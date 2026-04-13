@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="sv" class="bg-[#050505]">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neurovibe — Kognitiv Harmoni & Neuro-tips för Arbetslivet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.1; }
+            50% { transform: scale(1.1); opacity: 0.18; }
+        }
+        
+        .neuro-accent-blur {
+            position: absolute;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(216, 49, 49, 0.3) 0%, rgba(216, 49, 49, 0) 70%);
+            filter: blur(80px);
+            z-index: -1;
+            animation: breathe 12s ease-in-out infinite;
+        }
+
+        .glass-panel { 
+            background: rgba(255, 255, 255, 0.02); 
+            backdrop-filter: blur(30px); 
+            border: 1px solid rgba(255, 255, 255, 0.05); 
+            border-radius: 24px;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #FFFFFF 30%, #909090 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .scroll-hide::-webkit-scrollbar { display: none; }
+        
+        /* WCAG: Better focus visibility */
+        .input-glow:focus { 
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(216, 49, 49, 0.5); 
+            box-shadow: 0 0 0 2px rgba(216, 49, 49, 0.2);
+            outline: none;
+        }
+
+        button:focus-visible {
+            outline: 2px solid #D83131;
+            outline-offset: 4px;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @keyframes float-gentle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .float-zen { animation: float-gentle 8s ease-in-out infinite; }
+
+        .modal-bg {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+
+    <!-- SEO & Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Neurovibe — Din guide till kognitiv harmoni, neuro-tips och neuroinkluderande arbetsmiljöer. Vi optimerar vardagen för ADHD, autism och neurodiversitet.">
+    <meta name="keywords" content="neurodiversitet, ADHD arbetsplats, autism stöd, neuro-tips, biohacking Sverige, kognitiv optimering, neuroinkludering">
+    <!-- OpenGraph for LLM/Search results -->
+    <meta property="og:title" content="Neurovibe | Kognitiv Harmoni">
+    <meta property="og:description" content="Guider och verktyg för en neuroinkluderande vardag och arbetsmiljö.">
+    <meta property="og:type" content="website">
+
+</head>
+<body class="text-[#E0E0E0] selection:bg-[#D83131] selection:text-white min-h-screen flex flex-col scroll-smooth">
+
+    <div class="neuro-accent-blur top-[-10vw] right-[-10vw]" aria-hidden="true"></div>
+    <div class="neuro-accent-blur bottom-[-10vw] left-[-10vw]" style="animation-delay: -6s;" aria-hidden="true"></div>
+
+    <div class="flex flex-col flex-grow max-w-6xl mx-auto w-full px-6 md:px-10 py-8">
+        
+        <!-- Header -->
+        <header class="flex justify-between items-center mb-12 md:mb-20 transition-all duration-1000" id="header-ui">
+            <button class="flex items-center gap-4 group cursor-pointer text-left" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Neurovibe Hem">
+                <div class="relative w-10 h-10 flex items-center justify-center">
+                    <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="24" cy="24" r="20" stroke="#D83131" stroke-width="2" opacity="0.6"/>
+                        <circle cx="24" cy="24" r="8" fill="#D83131" opacity="0.8" class="animate-pulse"/>
+                    </svg>
+                </div>
+                <span class="text-xl font-semibold tracking-tight">Neuro<span class="opacity-30 font-light">vibe</span></span>
+            </button>
+            <nav class="hidden md:flex gap-8 text-[10px] font-bold tracking-widest uppercase items-center">
+                <a href="#philosophy" class="opacity-50 hover:opacity-100 transition-opacity">Filosofi</a>
+                <a href="#lab" class="opacity-50 hover:opacity-100 transition-opacity">Labbet</a>
+                <button onclick="toggleZen()" id="zen-btn" class="px-4 py-2 rounded-full border border-white/20 hover:bg-white/5 transition-all text-[9px] tracking-widest">ZEN MODE</button>
+                <button onclick="toggleModal('access')" class="bg-white/10 px-4 py-2 rounded-full hover:bg-white/20 transition-all border border-white/10">Få tillgång</button>
+            </nav>
+            <button class="md:hidden w-8 h-8 flex flex-col justify-center items-end gap-1.5" aria-label="Meny">
+                <div class="w-6 h-0.5 bg-white/60"></div>
+                <div class="w-4 h-0.5 bg-white/60"></div>
+            </button>
+        </header>
+
+        <!-- Hero Section -->
+        <main class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24 min-h-[70vh] transition-all duration-1000" id="hero-ui">
+            
+            <div class="space-y-6 md:space-y-10 float-zen">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-[9px] font-bold tracking-widest uppercase opacity-60">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#D83131]"></span>
+                    Adviseo Experimental Lab
+                </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-gradient">
+                    Andas in <br> kognitiv <br> klarhet.
+                </h1>
+                <p class="text-lg md:text-xl text-[#A0A0A0] font-light leading-relaxed max-w-md">
+                    Neurovibe är en fristad för din exekutiva funktion. Vi förvandlar bruset till rytm, en liten seger i taget.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <button onclick="toggleModal('access')" class="bg-[#D83131] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#B72A2A] transition-all shadow-lg shadow-[#D83131]/20">
+                        Gå med i betan
+                    </button>
+                    <a href="#philosophy" class="glass-panel border-white/20 px-8 py-4 rounded-xl font-semibold hover:bg-white/5 transition-all text-center">
+                        Vårt manifest
+                    </a>
+                </div>
+            </div>
+
+            <!-- Chat Widget -->
+            <section class="glass-panel p-6 md:p-8 h-[500px] md:h-[580px] flex flex-col shadow-2xl relative overflow-hidden group" aria-label="Chatt-assistent">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#D83131] to-transparent opacity-20"></div>
+                
+                <div class="flex items-center justify-between mb-6 md:mb-8">
+                    <div class="flex gap-1.5">
+                        <div class="w-2 h-2 rounded-full bg-[#D83131]/60"></div>
+                        <div class="w-2 h-2 rounded-full bg-white/10"></div>
+                    </div>
+                    <span class="text-[9px] font-mono opacity-40 uppercase tracking-widest">Guiden_Aktiv</span>
+                </div>
+
+                <!-- WCAG: aria-live ensures screen readers announce new messages -->
+                <div id="chat-container" 
+                    class="flex-grow space-y-6 overflow-y-auto scroll-hide mb-6 pr-2" 
+                    aria-live="polite" 
+                    aria-relevant="additions"
+                    role="log">
+                    <div class="space-y-2">
+                        <span class="text-[9px] font-bold opacity-40 uppercase tracking-widest">Guide</span>
+                        <div class="text-xl md:text-2xl font-light leading-snug text-[#B0B0B0] max-w-[90%]">
+                            Ta ett djupt andetag. <br> Vad känns överväldigande just nu?
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <label for="chat-input" class="sr-only">Beskriv vad som är överväldigande</label>
+                    <input type="text" id="chat-input" 
+                        class="w-full glass-panel bg-white/[0.04] border-white/10 px-6 py-4 md:py-5 rounded-2xl outline-none text-base md:text-lg font-light transition-all input-glow" 
+                        placeholder="Skriv mjukt..."
+                        autocomplete="off">
+                    <button id="send-btn" 
+                        class="absolute right-4 top-1/2 -translate-y-1/2 p-2 hover:text-[#D83131] transition-colors opacity-60 hover:opacity-100"
+                        aria-label="Skicka meddelande">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Philosophy Section -->
+        <section id="philosophy" class="py-24 border-t border-white/10">
+            <div class="max-w-3xl">
+                <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#D83131] mb-6 block">Vår filosofi</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-10 tracking-tight">Designat för <br> dopamin-skulden.</h2>
+                <div class="space-y-8 text-lg md:text-xl text-[#A0A0A0] font-light leading-relaxed">
+                    <p>De flesta produktivitetsverktyg är byggda för ett "neurotypiskt" flöde. De kräver konstant uppmärksamhet, skapar skuld genom röda notiser och antar en linjär väg till målet.</p>
+                    <p>Neurovibe är annorlunda. Vi bygger för de stunder då den exekutiva funktionen är offline. Våra gränssnitt andas, vår AI mjukar upp komplexa krav och vårt mål är att minska kognitiv belastning — inte öka den.</p>
+                    <div class="grid md:grid-cols-2 gap-12 pt-12">
+                        <div class="space-y-4">
+                            <h3 class="text-white font-semibold text-lg">Sensorik först</h3>
+                            <p class="text-base text-[#808080]">Minimalistiskt mörkt läge och pulserande element för att förhindra sensorisk överbelastning.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-white font-semibold text-lg">Noll friktion</h3>
+                            <p class="text-base text-[#808080]">Ett klick för att bryta ner uppgifter. Inget komplext upplägg. Ingen "to-do list skuld".</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lab Section -->
+        <section id="lab" class="py-24 border-t border-white/10 mb-24">
+            <div id="blog-section" class="mb-20 hidden">
+                <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#D83131] mb-8 block">Senaste insikter</span>
+                <div id="posts-container" class="grid md:grid-cols-2 gap-8">
+                    <!-- Posts load here -->
+                </div>
+            </div>
+
+            <div class="glass-panel p-10 md:p-16 border-white/20 bg-white/[0.02]">
+                <div class="max-w-3xl mx-auto text-center space-y-8">
+                    <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#D83131]">Forskning & Utveckling</span>
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight">LSS-översättaren</h2>
+                    <p class="text-xl text-[#A0A0A0] font-light leading-relaxed">
+                        Vi tränar just nu vår AI på tusentals sidor av svensk lagstiftning och vägledningar från Försäkringskassan. Målet: Ladda upp ett dokument, få en sammanfattning av dina rättigheter på 3 punkter.
+                    </p>
+                    <div class="pt-6">
+                        <button onclick="toggleModal('access')" class="px-8 py-3 rounded-full border border-white/20 hover:bg-white/5 transition-all text-sm font-semibold opacity-80">
+                            Följ utvecklingen
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-auto py-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8 opacity-40 text-[9px] font-mono tracking-widest uppercase">
+            <div class="flex items-center gap-4">
+                <div class="w-6 h-6 bg-[#D83131]/60 rounded-lg"></div>
+                <span>© 2026 ADVISEO LABORATORY</span>
+            </div>
+            <nav class="flex gap-12">
+                <a href="#philosophy" class="hover:text-white transition-colors">Manifest</a>
+                <button onclick="toggleModal('privacy')" class="hover:text-white transition-colors uppercase">Integritet</button>
+                <a href="#" class="hover:text-white transition-colors">Juridik</a>
+            </nav>
+            <div class="flex gap-8">
+                <span>Stockholm</span>
+                <span>/</span>
+                <span>Digital First</span>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Access Modal -->
+    <div id="access-modal" class="fixed inset-0 z-50 hidden modal-bg flex items-center justify-center p-6" role="dialog" aria-labelledby="modal-title">
+        <div class="glass-panel w-full max-w-md p-10 md:p-12 relative border-white/20 animate-[fadeIn_0.4s_ease-out]">
+            <button onclick="toggleModal('access')" class="absolute top-6 right-6 opacity-50 hover:opacity-100 text-2xl" aria-label="Stäng">&times;</button>
+            <div id="modal-content" class="text-center space-y-6">
+                <h3 id="modal-title" class="text-3xl font-bold tracking-tight">Gå med i betan</h3>
+                <p class="text-[#A0A0A0] font-light text-sm">Neurovibe är just nu i en stängd experimentell fas. Lämna din e-post för att få en notis när vi öppnar för fler NPF-hjärnor.</p>
+                <div class="space-y-4 pt-4 text-left">
+                    <div>
+                        <label for="lead-email" class="sr-only">E-postadress</label>
+                        <input type="email" id="lead-email" placeholder="namn@exempel.se" 
+                            class="w-full glass-panel bg-white/5 border-white/10 px-6 py-4 rounded-xl outline-none focus:border-[#D83131] transition-all input-glow">
+                    </div>
+                    
+                    <!-- GDPR: Consent Checkbox -->
+                    <div class="flex gap-3 items-start px-2 py-2">
+                        <input type="checkbox" id="lead-consent" class="mt-1 accent-[#D83131] w-4 h-4 cursor-pointer">
+                        <label for="lead-consent" class="text-[11px] leading-tight text-[#808080] font-light cursor-pointer">
+                            Jag godkänner att mina uppgifter hanteras enligt <button type="button" onclick="toggleModal('privacy')" class="text-[#D83131] underline hover:text-[#FF4040]">integritetspolicyn</button>.
+                        </label>
+                    </div>
+
+                    <button id="submit-lead" class="w-full bg-[#D83131] text-white py-4 rounded-xl font-bold hover:bg-[#B72A2A] transition-all disabled:opacity-30 disabled:cursor-not-allowed shadow-lg shadow-[#D83131]/20">
+                        Begär inbjudan
+                    </button>
+                </div>
+                <p class="text-[10px] uppercase tracking-widest opacity-30">Early access 2026 / Adviseo</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Modal -->
+    <div id="privacy-modal" class="fixed inset-0 z-[60] hidden modal-bg flex items-center justify-center p-6" role="dialog" aria-labelledby="privacy-title">
+        <div class="glass-panel w-full max-w-2xl max-h-[80vh] overflow-y-auto p-10 md:p-12 relative border-white/20 animate-[fadeIn_0.4s_ease-out] scroll-hide">
+            <button onclick="toggleModal('privacy')" class="absolute top-6 right-6 opacity-50 hover:opacity-100 text-2xl" aria-label="Stäng">&times;</button>
+            <div class="space-y-8">
+                <h3 id="privacy-title" class="text-3xl font-bold tracking-tight text-gradient">Integritetspolicy</h3>
+                <div class="space-y-6 text-[#A0A0A0] font-light text-sm leading-relaxed">
+                    <section>
+                        <h4 class="text-white font-semibold mb-2 uppercase text-[10px] tracking-widest">Inledning</h4>
+                        <p>Din integritet är fundamentet i Neurovibe. Vi samlar in minimalt med data och endast för att förbättra din upplevelse och vår forskning inom kognitivt stöd.</p>
+                    </section>
+                    <section>
+                        <h4 class="text-white font-semibold mb-2 uppercase text-[10px] tracking-widest">Data vi samlar in</h4>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li><strong>E-postadress:</strong> Används endast för inbjudningar och viktiga uppdateringar om betan.</li>
+                            <li><strong>Chattdata:</strong> Meddelanden du skriver bearbetas för att ge svar. I betan sparas dessa anonymiserat för att förbättra AI-modellen.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h4 class="text-white font-semibold mb-2 uppercase text-[10px] tracking-widest">Tredjepart (AI)</h4>
+                        <p>Vi använder teknologier från **OpenAI** för att driva "Guiden". Ingen data vi skickar dit kopplas till din e-postadress. Genom att använda chatten godkänner du att din text bearbetas av OpenAI:s modeller.</p>
+                    </section>
+                    <section>
+                        <h4 class="text-white font-semibold mb-2 uppercase text-[10px] tracking-widest">Dina rättigheter</h4>
+                        <p>Du har rätt att när som helst begära att din e-post tas bort från vår väntelista. Kontakta oss på simon@adviseo.se för radering eller utdrag av data.</p>
+                    </section>
+                </div>
+                <button onclick="toggleModal('privacy')" class="w-full border border-white/10 py-4 rounded-xl font-semibold hover:bg-white/5 transition-all">Stäng</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const chatContainer = document.getElementById('chat-container');
+        const chatInput = document.getElementById('chat-input');
+        const sendBtn = document.getElementById('send-btn');
+        const accessModal = document.getElementById('access-modal');
+        const privacyModal = document.getElementById('privacy-modal');
+        const leadEmail = document.getElementById('lead-email');
+        const leadConsent = document.getElementById('lead-consent');
+        const submitLead = document.getElementById('submit-lead');
+        const modalContent = document.getElementById('modal-content');
+        let isZen = false;
+
+        function toggleZen() {
+            isZen = !isZen;
+            const hero = document.getElementById('hero-ui');
+            const header = document.getElementById('header-ui');
+            const zenBtn = document.getElementById('zen-btn');
+            
+            if (isZen) {
+                hero.style.opacity = '0';
+                hero.style.pointerEvents = 'none';
+                header.style.opacity = '0.1';
+                zenBtn.textContent = "EXIT ZEN";
+                addMessage("Zen mode aktiverat. Inga distraktioner, bara du och jag.");
+            } else {
+                hero.style.opacity = '1';
+                hero.style.pointerEvents = 'all';
+                header.style.opacity = '1';
+                zenBtn.textContent = "ZEN MODE";
+            }
+        }
+
+        function toggleModal(id) {
+            if (id === 'access') accessModal.classList.toggle('hidden');
+            if (id === 'privacy') privacyModal.classList.toggle('hidden');
+        }
+
+        async function handleLead() {
+            const email = leadEmail.value.trim();
+            if (!email) return;
+            
+            if (!leadConsent.checked) {
+                alert("Du behöver godkänna integritetspolicyn för att fortsätta.");
+                return;
+            }
+            
+            submitLead.disabled = true;
+            submitLead.textContent = "Sparar...";
+            
+            try {
+                const response = await fetch('/api/lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email })
+                });
+                if (response.ok) {
+                    modalContent.innerHTML = `
+                        <div class='py-8 space-y-4'>
+                            <div class='w-16 h-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6'>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
+                            <h3 class='text-3xl font-bold tracking-tight text-white'>Du är på listan.</h3>
+                            <p class='text-[#808080] font-light'>Vi hör av oss så fort det finns en plats ledig för dig.</p>
+                            <button onclick="toggleModal('access')" class='mt-6 text-[10px] uppercase tracking-widest opacity-40 hover:opacity-100 transition-opacity'>Stäng</button>
+                        </div>
+                    `;
+                } else {
+                    throw new Error();
+                }
+            } catch (err) {
+                submitLead.disabled = false;
+                submitLead.textContent = "Begär inbjudan";
+                alert("Något gick fel. Testa igen eller ladda om sidan.");
+            }
+        }
+
+        submitLead.addEventListener('click', handleLead);
+        leadEmail.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleLead(); });
+
+        function addMessage(text, isUser = false) {
+            const div = document.createElement('div');
+            div.className = isUser ? 'space-y-2 text-right animate-[fadeIn_0.5s_ease-out]' : 'space-y-2 animate-[fadeIn_0.8s_ease-out]';
+            
+            const label = document.createElement('span');
+            label.className = 'text-[9px] font-bold opacity-40 uppercase tracking-widest';
+            label.textContent = isUser ? 'Du' : 'Guiden';
+            
+            const msg = document.createElement('div');
+            msg.className = isUser 
+                ? 'text-xl md:text-2xl font-light leading-snug text-white/90 ml-auto max-w-[85%]' 
+                : 'text-xl md:text-2xl font-light leading-snug text-[#B0B0B0] max-w-[90%]';
+            msg.innerHTML = text;
+            
+            div.appendChild(label);
+            div.appendChild(msg);
+            chatContainer.appendChild(div);
+            
+            // WCAG: Ensure smooth scrolling for keyboard users too
+            chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
+        }
+
+        async function handleSend() {
+            const val = chatInput.value.trim();
+            if (!val) return;
+            chatInput.value = '';
+            addMessage(val, true);
+            
+            const typing = document.createElement('div');
+            typing.className = 'opacity-40 italic text-lg mt-4 animate-pulse';
+            typing.innerHTML = "Lyssnar...";
+            chatContainer.appendChild(typing);
+            chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
+            
+            try {
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: val })
+                });
+                const data = await response.json();
+                typing.remove();
+                
+                // Special trigger for Lead Modal
+                if (data.response.toUpperCase().includes("PROMPT_LEAD")) {
+                    const cleanMsg = data.response.replace(/#?PROMPT_LEAD/gi, "");
+                    addMessage(cleanMsg);
+                    setTimeout(() => toggleModal('access'), 2500);
+                } else {
+                    addMessage(data.response);
+                }
+            } catch (err) {
+                typing.remove();
+                addMessage("Anslutningen avbröts. Låt oss försöka igen.");
+            }
+        }
+
+        chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
+        sendBtn.addEventListener('click', handleSend);
+
+        // Load Blog Posts
+        async function loadPosts() {
+            try {
+                const res = await fetch('/api/posts');
+                const posts = await res.json();
+                if (posts && posts.length > 0) {
+                    const container = document.getElementById('posts-container');
+                    document.getElementById('blog-section').classList.remove('hidden');
+                    container.innerHTML = posts.map(p => `
+                        <article class="glass-panel p-8 border-white/10 hover:border-[#D83131]/30 transition-all group">
+                            <span class="text-[9px] font-bold text-[#D83131] uppercase tracking-widest">${p.category || 'Allmänt'} — ${p.date}</span>
+                            <h3 class="text-xl font-bold mt-3 mb-4 group-hover:text-white transition-colors">${p.title}</h3>
+                            <div class="text-[#808080] text-sm leading-relaxed line-clamp-3">${p.content}</div>
+                        </article>
+                    `).join('');
+                }
+            } catch (e) { console.log("Blog load failed"); }
+        }
+        loadPosts();
+    </script>
+</body>
+</html>
