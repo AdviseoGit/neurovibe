@@ -447,7 +447,16 @@
         async function loadPosts() {
             try {
                 const res = await fetch('/api/posts');
-                const posts = await res.json();
+                let posts = await res.json();
+                if (!posts) posts = [];
+                
+                posts.push({
+                    title: "Neurodiversitet och AI: Hur vi anpassar framtidens arbetsplats 2026",
+                    date: "2026-04-14",
+                    category: "Arbetsplats 2026",
+                    content: "I takt med att artificiell intelligens fortsätter att revolutionera hur vi arbetar, står framtidens arbetsplats inför en ny utmaning: att skapa miljöer som fullt ut stödjer neurodiversitet. Läs vår senaste rapport om hur AI-anpassade arbetsflöden skapar en mer inkluderande och kognitivt skonsam arbetsmiljö."
+                });
+
                 if (posts && posts.length > 0) {
                     const container = document.getElementById('posts-container');
                     document.getElementById('blog-section').classList.remove('hidden');
