@@ -1,9 +1,13 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Vindkollen",
-  "url": "https://vindkoll.se",
-  "description": "Calculator for wind power compensation in Sweden.",
+  "name": "Neurovibe",
+  "url": "https://neurovibe.com",
+  "description": "Neurovibe: Optimize your workplace for neurodiversity. High-value content, resources, and AI tools for ADHD, Autism, and neuro-inclusive productivity.",
   "applicationCategory": "BusinessApplication",
-  "operatingSystem": "All"
+  "operatingSystem": "All",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Neurovibe"
+  }
 }

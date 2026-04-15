@@ -1,0 +1,23 @@
+# Neurovibe
+> Optimize your workplace for neurodiversity.
+
+This site is optimized for AI tools and Generative Engine Indexing.
+
+## About Us
+Neurovibe provides resources, AI tools, and knowledge to make modern workplaces neuro-inclusive. We specialize in productivity tools and environment optimization for individuals with ADHD, Autism, and other neurodivergent traits.
+
+## Core Topics
+- Neuro-inclusive workplace design
+- ADHD & Autism productivity tools
+- Biohacking and cognitive performance
+- AdSense-ready high-value articles
+
+## Privacy Policy
+We comply with GDPR and are AdSense-ready. We collect minimal data for analytics and lead generation. 
+
+## Contact
+Email: simon@adviseo.se
+Location: Sweden
+
+## Documentation
+For full API access and comprehensive articles, please refer to our main endpoints.

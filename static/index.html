@@ -77,6 +77,8 @@
     <meta property="og:description" content="Guider och verktyg för en neuroinkluderande vardag och arbetsmiljö.">
     <meta property="og:type" content="website">
 
+    <script type="application/ld+json" src="/static/schema.json"></script>
+    <link rel="alternate" type="text/markdown" href="/static/llms.txt" />
 </head>
 <body class="text-[#E0E0E0] selection:bg-[#D83131] selection:text-white min-h-screen flex flex-col scroll-smooth">
 
@@ -473,5 +475,16 @@
         }
         loadPosts();
     </script>
+    <!-- Cookie Banner (AdSense Ready) -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-[#111] border-t border-[#333] p-4 z-50 flex flex-col sm:flex-row justify-between items-center text-sm text-[#888]">
+        <div class="mb-4 sm:mb-0">
+            Vi använder cookies för att anpassa innehåll, annonser (AdSense-redo) och analysera trafik. Läs vår <a href="#" onclick="document.getElementById('privacy-modal').classList.remove('hidden')" class="text-white underline">Integritetspolicy</a>.
+        </div>
+        <div class="flex gap-4">
+            <button onclick="document.getElementById('cookie-banner').style.display='none'" class="bg-[#d83131] hover:bg-[#b02828] text-white px-4 py-2 rounded transition-colors">
+                Acceptera alla
+            </button>
+        </div>
+    </div>
 </body>
 </html>
