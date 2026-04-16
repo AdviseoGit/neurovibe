@@ -30,6 +30,10 @@ class PostRequest(BaseModel):
 app.mount("/static", StaticFiles(directory="static"), name="static")
 app.mount("/content", StaticFiles(directory="content"), name="content")
 
+@app.get("/article")
+async def read_article():
+    return FileResponse("static/article.html")
+
 @app.get("/")
 async def read_index():
     return FileResponse("static/index.html")
@@ -101,8 +105,8 @@ async def get_posts():
         """)
         conn.commit()
         
-        cur.execute("SELECT title, content, category, published_at FROM neurovibe_posts ORDER BY published_at DESC")
-        posts = [{"title": r[0], "content": r[1], "category": r[2], "date": r[3].strftime("%Y-%m-%d")} for r in cur.fetchall()]
+        cur.execute("SELECT id, title, content, category, published_at FROM neurovibe_posts ORDER BY published_at DESC")
+        posts = [{"id": r[0], "title": r[1], "content": r[2], "category": r[3], "date": r[4].strftime("%Y-%m-%d")} for r in cur.fetchall()]
         cur.close()
         conn.close()
         return posts

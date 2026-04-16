@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="sv" class="bg-[#050505]">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neurovibe — Artikel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .glass-panel { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(30px); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 24px; }
+    </style>
+</head>
+<body class="text-[#E0E0E0] min-h-screen flex flex-col p-6 md:p-10">
+    <header class="mb-12">
+        <a href="/" class="flex items-center gap-4 group">
+            <span class="text-xl font-semibold tracking-tight">Neuro<span class="opacity-30 font-light">vibe</span></span>
+        </a>
+    </header>
+    <main class="max-w-3xl mx-auto w-full glass-panel p-8 md:p-12" id="article-content">
+        <div class="animate-pulse">Laddar artikel...</div>
+    </main>
+    <script>
+        async function loadArticle() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            const container = document.getElementById('article-content');
+            
+            if (!id) {
+                container.innerHTML = '<p>Artikel saknas.</p>';
+                return;
+            }
+
+            try {
+                const res = await fetch('/api/posts');
+                let posts = await res.json();
+                if (!posts) posts = [];
+                
+                posts.push({
+                    id: "hardcoded-1",
+                    title: "Neurodiversitet och AI: Hur vi anpassar framtidens arbetsplats 2026",
+                    date: "2026-04-14",
+                    category: "Arbetsplats 2026",
+                    content: "I takt med att artificiell intelligens fortsätter att revolutionera hur vi arbetar, står framtidens arbetsplats inför en ny utmaning: att skapa miljöer som fullt ut stödjer neurodiversitet. Läs vår senaste rapport om hur AI-anpassade arbetsflöden skapar en mer inkluderande och kognitivt skonsam arbetsmiljö. Detta är ett avgörande steg för att bygga hållbara företag där alla kan trivas och bidra med sina unika perspektiv."
+                });
+                
+                const article = posts.find(p => String(p.id) === id);
+                if (article) {
+                    container.innerHTML = `
+                        <span class="text-[9px] font-bold text-[#D83131] uppercase tracking-widest">${article.category || 'Allmänt'} — ${article.date}</span>
+                        <h1 class="text-3xl md:text-5xl font-bold mt-4 mb-8 text-white">${article.title}</h1>
+                        <div class="text-[#A0A0A0] text-lg leading-relaxed whitespace-pre-wrap">${article.content}</div>
+                        <a href="/" class="mt-12 inline-block px-6 py-3 border border-white/20 rounded-full hover:bg-white/5 transition-all text-sm font-semibold">Tillbaka</a>
+                    `;
+                } else {
+                    container.innerHTML = '<p>Artikel hittades inte.</p>';
+                }
+            } catch (e) {
+                container.innerHTML = '<p>Kunde inte ladda artikeln.</p>';
+            }
+        }
+        loadArticle();
+    </script>
+</body>
+</html>
