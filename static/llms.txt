@@ -21,3 +21,11 @@ Location: Sweden
 
 ## Documentation
 For full API access and comprehensive articles, please refer to our main endpoints.
+
+## Articles & Resources (Markdown)
+- [Optimizing Remote Work for ADHD](/content/adhd-remote-work-2026.md)
+- [Biohacking for Neurodivergence](/content/biohacking-2026.md)
+- [LSS Updates 2026](/content/lss-updates-2026.md)
+- [Neurodiversitet och AI 2026](/content/neurodiversitet-och-ai-2026.md)
+- [Arbetsprövning 2026: Nya regler](/content/arbetsprovning-2026-forsakringskassan.md)
+- [AI som Kognitivt Stöd 2026 (Försäkringskassan)](/content/ai-kognitivt-stod-2026.md): Guide to new Försäkringskassan guidelines on AI tools as workplace accommodations.

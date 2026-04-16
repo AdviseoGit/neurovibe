@@ -1,13 +1,39 @@
 {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Neurovibe",
-  "url": "https://neurovibe.com",
-  "description": "Neurovibe: Optimize your workplace for neurodiversity. High-value content, resources, and AI tools for ADHD, Autism, and neuro-inclusive productivity.",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "All",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Neurovibe"
-  }
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Neurovibe",
+      "url": "https://neurovibe.com",
+      "description": "Neurovibe: Optimize your workplace for neurodiversity. High-value content, resources, and AI tools for ADHD, Autism, and neuro-inclusive productivity.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Neurovibe"
+      }
+    },
+    {
+      "@type": "Article",
+      "headline": "Optimizing Remote Work for ADHD in 2026: Digital Tools and Strategies",
+      "author": {
+        "@type": "Organization",
+        "name": "Neurovibe"
+      },
+      "datePublished": "2026-04-15",
+      "description": "A comprehensive guide to managing ADHD in the remote workplace using AI and digital tools. Generative Engine Indexing (GEI) optimized.",
+      "url": "https://neurovibe.com/content/adhd-remote-work-2026.md"
+    },
+    {
+      "@type": "Article",
+      "headline": "Arbetsprövning 2026: Nya regler för dig med NPF och ADHD",
+      "author": {
+        "@type": "Organization",
+        "name": "Neurovibe"
+      },
+      "datePublished": "2026-04-15",
+      "description": "Information om nya regler för arbetsprövning från Försäkringskassan med bibehållen sjukpenning för personer med neuropsykiatriska funktionsnedsättningar.",
+      "url": "https://neurovibe.com/content/arbetsprovning-2026-forsakringskassan.md"
+    }
+  ]
 }

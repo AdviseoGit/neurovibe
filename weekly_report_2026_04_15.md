@@ -1,4 +1,20 @@
-# Neurovibe Maintenance Report: 2026-04-15
-- **SEO & AI Indexing:** Added valid JSON-LD schema for Neurovibe and `llms.txt` to optimize for Generative Engine Indexing.
-- **Compliance & AdSense:** Injected AdSense-ready cookie banner linked to the privacy policy.
-- **Content:** Promoted `biohacking-2026.md` into the `content` directory for high-value organic traffic targeting the "biohacking for neurodivergence" trend.
+# Neurovibe Maintenance Report: 2026-04-15 (Update)
+- **Generative Engine Indexing (LLM):** 
+  - Exposed `/llms.txt` and `/schema.json` natively at the root in `main.py`.
+  - Mounted `/content/` as a static directory to serve raw Markdown files (`biohacking-2026.md`, etc.).
+  - Updated `llms.txt` to include direct paths to the Markdown article endpoints, ensuring AI crawlers can ingest the core content directly.
+- **Compliance & AdSense Readiness:** 
+  - Verified the existing AdSense-ready cookie banner linked to the privacy policy.
+  - Injected the `adsbygoogle.js` script block into the `<head>` of `index.html` (with a placeholder client ID).
+  - Created and exposed `/ads.txt` at the root for AdSense crawler validation.
+- **SEO & Search Dominance:** Search engines and LLMs now have dual optimized funnels (HTML vs Markdown/Schema).
+- **Content & Trends (Subagent Update):**
+  - Generated new SEO-optimized Markdown article: `adhd-remote-work-2026.md` (ADHD & Remote Work AI Tools).
+  - Updated `static/llms.txt` to include the new article for LLM ingestion.
+  - Restructured `static/schema.json` to a `@graph` array and appended the new Article schema.
+  - Verified AdSense `ads.txt` placeholder exists and is correctly routed in FastAPI.
+  - Generated new SEO-optimized Markdown article: `arbetsprovning-2026-forsakringskassan.md` (Arbetsprövning 2026: Nya möjligheter).
+  - Updated `static/llms.txt` to include the new Arbetsprövning article for LLM ingestion.
+- **Wednesday Maintenance (Content, SEO, Trends):**
+  - Updated `research_knowledge.md` with new Försäkringskassan update regarding AI-driven cognitive support tools as official workplace accommodations (arbetshjälpmedel).
+  - Drafted new SEO-optimized article: `ai-kognitivt-stod-2026.md` covering the new Försäkringskassan guidelines on AI tools.
