@@ -28,6 +28,7 @@ class PostRequest(BaseModel):
 
 # Mount the static directory
 app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/content", StaticFiles(directory="content"), name="content")
 
 @app.get("/")
 async def read_index():
@@ -36,6 +37,24 @@ async def read_index():
 @app.get("/robots.txt")
 async def robots():
     return FileResponse("static/robots.txt")
+
+@app.get("/llms.txt")
+async def llms_txt():
+    return FileResponse("static/llms.txt")
+
+@app.get("/ads.txt")
+async def ads_txt():
+    return FileResponse("static/ads.txt")
+
+
+@app.get("/schema.json")
+async def schema_json():
+    return FileResponse("static/schema.json")
+
+@app.get("/sitemap.xml")
+async def sitemap():
+    return FileResponse("static/sitemap.xml")
+
 
 @app.get("/favicon.ico")
 async def favicon():
