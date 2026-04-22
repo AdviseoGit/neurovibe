@@ -21,6 +21,11 @@ class ChatRequest(BaseModel):
 class LeadRequest(BaseModel):
     email: EmailStr
 
+class FeedbackRequest(BaseModel):
+    tool: str
+    rating: int
+    comment: str = ""
+
 class PostRequest(BaseModel):
     title: str
     content: str
@@ -92,6 +97,40 @@ async def save_lead(req: LeadRequest):
     except Exception as e:
         print(f"DB Error: {e}")
         raise HTTPException(status_code=500, detail="Could not save email")
+
+
+@app.post("/api/feedback")
+async def save_feedback(req: FeedbackRequest):
+    if not DATABASE_URL:
+        print(f"FEEDBACK CAPTURED (No DB): Tool={req.tool}, Rating={req.rating}, Comment={req.comment}")
+        return {"status": "success", "message": "Feedback saved (offline)"}
+    
+    try:
+        conn = psycopg2.connect(DATABASE_URL)
+        cur = conn.cursor()
+        
+        # Lazy table creation
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS neurovibe_feedback (
+                id SERIAL PRIMARY KEY,
+                tool VARCHAR(100) NOT NULL,
+                rating INTEGER NOT NULL,
+                comment TEXT,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        """)
+        
+        cur.execute(
+            "INSERT INTO neurovibe_feedback (tool, rating, comment) VALUES (%s, %s, %s)",
+            (req.tool, req.rating, req.comment)
+        )
+        conn.commit()
+        cur.close()
+        conn.close()
+        return {"status": "success"}
+    except Exception as e:
+        print(f"Feedback DB Error: {e}")
+        raise HTTPException(status_code=500, detail="Could not save feedback")
 
 @app.get("/api/posts")
 async def get_posts():
