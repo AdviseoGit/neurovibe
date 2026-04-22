@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neurovibe - Användarfeedback</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen text-gray-800 flex flex-col items-center p-4">
+    
+    <div class="w-full max-w-lg mt-10">
+        <a href="/" class="text-indigo-600 hover:underline text-sm font-medium mb-6 inline-block">&larr; Tillbaka till startsidan</a>
+        
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <h1 class="text-2xl font-bold text-indigo-900 mb-2">Vad tycker du om våra verktyg?</h1>
+            <p class="text-gray-600 mb-8 text-sm">Vi utvecklar Neurovibe för dig. Din feedback hjälper oss att prioritera rätt funktioner framåt.</p>
+
+            <form id="feedbackForm" class="space-y-6">
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-3">Vilket verktyg har du använt mest?</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                            <input type="radio" name="tool" value="nedbrytaren" class="text-indigo-600 focus:ring-indigo-500">
+                            <span class="ml-3 text-gray-700">Uppgiftsnedbrytaren</span>
+                        </label>
+                        <label class="flex items-center p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                            <input type="radio" name="tool" value="fokustimer" class="text-indigo-600 focus:ring-indigo-500">
+                            <span class="ml-3 text-gray-700">Fokus Timer</span>
+                        </label>
+                        <label class="flex items-center p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                            <input type="radio" name="tool" value="burnout" class="text-indigo-600 focus:ring-indigo-500">
+                            <span class="ml-3 text-gray-700">Burnout Calculator</span>
+                        </label>
+                        <label class="flex items-center p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                            <input type="radio" name="tool" value="mallar" class="text-indigo-600 focus:ring-indigo-500">
+                            <span class="ml-3 text-gray-700">Arbetsplatsmallar</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-3">Hur hjälpsamt var verktyget? (1-5)</label>
+                    <div class="flex justify-between items-center bg-gray-50 p-4 rounded-lg border border-gray-100">
+                        <span class="text-xs text-gray-500">Inte alls</span>
+                        <div class="flex gap-2">
+                            <label class="cursor-pointer"><input type="radio" name="rating" value="1" class="sr-only peer"><div class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-300 peer-checked:bg-indigo-600 peer-checked:text-white peer-checked:border-indigo-600 hover:bg-gray-100 transition">1</div></label>
+                            <label class="cursor-pointer"><input type="radio" name="rating" value="2" class="sr-only peer"><div class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-300 peer-checked:bg-indigo-600 peer-checked:text-white peer-checked:border-indigo-600 hover:bg-gray-100 transition">2</div></label>
+                            <label class="cursor-pointer"><input type="radio" name="rating" value="3" class="sr-only peer"><div class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-300 peer-checked:bg-indigo-600 peer-checked:text-white peer-checked:border-indigo-600 hover:bg-gray-100 transition">3</div></label>
+                            <label class="cursor-pointer"><input type="radio" name="rating" value="4" class="sr-only peer"><div class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-300 peer-checked:bg-indigo-600 peer-checked:text-white peer-checked:border-indigo-600 hover:bg-gray-100 transition">4</div></label>
+                            <label class="cursor-pointer"><input type="radio" name="rating" value="5" class="sr-only peer"><div class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-300 peer-checked:bg-indigo-600 peer-checked:text-white peer-checked:border-indigo-600 hover:bg-gray-100 transition">5</div></label>
+                        </div>
+                        <span class="text-xs text-gray-500">Mycket</span>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Vad saknar du eller vad kan vi göra bättre?</label>
+                    <textarea id="comment" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" placeholder="Berätta hur vi kan anpassa verktygen ännu bättre för dina behov..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-lg font-bold hover:bg-indigo-700 transition flex justify-center items-center">
+                    <span>Skicka feedback</span>
+                </button>
+            </form>
+
+            <!-- Success State (Hidden initially) -->
+            <div id="successState" class="hidden text-center py-8">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Tack!</h2>
+                <p class="text-gray-600">Din röst är ovärderlig för att vi ska kunna bygga rätt saker.</p>
+                <button onclick="window.location.href='/resurser.html'" class="mt-8 text-indigo-600 font-medium hover:underline">Gå till Resource Hub</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // In a real app we'd send this to the /api/feedback endpoint we'll create
+            // For now, we simulate the submission for the frontend flow
+            
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            submitBtn.innerHTML = '<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Skickar...';
+            submitBtn.disabled = true;
+
+            // Simulate API delay
+            await new Promise(resolve => setTimeout(resolve, 800));
+
+            document.getElementById('feedbackForm').classList.add('hidden');
+            document.getElementById('successState').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
