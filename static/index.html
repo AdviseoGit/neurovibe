@@ -89,6 +89,7 @@
             <nav class="hidden md:flex gap-8 text-[10px] font-bold tracking-widest uppercase items-center">
                 <a href="#philosophy" class="opacity-50 hover:opacity-100 transition-opacity">Filosofi</a>
                 <a href="#lab" class="opacity-50 hover:opacity-100 transition-opacity">Labbet</a>
+                <a href="/resurser.html" class="opacity-50 hover:opacity-100 transition-opacity">Verktyg</a>
                 <button onclick="toggleZen()" id="zen-btn" class="px-4 py-2 rounded-full border border-white/20 hover:bg-white/5 transition-all text-[9px] tracking-widest">ZEN MODE</button>
                 <button onclick="toggleModal('access')" class="bg-white/10 px-4 py-2 rounded-full hover:bg-white/20 transition-all border border-white/10">Få tillgång</button>
             </nav>
@@ -99,6 +100,7 @@
             <div id="mobile-menu" class="fixed inset-0 bg-[#050505]/95 backdrop-blur-lg z-40 hidden flex-col items-center justify-center gap-8 text-xl font-semibold opacity-0 transition-opacity duration-300">
                 <a href="#philosophy" class="mobile-link hover:text-[#D83131] transition-colors">Filosofi</a>
                 <a href="#lab" class="mobile-link hover:text-[#D83131] transition-colors">Labbet</a>
+                <a href="/resurser.html" class="mobile-link hover:text-[#D83131] transition-colors">Verktyg</a>
                 <button onclick="toggleZen(); toggleMobileMenu();" class="px-6 py-3 rounded-full border border-white/20 hover:bg-white/5 transition-all text-sm tracking-widest">ZEN MODE</button>
                 <button onclick="toggleModal('access'); toggleMobileMenu();" class="bg-[#D83131] px-6 py-3 rounded-full hover:bg-[#B72A2A] transition-all text-sm">Få tillgång</button>
             </div>
@@ -180,20 +182,20 @@
                     <p>Neurovibe är annorlunda. Vi bygger för de stunder då den exekutiva funktionen är offline. Våra gränssnitt andas, vår AI mjukar upp komplexa krav och vårt mål är att minska kognitiv belastning — inte öka den.</p>
                     <div class="grid md:grid-cols-2 gap-12 pt-12">
                         <div class="space-y-4">
-                            <h3 class="text-white font-semibold text-lg">Sensorik först</h3>
-                            <p class="text-base text-[#808080]">Minimalistiskt mörkt läge och pulserande element för att förhindra sensorisk överbelastning.</p>
+                            <h3 class="text-white font-semibold text-lg">Mallar för chefer</h3>
+                            <p class="text-base text-[#808080]">Sluta gissa. Använd vår <a href="/template-employer.html" class="text-[#D83131] hover:underline">Mall för arbetsplatsanpassning</a> för att formalisera stödet till dina anställda.</p>
                         </div>
                         <div class="space-y-4">
-                            <h3 class="text-white font-semibold text-lg">Noll friktion</h3>
-                            <p class="text-base text-[#808080]">Ett klick för att bryta ner uppgifter. Inget komplext upplägg. Ingen "to-do list skuld".</p>
+                            <h3 class="text-white font-semibold text-lg">Neuro-Verktyg</h3>
+                            <p class="text-base text-[#808080]">Prova vår <a href="/verktyg-nedbrytare.html" class="text-[#D83131] hover:underline">Uppgiftsnedbrytare</a> för att övervinna exekutiv dysfunktion idag.</p>
                         </div>
                         <div class="space-y-4">
                             <h3 class="text-white font-semibold text-lg">Tidsuppfattning</h3>
-                            <p class="text-base text-[#808080]">Få struktur på tiden med fokusintervaller anpassade för kortare, hanterbara sessioner.</p>
+                            <p class="text-base text-[#808080]">Få struktur på tiden med vår <a href="/verktyg-fokus-timer.html" class="text-[#D83131] hover:underline">visuella Fokus Timer</a>, anpassad för kortare, hanterbara intervaller.</p>
                         </div>
                         <div class="space-y-4">
-                            <h3 class="text-white font-semibold text-lg">Inkludering på riktigt</h3>
-                            <p class="text-base text-[#808080]">Verktyg och checklistor för arbetsgivare som vill stödja neurodivergent talang konkret.</p>
+                            <h3 class="text-white font-semibold text-lg">Resource Hub</h3>
+                            <p class="text-base text-[#808080]">Utforska alla våra samlade <a href="/resurser.html" class="text-[#D83131] hover:underline">verktyg och mallar</a> på ett och samma ställe.</p>
                         </div>
                     </div>
                 </div>
@@ -202,9 +204,17 @@
 
         <!-- Lab Section -->
         <section id="lab" class="py-24 border-t border-white/10 mb-24">
-            <div id="blog-section" class="mb-20 hidden">
+            <div id="blog-section" class="mb-20">
                 <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#D83131] mb-8 block">Senaste insikter</span>
-                <div id="posts-container" class="grid md:grid-cols-2 gap-8"></div>
+                <div id="posts-container" class="grid md:grid-cols-2 gap-8">
+                    <!-- Featured article for SEO -->
+                    <article class="glass-panel p-8 border-white/10 hover:border-[#D83131]/30 transition-all group">
+                        <span class="text-[9px] font-bold text-[#D83131] uppercase tracking-widest">Neuroinkludering — 2026-04-22</span>
+                        <h3 class="text-xl font-bold mt-3 mb-4 group-hover:text-white transition-colors">ADHD på arbetsplatsen: Så skapar du en neuroinkluderande miljö</h3>
+                        <div class="text-[#808080] text-sm leading-relaxed line-clamp-3 mb-4">Att förstå och anpassa sig efter neurodivergenta medarbetare är inte bara en fråga om tillgänglighet – det är en strategisk fördel som kan låsa upp enorm potential.</div>
+                        <a href="/article_adhd_workplace.html" class="text-[#D83131] text-sm font-semibold hover:underline">Läs hela guiden &rarr;</a>
+                    </article>
+                </div>
             </div>
 
             <!-- Workspace Checklist -->
@@ -250,8 +260,8 @@
             </div>
             <nav class="flex gap-12">
                 <a href="#philosophy" class="hover:text-white transition-colors">Manifest</a>
+                <a href="/om-oss.html" class="hover:text-white transition-colors">Om Oss</a>
                 <button onclick="toggleModal('privacy')" class="hover:text-white transition-colors uppercase">Integritet</button>
-                <a href="#" class="hover:text-white transition-colors">Juridik</a>
             </nav>
             <div class="flex gap-8">
                 <span>Stockholm</span>
