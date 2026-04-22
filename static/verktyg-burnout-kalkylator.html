@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neurovibe - Burnout Prevention Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .slider-thumb::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #4f46e5;
+            cursor: pointer;
+        }
+        .slider-thumb::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #4f46e5;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen text-gray-800 p-4 md:p-8">
+
+    <div class="max-w-2xl mx-auto">
+        <a href="/resurser.html" class="text-indigo-600 hover:underline text-sm font-medium mb-6 inline-block">&larr; Tillbaka till Resource Hub</a>
+        
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <h1 class="text-3xl font-bold text-indigo-900 mb-3">Burnout Prevention Calculator</h1>
+            <p class="text-gray-600 mb-8">Identifiera riskzoner baserat på din aktuella arbetsbelastning och återhämtning. Det här verktyget är utformat för att ge tidiga varningssignaler om sensorisk och kognitiv överbelastning.</p>
+
+            <form id="burnoutForm" class="space-y-8">
+                <!-- Belastning -->
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-sm">1</span> 
+                        Nuvarande belastning
+                    </h2>
+                    
+                    <div class="space-y-6 bg-gray-50 p-6 rounded-xl border border-gray-100">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Sensorisk miljö (Ljud, ljus, intryck)</label>
+                            <div class="flex items-center gap-4">
+                                <span class="text-xs text-gray-500 w-12 text-right">Lugn</span>
+                                <input type="range" id="sensoryLoad" min="1" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider-thumb accent-indigo-600">
+                                <span class="text-xs text-gray-500 w-12 text-left">Kaos</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Kognitiva krav (Kontextbyten, otydlighet, möten)</label>
+                            <div class="flex items-center gap-4">
+                                <span class="text-xs text-gray-500 w-12 text-right">Låga</span>
+                                <input type="range" id="cognitiveLoad" min="1" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider-thumb accent-indigo-600">
+                                <span class="text-xs text-gray-500 w-12 text-left">Höga</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Arbetstid per vecka (Timmar)</label>
+                            <input type="number" id="workHours" min="10" max="80" value="40" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Återhämtning -->
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-sm">2</span> 
+                        Nuvarande återhämtning
+                    </h2>
+                    
+                    <div class="space-y-6 bg-gray-50 p-6 rounded-xl border border-gray-100">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Kvalitet på sömn</label>
+                            <div class="flex items-center gap-4">
+                                <span class="text-xs text-gray-500 w-12 text-right">Dålig</span>
+                                <input type="range" id="sleepQuality" min="1" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider-thumb accent-indigo-600">
+                                <span class="text-xs text-gray-500 w-12 text-left">Utmärkt</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Tid för "Special Interests" (Dopaminpåfyllning)</label>
+                            <select id="hyperfocusTime" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                                <option value="1">Nästan aldrig (1)</option>
+                                <option value="3">Sällan (3)</option>
+                                <option value="5" selected>Ibland (5)</option>
+                                <option value="8">Ofta (8)</option>
+                                <option value="10">Dagligen (10)</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Maskering (Hur mycket måste du dölja dina traits?)</label>
+                            <div class="flex items-center gap-4">
+                                <span class="text-xs text-gray-500 w-12 text-right">Inte alls</span>
+                                <input type="range" id="maskingLevel" min="1" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider-thumb accent-indigo-600">
+                                <span class="text-xs text-gray-500 w-12 text-left">Hela tiden</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Hög maskering dränerar återhämtning oproportionerligt mycket.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" onclick="calculateRisk()" class="w-full bg-indigo-600 text-white py-3 rounded-lg font-bold hover:bg-indigo-700 transition">Beräkna riskzon</button>
+            </form>
+
+            <!-- Results Section (Hidden initially) -->
+            <div id="resultSection" class="mt-8 hidden border-t border-gray-200 pt-8">
+                <h2 class="text-xl font-bold mb-6 text-center">Din nuvarande status</h2>
+                
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm font-medium text-gray-600">Risknivå</span>
+                    <span id="riskPercentageText" class="text-sm font-bold text-gray-900">0%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-4 mb-6 overflow-hidden">
+                    <div id="riskBar" class="h-4 rounded-full transition-all duration-1000 ease-out" style="width: 0%"></div>
+                </div>
+
+                <div id="riskCard" class="p-6 rounded-xl mb-6">
+                    <h3 id="riskTitle" class="text-lg font-bold mb-2">Låg Risk</h3>
+                    <p id="riskDescription" class="text-sm text-gray-700"></p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-gray-800 mb-3">Rekommenderade åtgärder:</h4>
+                    <ul id="actionItems" class="space-y-2 text-sm text-gray-600 list-disc pl-5">
+                        <!-- Action items generated by JS -->
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function calculateRisk() {
+            // Get values
+            const sensoryLoad = parseInt(document.getElementById('sensoryLoad').value);
+            const cognitiveLoad = parseInt(document.getElementById('cognitiveLoad').value);
+            const workHours = parseInt(document.getElementById('workHours').value);
+            const sleepQuality = parseInt(document.getElementById('sleepQuality').value);
+            const hyperfocusTime = parseInt(document.getElementById('hyperfocusTime').value);
+            const maskingLevel = parseInt(document.getElementById('maskingLevel').value);
+
+            // Calculation logic (Heuristics tailored for neurodiversity)
+            // Load max = 10 + 10 + (max 10 from hours) = 30
+            // Hours impact: 40h = 5, 60h = 10, <20h = 1
+            let hoursImpact = Math.max(1, Math.min(10, Math.floor(workHours / 6))); 
+            
+            // Masking is a massive drainer, acts as a multiplier on load
+            let maskingMultiplier = 1.0 + (maskingLevel * 0.05); // Up to 50% extra load
+
+            let totalLoad = (sensoryLoad + cognitiveLoad + hoursImpact) * maskingMultiplier;
+
+            // Recovery max = 10 + 10 = 20
+            let totalRecovery = sleepQuality + hyperfocusTime;
+
+            // Base ratio (Load vs Recovery)
+            // High risk if Load > 2x Recovery
+            let ratio = totalLoad / Math.max(1, totalRecovery);
+            
+            // Convert to a 0-100 percentage
+            // If ratio is 1.0 = ~30% risk
+            // If ratio is 2.0 = ~70% risk
+            // If ratio is 3.0+ = 95%+ risk
+            let riskPercentage = Math.min(100, Math.max(0, Math.floor((ratio - 0.5) * 40)));
+
+            updateUI(riskPercentage, sensoryLoad, maskingLevel, totalRecovery);
+        }
+
+        function updateUI(risk, sensory, masking, recovery) {
+            const resultSection = document.getElementById('resultSection');
+            const riskBar = document.getElementById('riskBar');
+            const riskPercentageText = document.getElementById('riskPercentageText');
+            const riskCard = document.getElementById('riskCard');
+            const riskTitle = document.getElementById('riskTitle');
+            const riskDescription = document.getElementById('riskDescription');
+            const actionItems = document.getElementById('actionItems');
+
+            resultSection.classList.remove('hidden');
+            
+            // Animate bar
+            setTimeout(() => {
+                riskBar.style.width = risk + '%';
+            }, 100);
+
+            riskPercentageText.textContent = risk + '%';
+
+            actionItems.innerHTML = ''; // Clear old
+
+            if (risk < 40) {
+                riskBar.className = "h-4 rounded-full bg-green-500 transition-all duration-1000 ease-out";
+                riskCard.className = "p-6 rounded-xl mb-6 bg-green-50 border border-green-200";
+                riskTitle.className = "text-lg font-bold mb-2 text-green-800";
+                riskTitle.textContent = "Hållbar nivå (Grön)";
+                riskDescription.textContent = "Din nuvarande balans mellan krav och återhämtning ser bra ut. Fortsätt prioritera dina rutiner.";
+                
+                actionItems.innerHTML += "<li>Behåll nuvarande rutiner.</li>";
+                actionItems.innerHTML += "<li>Notera vad som fungerar bra just nu, så du minns det när det blir tyngre.</li>";
+            } 
+            else if (risk < 75) {
+                riskBar.className = "h-4 rounded-full bg-yellow-500 transition-all duration-1000 ease-out";
+                riskCard.className = "p-6 rounded-xl mb-6 bg-yellow-50 border border-yellow-200";
+                riskTitle.className = "text-lg font-bold mb-2 text-yellow-800";
+                riskTitle.textContent = "Varningszon (Gul)";
+                riskDescription.textContent = "Du befinner dig i en riskzon där belastningen börjar överstiga återhämtningen. Agera innan det leder till utmattning.";
+                
+                if (sensory > 6) actionItems.innerHTML += "<li><strong>Sensorisk vila:</strong> Boka in 20 minuter i ett helt tyst, mörkt rum imorgon.</li>";
+                if (masking > 6) actionItems.innerHTML += "<li><strong>Maskerings-detox:</strong> Planera in en helgdag där du inte träffar någon och kan vara exakt dig själv.</li>";
+                actionItems.innerHTML += `<li>Testa att använda vår <a href="/verktyg-nedbrytare.html" class="text-indigo-600 underline">Uppgiftsnedbrytare</a> för att minska kognitiv friktion.</li>`;
+            } 
+            else {
+                riskBar.className = "h-4 rounded-full bg-red-600 transition-all duration-1000 ease-out";
+                riskCard.className = "p-6 rounded-xl mb-6 bg-red-50 border border-red-200";
+                riskTitle.className = "text-lg font-bold mb-2 text-red-800";
+                riskTitle.textContent = "Akut Överbelastning (Röd)";
+                riskDescription.textContent = "Allvarlig varning. Ditt nervsystem är överbelastat. Omedelbar minskning av krav krävs.";
+                
+                actionItems.innerHTML += "<li><strong>Säg nej:</strong> Avboka eller skjut upp alla icke-kritiska åtaganden de kommande 48 timmarna.</li>";
+                if (recovery < 8) actionItems.innerHTML += "<li><strong>Kräv återhämtning:</strong> Prioritera sömn och specialintressen framför måsten just nu.</li>";
+                actionItems.innerHTML += `<li>Läs vår <a href="/template-employer.html" class="text-indigo-600 underline">Mall för arbetsplatsanpassning</a> och begär ett möte med din chef när du återhämtat dig.</li>`;
+            }
+
+            // Scroll to results
+            resultSection.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }
+    </script>
+</body>
+</html>
