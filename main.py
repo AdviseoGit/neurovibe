@@ -155,6 +155,61 @@ async def get_admin_feedback(request: Request):
         # If table doesn't exist yet, just return empty array
         return []
 
+
+@app.get("/api/resources")
+async def get_resources():
+    # In a real dynamic system, this could come from PostgreSQL (e.g. neurovibe_resources table)
+    # For now, we return a structured JSON representing the tools/guides to demonstrate the dynamic loading
+    resources = [
+        {
+            "id": "verktyg-nedbrytare",
+            "type": "tool",
+            "title": "Uppgiftsnedbrytaren",
+            "description": "Övervinn exekutiv dysfunktion. Få överväldigande uppgifter nedbrutna i tre extremt små, hanterbara steg.",
+            "url": "/verktyg-nedbrytare.html",
+            "icon": '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>',
+            "color": "indigo"
+        },
+        {
+            "id": "verktyg-fokus-timer",
+            "type": "tool",
+            "title": "Fokus Timer",
+            "description": "En visuell timer anpassad för neurodiversitet med korta arbetspass och tydlig struktur för att hantera tidsuppfattning.",
+            "url": "/verktyg-fokus-timer.html",
+            "icon": '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>',
+            "color": "indigo"
+        },
+        {
+            "id": "verktyg-burnout",
+            "type": "tool",
+            "title": "Burnout Prevention Calculator",
+            "description": "Mät din riskzon baserat på sensorisk belastning, maskering och kognitiva krav för att förhindra autistisk utmattning.",
+            "url": "/verktyg-burnout-kalkylator.html",
+            "icon": '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>',
+            "color": "red",
+            "badge": "NYTT VERKTYG"
+        },
+        {
+            "id": "mall-arbetsgivare",
+            "type": "template",
+            "title": "Mall för Arbetsplatsanpassning",
+            "description": "Ett formellt men vänligt dokument du kan fylla i och ge till din chef för att begära anpassningar (t.ex. brusreducerande hörlurar eller hemarbete).",
+            "url": "/template-employer.html",
+            "icon": '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>',
+            "color": "green"
+        },
+        {
+            "id": "guide-adhd-workplace",
+            "type": "guide",
+            "title": "ADHD på arbetsplatsen (Guide)",
+            "description": "Så skapar du en neuroinkluderande miljö. En djupgående guide för chefer och HR kring varför neurodiversitet är en styrka och hur man stöttar det.",
+            "url": "/article_adhd_workplace.html",
+            "icon": '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>',
+            "color": "indigo"
+        }
+    ]
+    return resources
+
 @app.get("/api/posts")
 async def get_posts():
     if not DATABASE_URL:
