@@ -138,9 +138,6 @@ async def create_post(req: PostRequest, request: Request):
     conn.close()
     return {"status": "success"}
 
-@app.post("/api/chat")
-async def chat_endpoint(req: ChatRequest):
-# Patch file to insert into main.py
 @app.post("/api/breakdown")
 async def breakdown_endpoint(req: ChatRequest):
     if not OPENAI_API_KEY:
@@ -169,6 +166,9 @@ async def breakdown_endpoint(req: ChatRequest):
         return {"response": response.choices[0].message.content}
     except Exception as e:
         return {"response": f"Kunde inte bryta ner uppgiften just nu."}
+
+@app.post("/api/chat")
+async def chat_endpoint(req: ChatRequest):
     if not OPENAI_API_KEY:
         await asyncio.sleep(1.5)
         return {"response": "Jag är i zen-offline läge just nu. Kontrollera API-nyckeln."}
