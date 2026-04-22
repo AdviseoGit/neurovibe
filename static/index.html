@@ -264,8 +264,8 @@
             </div>
             <nav class="flex gap-12">
                 <a href="#philosophy" class="hover:text-white transition-colors">Manifest</a>
-                <button onclick="toggleModal('privacy')" class="hover:text-white transition-colors uppercase">Integritet</button>
-                <a href="#" class="hover:text-white transition-colors">Juridik</a>
+                <a href="/om-oss.html" class="hover:text-white transition-colors uppercase">Om Oss</a>
+                <a href="/integritetspolicy.html" class="hover:text-white transition-colors uppercase">Juridik <a href="#" class="hover:text-white transition-colors">Juridik</a> Policy</a>
             </nav>
             <div class="flex gap-8">
                 <span>Stockholm</span>
@@ -527,13 +527,14 @@
     <!-- Cookie Banner (AdSense Ready) -->
     <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-[#111] border-t border-[#333] p-4 z-50 flex flex-col sm:flex-row justify-between items-center text-sm text-[#888]">
         <div class="mb-4 sm:mb-0">
-            Vi använder cookies för att anpassa innehåll, annonser (AdSense-redo) och analysera trafik. Läs vår <a href="#" onclick="document.getElementById('privacy-modal').classList.remove('hidden')" class="text-white underline">Integritetspolicy</a>.
+            Vi använder cookies för att anpassa innehåll, annonser (AdSense-redo) och analysera trafik. Läs vår <a href="/integritetspolicy.html" class="text-white underline">Integritetspolicy</a>.
         </div>
         <div class="flex gap-4">
-            <button onclick="document.getElementById('cookie-banner').style.display='none'" class="bg-[#d83131] hover:bg-[#b02828] text-white px-4 py-2 rounded transition-colors">
+            <button onclick="acceptCookies()" class="bg-[#d83131] hover:bg-[#b02828] text-white px-4 py-2 rounded transition-colors">
                 Acceptera alla
             </button>
         </div>
     </div>
+<script src="/cookie-banner.js"></script>
 </body>
 </html>
