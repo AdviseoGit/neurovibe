@@ -140,6 +140,35 @@ async def create_post(req: PostRequest, request: Request):
 
 @app.post("/api/chat")
 async def chat_endpoint(req: ChatRequest):
+# Patch file to insert into main.py
+@app.post("/api/breakdown")
+async def breakdown_endpoint(req: ChatRequest):
+    if not OPENAI_API_KEY:
+        await asyncio.sleep(1.5)
+        return {"response": "<b>API offline.</b><br>1. Andas<br>2. Hämta vatten<br>3. Prova igen senare"}
+
+    try:
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {
+                    "role": "system", 
+                    "content": (
+                        "Du är ett neuroinkluderande verktyg som bryter ner överväldigande uppgifter. "
+                        "Användaren ger dig en uppgift som känns för stor eller luddig. "
+                        "Din enda uppgift är att returnera EXAKT TRE, extremt små, konkreta och friktionsfria steg för att påbörja uppgiften. "
+                        "Steg 1 måste vara löjligt enkelt (t.ex. 'Öppna dokumentet' eller 'Ta fram ett glas vatten'). "
+                        "Returnera svaret formaterat i HTML med en <ul> lista och <li> taggar. Ingen annan text."
+                    )
+                },
+                {"role": "user", "content": req.message}
+            ],
+            max_tokens=150,
+            temperature=0.3
+        )
+        return {"response": response.choices[0].message.content}
+    except Exception as e:
+        return {"response": f"Kunde inte bryta ner uppgiften just nu."}
     if not OPENAI_API_KEY:
         await asyncio.sleep(1.5)
         return {"response": "Jag är i zen-offline läge just nu. Kontrollera API-nyckeln."}

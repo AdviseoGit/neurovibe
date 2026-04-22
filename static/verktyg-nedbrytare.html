@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="sv" class="bg-[#050505]">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uppgiftsnedbrytare | Dopaminvänligt verktyg | Neurovibe</title>
+    <link rel="canonical" href="https://neurovibe.se/verktyg-nedbrytare.html" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        
+        .neuro-accent-blur {
+            position: absolute;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(216, 49, 49, 0.3) 0%, rgba(216, 49, 49, 0) 70%);
+            filter: blur(80px);
+            z-index: -1;
+        }
+
+        .glass-panel { 
+            background: rgba(255, 255, 255, 0.02); 
+            backdrop-filter: blur(30px); 
+            border: 1px solid rgba(255, 255, 255, 0.05); 
+            border-radius: 24px;
+        }
+
+        .input-glow:focus { 
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(216, 49, 49, 0.5); 
+            box-shadow: 0 0 0 2px rgba(216, 49, 49, 0.2);
+            outline: none;
+        }
+        
+        .result-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .result-list li {
+            background: rgba(255,255,255,0.05);
+            margin-bottom: 1rem;
+            padding: 1.25rem;
+            border-radius: 12px;
+            border-left: 4px solid #D83131;
+            font-size: 1.125rem;
+            color: #E0E0E0;
+            display: flex;
+            align-items: center;
+        }
+        .result-list li::before {
+            content: "→";
+            color: #D83131;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Känns uppgiften för stor? Vår AI-drivna uppgiftsnedbrytare hjälper dig minska dopamin-skulden genom att dela upp överväldigande projekt i tre små, hanterbara steg.">
+</head>
+<body class="text-[#E0E0E0] selection:bg-[#D83131] selection:text-white min-h-screen flex flex-col">
+
+    <div class="neuro-accent-blur top-[-10vw] right-[-10vw]" aria-hidden="true"></div>
+
+    <div class="flex flex-col flex-grow max-w-3xl mx-auto w-full px-6 py-8">
+        <!-- Header -->
+        <header class="flex justify-between items-center mb-16">
+            <a href="/" class="flex items-center gap-4 group cursor-pointer text-left">
+                <span class="text-xl font-semibold tracking-tight">Neuro<span class="opacity-30 font-light">vibe</span></span>
+            </a>
+            <a href="/" class="text-[10px] font-bold tracking-widest uppercase hover:text-white opacity-50 transition-opacity">
+                &larr; Tillbaka
+            </a>
+        </header>
+
+        <main class="glass-panel p-8 md:p-12 mb-16">
+            <div class="text-center mb-10">
+                <span class="text-[#D83131] text-[10px] font-bold tracking-[0.3em] uppercase block mb-4">Verktyg</span>
+                <h1 class="text-4xl font-bold tracking-tight text-white mb-4">Uppgiftsnedbrytaren</h1>
+                <p class="text-[#A0A0A0] font-light text-lg">
+                    Exekutiv dysfunktion? Skriv in vad du måste göra, så ger vi dig tre extremt små, dopaminvänliga startsteg.
+                </p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="relative">
+                    <input type="text" id="task-input" 
+                        class="w-full glass-panel bg-white/[0.04] border-white/10 px-6 py-5 rounded-2xl outline-none text-lg font-light transition-all input-glow" 
+                        placeholder="T.ex. 'Gör klart månadens rapport...'"
+                        autocomplete="off">
+                </div>
+                
+                <button id="breakdown-btn" class="w-full bg-[#D83131] text-white py-4 rounded-xl font-bold hover:bg-[#B72A2A] transition-all shadow-lg shadow-[#D83131]/20">
+                    Gör det hanterbart
+                </button>
+            </div>
+
+            <div id="loading" class="hidden text-center mt-12 opacity-50">
+                <p class="animate-pulse tracking-widest uppercase text-sm">Analyserar friktionen...</p>
+            </div>
+
+            <div id="result-container" class="mt-12 hidden">
+                <h3 class="text-xl font-semibold mb-6">Din mikro-plan:</h3>
+                <div id="result-content" class="result-list">
+                    <!-- Results injected here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const btn = document.getElementById('breakdown-btn');
+        const input = document.getElementById('task-input');
+        const loading = document.getElementById('loading');
+        const resultContainer = document.getElementById('result-container');
+        const resultContent = document.getElementById('result-content');
+
+        async function handleBreakdown() {
+            const task = input.value.trim();
+            if(!task) return;
+
+            btn.disabled = true;
+            resultContainer.classList.add('hidden');
+            loading.classList.remove('hidden');
+
+            try {
+                const response = await fetch('/api/breakdown', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: task })
+                });
+                
+                const data = await response.json();
+                
+                loading.classList.add('hidden');
+                resultContent.innerHTML = data.response;
+                resultContainer.classList.remove('hidden');
+            } catch (err) {
+                loading.classList.add('hidden');
+                resultContent.innerHTML = "<p class='text-[#D83131]'>Ett fel uppstod. Prova igen.</p>";
+                resultContainer.classList.remove('hidden');
+            } finally {
+                btn.disabled = false;
+            }
+        }
+
+        btn.addEventListener('click', handleBreakdown);
+        input.addEventListener('keypress', (e) => { if(e.key === 'Enter') handleBreakdown(); });
+    </script>
+</body>
+</html>
