@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neurovibe - Fokus Timer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen text-gray-800 flex flex-col items-center justify-center">
+    
+    <div class="max-w-md w-full bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+        <h1 class="text-2xl font-bold text-indigo-900 mb-2">Fokus Timer</h1>
+        <p class="text-gray-500 mb-8 text-sm">Anpassad för neurodiversitet: Korta, hanterbara arbetspass med tydlig visuell struktur.</p>
+
+        <div class="relative flex justify-center items-center mb-8">
+            <!-- SVG Progress Circle -->
+            <svg class="transform -rotate-90 w-48 h-48">
+                <circle cx="96" cy="96" r="88" stroke="currentColor" stroke-width="8" fill="transparent" class="text-gray-100" />
+                <circle id="progressCircle" cx="96" cy="96" r="88" stroke="currentColor" stroke-width="8" fill="transparent" stroke-dasharray="552.92" stroke-dashoffset="0" class="text-indigo-500 transition-all duration-1000 ease-linear" />
+            </svg>
+            <div class="absolute text-4xl font-bold text-indigo-900" id="timeDisplay">25:00</div>
+        </div>
+
+        <div class="flex gap-4 justify-center mb-8">
+            <button id="startBtn" class="bg-indigo-600 text-white px-6 py-2 rounded-full font-medium hover:bg-indigo-700 transition">Starta</button>
+            <button id="pauseBtn" class="bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-gray-300 transition hidden">Pausa</button>
+            <button id="resetBtn" class="bg-white border border-gray-300 text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-gray-50 transition">Återställ</button>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 text-sm">
+            <button onclick="setMode('focus', 25)" class="p-3 rounded-lg border border-indigo-100 bg-indigo-50 text-indigo-800 font-medium hover:bg-indigo-100 transition" id="modeFocus">Fokus (25m)</button>
+            <button onclick="setMode('break', 5)" class="p-3 rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 transition" id="modeBreak">Paus (5m)</button>
+        </div>
+        
+        <div class="mt-8 text-left">
+             <a href="/" class="text-indigo-600 hover:underline text-sm font-medium">← Tillbaka till startsidan</a>
+        </div>
+    </div>
+
+    <script>
+        let timeLeft = 25 * 60;
+        let totalTime = 25 * 60;
+        let timerId = null;
+        let isRunning = false;
+        
+        const timeDisplay = document.getElementById('timeDisplay');
+        const progressCircle = document.getElementById('progressCircle');
+        const startBtn = document.getElementById('startBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        
+        const modeFocus = document.getElementById('modeFocus');
+        const modeBreak = document.getElementById('modeBreak');
+        
+        // Circumference of circle with r=88 is approx 552.92
+        const circleCircumference = 552.92;
+
+        function updateDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timeDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            // Update circle
+            const progress = timeLeft / totalTime;
+            const offset = circleCircumference - (progress * circleCircumference);
+            progressCircle.style.strokeDashoffset = offset;
+        }
+
+        function setMode(mode, minutes) {
+            pauseTimer();
+            totalTime = minutes * 60;
+            timeLeft = totalTime;
+            updateDisplay();
+            
+            if(mode === 'focus') {
+                modeFocus.className = "p-3 rounded-lg border border-indigo-100 bg-indigo-50 text-indigo-800 font-medium hover:bg-indigo-100 transition";
+                modeBreak.className = "p-3 rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 transition";
+                progressCircle.classList.remove('text-green-500');
+                progressCircle.classList.add('text-indigo-500');
+            } else {
+                modeBreak.className = "p-3 rounded-lg border border-green-100 bg-green-50 text-green-800 font-medium hover:bg-green-100 transition";
+                modeFocus.className = "p-3 rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 transition";
+                progressCircle.classList.remove('text-indigo-500');
+                progressCircle.classList.add('text-green-500');
+            }
+        }
+
+        function startTimer() {
+            if (isRunning) return;
+            isRunning = true;
+            
+            startBtn.classList.add('hidden');
+            pauseBtn.classList.remove('hidden');
+            
+            timerId = setInterval(() => {
+                timeLeft--;
+                updateDisplay();
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timerId);
+                    isRunning = false;
+                    startBtn.classList.remove('hidden');
+                    pauseBtn.classList.add('hidden');
+                    
+                    // Gentle chime via Web Audio API
+                    playChime();
+                }
+            }, 1000);
+        }
+
+        function pauseTimer() {
+            clearInterval(timerId);
+            isRunning = false;
+            startBtn.classList.remove('hidden');
+            pauseBtn.classList.add('hidden');
+        }
+
+        function resetTimer() {
+            pauseTimer();
+            timeLeft = totalTime;
+            updateDisplay();
+        }
+        
+        function playChime() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(523.25, ctx.currentTime); // C5
+                osc.frequency.exponentialRampToValueAtTime(1046.50, ctx.currentTime + 1.5); // C6
+                
+                gain.gain.setValueAtTime(0, ctx.currentTime);
+                gain.gain.linearRampToValueAtTime(0.5, ctx.currentTime + 0.1);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 1.5);
+                
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                
+                osc.start(ctx.currentTime);
+                osc.stop(ctx.currentTime + 1.5);
+            } catch(e) {
+                console.log("Audio play failed, likely requires user interaction first");
+            }
+        }
+
+        startBtn.addEventListener('click', startTimer);
+        pauseBtn.addEventListener('click', pauseTimer);
+        resetBtn.addEventListener('click', resetTimer);
+
+        // Init
+        updateDisplay();
+    </script>
+</body>
+</html>
