@@ -50,7 +50,6 @@ async def llms_txt():
 async def ads_txt():
     return FileResponse("static/ads.txt")
 
-
 @app.get("/schema.json")
 async def schema_json():
     return FileResponse("static/schema.json")
@@ -59,10 +58,18 @@ async def schema_json():
 async def sitemap():
     return FileResponse("static/sitemap.xml")
 
-
 @app.get("/favicon.ico")
 async def favicon():
     return FileResponse("static/favicon.svg")
+
+# Catch-all route to serve any .html file from the static directory from the root URL
+@app.get("/{filename}", response_class=FileResponse)
+async def serve_html(filename: str):
+    if filename.endswith(".html"):
+        file_path = os.path.join("static", filename)
+        if os.path.exists(file_path):
+            return FileResponse(file_path)
+    raise HTTPException(status_code=404, detail="Item not found")
 
 @app.post("/api/lead")
 async def save_lead(req: LeadRequest):
