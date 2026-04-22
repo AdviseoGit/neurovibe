@@ -10,12 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-        
+
         @keyframes breathe {
             0%, 100% { transform: scale(1); opacity: 0.1; }
             50% { transform: scale(1.1); opacity: 0.18; }
         }
-        
+
         .neuro-accent-blur {
             position: absolute;
             width: 40vw;
@@ -26,10 +26,10 @@
             animation: breathe 12s ease-in-out infinite;
         }
 
-        .glass-panel { 
-            background: rgba(255, 255, 255, 0.02); 
-            backdrop-filter: blur(30px); 
-            border: 1px solid rgba(255, 255, 255, 0.05); 
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 24px;
         }
 
@@ -40,19 +40,15 @@
         }
 
         .scroll-hide::-webkit-scrollbar { display: none; }
-        
-        /* WCAG: Better focus visibility */
-        .input-glow:focus { 
+
+        .input-glow:focus {
             background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(216, 49, 49, 0.5); 
+            border-color: rgba(216, 49, 49, 0.5);
             box-shadow: 0 0 0 2px rgba(216, 49, 49, 0.2);
             outline: none;
         }
 
-        button:focus-visible {
-            outline: 2px solid #D83131;
-            outline-offset: 4px;
-        }
+        button:focus-visible { outline: 2px solid #D83131; outline-offset: 4px; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -62,26 +58,16 @@
         }
         .float-zen { animation: float-gentle 8s ease-in-out infinite; }
 
-        .modal-bg {
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(12px);
-        }
+        .modal-bg { background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(12px); }
     </style>
 
-    <!-- SEO & Favicon -->
     <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
     <meta name="robots" content="index, follow">
     <meta name="description" content="Neurovibe — Din guide till kognitiv harmoni, neuro-tips och neuroinkluderande arbetsmiljöer. Vi optimerar vardagen för ADHD, autism och neurodiversitet.">
     <meta name="keywords" content="neurodiversitet, ADHD arbetsplats, autism stöd, neuro-tips, biohacking Sverige, kognitiv optimering, neuroinkludering">
-    <!-- OpenGraph for LLM/Search results -->
     <meta property="og:title" content="Neurovibe | Kognitiv Harmoni">
     <meta property="og:description" content="Guider och verktyg för en neuroinkluderande vardag och arbetsmiljö.">
     <meta property="og:type" content="website">
-
-    <script type="application/ld+json" src="/static/schema.json"></script>
-    <link rel="alternate" type="text/markdown" href="/static/llms.txt" />
-    <!-- AdSense Readiness -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
 </head>
 <body class="text-[#E0E0E0] selection:bg-[#D83131] selection:text-white min-h-screen flex flex-col scroll-smooth">
 
@@ -89,7 +75,7 @@
     <div class="neuro-accent-blur bottom-[-10vw] left-[-10vw]" style="animation-delay: -6s;" aria-hidden="true"></div>
 
     <div class="flex flex-col flex-grow max-w-6xl mx-auto w-full px-6 md:px-10 py-8">
-        
+
         <!-- Header -->
         <header class="flex justify-between items-center mb-12 md:mb-20 transition-all duration-1000" id="header-ui">
             <button class="flex items-center gap-4 group cursor-pointer text-left" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Neurovibe Hem">
@@ -121,14 +107,14 @@
 
         <!-- Hero Section -->
         <main class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24 min-h-[70vh] transition-all duration-1000" id="hero-ui">
-            
+
             <div class="space-y-6 md:space-y-10 float-zen">
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-[9px] font-bold tracking-widest uppercase opacity-60">
                     <span class="w-1.5 h-1.5 rounded-full bg-[#D83131]"></span>
                     Adviseo Experimental Lab
                 </div>
                 <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-gradient">
-                    Framtidens <br> arbetsplatser bygger på <br> neurodiversitet.
+                    Framtidens <br> arbetsplatser <br> bygger på <br> neurodiversitet.
                 </h1>
                 <p class="text-lg md:text-xl text-[#A0A0A0] font-light leading-relaxed max-w-md">
                     Få tillgång till verktygen som gör det möjligt. Vi bygger broar mellan neurodivergent talang och inkluderande arbetsgivare.
@@ -146,7 +132,7 @@
             <!-- Chat Widget -->
             <section class="glass-panel p-6 md:p-8 h-[500px] md:h-[580px] flex flex-col shadow-2xl relative overflow-hidden group" aria-label="Chatt-assistent">
                 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#D83131] to-transparent opacity-20"></div>
-                
+
                 <div class="flex items-center justify-between mb-6 md:mb-8">
                     <div class="flex gap-1.5">
                         <div class="w-2 h-2 rounded-full bg-[#D83131]/60"></div>
@@ -155,10 +141,9 @@
                     <span class="text-[9px] font-mono opacity-40 uppercase tracking-widest">Guiden_Aktiv</span>
                 </div>
 
-                <!-- WCAG: aria-live ensures screen readers announce new messages -->
-                <div id="chat-container" 
-                    class="flex-grow space-y-6 overflow-y-auto scroll-hide mb-6 pr-2" 
-                    aria-live="polite" 
+                <div id="chat-container"
+                    class="flex-grow space-y-6 overflow-y-auto scroll-hide mb-6 pr-2"
+                    aria-live="polite"
                     aria-relevant="additions"
                     role="log">
                     <div class="space-y-2">
@@ -171,11 +156,11 @@
 
                 <div class="relative">
                     <label for="chat-input" class="sr-only">Beskriv vad som är överväldigande</label>
-                    <input type="text" id="chat-input" 
-                        class="w-full glass-panel bg-white/[0.04] border-white/10 px-6 py-4 md:py-5 rounded-2xl outline-none text-base md:text-lg font-light transition-all input-glow" 
+                    <input type="text" id="chat-input"
+                        class="w-full glass-panel bg-white/[0.04] border-white/10 px-6 py-4 md:py-5 rounded-2xl outline-none text-base md:text-lg font-light transition-all input-glow"
                         placeholder="Skriv mjukt..."
                         autocomplete="off">
-                    <button id="send-btn" 
+                    <button id="send-btn"
                         class="absolute right-4 top-1/2 -translate-y-1/2 p-2 hover:text-[#D83131] transition-colors opacity-60 hover:opacity-100"
                         aria-label="Skicka meddelande">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -185,11 +170,6 @@
                 </div>
             </section>
         </main>
-
-        <!-- Ad Slot: Between Hero and Philosophy -->
-        <div class="w-full max-w-4xl mx-auto my-12 min-h-[90px] flex items-center justify-center bg-white/[0.02] border border-white/5 rounded-xl text-[10px] text-[#808080] tracking-widest uppercase">
-            [ Annonsplats ]
-        </div>
 
         <!-- Philosophy Section -->
         <section id="philosophy" class="py-24 border-t border-white/10">
@@ -201,24 +181,20 @@
                     <p>Neurovibe är annorlunda. Vi bygger för de stunder då den exekutiva funktionen är offline. Våra gränssnitt andas, vår AI mjukar upp komplexa krav och vårt mål är att minska kognitiv belastning — inte öka den.</p>
                     <div class="grid md:grid-cols-2 gap-12 pt-12">
                         <div class="space-y-4">
-                            <h3 class="text-white font-semibold text-lg">Mallar för chefer</h3>
-                            <p class="text-base text-[#808080]">Sluta gissa. Använd vår <a href="/template-employer.html" class="text-[#D83131] hover:underline">Mall för arbetsplatsanpassning</a> för att formalisera stödet till dina anställda.</p>
-                        </div>
-                        <div class="space-y-4">
-                            <h3 class="text-white font-semibold text-lg">Neuro-Verktyg</h3>
-                            <p class="text-base text-[#808080]">Prova vår <a href="/verktyg-nedbrytare.html" class="text-[#D83131] hover:underline">Uppgiftsnedbrytare</a> för att övervinna exekutiv dysfunktion idag.</p>
-                        </div>
-                        <div class="space-y-4">
-                            <h3 class="text-white font-semibold text-lg">Tidsuppfattning</h3>
-                            <p class="text-base text-[#808080]">Få struktur på tiden med vår <a href="/verktyg-fokus-timer.html" class="text-[#D83131] hover:underline">visuella Fokus Timer</a>, anpassad för kortare, hanterbara intervaller.</p>
-                        </div>
-                        <div class="space-y-4">
-                            <h3 class="text-white font-semibold text-lg">Resource Hub</h3>
-                            <p class="text-base text-[#808080]">Utforska alla våra samlade <a href="/resurser.html" class="text-[#D83131] hover:underline">verktyg och mallar</a> på ett och samma ställe.</p>
+                            <h3 class="text-white font-semibold text-lg">Sensorik först</h3>
+                            <p class="text-base text-[#808080]">Minimalistiskt mörkt läge och pulserande element för att förhindra sensorisk överbelastning.</p>
                         </div>
                         <div class="space-y-4">
                             <h3 class="text-white font-semibold text-lg">Noll friktion</h3>
                             <p class="text-base text-[#808080]">Ett klick för att bryta ner uppgifter. Inget komplext upplägg. Ingen "to-do list skuld".</p>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-white font-semibold text-lg">Tidsuppfattning</h3>
+                            <p class="text-base text-[#808080]">Få struktur på tiden med fokusintervaller anpassade för kortare, hanterbara sessioner.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-white font-semibold text-lg">Inkludering på riktigt</h3>
+                            <p class="text-base text-[#808080]">Verktyg och checklistor för arbetsgivare som vill stödja neurodivergent talang konkret.</p>
                         </div>
                     </div>
                 </div>
@@ -229,17 +205,10 @@
         <section id="lab" class="py-24 border-t border-white/10 mb-24">
             <div id="blog-section" class="mb-20 hidden">
                 <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#D83131] mb-8 block">Senaste insikter</span>
-                <div id="posts-container" class="grid md:grid-cols-2 gap-8">
-                    <!-- Hardcoded featured article for SEO -->
-                    <article class="glass-panel p-8 border-white/10 hover:border-[#D83131]/30 transition-all group">
-                        <span class="text-[9px] font-bold text-[#D83131] uppercase tracking-widest">Neuroinkludering — 2026-04-22</span>
-                        <h3 class="text-xl font-bold mt-3 mb-4 group-hover:text-white transition-colors">ADHD på arbetsplatsen: Så skapar du en neuroinkluderande miljö</h3>
-                        <div class="text-[#808080] text-sm leading-relaxed line-clamp-3 mb-4">Att förstå och anpassa sig efter neurodivergenta medarbetare är inte bara en fråga om tillgänglighet – det är en strategisk fördel som kan låsa upp enorm potential.</div><a href="/article_adhd_workplace.html" class="text-[#D83131] text-sm font-semibold hover:underline">Läs hela guiden &rarr;</a>
-                    </article>
-                    <!-- Posts load here -->
-                </div>
+                <div id="posts-container" class="grid md:grid-cols-2 gap-8"></div>
             </div>
 
+            <!-- Workspace Checklist -->
             <div class="glass-panel p-10 md:p-16 border-white/20 bg-white/[0.02]">
                 <div class="max-w-3xl mx-auto space-y-8">
                     <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#D83131] text-center block">Verktyg</span>
@@ -282,8 +251,8 @@
             </div>
             <nav class="flex gap-12">
                 <a href="#philosophy" class="hover:text-white transition-colors">Manifest</a>
-                <a href="/om-oss.html" class="hover:text-white transition-colors uppercase">Om Oss</a>
-                <a href="/integritetspolicy.html" class="hover:text-white transition-colors uppercase">Juridik <a href="#" class="hover:text-white transition-colors">Juridik</a> Policy</a>
+                <button onclick="toggleModal('privacy')" class="hover:text-white transition-colors uppercase">Integritet</button>
+                <a href="#" class="hover:text-white transition-colors">Juridik</a>
             </nav>
             <div class="flex gap-8">
                 <span>Stockholm</span>
@@ -300,22 +269,19 @@
             <button onclick="toggleModal('access')" class="absolute top-6 right-6 opacity-50 hover:opacity-100 text-2xl" aria-label="Stäng">&times;</button>
             <div id="modal-content" class="text-center space-y-6">
                 <h3 id="modal-title" class="text-3xl font-bold tracking-tight">Få tillgång</h3>
-                <p class="text-[#A0A0A0] font-light text-sm">Ange din e-post för omedelbar tillgång till våra professionella neuroinkluderande verktyg och checklistor.</p>
+                <p class="text-[#A0A0A0] font-light text-sm">Ange din e-post för tillgång till våra neuroinkluderande verktyg och checklistor.</p>
                 <div class="space-y-4 pt-4 text-left">
                     <div>
                         <label for="lead-email" class="sr-only">E-postadress</label>
-                        <input type="email" id="lead-email" placeholder="namn@exempel.se" 
+                        <input type="email" id="lead-email" placeholder="namn@exempel.se"
                             class="w-full glass-panel bg-white/5 border-white/10 px-6 py-4 rounded-xl outline-none focus:border-[#D83131] transition-all input-glow">
                     </div>
-                    
-                    <!-- GDPR: Consent Checkbox -->
                     <div class="flex gap-3 items-start px-2 py-2">
                         <input type="checkbox" id="lead-consent" class="mt-1 accent-[#D83131] w-4 h-4 cursor-pointer">
                         <label for="lead-consent" class="text-[11px] leading-tight text-[#808080] font-light cursor-pointer">
                             Jag godkänner att mina uppgifter hanteras enligt <button type="button" onclick="toggleModal('privacy')" class="text-[#D83131] underline hover:text-[#FF4040]">integritetspolicyn</button>.
                         </label>
                     </div>
-
                     <button id="submit-lead" class="w-full bg-[#D83131] text-white py-4 rounded-xl font-bold hover:bg-[#B72A2A] transition-all disabled:opacity-30 disabled:cursor-not-allowed shadow-lg shadow-[#D83131]/20">
                         Begär inbjudan
                     </button>
@@ -339,17 +305,13 @@
                     <section>
                         <h4 class="text-white font-semibold mb-2 uppercase text-[10px] tracking-widest">Data vi samlar in</h4>
                         <ul class="list-disc pl-5 space-y-1">
-                            <li><strong>E-postadress:</strong> Används endast för inbjudningar och viktiga uppdateringar om betan.</li>
-                            <li><strong>Chattdata:</strong> Meddelanden du skriver bearbetas för att ge svar. I betan sparas dessa anonymiserat för att förbättra AI-modellen.</li>
+                            <li><strong>E-postadress:</strong> Används endast för inbjudningar och viktiga uppdateringar.</li>
+                            <li><strong>Chattdata:</strong> Meddelanden bearbetas för att ge svar och sparas anonymiserat för att förbättra AI-modellen.</li>
                         </ul>
                     </section>
                     <section>
-                        <h4 class="text-white font-semibold mb-2 uppercase text-[10px] tracking-widest">Tredjepart (AI)</h4>
-                        <p>Vi använder teknologier från **OpenAI** för att driva "Guiden". Ingen data vi skickar dit kopplas till din e-postadress. Genom att använda chatten godkänner du att din text bearbetas av OpenAI:s modeller.</p>
-                    </section>
-                    <section>
                         <h4 class="text-white font-semibold mb-2 uppercase text-[10px] tracking-widest">Dina rättigheter</h4>
-                        <p>Du har rätt att när som helst begära att din e-post tas bort från vår väntelista. Kontakta oss på simon@adviseo.se för radering eller utdrag av data.</p>
+                        <p>Du har rätt att begära att din e-post tas bort från vår väntelista. Kontakta oss på simon@adviseo.se.</p>
                     </section>
                 </div>
                 <button onclick="toggleModal('privacy')" class="w-full border border-white/10 py-4 rounded-xl font-semibold hover:bg-white/5 transition-all">Stäng</button>
@@ -370,6 +332,7 @@
         const mobileMenuBtn = document.getElementById("mobile-menu-btn");
         const mobileMenu = document.getElementById("mobile-menu");
         let isMobileMenuOpen = false;
+
         function toggleMobileMenu() {
             isMobileMenuOpen = !isMobileMenuOpen;
             if (isMobileMenuOpen) {
@@ -382,16 +345,15 @@
                 document.body.style.overflow = "";
             }
         }
-        if(mobileMenuBtn) mobileMenuBtn.addEventListener("click", toggleMobileMenu);
+        if (mobileMenuBtn) mobileMenuBtn.addEventListener("click", toggleMobileMenu);
         document.querySelectorAll(".mobile-link").forEach(l => l.addEventListener("click", toggleMobileMenu));
-        let isZen = false;
 
+        let isZen = false;
         function toggleZen() {
             isZen = !isZen;
             const hero = document.getElementById('hero-ui');
             const header = document.getElementById('header-ui');
             const zenBtn = document.getElementById('zen-btn');
-            
             if (isZen) {
                 hero.style.opacity = '0';
                 hero.style.pointerEvents = 'none';
@@ -414,15 +376,12 @@
         async function handleLead() {
             const email = leadEmail.value.trim();
             if (!email) return;
-            
             if (!leadConsent.checked) {
                 alert("Du behöver godkänna integritetspolicyn för att fortsätta.");
                 return;
             }
-            
             submitLead.disabled = true;
             submitLead.textContent = "Sparar...";
-            
             try {
                 const response = await fetch('/api/lead', {
                     method: 'POST',
@@ -430,8 +389,6 @@
                     body: JSON.stringify({ email: email })
                 });
                 if (response.ok) {
-                    window.location.href = "/waitlist-success.html";
-                    return;
                     modalContent.innerHTML = `
                         <div class='py-8 space-y-4'>
                             <div class='w-16 h-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6'>
@@ -458,22 +415,17 @@
         function addMessage(text, isUser = false) {
             const div = document.createElement('div');
             div.className = isUser ? 'space-y-2 text-right animate-[fadeIn_0.5s_ease-out]' : 'space-y-2 animate-[fadeIn_0.8s_ease-out]';
-            
             const label = document.createElement('span');
             label.className = 'text-[9px] font-bold opacity-40 uppercase tracking-widest';
             label.textContent = isUser ? 'Du' : 'Guiden';
-            
             const msg = document.createElement('div');
-            msg.className = isUser 
-                ? 'text-xl md:text-2xl font-light leading-snug text-white/90 ml-auto max-w-[85%]' 
+            msg.className = isUser
+                ? 'text-xl md:text-2xl font-light leading-snug text-white/90 ml-auto max-w-[85%]'
                 : 'text-xl md:text-2xl font-light leading-snug text-[#B0B0B0] max-w-[90%]';
             msg.innerHTML = text;
-            
             div.appendChild(label);
             div.appendChild(msg);
             chatContainer.appendChild(div);
-            
-            // WCAG: Ensure smooth scrolling for keyboard users too
             chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
         }
 
@@ -482,13 +434,11 @@
             if (!val) return;
             chatInput.value = '';
             addMessage(val, true);
-            
             const typing = document.createElement('div');
             typing.className = 'opacity-40 italic text-lg mt-4 animate-pulse';
             typing.innerHTML = "Lyssnar...";
             chatContainer.appendChild(typing);
             chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
-            
             try {
                 const response = await fetch('/api/chat', {
                     method: 'POST',
@@ -497,8 +447,6 @@
                 });
                 const data = await response.json();
                 typing.remove();
-                
-                // Special trigger for Lead Modal
                 if (data.response.toUpperCase().includes("PROMPT_LEAD")) {
                     const cleanMsg = data.response.replace(/#?PROMPT_LEAD/gi, "");
                     addMessage(cleanMsg);
@@ -515,20 +463,10 @@
         chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
         sendBtn.addEventListener('click', handleSend);
 
-        // Load Blog Posts
         async function loadPosts() {
             try {
                 const res = await fetch('/api/posts');
-                let posts = await res.json();
-                if (!posts) posts = [];
-                
-                posts.push({ id: "hardcoded-1",
-                    title: "Neurodiversitet och AI: Hur vi anpassar framtidens arbetsplats 2026",
-                    date: "2026-04-14",
-                    category: "Arbetsplats 2026",
-                    content: "I takt med att artificiell intelligens fortsätter att revolutionera hur vi arbetar, står framtidens arbetsplats inför en ny utmaning: att skapa miljöer som fullt ut stödjer neurodiversitet. Läs vår senaste rapport om hur AI-anpassade arbetsflöden skapar en mer inkluderande och kognitivt skonsam arbetsmiljö."
-                });
-
+                const posts = await res.json();
                 if (posts && posts.length > 0) {
                     const container = document.getElementById('posts-container');
                     document.getElementById('blog-section').classList.remove('hidden');
@@ -536,7 +474,7 @@
                         <article class="glass-panel p-8 border-white/10 hover:border-[#D83131]/30 transition-all group">
                             <span class="text-[9px] font-bold text-[#D83131] uppercase tracking-widest">${p.category || 'Allmänt'} — ${p.date}</span>
                             <h3 class="text-xl font-bold mt-3 mb-4 group-hover:text-white transition-colors">${p.title}</h3>
-                            <div class="text-[#808080] text-sm leading-relaxed line-clamp-3 mb-4">${p.content}</div><a href="/article?id=${p.id}" class="text-[#D83131] text-sm font-semibold hover:underline">Läs hela artikeln &rarr;</a>
+                            <div class="text-[#808080] text-sm leading-relaxed line-clamp-3">${p.content}</div>
                         </article>
                     `).join('');
                 }
@@ -544,17 +482,5 @@
         }
         loadPosts();
     </script>
-    <!-- Cookie Banner (AdSense Ready) -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-[#111] border-t border-[#333] p-4 z-50 flex flex-col sm:flex-row justify-between items-center text-sm text-[#888]">
-        <div class="mb-4 sm:mb-0">
-            Vi använder cookies för att anpassa innehåll, annonser (AdSense-redo) och analysera trafik. Läs vår <a href="/integritetspolicy.html" class="text-white underline">Integritetspolicy</a>.
-        </div>
-        <div class="flex gap-4">
-            <button onclick="acceptCookies()" class="bg-[#d83131] hover:bg-[#b02828] text-white px-4 py-2 rounded transition-colors">
-                Acceptera alla
-            </button>
-        </div>
-    </div>
-<script src="/cookie-banner.js"></script>
 </body>
 </html>
