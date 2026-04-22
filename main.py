@@ -132,6 +132,29 @@ async def save_feedback(req: FeedbackRequest):
         print(f"Feedback DB Error: {e}")
         raise HTTPException(status_code=500, detail="Could not save feedback")
 
+
+@app.get("/api/admin/feedback")
+async def get_admin_feedback(request: Request):
+    api_key = request.headers.get("X-API-KEY")
+    if api_key != os.environ.get("INTERNAL_API_KEY"):
+        raise HTTPException(status_code=403, detail="Unauthorized")
+    
+    if not DATABASE_URL:
+        return []
+        
+    try:
+        conn = psycopg2.connect(DATABASE_URL)
+        cur = conn.cursor()
+        cur.execute("SELECT id, tool, rating, comment, created_at FROM neurovibe_feedback ORDER BY created_at DESC LIMIT 100")
+        results = [{"id": r[0], "tool": r[1], "rating": r[2], "comment": r[3], "created_at": str(r[4])} for r in cur.fetchall()]
+        cur.close()
+        conn.close()
+        return results
+    except Exception as e:
+        print(f"Admin DB Error: {e}")
+        # If table doesn't exist yet, just return empty array
+        return []
+
 @app.get("/api/posts")
 async def get_posts():
     if not DATABASE_URL:
