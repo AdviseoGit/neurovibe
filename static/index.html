@@ -201,6 +201,10 @@
                     <p>Neurovibe är annorlunda. Vi bygger för de stunder då den exekutiva funktionen är offline. Våra gränssnitt andas, vår AI mjukar upp komplexa krav och vårt mål är att minska kognitiv belastning — inte öka den.</p>
                     <div class="grid md:grid-cols-2 gap-12 pt-12">
                         <div class="space-y-4">
+                            <h3 class="text-white font-semibold text-lg">Mallar för chefer</h3>
+                            <p class="text-base text-[#808080]">Sluta gissa. Använd vår <a href="/template-employer.html" class="text-[#D83131] hover:underline">Mall för arbetsplatsanpassning</a> för att formalisera stödet till dina anställda.</p>
+                        </div>
+                        <div class="space-y-4">
                             <h3 class="text-white font-semibold text-lg">Neuro-Verktyg</h3>
                             <p class="text-base text-[#808080]">Prova vår <a href="/verktyg-nedbrytare.html" class="text-[#D83131] hover:underline">Uppgiftsnedbrytare</a> för att övervinna exekutiv dysfunktion idag.</p>
                         </div>
@@ -422,6 +426,8 @@
                     body: JSON.stringify({ email: email })
                 });
                 if (response.ok) {
+                    window.location.href = "/waitlist-success.html";
+                    return;
                     modalContent.innerHTML = `
                         <div class='py-8 space-y-4'>
                             <div class='w-16 h-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6'>
