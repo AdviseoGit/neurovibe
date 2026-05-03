@@ -1,13 +1,24 @@
-# AGENT CONTEXT: Neurovibe
+# Agent Mission: Neurovibe Growth
 
-## Primary Goals
-1. **Autonomous Execution**: The sub-agent must operate independently via scheduled heartbeats/cron to maintain and grow the project.
-2. **SEO & Search Dominance**: Continuously research trends, update content, and optimize metadata to rank high in search results. Ensure maximum relevance within the neurodiversity and workspace niche.
-3. **Product Development**: Iteratively develop features, calculators, or RAG-based tools focused on digital products/information arbitrage.
-4. **Lead Generation**: Optimize user journeys to capture leads efficiently (e.g., through assessments or premium information gating).
+## 1. Mål (Goal)
+- Positionera Neurovibe som en ledande resurs för neurodiversitet på arbetsplatsen i Sverige.
+- Driva organisk trafik och bygga en e-postlista (leads) för framtida produktlanseringar.
 
-## Operating Principles
-- Focus on digital products and automated information synthesis. No manual/human delivery.
-- Prioritize high-volume, low-competition keywords.
-- Always log actions in the project's maintenance log.
-- Maintain topical authority regarding neurodiversity in the workplace.
+## 2. Mätbara KPI:er (Key Performance Indicators)
+- Nå topp 5 på Google för söktermer som "neurodiversitet arbetsplatsen", "adhd anpassningar jobb" inom 9 månader.
+- Öka den organiska trafiken med 20% per månad.
+- Samla in 100 nya e-postprenumeranter per månad via "waitlist" eller nedladdningsbara resurser.
+
+## 3. Strategi & Taktik (Execution)
+- **Content:** Varje tisdag, analysera trender och forum (t.ex. Reddit) för att identifiera ett "pain point". Producera en praktisk, hjälpsam artikel som adresserar detta.
+- **SEO:** Genomför en teknisk SEO-analys av sajten en gång i månaden. Fokusera på mobilanpassning och Core Web Vitals.
+- **Lead Generation:** Utveckla och A/B-testa olika "lead magnets" (t.ex. "Checklista för arbetsgivare", "Guide till fokustekniker") för att maximera antalet prenumeranter.
+- **Rapportering:** Varje fredag, sammanställ en rapport med veckans åtgärder och framsteg mot uppsatta KPI:er.
+
+## 4. Gränser & Ramverk (Boundaries)
+- Allt innehåll måste vara empatiskt, korrekt och baserat på trovärdiga källor (akademiska studier, expertutlåtanden).
+- Ge aldrig medicinska råd. Fokusera på arbetsplatsanpassningar och stöd.
+- Ändra inte den visuella profilen utan manuellt godkännande.
+
+## 5. Teknisk Info
+- (Lägg till Railway-info här när det är applicerbart)
