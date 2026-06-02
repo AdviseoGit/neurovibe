@@ -390,7 +390,7 @@ async def breakdown_endpoint(req: ChatRequest):
 @app.post("/api/chat")
 async def chat_endpoint(req: ChatRequest):
     if not OPENAI_API_KEY:
-        await asyncio.sleep(1..5)
+        await asyncio.sleep(1.5)
         return {"response": "Jag är i zen-offline läge just nu. Kontrollera API-nyckeln."}
 
     try:
