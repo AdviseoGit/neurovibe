@@ -1,99 +1,194 @@
 
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="sv" class="bg-[#050505]">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YJG1D5GJPR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-YJG1D5GJPR');
-</script>
-
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJG1D5GJPR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YJG1D5GJPR');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Praktiska Anpassningar för ADHD på Arbetsplatsen - Neurovibe</title>
-    <meta name="description" content="En guide med konkreta tips och anpassningar för att trivas och prestera på jobbet med ADHD. Förbättra fokus, struktur och välmående.">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Från Kaos till Kontroll: Din Guide till ADHD-Anpassningar på Jobbet - Neurovibe</title>
+    <meta name="description" content="Upptäck konkreta strategier, stöd och hjälpmedel för att hantera ADHD på jobbet. Skapa en arbetsmiljö där du kan fokusera, prestera och må bra.">
+    <link rel="canonical" href="https://neurovibe.se/adhd-anpassningar-jobb.html" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .zen-gradient { background: linear-gradient(120deg, #1f2937 0%, #374151 100%); }
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #FFFFFF 30%, #909090 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .prose-custom {
+            color: #A0A0A0;
+            font-size: 1.125rem;
+            line-height: 1.75;
+        }
+        .prose-custom h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #E0E0E0;
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+        }
+        .prose-custom h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #C0C0C0;
+            margin-top: 2em;
+            margin-bottom: 0.75em;
+        }
+        .prose-custom a {
+            color: #D83131;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .prose-custom a:hover {
+            color: #B72A2A;
+        }
+        .prose-custom ul {
+            list-style-type: disc;
+            padding-left: 1.5em;
+            margin-top: 1.25em;
+            margin-bottom: 1.25em;
+        }
+        .prose-custom li {
+            margin-bottom: 0.5em;
+        }
+        .prose-custom blockquote {
+            border-left: 4px solid #D83131;
+            padding-left: 1em;
+            margin-left: 0;
+            font-style: italic;
+            color: #808080;
+        }
     </style>
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
 </head>
-<body class="bg-gray-900 text-gray-200">
+<body class="text-[#E0E0E0] selection:bg-[#D83131] selection:text-white min-h-screen flex flex-col scroll-smooth">
 
-    <!-- Header -->
-    <header class="zen-gradient shadow-lg">
-        <div class="container mx-auto px-6 py-4">
-            <h1 class="text-3xl font-bold text-white">Neurovibe</h1>
-            <p class="text-indigo-300">Din guide till ett neuroinkluderande arbetsliv</p>
-        </div>
-    </header>
+    <div class="neuro-accent-blur top-[-10vw] right-[-10vw]" aria-hidden="true"></div>
+    <div class="neuro-accent-blur bottom-[-10vw] left-[-10vw]" style="animation-delay: -6s;" aria-hidden="true"></div>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-6 py-12">
-        <article class="prose prose-invert lg:prose-xl max-w-none">
-            
-            <h1 class="text-4xl font-extrabold text-indigo-400">Praktiska Anpassningar för ADHD på Arbetsplatsen</h1>
-            
-            <p class="text-lg text-gray-400">Publicerad: 2026-06-02</p>
+    <div class="flex flex-col flex-grow max-w-4xl mx-auto w-full px-6 md:px-10 py-8">
+        
+        <!-- Header -->
+        <header class="flex justify-between items-center mb-12 md:mb-20">
+            <a href="/" class="flex items-center gap-4 group cursor-pointer text-left" aria-label="Neurovibe Hem">
+                <div class="relative w-10 h-10 flex items-center justify-center">
+                    <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="24" cy="24" r="20" stroke="#D83131" stroke-width="2" opacity="0.6"/>
+                        <circle cx="24" cy="24" r="8" fill="#D83131" opacity="0.8" class="animate-pulse"/>
+                    </svg>
+                </div>
+                <span class="text-xl font-semibold tracking-tight">Neuro<span class="opacity-30 font-light">vibe</span></span>
+            </a>
+            <nav class="hidden md:flex gap-8 text-[10px] font-bold tracking-widest uppercase items-center">
+                <a href="/#philosophy" class="opacity-50 hover:opacity-100 transition-opacity">Filosofi</a>
+                <a href="/resurser.html" class="opacity-50 hover:opacity-100 transition-opacity">Verktyg</a>
+                <a href="/" class="bg-white/10 px-4 py-2 rounded-full hover:bg-white/20 transition-all border border-white/10">Startsidan</a>
+            </nav>
+        </header>
 
-            <p>Att navigera arbetslivet med ADHD kan vara en utmaning, men med rätt strategier och anpassningar kan du inte bara hantera svårigheterna utan också utnyttja dina unika styrkor. Den här guiden fokuserar på konkreta, praktiska anpassningar som både du och din arbetsgivare kan implementera för att skapa en mer ADHD-vänlig och produktiv miljö.</p>
+        <!-- Main Content -->
+        <main class="py-12">
+            <article class="prose-custom">
+                <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#D83131] mb-6 block">Guider</span>
+                <h1 class="text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight text-gradient mb-8">Från Kaos till Kontroll: Din Guide till ADHD-Anpassningar på Jobbet</h1>
+                <p class="text-sm text-gray-400">Publicerad: 2026-06-03 (Uppdaterad)</p>
 
-            <h2>Struktur och Organisation</h2>
-            <p>En av de största utmaningarna med ADHD är att upprätthålla struktur. Här är några anpassningar som kan hjälpa:</p>
-            <ul>
-                <li><strong>Digitala verktyg:</strong> Använd projekthanteringsverktyg (som Trello, Asana) för att visualisera uppgifter. Kalenderpåminnelser och digitala "att-göra"-listor är oumbärliga.</li>
-                <li><strong>Tydliga instruktioner:</strong> Be om skriftliga instruktioner och deadlines. Detta minskar risken för missförstånd och hjälper dig att hålla dig på rätt spår.</li>
-                <li><strong>Uppdelade uppgifter:</strong> Bryt ner stora, överväldigande projekt i mindre, hanterbara deluppgifter. Detta motverkar prokrastinering och ger en känsla av framsteg.</li>
-                <li><strong>Dags- och veckoplanering:</strong> Starta varje dag med att planera dina 2-3 viktigaste uppgifter. En kort avstämning i slutet av veckan kan hjälpa dig att förbereda för nästa.</li>
-            </ul>
+                <p>Att navigera arbetslivet med ADHD kan kännas som en ständig kamp mot klockan och distraktioner. Men med rätt strategier, stöd och anpassningar kan du omvandla utmaningarna till styrkor. Den här guiden ger dig konkreta, praktiska tips som både du och din arbetsgivare kan använda för att skapa en ADHD-vänlig och produktiv miljö.</p>
 
-            <blockquote class="border-l-4 border-indigo-500 pl-4 italic">
-                "Min kalender är inte en rekommendation, den är min chef. Om det inte står där, existerar det inte. Det är den bästa anpassningen jag har gjort för min karriär."
-            </blockquote>
+                <h2>Struktur och Organisation: Dina Viktigaste Hjälpmedel</h2>
+                <p>En av de största utmaningarna med ADHD är att skapa och bibehålla struktur. Här är några anpassningar och hjälpmedel som kan göra stor skillnad:</p>
+                <ul>
+                    <li><strong>Digitala verktyg:</strong> Använd projekthanteringsverktyg (som Trello, Asana) för att visualisera uppgifter. Kalenderpåminnelser och digitala "att-göra"-listor är oumbärliga för att hålla ordning.</li>
+                    <li><strong>Tydliga instruktioner:</strong> Be om skriftliga instruktioner och deadlines. Detta minskar risken för missförstånd och ger en tydlig väg framåt.</li>
+                    <li><strong>Uppdelade uppgifter:</strong> Bryt ner stora, överväldigande projekt i mindre, hanterbara deluppgifter. Detta motverkar prokrastinering och ger en känsla av framsteg.</li>
+                    <li><strong>Dags- och veckoplanering:</strong> Starta varje dag med att identifiera dina 2-3 viktigaste uppgifter. En kort avstämning i slutet av veckan hjälper dig att förbereda för nästa.</li>
+                </ul>
 
-            <h2>Fokus och Distraktioner</h2>
-            <p>Att bibehålla fokus i en stökig kontorsmiljö kan vara nästintill omöjligt. Prova dessa anpassningar:</p>
-            <ul>
-                <li><strong>Brusreducerande hörlurar:</strong> En game-changer för att stänga ute distraherande ljud och skapa en personlig "fokusbubbla".</li>
-                <li><strong>Anpassad arbetsplats:</strong> Om möjligt, välj en plats med färre visuella distraktioner, t.ex. vid en vägg eller i ett hörn.</li>
-                <li><strong>"Stör ej"-signaler:</strong> Använd en fysisk skylt eller en status i chattprogram för att signalera när du behöver arbeta ostört.</li>
-                <li><strong>Fokustekniker:</strong> Använd tekniker som Pomodoro (25 minuters arbete, 5 minuters paus) för att arbeta i koncentrerade intervaller. Verktyg som <a href="/verktyg-fokus-timer.html">vår FOKUS-TIMER</a> kan hjälpa.</li>
-                <li><strong>Flexibla arbetstider:</strong> Om möjligt, arbeta under de tider på dygnet då du är som mest produktiv och minst benägen att bli störd.</li>
-            </ul>
+                <blockquote>
+                    "Min kalender är inte en rekommendation, den är min chef. Om det inte står där, existerar det inte. Det är den bästa anpassningen jag har gjort för min karriär."
+                </blockquote>
 
-            <h2>Energi och Välmående</h2>
-            <p>ADHD är nära kopplat till energinivåer och emotionell reglering. Att prioritera välmående är avgörande.</p>
-            
-            <div class="bg-gray-800 p-6 rounded-lg">
-                <h3 class="text-2xl font-bold text-indigo-400">En Hållbar Arbetsdag</h3>
-                <ol>
-                    <li><strong>Regelbundna pauser:</strong> Ta korta, regelbundna pauser för att röra på dig. Det hjälper till att återställa fokus och reglera energi.</li>
-                    <li><strong>Möteshantering:</strong> Försök att undvika långa, ostrukturerade möten. Be om en tydlig agenda i förväg och sammanfattande punkter efteråt.</li>
-                    <li><strong>Tydlig kommunikation:</strong> Uppmuntra en kultur där det är okej att be om förtydliganden och att vara ärlig med sin kapacitet.</li>
-                    <li><strong>Identifiera dina styrkor:</strong> Fokusera på arbetsuppgifter som utnyttjar ADHD-styrkor som kreativitet, hyperfokus och problemlösning.</li>
-                </ol>
-            </div>
-            
-            <div class="mt-8 bg-indigo-900 bg-opacity-50 p-6 rounded-lg text-center">
-                 <h2 class="text-2xl font-bold text-white mb-2">Vill du ha fler verktyg som dessa?</h2>
-                 <p class="text-indigo-200 mb-4">Gå med i vår väntelista för att få tillgång till exklusiva guider, checklistor och verktyg som hjälper dig att blomstra i arbetslivet. Vi lanserar snart!</p>
-                 <a href="/waitlist.html" class="bg-indigo-500 text-white font-bold py-2 px-4 rounded hover:bg-indigo-600 transition duration-300">Gå med i väntelistan</a>
+                <h2>Fokus och Distraktioner: Skapa Din Bubbla</h2>
+                <p>Att bibehålla fokus i en stökig kontorsmiljö kan vara nästintill omöjligt. Prova dessa strategier för att ta kontroll över din uppmärksamhet:</p>
+                <ul>
+                    <li><strong>Brusreducerande hörlurar:</strong> En game-changer för att stänga ute distraherande ljud och skapa en personlig "fokusbubbla".</li>
+                    <li><strong>Anpassad arbetsplats:</strong> Om möjligt, välj en plats med färre visuella distraktioner, t.ex. vid en vägg eller i ett hörn.</li>
+                    <li><strong>"Stör ej"-signaler:</strong> Använd en fysisk skylt eller en status i chattprogram för att signalera när du behöver arbeta ostört.</li>
+                    <li><strong>Fokustekniker:</strong> Använd tekniker som Pomodoro (25 minuters arbete, 5 minuters paus) för att arbeta i koncentrerade intervaller.</li>
+                    <li><strong>Flexibla arbetstider:</strong> Om möjligt, arbeta under de tider på dygnet då du är som mest produktiv och minst benägen att bli störd. Detta är ett kraftfullt stöd för att hantera din energi.</li>
+                </ul>
+
+                <h2>Kommunikation och Självledarskap</h2>
+                <p>Att kommunicera dina behov är en av de mest effektiva strategierna för att få det stöd du behöver. Det handlar inte om att be om ursäkt, utan om att skapa förutsättningar för att du ska kunna prestera på topp.</p>
+                <ul>
+                    <li><strong>Var tydlig och specifik:</strong> Istället för att säga "jag har svårt att fokusera", prova "jag presterar bäst när jag får arbeta med hörlurar i ett par timmar utan avbrott".</li>
+                    <li><strong>Fokusera på lösningar:</strong> Presentera dina behov som lösningar som gynnar både dig och företaget. Exempelvis: "Om jag får skriftliga instruktioner minskar risken för missförstånd och vi sparar tid."</li>
+                    <li><strong>Lär dig mer om <a href="maskering-pa-arbetsplatsen.html">maskering</a>:</strong> Att förstå hur du kanske döljer dina svårigheter är första steget till att våga be om hjälp på ett konstruktivt sätt.</li>
+                </ul>
+
+                <h2>Energi och Välmående: Hållbarhet på Lång Sikt</h2>
+                <p>ADHD är nära kopplat till energinivåer och emotionell reglering. Att prioritera välmående är inte en lyx, det är en nödvändighet.</p>
+                
+                <div class="glass-panel p-8 my-8">
+                    <h3 class="!mt-0 !text-2xl font-bold text-white">En Hållbar Arbetsdag</h3>
+                    <ol class="list-decimal pl-5 mt-4 space-y-2">
+                        <li><strong>Regelbundna pauser:</strong> Ta korta, regelbundna pauser för att röra på dig. Det hjälper till att återställa fokus och reglera energi.</li>
+                        <li><strong>Möteshantering:</strong> Försök att undvika långa, ostrukturerade möten. Be om en tydlig agenda i förväg och sammanfattande punkter efteråt.</li>
+                        <li><strong>Tydlig kommunikation:</strong> Uppmuntra en kultur där det är okej att be om förtydliganden och att vara ärlig med sin kapacitet.</li>
+                        <li><strong>Identifiera dina styrkor:</strong> Fokusera på arbetsuppgifter som utnyttjar ADHD-styrkor som kreativitet, hyperfokus och problemlösning.</li>
+                    </ol>
+                </div>
+                
+                <p>Kom ihåg, anpassningar handlar inte om att få en orättvis fördel, utan om att skapa förutsättningar för att du ska kunna göra ditt bästa arbete. Öppen dialog med din chef är ofta det första steget mot en mer hållbar och framgångsrik karriär.</p>
+            </article>
+
+            <div class="mt-24 text-center glass-panel p-10 border-white/10">
+                 <h2 class="text-3xl font-bold text-white mb-4">Redo för nästa steg?</h2>
+                 <p class="text-[#A0A0A0] mb-8 max-w-2xl mx-auto">Utforska våra verktyg, gå med i väntelistan för att få tillgång till exklusiva guider och checklistor, eller återvänd till startsidan för fler insikter.</p>
+                 <div class="flex flex-wrap gap-4 justify-center">
+                    <a href="/resurser.html" class="bg-[#D83131] text-white px-8 py-3 rounded-xl font-semibold hover:bg-[#B72A2A] transition-all shadow-lg shadow-[#D83131]/20">
+                        Se alla verktyg
+                    </a>
+                    <a href="/" class="glass-panel border-white/20 px-8 py-3 rounded-xl font-semibold hover:bg-white/5 transition-all text-center">
+                        Tillbaka till start
+                    </a>
+                </div>
              </div>
-
-            <p class="mt-8">Kom ihåg, anpassningar handlar inte om att få en orättvis fördel, utan om att skapa förutsättningar för att du ska kunna göra ditt bästa arbete. Öppen dialog med din chef är ofta det första steget mot en mer hållbar och framgångsrik karriär.</p>
-
-        </article>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 mt-12">
-        <div class="container mx-auto px-6 py-4 text-center text-gray-400">
-            <p>&copy; 2026 Neurovibe. Alla rättigheter förbehållna.</p>
-        </div>
-    </footer>
-
+        </main>
+        
+        <!-- Footer -->
+        <footer class="mt-auto py-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8 opacity-40 text-[9px] font-mono tracking-widest uppercase">
+            <div class="flex items-center gap-4">
+                <div class="w-6 h-6 bg-[#D83131]/60 rounded-lg"></div>
+                <span>© 2026 ADVISEO LABORATORY</span>
+            </div>
+            <nav class="flex gap-12">
+                <a href="/#philosophy" class="hover:text-white transition-colors">Manifest</a>
+                <a href="/om-oss.html" class="hover:text-white transition-colors">Om Oss</a>
+                <a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritet</a>
+            </nav>
+            <div class="flex gap-8">
+                <span>Stockholm</span>
+                <span>/</span>
+                <span>Digital First</span>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
