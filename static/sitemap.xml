@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://neurovibe.se/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://neurovibe.se/neurodiversitet-arbetsplatsen.html</loc>
     <lastmod>2026-06-06</lastmod>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://neurovibe.se/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://neurovibe.se/npf-arbetslivet.html</loc>
@@ -20,14 +20,14 @@
     <lastmod>2026-06-04</lastmod>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://neurovibe.se/maskering-en-guide.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <url>
+    <loc>https://neurovibe.se/fordelarna-med-neurodiversitet.html</loc>
+    <lastmod>2026-06-07</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neurovibe.se/article_adhd_workplace.html</loc>
-    <lastmod>2026-04-22</lastmod>
+    <loc>https://neurovibe.se/maskering-pa-arbetsplatsen.html</loc>
+    <lastmod>2026-06-07</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>
