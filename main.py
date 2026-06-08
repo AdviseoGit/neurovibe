@@ -198,6 +198,16 @@ async def save_lead(req: LeadRequest, background: BackgroundTasks):
         conn = psycopg2.connect(DATABASE_URL)
         cur = conn.cursor()
         cur.execute(
+            """
+            CREATE TABLE IF NOT EXISTS neurovibe_leads (
+                id SERIAL PRIMARY KEY,
+                email VARCHAR(255) UNIQUE NOT NULL,
+                source VARCHAR(64),
+                created_at TIMESTAMP DEFAULT NOW()
+            )
+            """
+        )
+        cur.execute(
             "INSERT INTO neurovibe_leads (email, source) VALUES (%s, %s) ON CONFLICT (email) DO NOTHING",
             (req.email, "beta_landing")
         )
