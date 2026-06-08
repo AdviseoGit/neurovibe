@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request, HTTPException, Depends
+from fastapi import FastAPI, Request, HTTPException, Depends, BackgroundTasks
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
@@ -25,6 +25,22 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 app = FastAPI()
+
+
+def _deliver_welcome_nv(email: str):
+    import mailer
+    import report_nv
+    pdf = None
+    try:
+        pdf = report_nv.build_checklist_pdf()
+    except Exception as e:
+        print(f"[nv] checklist pdf failed: {e}")
+    atts = [("Neurovibe-checklista.pdf", pdf, "application/pdf")] if pdf else None
+    mailer.send_email(email, "Valkommen till Neurovibe - din checklista",
+                      report_nv.user_email_html(), attachments=atts, from_name="Neurovibe")
+    mailer.notify_owner("Ny lead - Neurovibe (vantelista)",
+                        f"<p>Ny lead: <b>{email}</b></p>", reply_to=email, from_name="Neurovibe")
+
 
 # --- User & Auth Models ---
 class User(BaseModel):
@@ -171,7 +187,8 @@ async def serve_html(filename: str):
     raise HTTPException(status_code=404, detail="Item not found")
 
 @app.post("/api/lead")
-async def save_lead(req: LeadRequest):
+async def save_lead(req: LeadRequest, background: BackgroundTasks):
+    background.add_task(_deliver_welcome_nv, req.email)
     if not DATABASE_URL:
         # Fallback if DB not connected
         print(f"LEAD CAPTURED (No DB): {req.email}")
