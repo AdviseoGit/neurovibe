@@ -42,5 +42,5 @@ Vår "moat" är egeninsamlad, anonymiserad data från våra verktyg, som vi anv�
 
 
 ## DESIGN-SKULD (rapporterad av Sim 2026-06-11 — HÖGSTA PRIORITET)
-- [ ] Mobilmenyn passar INTE skärmen — fixa hamburgermenyn/navigationen så den ryms, öppnas/stängs korrekt och är tap-vänlig på 360px-bredd. Verifiera mot CSS:en, anta inget.
+- [x] Mobilmenyn passar INTE skärmen — fixa hamburgermenyn/navigationen så den ryms, öppnas/stängs korrekt och är tap-vänlig på 360px-bredd. Verifiera mot CSS:en, anta inget.
 - [ ] Navigeringsöversyn enligt design-nordstjärnan (max 2 klick, inga återvändsgränder).
