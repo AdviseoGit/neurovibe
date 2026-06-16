@@ -74,13 +74,35 @@
 
     <div class="flex flex-col flex-grow max-w-3xl mx-auto w-full px-6 py-8">
         <!-- Header -->
-        <header class="flex justify-between items-center mb-16">
-            <a href="/" class="flex items-center gap-4 group cursor-pointer text-left">
+        <header class="flex justify-between items-center mb-12 md:mb-20 transition-all duration-1000" id="header-ui">
+            <button class="flex items-center gap-4 group cursor-pointer text-left" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Neurovibe Hem">
+                <div class="relative w-10 h-10 flex items-center justify-center">
+                    <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="24" cy="24" r="20" stroke="#D83131" stroke-width="2" opacity="0.6"/>
+                        <circle cx="24" cy="24" r="8" fill="#D83131" opacity="0.8" class="animate-pulse"/>
+                    </svg>
+                </div>
                 <span class="text-xl font-semibold tracking-tight">Neuro<span class="opacity-30 font-light">vibe</span></span>
-            </a>
-            <a href="/" class="text-[10px] font-bold tracking-widest uppercase hover:text-white opacity-50 transition-opacity">
-                &larr; Tillbaka
-            </a>
+            </button>
+            <nav class="hidden md:flex gap-8 text-[10px] font-bold tracking-widest uppercase items-center">
+                <a href="#philosophy" class="opacity-50 hover:opacity-100 transition-opacity">Filosofi</a>
+                <a href="#lab" class="opacity-50 hover:opacity-100 transition-opacity">Labbet</a>
+                <a href="/resurser.html" class="opacity-50 hover:opacity-100 transition-opacity">Verktyg</a>
+                <button onclick="toggleZen()" id="zen-btn" class="px-4 py-2 rounded-full border border-white/20 hover:bg-white/5 transition-all text-[9px] tracking-widest">ZEN MODE</button>
+                <button onclick="toggleModal('access')" class="bg-white/10 px-4 py-2 rounded-full hover:bg-white/20 transition-all border border-white/10">Få tillgång</button>
+            </nav>
+            <button id="mobile-menu-btn" class="md:hidden z-50 w-10 h-10 flex flex-col justify-center items-center gap-1.5 relative focus:outline-none" aria-label="Meny">
+                <div class="w-6 h-0.5 bg-white transition-transform duration-300 origin-center" id="menu-line-1"></div>
+                <div class="w-6 h-0.5 bg-white transition-opacity duration-300" id="menu-line-2"></div>
+                <div class="w-6 h-0.5 bg-white transition-transform duration-300 origin-center" id="menu-line-3"></div>
+            </button>
+            <div id="mobile-menu" class="fixed inset-0 bg-[#050505]/95 backdrop-blur-lg z-40 hidden flex-col items-center justify-center gap-8 text-xl font-semibold opacity-0 transition-opacity duration-300">
+                <a href="#philosophy" class="mobile-link hover:text-[#D83131] transition-colors">Filosofi</a>
+                <a href="#lab" class="mobile-link hover:text-[#D83131] transition-colors">Labbet</a>
+                <a href="/resurser.html" class="mobile-link hover:text-[#D83131] transition-colors">Verktyg</a>
+                <button onclick="toggleZen(); toggleMobileMenu();" class="px-6 py-3 rounded-full border border-white/20 hover:bg-white/5 transition-all text-sm tracking-widest">ZEN MODE</button>
+                <button onclick="toggleModal('access'); toggleMobileMenu();" class="bg-[#D83131] px-6 py-3 rounded-full hover:bg-[#B72A2A] transition-all text-sm">Få tillgång</button>
+            </div>
         </header>
 
         <main class="glass-panel p-8 md:p-12 mb-16">
@@ -156,6 +178,37 @@
 
         btn.addEventListener('click', handleBreakdown);
         input.addEventListener('keypress', (e) => { if(e.key === 'Enter') handleBreakdown(); });
+    </script>
+
+    <script>
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        let isMobileMenuOpen = false;
+
+        function toggleMobileMenu() {
+            isMobileMenuOpen = !isMobileMenuOpen;
+            const line1 = document.getElementById("menu-line-1");
+            const line2 = document.getElementById("menu-line-2");
+            const line3 = document.getElementById("menu-line-3");
+
+            if (isMobileMenuOpen) {
+                mobileMenu.classList.remove("hidden");
+                setTimeout(() => mobileMenu.classList.remove("opacity-0"), 10);
+                document.body.style.overflow = "hidden";
+                if(line1) line1.classList.add("translate-y-2", "rotate-45");
+                if(line2) line2.classList.add("opacity-0");
+                if(line3) line3.classList.add("-translate-y-2", "-rotate-45");
+            } else {
+                mobileMenu.classList.add("opacity-0");
+                setTimeout(() => mobileMenu.classList.add("hidden"), 300);
+                document.body.style.overflow = "";
+                if(line1) line1.classList.remove("translate-y-2", "rotate-45");
+                if(line2) line2.classList.remove("opacity-0");
+                if(line3) line3.classList.remove("-translate-y-2", "-rotate-45");
+            }
+        }
+        if (mobileMenuBtn) mobileMenuBtn.addEventListener("click", toggleMobileMenu);
+        document.querySelectorAll(".mobile-link").forEach(l => l.addEventListener("click", toggleMobileMenu));
     </script>
 </body>
 </html>
