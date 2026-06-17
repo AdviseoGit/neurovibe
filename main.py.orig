@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request, HTTPException, Depends, BackgroundTasks
 from fastapi import Form
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from pydantic import BaseModel, EmailStr
 import os

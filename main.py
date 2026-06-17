@@ -137,8 +137,8 @@ async def read_article():
 @app.post("/api/waitlist")
 async def join_waitlist(email: str = Form(...)):
     # Create dir if not exists
-    os.makedirs(os.path.join(DATA_DIR, "leads"), exist_ok=True)
-    waitlist_file = os.path.join(DATA_DIR, "leads", "waitlist.txt")
+    os.makedirs("leads", exist_ok=True)
+    waitlist_file = os.path.join("leads", "waitlist.txt")
     
     with open(waitlist_file, "a") as f:
         f.write(f"{email}\n")
