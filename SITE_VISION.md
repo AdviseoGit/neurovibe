@@ -44,3 +44,5 @@ Vår "moat" är egeninsamlad, anonymiserad data från våra verktyg, som vi anv�
 ## DESIGN-SKULD (rapporterad av Sim 2026-06-11 — HÖGSTA PRIORITET)
 - [x] Mobilmenyn passar INTE skärmen (Löst 2026-06-16 med gemensam JS-funktion och mobile-menu-btn). — fixa hamburgermenyn/navigationen så den ryms, öppnas/stängs korrekt och är tap-vänlig på 360px-bredd. Verifiera mot CSS:en, anta inget.
 - [x] Navigeringsöversyn enligt design-nordstjärnan (max 2 klick, inga återvändsgränder). (Åtgärdat 2026-06-16: Enhetlig footer och JS-mobilmeny impl. på alla sidor)
+
+- [x] Enhetlig stilmall för alla verktyg och artiklar (Löst 2026-06-17).

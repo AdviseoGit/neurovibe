@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="sv" class="bg-[#050505]">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJG1D5GJPR"></script>
@@ -42,29 +42,86 @@
     }
     </script>
 </head>
-<body class="bg-gray-50 text-gray-800">
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0">
-                    <a href="index.html" class="text-2xl font-bold text-gray-900">Neurovibe</a>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="index.html" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Hem</a>
-                        <a href="neurodiversitet-arbetsplatsen.html" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Vad är Neurodiversitet?</a>
-                        <a href="adhd-anpassningar-jobb.html" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Anpassningar</a>
-                        <a href="fordelarna-med-neurodiversitet.html" class="text-gray-900 bg-gray-100 px-3 py-2 rounded-md text-sm font-medium">Fördelarna</a>
-                        <a href="resurser.html" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Resurser</a>
-                    </div>
-                </div>
+<body class="text-[#E0E0E0] selection:bg-[#D83131] selection:text-white min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 rounded bg-gradient-to-br from-[#D83131] to-[#FF5555] flex items-center justify-center font-bold text-white shadow-lg shadow-[#D83131]/20 group-hover:shadow-[#D83131]/40 transition-all">N</div>
+                <span class="text-xl font-bold tracking-tight text-white">Neurovibe</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-[#A0A0A0]">
+                <a href="/resurser.html" class="hover:text-white transition-colors">Resurser & Artiklar</a>
+                <a href="/om-oss.html" class="hover:text-white transition-colors">Om oss</a>
+                <button onclick="toggleModal('access')" class="bg-white/5 hover:bg-white/10 text-white px-5 py-2.5 rounded-full transition-colors border border-white/10">Få tillgång</button>
             </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white p-2" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            </button>
         </div>
     </nav>
+    
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#050505]/95 backdrop-blur-lg z-40 hidden flex-col items-center justify-center gap-8 text-xl font-semibold opacity-0 transition-opacity duration-300">
+        <a href="/resurser.html" class="hover:text-[#D83131] transition-colors">Resurser & Artiklar</a>
+        <a href="/om-oss.html" class="hover:text-[#D83131] transition-colors">Om oss</a>
+        <button onclick="toggleModal('access'); toggleMobileMenu();" class="bg-[#D83131] px-6 py-3 rounded-full hover:bg-[#B72A2A] transition-all text-sm">Få tillgång</button>
+    </div>
+    
+    <!-- Access Modal -->
+    <div id="access-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center opacity-0 transition-opacity duration-300 px-4">
+        <div class="bg-[#0A0A0A] border border-white/10 p-8 rounded-2xl max-w-md w-full relative transform scale-95 transition-transform duration-300" id="access-modal-content">
+            <button onclick="toggleModal('access')" class="absolute top-4 right-4 text-[#A0A0A0] hover:text-white">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+            <h3 class="text-2xl font-bold text-white mb-2">Gå med i väntelistan</h3>
+            <p class="text-[#A0A0A0] mb-6">Få tidig tillgång till våra premiumverktyg och guider för en neuroinkluderande arbetsplats.</p>
+            <form action="/api/waitlist" method="POST" class="flex flex-col gap-4">
+                <input type="email" name="email" placeholder="din@epost.se" required class="bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#D83131] transition-colors">
+                <button type="submit" class="bg-[#D83131] text-white py-3 rounded-xl font-bold hover:bg-[#B72A2A] transition-all shadow-lg shadow-[#D83131]/20">Gå med nu</button>
+            </form>
+            <p class="text-xs text-[#808080] mt-4 text-center">Vi delar aldrig din e-post med någon.</p>
+        </div>
+    </div>
+    
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                setTimeout(() => menu.classList.remove('opacity-0'), 10);
+            } else {
+                menu.classList.add('opacity-0');
+                setTimeout(() => menu.classList.add('hidden'), 300);
+            }
+        }
+        function toggleModal(id) {
+            const modal = document.getElementById(`${id}-modal`);
+            const content = document.getElementById(`${id}-modal-content`);
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    content.classList.remove('scale-95');
+                }, 10);
+            } else {
+                modal.classList.add('opacity-0');
+                content.classList.add('scale-95');
+                setTimeout(() => modal.classList.add('hidden'), 300);
+            }
+        }
+    </script>
+
+    
             <button id="mobile-menu-btn" class="md:hidden z-50 w-10 h-10 flex flex-col justify-center items-center gap-1.5 relative focus:outline-none" aria-label="Meny">
-                <div class="w-6 h-0.5 bg-white transition-transform duration-300 origin-center" id="menu-line-1"></div>
-                <div class="w-6 h-0.5 bg-white transition-opacity duration-300" id="menu-line-2"></div>
-                <div class="w-6 h-0.5 bg-white transition-transform duration-300 origin-center" id="menu-line-3"></div>
+                <div class="w-6 h-0.5 bg-[#0A0A0A] transition-transform duration-300 origin-center" id="menu-line-1"></div>
+                <div class="w-6 h-0.5 bg-[#0A0A0A] transition-opacity duration-300" id="menu-line-2"></div>
+                <div class="w-6 h-0.5 bg-[#0A0A0A] transition-transform duration-300 origin-center" id="menu-line-3"></div>
             </button>
             <div id="mobile-menu" class="fixed inset-0 bg-[#050505]/95 backdrop-blur-lg z-40 hidden flex-col items-center justify-center gap-8 text-xl font-semibold opacity-0 transition-opacity duration-300">
                 <a href="index.html" class="mobile-link hover:text-[#D83131] transition-colors">Neurovibe</a>
@@ -75,42 +132,42 @@
                 <a href="resurser.html" class="mobile-link hover:text-[#D83131] transition-colors">Resurser</a>
             </div>
 
-    <header class="bg-white shadow">
+    <header class="bg-[#0A0A0A] shadow">
         <div class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">Mer än Inkludering: En Strategisk Fördel</h1>
-            <p class="text-lg text-gray-600">Att bygga ett team där alla tänker likadant är att bygga ett team med dolda svagheter. Neurodiversitet – idén att neurologiska skillnader som ADHD, autism och dyslexi är naturliga variationer – är inte en HR-trend, utan en kraftfull konkurrensfördel.</p>
+            <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight">Mer än Inkludering: En Strategisk Fördel</h1>
+            <p class="text-lg text-[#A0A0A0]">Att bygga ett team där alla tänker likadant är att bygga ett team med dolda svagheter. Neurodiversitet – idén att neurologiska skillnader som ADHD, autism och dyslexi är naturliga variationer – är inte en HR-trend, utan en kraftfull konkurrensfördel.</p>
         </div>
     </header>
 
     <main class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <article class="bg-white rounded-lg shadow-xl p-8">
-            <h2 class="text-3xl font-bold text-gray-900 mt-6 mb-4">1. Ökad Innovationskraft och Kreativitet</h2>
+        <article class="bg-[#0A0A0A] rounded-lg shadow-xl p-8">
+            <h2 class="text-3xl font-bold text-white mt-6 mb-4">1. Ökad Innovationskraft och Kreativitet</h2>
             <p class="mb-6 text-base leading-relaxed">Personer med neurodivergenta profiler ser världen från unika perspektiv. Deras hjärnor är ofta kopplade för att hitta mönster och lösningar som andra missar ("divergent tänkande"). Ett neurodivergent team kan tackla problem från flera vinklar samtidigt, vilket leder till mer robusta och kreativa lösningar. Företag som aktivt inkluderar dessa tänkare ser ofta en markant ökning i innovationskraft.</p>
 
-            <h2 class="text-3xl font-bold text-gray-900 mt-10 mb-4">2. Exceptionell Problemlösning och Analysförmåga</h2>
+            <h2 class="text-3xl font-bold text-white mt-10 mb-4">2. Exceptionell Problemlösning och Analysförmåga</h2>
             <p class="mb-6 text-base leading-relaxed">Många neurodivergenta individer, särskilt de med autism, har en enastående förmåga till djupt fokus och systematisk analys. Detta "hyperfokus" gör dem extremt duktiga på att identifiera fel i komplexa system, oavsett om det gäller mjukvarukod, finansiella modeller eller produktionsprocesser. De kan upptäcka avvikelser som ett neurotypiskt öga lätt skulle overse.</p>
 
             <div class="my-10 p-6 bg-blue-50 border-l-4 border-blue-500 rounded-r-lg">
                 <p class="text-xl font-semibold text-blue-800">Verkligt Exempel: Företag som SAP och Microsoft har specialiserade anställningsprogram ("Autism at Work") för personer på autismspektrumet, just för att dra nytta av deras unika analytiska talanger inom roller som mjukvarutestning och cybersäkerhet.</p>
             </div>
 
-            <h2 class="text-3xl font-bold text-gray-900 mt-10 mb-4">3. Förbättrad Företagskultur och Engagemang</h2>
+            <h2 class="text-3xl font-bold text-white mt-10 mb-4">3. Förbättrad Företagskultur och Engagemang</h2>
             <p class="mb-6 text-base leading-relaxed">När en organisation skapar en inkluderande miljö signalerar det ett starkt engagemang för alla medarbetares välbefinnande. Anpassningar som flexibla arbetstider, tysta arbetszoner och tydligare kommunikation (t.ex. skriftliga sammanfattningar efter möten) gynnar inte bara neurodivergenta anställda, utan hela personalstyrkan. Detta leder till högre lojalitet, lägre personalomsättning och ett starkare arbetsgivarvarumärke.</p>
 
-            <h2 class="text-3xl font-bold text-gray-900 mt-10 mb-4">4. Ökad Tillförlitlighet och Precision</h2>
+            <h2 class="text-3xl font-bold text-white mt-10 mb-4">4. Ökad Tillförlitlighet och Precision</h2>
             <p class="mb-6 text-base leading-relaxed">Egenskaper som är vanliga hos personer med ADHD, såsom en förmåga att snabbt skifta fokus och hantera flera informationsströmmar, kan vara en tillgång i snabbrörliga miljöer som kundtjänst eller trading. Samtidigt kan den noggrannhet och detaljorientering som ofta förknippas med autism vara ovärderlig i roller som kräver hög precision, som kvalitetssäkring eller dataanalys.</p>
 
-            <h2 class="text-3xl font-bold text-gray-900 mt-10 mb-4">5. En Större Talangpool</h2>
+            <h2 class="text-3xl font-bold text-white mt-10 mb-4">5. En Större Talangpool</h2>
             <p class="mb-6 text-base leading-relaxed">Uppskattningsvis 15-20% av befolkningen anses vara neurodivergent. Genom att ignorera denna grupp och använda traditionella rekryteringsprocesser som oavsiktligt filtrerar bort dem, missar företag en enorm pool av outnyttjad talang. Att anpassa intervjuprocesser och arbetsbeskrivningar öppnar dörren till kandidater som annars aldrig hade sökt eller kommit igenom.</p>
             
-            <h2 class="text-3xl font-bold text-gray-900 mt-10 mb-4">6. Bättre Representation och Kundförståelse</h2>
+            <h2 class="text-3xl font-bold text-white mt-10 mb-4">6. Bättre Representation och Kundförståelse</h2>
             <p class="mb-6 text-base leading-relaxed">Ett team som speglar samhällets mångfald har lättare att förstå och möta behoven hos en bredare kundbas. Neurodivergenta medarbetare kan erbjuda insikter i produktutveckling och marknadsföring som säkerställer att era produkter är tillgängliga och attraktiva för alla typer av kunder.</p>
 
-            <h2 class="text-3xl font-bold text-gray-900 mt-10 mb-4">7. Ökad Produktivitet</h2>
+            <h2 class="text-3xl font-bold text-white mt-10 mb-4">7. Ökad Produktivitet</h2>
             <p class="mb-6 text-base leading-relaxed">En studie från J.P. Morgan Chase fann att deras "Autism at Work"-program resulterade i att anställda var 90-140% mer produktiva än sina neurotypiska kollegor, tack vare deras höga precision och fokus. När rätt person får rätt förutsättningar i rätt roll kan resultaten vara enastående.</p>
 
-            <div class="mt-12 pt-8 border-t border-gray-200">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Hur Kommer Man Igång?</h3>
+            <div class="mt-12 pt-8 border-t border-[#333333]">
+                <h3 class="text-2xl font-bold text-white mb-4">Hur Kommer Man Igång?</h3>
                 <ul class="list-disc list-inside space-y-2 text-base">
                     <li><strong>Utbilda ledare och team:</strong> Skapa medvetenhet och förståelse för vad neurodiversitet är och inte är.</li>
                     <li><strong>Flexibla arbetsmiljöer:</strong> Erbjud valmöjligheter som hörlurar, tysta zoner och möjlighet till distansarbete.</li>
@@ -119,26 +176,11 @@
                 </ul>
             </div>
 
-            <p class="mt-12 text-lg text-gray-700 font-semibold">Att investera i neurodiversitet är att investera i en mer dynamisk, motståndskraftig och intelligent organisation. Det handlar om att se potential där andra ser skillnader och att bygga ett team som är rustat för framtidens utmaningar.</p>
+            <p class="mt-12 text-lg text-[#B0B0B0] font-semibold">Att investera i neurodiversitet är att investera i en mer dynamisk, motståndskraftig och intelligent organisation. Det handlar om att se potential där andra ser skillnader och att bygga ett team som är rustat för framtidens utmaningar.</p>
         </article>
     </main>
 
-    <footer class="mt-auto py-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8 opacity-40 text-[9px] font-mono tracking-widest uppercase">
-            <div class="flex items-center gap-4">
-                <div class="w-6 h-6 bg-[#D83131]/60 rounded-lg"></div>
-                <span>© 2026 ADVISEO LABORATORY</span>
-            </div>
-            <nav class="flex gap-12">
-                <a href="#philosophy" class="hover:text-white transition-colors">Manifest</a>
-                <a href="/om-oss.html" class="hover:text-white transition-colors">Om Oss</a>
-                <button onclick="toggleModal('privacy')" class="hover:text-white transition-colors uppercase">Integritet</button>
-            </nav>
-            <div class="flex gap-8">
-                <span>Stockholm</span>
-                <span>/</span>
-                <span>Digital First</span>
-            </div>
-        </footer>
+    
 
     <script>
         const mobileMenuBtn = document.getElementById("mobile-menu-btn");
@@ -170,5 +212,41 @@
         if (mobileMenuBtn) mobileMenuBtn.addEventListener("click", toggleMobileMenu);
         document.querySelectorAll(".mobile-link").forEach(l => l.addEventListener("click", toggleMobileMenu));
     </script>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 bg-[#050505] pt-16 pb-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-6 h-6 rounded bg-gradient-to-br from-[#D83131] to-[#FF5555] flex items-center justify-center font-bold text-white text-xs">N</div>
+                        <span class="text-lg font-bold text-white">Neurovibe</span>
+                    </div>
+                    <p class="text-[#A0A0A0] max-w-sm">Kognitiv harmoni och neuro-tips för arbetslivet. Vi hjälper dig att bygga en arbetsplats där alla hjärnor trivs.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Verktyg</h4>
+                    <ul class="space-y-2 text-[#A0A0A0]">
+                        <li><a href="/verktyg-nedbrytare.html" class="hover:text-[#D83131] transition-colors">Uppgiftsnedbrytaren</a></li>
+                        <li><a href="/verktyg-burnout-kalkylator.html" class="hover:text-[#D83131] transition-colors">Burnout-kalkylator</a></li>
+                        <li><a href="/verktyg-fokus-timer.html" class="hover:text-[#D83131] transition-colors">Fokus Timer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Neurovibe</h4>
+                    <ul class="space-y-2 text-[#A0A0A0]">
+                        <li><a href="/om-oss.html" class="hover:text-[#D83131] transition-colors">Om oss</a></li>
+                        <li><a href="/resurser.html" class="hover:text-[#D83131] transition-colors">Resurser</a></li>
+                        <li><a href="/integritetspolicy.html" class="hover:text-[#D83131] transition-colors">Integritetspolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/5 text-center md:text-left text-[#808080] text-sm flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 Neurovibe.se. Alla rättigheter förbehållna.</p>
+                <p>Byggd för neuroinkluderande arbetsplatser.</p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
