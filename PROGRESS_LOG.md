@@ -1,3 +1,4 @@
+2026-06-19 | INNEHÅLL | Publicera komplett guide till ADHD-diagnos som vuxen | SEO & Leads | nästa: Fånga upp FK-guiden
 -e 2026-06-18 | TEKNIK | Fixa GSC property för analytics-skript | Mätning SEO | nästa: Skriv utökad maskering-guide
 2026-06-17 | fix(data): Use relative path for leads directory
 2026-06-17 | fix(data): Fix RedirectResponse import in main.py
