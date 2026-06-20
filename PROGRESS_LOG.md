@@ -1,3 +1,4 @@
+2026-06-20 | DESIGN | Rensa saknade mall-länkar och uppdatera verktygsidor | 404/Trasiga länkar | nästa: Fånga upp FK-guiden
 2026-06-19 | DESIGN | Neutraliserade all copy som antydde mänsklig expertis; adderade tydlig AI-transparens-footer till alla sidor | AI-Transparens | nästa: - 
 2026-06-19 | INNEHÅLL | Publicera komplett guide till ADHD-diagnos som vuxen | SEO & Leads | nästa: Fånga upp FK-guiden
 -e 2026-06-18 | TEKNIK | Fixa GSC property för analytics-skript | Mätning SEO | nästa: Skriv utökad maskering-guide
