@@ -166,7 +166,36 @@ class PostRequest(BaseModel):
     content: str
     category: str = "Allmänt"
 
+class BurnoutData(BaseModel):
+    sensoryLoad: int
+    cognitiveLoad: int
+    workHours: int
+    sleepQuality: int
+    hyperfocusTime: int
+    maskingLevel: int
+    riskPercentage: int
+
+
+
+@app.post("/api/burnout-data")
+async def save_burnout_data(data: BurnoutData):
+    os.makedirs("data", exist_ok=True)
+    file_path = os.path.join("data", "burnout_data.csv")
+    
+    file_exists = os.path.isfile(file_path)
+    
+    with open(file_path, "a", encoding="utf-8") as f:
+        if not file_exists:
+            f.write("timestamp,sensoryLoad,cognitiveLoad,workHours,sleepQuality,hyperfocusTime,maskingLevel,riskPercentage\n")
+        
+        import time
+        timestamp = int(time.time())
+        f.write(f"{timestamp},{data.sensoryLoad},{data.cognitiveLoad},{data.workHours},{data.sleepQuality},{data.hyperfocusTime},{data.maskingLevel},{data.riskPercentage}\n")
+        
+    return {"status": "success"}
+
 @app.get("/robots.txt")
+
 async def robots():
     return FileResponse("static/robots.txt")
 
