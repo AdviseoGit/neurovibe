@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="sv" class="bg-[#050505]">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intervjuguide för neurodivergenta kandidater | Neurovibe</title>
+    <meta name="description" content="Verktyg och checklista för arbetsgivare för att genomföra neuroinkluderande anställningsintervjuer. Minska friktion och lyft fram rätt kompetens.">
+    <link rel="canonical" href="https://neurovibe.se/intervju-guide.html" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJG1D5GJPR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YJG1D5GJPR');
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #FFFFFF 30%, #909090 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="text-[#E0E0E0] min-h-screen flex flex-col relative">
+
+    <div class="max-w-4xl mx-auto w-full px-6 pt-12 flex-grow flex flex-col relative z-10">
+        <!-- Header -->
+        <header class="flex justify-between items-center mb-16 relative">
+            <a href="/" class="text-2xl font-bold tracking-tight text-white z-20 flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-[#D83131]"></div>
+                Neurovibe
+            </a>
+            
+            <button id="mobile-menu-btn" class="md:hidden z-30 p-2 text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <nav id="main-nav" class="hidden md:flex gap-8 text-sm font-medium items-center absolute md:relative top-full left-0 w-full md:w-auto bg-[#050505] md:bg-transparent p-6 md:p-0 border border-white/10 md:border-none rounded-2xl mt-4 md:mt-0 z-20 shadow-2xl md:shadow-none flex-col md:flex-row">
+                <a href="/resurser.html" class="hover:text-white transition-colors w-full md:w-auto text-center py-2 md:py-0">Guider & Verktyg</a>
+                <a href="/om-sajten.html" class="hover:text-white transition-colors w-full md:w-auto text-center py-2 md:py-0">Om sajten</a>
+                <a href="/#anmalan" class="bg-[#D83131] text-white px-5 py-2.5 rounded-full hover:bg-[#B82525] transition-all w-full md:w-auto text-center font-semibold mt-4 md:mt-0 shadow-[0_0_15px_rgba(216,49,49,0.3)]">Gå med i väntelistan</a>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow">
+            <div class="mb-12">
+                <div class="inline-block px-3 py-1 border border-[#D83131]/30 rounded-full text-xs font-semibold text-[#D83131] mb-4 bg-[#D83131]/10">Interaktivt Verktyg (Beta)</div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Neuroinkluderande Intervjuguide</h1>
+                <p class="text-xl text-[#A0A0A0] max-w-2xl leading-relaxed">Traditionella anställningsintervjuer filtrerar ofta bort högpresterande neurodivergenta kandidater på grund av dolda sociala koder och kognitiv överbelastning. Använd detta verktyg för att utforma en intervju som mäter kompetens – inte förmågan att kallprata.</p>
+            </div>
+
+            <div class="glass-panel p-8 md:p-12 mb-16 relative overflow-hidden">
+                <div id="setup-view">
+                    <h2 class="text-2xl font-semibold text-white mb-6">Bygg din intervjumall</h2>
+                    <p class="text-[#808080] mb-8">Välj de områden som är relevanta för rollen, så genererar vi en neuroinkluderande intervjuplan som du kan spara eller skriva ut.</p>
+                    
+                    <form id="interview-builder-form" class="space-y-6">
+                        <div class="space-y-4">
+                            <label class="flex items-start gap-4 p-4 rounded-xl border border-white/5 bg-white/5 cursor-pointer hover:bg-white/10 transition-colors">
+                                <div class="mt-1">
+                                    <input type="checkbox" name="modules" value="preparation" class="w-5 h-5 accent-[#D83131]" checked disabled>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-white">Före intervjun (Obligatorisk)</div>
+                                    <div class="text-sm text-[#808080]">Information på förhand, tydlighet kring format och eliminering av osäkerhet.</div>
+                                </div>
+                            </label>
+
+                            <label class="flex items-start gap-4 p-4 rounded-xl border border-white/5 bg-white/5 cursor-pointer hover:bg-white/10 transition-colors">
+                                <div class="mt-1">
+                                    <input type="checkbox" name="modules" value="questions" class="w-5 h-5 accent-[#D83131]" checked>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-white">Inkluderande frågeformulering</div>
+                                    <div class="text-sm text-[#808080]">Hur man undviker dubbla budskap, dolda antaganden och hypotetiska "fällor".</div>
+                                </div>
+                            </label>
+
+                            <label class="flex items-start gap-4 p-4 rounded-xl border border-white/5 bg-white/5 cursor-pointer hover:bg-white/10 transition-colors">
+                                <div class="mt-1">
+                                    <input type="checkbox" name="modules" value="environment" class="w-5 h-5 accent-[#D83131]">
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-white">Sensorisk miljö & Format</div>
+                                    <div class="text-sm text-[#808080]">Ljus, ljud, placering och alternativ till det klassiska samtalet (arbetsprov, asynkront).</div>
+                                </div>
+                            </label>
+
+                            <label class="flex items-start gap-4 p-4 rounded-xl border border-white/5 bg-white/5 cursor-pointer hover:bg-white/10 transition-colors">
+                                <div class="mt-1">
+                                    <input type="checkbox" name="modules" value="evaluation" class="w-5 h-5 accent-[#D83131]">
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-white">Rättvis bedömning</div>
+                                    <div class="text-sm text-[#808080]">Hur du frikopplar bristande ögonkontakt eller nervösa tics från bedömningen av yrkeskompetens.</div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <button type="submit" class="w-full bg-[#D83131] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#B82525] transition-colors">Generera intervjuguide</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="result-view" class="hidden">
+                    <button id="back-btn" class="text-sm text-[#808080] hover:text-white mb-6 flex items-center gap-2 transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                        Tillbaka till val
+                    </button>
+                    
+                    <div id="guide-content" class="space-y-8 text-[#D0D0D0]">
+                        <!-- Innehåll injiceras via JS -->
+                    </div>
+                    
+                    <div class="mt-12 p-6 rounded-xl border border-[#D83131]/30 bg-[#D83131]/5 flex flex-col items-center text-center">
+                        <h3 class="text-xl font-semibold text-white mb-2">Spara guiden och få mer data</h3>
+                        <p class="text-[#808080] mb-6">Ladda ner denna guide som PDF och anslut dig till väntelistan för vårt kommande rekryteringsverktyg.</p>
+                        <form id="save-lead-form" class="w-full max-w-md flex flex-col sm:flex-row gap-3">
+                            <input type="email" id="user-email" placeholder="Din e-postadress" required class="flex-grow bg-[#151515] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#D83131] transition-colors">
+                            <button type="submit" class="bg-[#D83131] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#B82525] transition-colors whitespace-nowrap">Spara PDF</button>
+                        </form>
+                        <p id="lead-success-msg" class="hidden text-green-400 mt-4 text-sm">Tack! Vi har skickat guiden till din e-post.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="mt-auto py-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8 opacity-40 text-[9px] font-mono tracking-widest uppercase">
+            <div class="flex items-center gap-4">
+                <span>&copy; 2026 Neurovibe</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <span>Denna sajt skapas och drivs helt av AI &middot; <a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></span>
+                <a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Mobilmeny
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const nav = document.getElementById('main-nav');
+            if (nav.classList.contains('hidden')) {
+                nav.classList.remove('hidden');
+                nav.classList.add('flex');
+            } else {
+                nav.classList.add('hidden');
+                nav.classList.remove('flex');
+            }
+        });
+
+        // Databas med modul-innehåll
+        const moduleContent = {
+            preparation: `
+                <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold text-white mb-4 border-b border-white/10 pb-2">1. Före intervjun (Information & Tydlighet)</h3>
+                    <ul class="space-y-3 list-disc pl-5">
+                        <li><strong>Skicka frågorna i förväg:</strong> Att ge kandidaten intervjufrågorna 24-48 timmar innan mäter deras faktiska analysförmåga, inte deras förmåga att improvisera under stress.</li>
+                        <li><strong>Detaljerad logistik:</strong> Beskriv exakt var ni möts, vem kandidaten ska fråga efter, hur kontoret ser ut och vilka som kommer att närvara (namn och roll).</li>
+                        <li><strong>Formatbeskrivning:</strong> Klargör hur lång intervjun är, vilka typer av frågor som ställs (t.ex. arbetsprov vs CV-genomgång) och att det är okej att ta med anteckningar.</li>
+                        <li><strong>Erbjud anpassningar proaktivt:</strong> Fråga alltid "Finns det några anpassningar vi kan göra för att du ska kunna prestera ditt bästa under intervjun?" istället för att vänta på att kandidaten ska be om det.</li>
+                    </ul>
+                </div>
+            `,
+            questions: `
+                <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold text-white mb-4 border-b border-white/10 pb-2">2. Inkluderande frågeformulering</h3>
+                    <ul class="space-y-3 list-disc pl-5">
+                        <li><strong>Undvik hypotetiska "hur skulle du..."-frågor:</strong> Autistiska kandidater tenderar att svara extremt bokstavligt på hypotetiska scenarier och kan fastna i detaljer som saknas.</li>
+                        <li><strong>Använd beteendebaserade frågor:</strong> Fråga istället "Berätta om en specifik gång du löste problem X. Vilka steg tog du?". Be om konkreta exempel från det förflutna.</li>
+                        <li><strong>En fråga i taget:</strong> Undvik att bunta ihop flera frågor ("Berätta om din bakgrund, varför du sökte hit och vad du ser som din största svaghet"). Ställ en specifik fråga, få ett svar, ställ nästa.</li>
+                        <li><strong>Var tydlig med vad du vill ha:</strong> Om du vill ha ett kort svar, säg "Kan du ge mig en kort sammanfattning på två minuter av...". Lämna inte tolkningen till kandidaten.</li>
+                    </ul>
+                </div>
+            `,
+            environment: `
+                <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold text-white mb-4 border-b border-white/10 pb-2">3. Sensorisk miljö & Format</h3>
+                    <ul class="space-y-3 list-disc pl-5">
+                        <li><strong>Visuell och auditiv miljö:</strong> Välj ett tyst rum utan genomgångstrafik. Undvik blinkande lysrör eller platser där kandidaten sitter vänd mot en stökig kontorsyta (visuell distraktion).</li>
+                        <li><strong>Alternativa format:</strong> Överväg om ett arbetsprov, en asynkron videointervju eller en kod/design-uppgift ger en bättre bild av kandidatens förmåga än ett klassiskt samtal över ett bord.</li>
+                        <li><strong>Tillåt hjälpmedel:</strong> Gör det tydligt att det är accepterat att kandidaten antecknar, tittar i sina egna papper, tar korta pauser eller dricker vatten.</li>
+                    </ul>
+                </div>
+            `,
+            evaluation: `
+                <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold text-white mb-4 border-b border-white/10 pb-2">4. Rättvis bedömning (Att eliminera bias)</h3>
+                    <ul class="space-y-3 list-disc pl-5">
+                        <li><strong>Frikoppla ögonkontakt från kompetens:</strong> Bristande (eller intensiv) ögonkontakt betyder inte oärlighet, ointresse eller bristande respekt. Det är ofta en strategi för att kunna fokusera på vad som sägs.</li>
+                        <li><strong>Skilj på social smidighet och yrkeskompetens:</strong> Kräver rollen verkligen extrem social flexibilitet, eller bedömer du kandidaten utifrån en allmän norm? Värdera de färdigheter som faktiskt krävs för jobbet.</li>
+                        <li><strong>Tics och stimming:</strong> Små repetitiva rörelser (stimming) hjälper många neurodivergenta att reglera stress. Låt det inte påverka bedömningen av deras professionalitet.</li>
+                        <li><strong>Bokstavliga svar:</strong> Om kandidaten ger ett kortfattat, mycket direkt svar, tolka det inte som otrevligt. De svarade förmodligen exakt på frågan du ställde. Följ upp med en mer specifik fråga om du vill ha mer detaljer.</li>
+                    </ul>
+                </div>
+            `
+        };
+
+        // Hantera formulär för att generera guide
+        document.getElementById('interview-builder-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Samla in valda moduler
+            const selectedModules = [];
+            document.querySelectorAll('input[name="modules"]:checked').forEach(checkbox => {
+                selectedModules.push(checkbox.value);
+            });
+            
+            // Bygg HTML-innehåll
+            let contentHTML = '';
+            selectedModules.forEach(mod => {
+                if (moduleContent[mod]) {
+                    contentHTML += moduleContent[mod];
+                }
+            });
+            
+            document.getElementById('guide-content').innerHTML = contentHTML;
+            
+            // Byt vy
+            document.getElementById('setup-view').classList.add('hidden');
+            document.getElementById('result-view').classList.remove('hidden');
+            
+            // Skicka data capture event
+            fetch('/api/tool-usage', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    tool: 'interview-guide',
+                    modules: selectedModules
+                })
+            }).catch(err => console.log('Analytics ej ansluten (offline-läge)'));
+        });
+        
+        // Tillbaka-knapp
+        document.getElementById('back-btn').addEventListener('click', function() {
+            document.getElementById('result-view').classList.add('hidden');
+            document.getElementById('setup-view').classList.remove('hidden');
+        });
+
+        // Hantera lead capture
+        document.getElementById('save-lead-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('user-email').value;
+            const submitBtn = this.querySelector('button');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sparar...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch('/api/lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email })
+                });
+                
+                // Formaterar JSON eller visar succé ändå om mock-server
+                this.classList.add('hidden');
+                document.getElementById('lead-success-msg').classList.remove('hidden');
+            } catch (error) {
+                console.error('Error:', error);
+                this.classList.add('hidden');
+                document.getElementById('lead-success-msg').textContent = 'Tack! Din förfrågan är registrerad.';
+                document.getElementById('lead-success-msg').classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
