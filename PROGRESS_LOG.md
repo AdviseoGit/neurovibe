@@ -1,3 +1,4 @@
+2026-06-23 | LEADFLOW | Migrerat HTML-formulär till API-endpoint | Leadflow konvertering fix | nästa: Fånga upp FK-guiden
 2026-06-22 | TILLVÄXT | Nytt verktyg: Neuroinkluderande Intervjuguide publicerat | Leadflow & SEO | nästa: Bygg ut data-capture backend
 2026-06-21 | DATA | Implementerat data-capture för burnout-kalkylator | Data-tillgång | nästa: - 
 2026-06-20 | DESIGN | Rensa saknade mall-länkar och uppdatera verktygsidor | 404/Trasiga länkar | nästa: Fånga upp FK-guiden
