@@ -134,16 +134,7 @@ async def read_article():
     return FileResponse("static/article.html")
 
 
-@app.post("/api/waitlist")
-async def join_waitlist(email: str = Form(...)):
-    # Create dir if not exists
-    os.makedirs("leads", exist_ok=True)
-    waitlist_file = os.path.join("leads", "waitlist.txt")
-    
-    with open(waitlist_file, "a") as f:
-        f.write(f"{email}\n")
-        
-    return RedirectResponse(url="/waitlist-success.html", status_code=303)
+
 
 @app.get("/")
 async def read_index():

@@ -133,7 +133,7 @@
             </button>
             <h3 class="text-2xl font-bold text-white mb-2">Gå med i väntelistan</h3>
             <p class="text-[#A0A0A0] mb-6">Få tidig tillgång till våra premiumverktyg och guider för en neuroinkluderande arbetsplats.</p>
-            <form action="/api/waitlist" method="POST" class="flex flex-col gap-4">
+            <form id="waitlist-form" action="javascript:void(0)" class="flex flex-col gap-4">
                 <input type="email" name="email" placeholder="din@epost.se" required class="bg-[#111111] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#D83131] transition-colors">
                 <button type="submit" class="bg-[#D83131] text-white py-3 rounded-xl font-bold hover:bg-[#B72A2A] transition-all shadow-lg shadow-[#D83131]/20">Gå med nu</button>
             </form>
@@ -617,5 +617,37 @@
         </div>
     </footer>
 
+
+            <script>
+                document.getElementById('waitlist-form').addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const emailInput = e.target.querySelector('input[type="email"]');
+                    const btn = e.target.querySelector('button[type="submit"]');
+                    const email = emailInput.value.trim();
+                    if(!email) return;
+                    
+                    btn.disabled = true;
+                    btn.textContent = "Sparar...";
+                    
+                    try {
+                        const response = await fetch('/api/lead', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ email: email })
+                        });
+                        
+                        if (response.ok) {
+                            e.target.innerHTML = "<div class='text-green-500 font-bold'>✓ Du är tillagd i väntelistan!</div>";
+                        } else {
+                            throw new Error('Något gick fel');
+                        }
+                    } catch (err) {
+                        btn.disabled = false;
+                        btn.textContent = "Gå med nu";
+                        alert("Kunde inte spara e-postadressen. Försök igen.");
+                    }
+                });
+            </script>
+        
 </body>
 </html>
