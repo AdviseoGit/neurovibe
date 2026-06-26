@@ -19,3 +19,4 @@
 2026-06-11 | docs: seed SITE_VISION with Sims design/freshness priorities (north star, 2026-06-11)
 2026-06-11 | fix: pin Python 3.12 (Railpack/mise cannot install 3.13.14 - no precompiled binary, broke builds)
 2026-06-11 | refactor: Standardize header/footer and add SITE_VISION.md-e 2026-06-18 | INNEHÅLL | Draft 50% adhd-diagnos-guide | Ny guide påbörjad | nästa: Färdigställ adhd-diagnos-guide
+2026-06-26 | LEADFLOW | Skapa Lead-magnet formulär för Neurovibe Checklista i guiderna | Leadflow & konvertering | nästa: - 

@@ -498,6 +498,50 @@
 <p class="text-gray-300 leading-relaxed mb-6"><em>Författare: Neurovibe-teamet</em></p>
 <p class="text-gray-300 leading-relaxed mb-6"><em>Källor: Autism Research (2025), ADHD-Center Sverige, #MaskingAtWork TikTok-analys (juni 2026), Arbetsmiljöverket, Diskrimineringslagen</em></p>
 
+<div class="glass-panel p-8 mt-12 mb-12 border-l-4 border-[#D83131]">
+    <h3 class="text-2xl font-bold text-white mb-4">Gratis resurs: Executive Function Recovery Plan</h3>
+    <p class="text-[#A0A0A0] mb-6">Få vår kompletta checklista för att hantera kognitiv överbelastning och anpassa din arbetsmiljö. Skickas direkt till din inkorg.</p>
+    <form id="lead-magnet-form" class="flex flex-col sm:flex-row gap-4" onsubmit="submitLeadMagnet(event)">
+        <input type="email" id="lm-email" placeholder="Din e-postadress" required class="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-[#D83131] transition-colors">
+        <button type="submit" class="bg-[#D83131] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#B72A2A] transition-colors whitespace-nowrap">Skicka guiden</button>
+    </form>
+    <div id="lm-success" class="hidden mt-4 text-green-400 text-sm font-medium">Tack! Checklistan skickas till din e-post.</div>
+    <div id="lm-error" class="hidden mt-4 text-[#D83131] text-sm font-medium">Något gick fel. Vänligen försök igen senare.</div>
+</div>
+
+<script>
+async function submitLeadMagnet(e) {
+    e.preventDefault();
+    const email = document.getElementById('lm-email').value;
+    const form = document.getElementById('lead-magnet-form');
+    const successMsg = document.getElementById('lm-success');
+    const errorMsg = document.getElementById('lm-error');
+    
+    const btn = form.querySelector('button');
+    const originalText = btn.innerText;
+    btn.innerText = 'Skickar...';
+    btn.disabled = true;
+
+    try {
+        const res = await fetch('/api/lead', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email })
+        });
+        
+        if (res.ok) {
+            form.style.display = 'none';
+            successMsg.classList.remove('hidden');
+        } else {
+            throw new Error('API Error');
+        }
+    } catch (err) {
+        errorMsg.classList.remove('hidden');
+        btn.innerText = originalText;
+        btn.disabled = false;
+    }
+}
+</script>
 </article>
     </main>
 
