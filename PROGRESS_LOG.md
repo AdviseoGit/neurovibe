@@ -1,3 +1,4 @@
+2026-06-27 | LEADFLOW | Fixa lead-formulär i guider & stabilisera mobilsida/navigering | Lead-konvertering & UX | nästa: Analysera data-capture for första rapport
 2026-06-25 | INNEHÅLL | Guide om Försäkringskassan & Arbetsförmedlingens stöd vid NPF | SEO & Leads | nästa: Fånga upp FK-guiden i interaktivt verktyg
 2026-06-24 | DESIGN | Applicerat design-nordstjärna på kvarvarande guide + återställt root | Enhetlig UX | nästa: Fånga upp FK-guiden
 2026-06-23 | LEADFLOW | Migrerat HTML-formulär till API-endpoint | Leadflow konvertering fix | nästa: Fånga upp FK-guiden

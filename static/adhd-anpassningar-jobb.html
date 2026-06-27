@@ -247,6 +247,12 @@
       </div>
     </div>
   
+
+<!-- Lead Magnet -->
+<div id="lead-magnet-container"></div>
+<script>
+fetch("/lead-magnet-snippet.html").then(r => r.text()).then(html => document.getElementById("lead-magnet-container").innerHTML = html);
+</script>
 </article>
 
             <div class="mt-24 text-center glass-panel p-10 border-white/10">
