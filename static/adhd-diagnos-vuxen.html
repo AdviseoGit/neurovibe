@@ -542,6 +542,13 @@ async function submitLeadMagnet(e) {
     }
 }
 </script>
+
+<!-- Lead Magnet -->
+<div id="lead-magnet-container"></div>
+<script>
+fetch("/lead-magnet-snippet.html").then(r => r.text()).then(html => document.getElementById("lead-magnet-container").innerHTML = html);
+</script>
+
 </article>
     </main>
 

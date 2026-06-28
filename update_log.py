@@ -1,13 +1,12 @@
 import datetime
 
-d = datetime.datetime.utcnow().strftime("%Y-%m-%d")
-log_entry = f"{d} | LEADFLOW | Fixa lead-formulär i guider & stabilisera mobilsida/navigering | Lead-konvertering & UX | nästa: Analysera data-capture for första rapport"
+date_str = datetime.datetime.utcnow().strftime("%Y-%m-%d")
+log_entry = f"{date_str} | LEADFLOW | Skapa Lead-magnet formulär för Neurovibe Checklista i guiderna | Leadflow & konvertering | nästa: Bygga databasen för att skicka checklistan\n"
 
-log_path = "/data/workspace/projects/neurovibe/PROGRESS_LOG.md"
-with open(log_path, "r", encoding="utf-8") as f:
-    lines = f.readlines()
+with open('/data/workspace/projects/neurovibe/PROGRESS_LOG.md', 'r') as f:
+    content = f.read()
 
-lines.insert(0, log_entry + "\n")
-
-with open(log_path, "w", encoding="utf-8") as f:
-    f.writelines(lines)
+# Make sure we don't insert duplicate entries for today if already testing
+if "Skapa Lead-magnet formulär" not in content[:300]:
+    with open('/data/workspace/projects/neurovibe/PROGRESS_LOG.md', 'w') as f:
+        f.write(log_entry + content)
