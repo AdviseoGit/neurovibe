@@ -23,7 +23,7 @@ Vår "moat" är egeninsamlad, anonymiserad data från våra verktyg, som vi anv�
 2.  **[ ] Datafångst & Första Verktyget (Q3 2026):**
     -   [ ] Ett första interaktivt verktyg (t.ex. "Uppgiftsnedbrytaren") är live.
     -   [ ] Verktyget har en fungerande backend-endpoint som SPARAR (anonymiserad) input/output.
-    -   [ ] Lead-formulär (waitlist) är live och kopplat till en fungerande e-posthantering.
+    -   [x] Lead-formulär (waitlist) är live och kopplat till en fungerande e-posthantering.
 
 3.  **[ ] Innehållspelare & SEO-fäste (Q4 2026):**
     -   [ ] Skapa och publicera den första innehållspelaren (t.ex. en komplett guide till "ADHD-anpassningar på jobbet" som samlar all relaterad information).
