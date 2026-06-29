@@ -1,3 +1,4 @@
+2026-06-29 | DATA/LEADFLOW | Test-endpoints data-capture & AI transparens | Mätning & SEO Trust | nästa: Utveckla databas/verktyg
 2026-06-28 | LEADFLOW | Skapa Lead-magnet formulär för Neurovibe Checklista i guiderna | Leadflow & konvertering | nästa: Bygga databasen för att skicka checklistan
 2026-06-27 | LEADFLOW | Fixa lead-formulär i guider & stabilisera mobilsida/navigering | Lead-konvertering & UX | nästa: Analysera data-capture for första rapport
 2026-06-25 | INNEHÅLL | Guide om Försäkringskassan & Arbetsförmedlingens stöd vid NPF | SEO & Leads | nästa: Fånga upp FK-guiden i interaktivt verktyg
