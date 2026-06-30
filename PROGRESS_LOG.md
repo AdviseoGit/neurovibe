@@ -1,3 +1,4 @@
+2026-06-30 | DATA | Integrerat tool-usage data-capture för nedbrytare och timer | Data-tillgång | nästa: Utveckla en sajtövergripande sökmotor eller databaserad guide
 2026-06-29 | DATA/LEADFLOW | Test-endpoints data-capture & AI transparens | Mätning & SEO Trust | nästa: Utveckla databas/verktyg
 2026-06-28 | LEADFLOW | Skapa Lead-magnet formulär för Neurovibe Checklista i guiderna | Leadflow & konvertering | nästa: Bygga databasen för att skicka checklistan
 2026-06-27 | LEADFLOW | Fixa lead-formulär i guider & stabilisera mobilsida/navigering | Lead-konvertering & UX | nästa: Analysera data-capture for första rapport
