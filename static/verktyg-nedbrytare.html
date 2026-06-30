@@ -167,6 +167,17 @@
                 loading.classList.add('hidden');
                 resultContent.innerHTML = data.response;
                 resultContainer.classList.remove('hidden');
+
+                fetch('/api/tool-usage', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        tool: 'nedbrytare',
+                        input_text: task,
+                        output_text: data.response
+                    })
+                }).catch(err => console.log('Analytics ej ansluten'));
+                
             } catch (err) {
                 loading.classList.add('hidden');
                 resultContent.innerHTML = "<p class='text-[#D83131]'>Ett fel uppstod. Prova igen.</p>";

@@ -200,6 +200,15 @@
                     
                     // Gentle chime via Web Audio API
                     playChime();
+
+                    fetch('/api/tool-usage', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ 
+                            tool: 'fokus-timer',
+                            metadata: { session_type: isWorkMode ? 'focus' : 'break' }
+                        })
+                    }).catch(err => console.log('Analytics ej ansluten'));
                 }
             }, 1000);
         }
