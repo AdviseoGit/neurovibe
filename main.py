@@ -175,36 +175,6 @@ class BurnoutData(BaseModel):
 
 
 
-class ToolUsageData(BaseModel):
-    tool: str
-    modules: Optional[list[str]] = None
-    input_text: Optional[str] = None
-    output_text: Optional[str] = None
-    metadata: Optional[dict] = None
-
-class BurnoutData(BaseModel):
-async def save_tool_usage(data: ToolUsageData):
-    os.makedirs("data", exist_ok=True)
-    file_path = os.path.join("data", "tool_usage.csv")
-    
-    file_exists = os.path.isfile(file_path)
-    
-    with open(file_path, "a", encoding="utf-8") as f:
-        if not file_exists:
-            f.write("timestamp,tool,modules,input_text,output_text,metadata\n")
-        
-        import time
-        import json
-        timestamp = int(time.time())
-        modules_str = json.dumps(data.modules) if data.modules else ""
-        input_str = data.input_text.replace("\n", " ").replace(",", ";") if data.input_text else ""
-        output_str = data.output_text.replace("\n", " ").replace(",", ";") if data.output_text else ""
-        metadata_str = json.dumps(data.metadata) if data.metadata else ""
-        
-        f.write(f'{timestamp},{data.tool},"{modules_str}","{input_str}","{output_str}","{metadata_str}"\n')
-        
-    return {"status": "success"}
-
 @app.post("/api/tool-usage")
 async def save_tool_usage(data: ToolUsageData):
     os.makedirs("data", exist_ok=True)
