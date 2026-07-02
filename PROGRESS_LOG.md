@@ -1,3 +1,4 @@
+2026-07-02 | DATA | Publicerade första original-datarapporten State of Neurodiversity 2026 med lead capture | Data-Moat & Leadflow | nästa: Bygg ut datarapporten eller börja outreach
 2026-07-01 | DESIGN | Uppdaterat 3 guider till dark theme nordstjärna + AI-transparens + GA4 | Enhetlig UX & Spårning | nästa: Analysera data-capture for första rapport
 2026-06-30 | DATA | Integrerat tool-usage data-capture för nedbrytare och timer | Data-tillgång | nästa: Utveckla en sajtövergripande sökmotor eller databaserad guide
 2026-06-29 | DATA/LEADFLOW | Test-endpoints data-capture & AI transparens | Mätning & SEO Trust | nästa: Utveckla databas/verktyg

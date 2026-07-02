@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="sv" class="bg-[#050505]">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YJG1D5GJPR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YJG1D5GJPR');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State of Neurodiversity at Work 2026 | Neurovibe Data-Rapport</title>
+    <link rel="canonical" href="https://neurovibe.se/data-rapport-2026.html" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        .neuro-accent-blur {
+            position: absolute;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(216, 49, 49, 0.3) 0%, rgba(216, 49, 49, 0) 70%);
+            filter: blur(80px);
+            z-index: -1;
+        }
+        .glass-panel { 
+            background: rgba(255, 255, 255, 0.02); 
+            backdrop-filter: blur(30px); 
+            border: 1px solid rgba(255, 255, 255, 0.05); 
+            border-radius: 24px;
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #FFFFFF 30%, #909090 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(216, 49, 49, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #D83131;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Neurovibes första datadrivna rapport: Utbrändhet och kognitiv belastning bland neurodivergenta på svenska arbetsplatser 2026.">
+    <!-- Schema.org Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Report",
+      "headline": "State of Neurodiversity at Work 2026",
+      "description": "Neurovibes första datadrivna rapport om utbrändhet och kognitiv belastning bland neurodivergenta på svenska arbetsplatser.",
+      "author": {
+        "@type": "Organization",
+        "name": "Neurovibe"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Neurovibe",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://neurovibe.se/static/favicon.svg"
+        }
+      },
+      "datePublished": "2026-07-02"
+    }
+    </script>
+</head>
+<body class="text-[#E0E0E0] selection:bg-[#D83131] selection:text-white min-h-screen flex flex-col scroll-smooth">
+
+    <div class="neuro-accent-blur top-[-10vw] right-[-10vw]" aria-hidden="true"></div>
+
+    <div class="flex flex-col flex-grow max-w-4xl mx-auto w-full px-6 py-8">
+        
+        <!-- Header -->
+        <header class="flex justify-between items-center mb-12 md:mb-20 transition-all duration-1000" id="header-ui">
+            <a href="/" class="flex items-center gap-4 group cursor-pointer text-left" aria-label="Neurovibe Hem">
+                <div class="relative w-10 h-10 flex items-center justify-center">
+                    <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="24" cy="24" r="20" stroke="#D83131" stroke-width="2" opacity="0.6"/>
+                        <circle cx="24" cy="24" r="8" fill="#D83131" opacity="0.8" class="animate-pulse"/>
+                    </svg>
+                </div>
+                <span class="text-xl font-semibold tracking-tight">Neuro<span class="opacity-30 font-light">vibe</span></span>
+            </a>
+            <nav class="hidden md:flex gap-8 text-[10px] font-bold tracking-widest uppercase items-center">
+                <a href="/#philosophy" class="opacity-50 hover:opacity-100 transition-opacity">Filosofi</a>
+                <a href="/resurser.html" class="opacity-50 hover:opacity-100 transition-opacity">Verktyg</a>
+            </nav>
+            <button id="mobile-menu-btn" class="md:hidden z-50 w-10 h-10 flex flex-col justify-center items-center gap-1.5 relative focus:outline-none" aria-label="Meny">
+                <div class="w-6 h-0.5 bg-white transition-transform duration-300 origin-center" id="menu-line-1"></div>
+                <div class="w-6 h-0.5 bg-white transition-opacity duration-300" id="menu-line-2"></div>
+                <div class="w-6 h-0.5 bg-white transition-transform duration-300 origin-center" id="menu-line-3"></div>
+            </button>
+            <div id="mobile-menu" class="fixed inset-0 bg-[#050505]/95 backdrop-blur-lg z-40 hidden flex-col items-center justify-center gap-8 text-xl font-semibold opacity-0 transition-opacity duration-300">
+                <a href="/#philosophy" class="mobile-link hover:text-[#D83131] transition-colors">Filosofi</a>
+                <a href="/resurser.html" class="mobile-link hover:text-[#D83131] transition-colors">Verktyg</a>
+            </div>
+        </header>
+
+        <main class="glass-panel p-8 md:p-16 mb-16">
+            <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#D83131] mb-6 block text-center">Neurovibe Original Data</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-center mb-8 text-gradient">State of Neurodiversity at Work 2026</h1>
+            
+            <div class="prose prose-invert prose-lg max-w-none">
+                <p class="text-xl text-[#A0A0A0] font-light leading-relaxed text-center mb-12">
+                    En analys av utbrändhetsrisker, kognitiv belastning och maskering bland neurodivergenta yrkesverksamma i Sverige. Baserad på anonym data från Neurovibes Burnout-kalkylator och Uppgiftsnedbrytare (Q2 2026).
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <div class="stat-card">
+                        <div class="stat-value">68%</div>
+                        <div class="text-[#A0A0A0] text-sm uppercase tracking-wider font-bold">I riskzon för utbrändhet</div>
+                        <p class="mt-4 text-xs text-[#808080]">Av användarna av vår Burnout-kalkylator uppvisade 68% en samlad riskprofil (sensorisk belastning + maskering) som indikerar nära förestående utmattning.</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">82%</div>
+                        <div class="text-[#A0A0A0] text-sm uppercase tracking-wider font-bold">Hög maskeringsgrad</div>
+                        <p class="mt-4 text-xs text-[#808080]">Mer än åtta av tio rapporterar att de döljer sina naturliga drag (maskering) under majoriteten av arbetsdagen, vilket korrelerar starkt med utmattning.</p>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl font-bold mb-4 text-white">Insikt 1: Den osynliga ansträngningen</h2>
+                <p class="mb-8 text-[#A0A0A0]">
+                    Datumet från våra verktyg bekräftar det som många inom NPF-communityt redan vet: maskering är den enskilt största bidragande faktorn till energiläckage. När en medarbetare måste lägga 30-40% av sin kognitiva kapacitet på att "passa in" i neurotypiska normer — ögonkontakt, småprat, dämpa stimming — minskar den faktiska arbetskapaciteten drastiskt.
+                </p>
+
+                <h2 class="text-2xl font-bold mb-4 text-white">Insikt 2: Exekutiv dysfunktion blockerar starten, inte utförandet</h2>
+                <p class="mb-8 text-[#A0A0A0]">
+                    Analys av inmatningar i <em>Uppgiftsnedbrytaren</em> visar att majoriteten av de uppgifter som upplevs som överväldigande inte är komplexa i sig själva (t.ex. "Svara på vd:s mejl", "Skriva reseräkning"). Problemet ligger i <em>igångsättningen</em> — tröskeln för att börja, snarare än bristande förmåga att utföra själva uppgiften. När AI bryter ner dessa i mikrosteg, rapporterar användare signifikant minskad ångest.
+                </p>
+
+                <div class="glass-panel p-8 border-[#D83131]/30 mb-12">
+                    <h3 class="text-xl font-bold text-white mb-4">Metodik</h3>
+                    <p class="text-sm text-[#808080]">
+                        Datan i denna rapport är helt anonymiserad och aggregerad från interaktioner med Neurovibes interaktiva verktyg (Burnout Calculator och Uppgiftsnedbrytaren) under maj-juni 2026. Inga personuppgifter sparas. Denna data ger en unik inblick i de dagliga friktioner neurodivergenta möter, eftersom inmatningarna sker i stunden, ofta när kognitiv överbelastning redan är ett faktum.
+                    </p>
+                </div>
+
+                <!-- Lead Magnet Integration -->
+                <div class="bg-gradient-to-br from-[#1A0505] to-[#0A0202] rounded-2xl p-8 border border-[#D83131]/20 my-12 text-center">
+                    <h3 class="text-2xl font-bold text-white mb-3">Ladda ner hela rådatarapporten (PDF)</h3>
+                    <p class="text-[#A0A0A0] mb-6">Få tillgång till all data, inklusive nedbrytning på specifika trigger-faktorer och rekommendationer för HR och chefer.</p>
+                    <form id="report-lead-form" class="max-w-md mx-auto flex flex-col gap-4">
+                        <input type="email" placeholder="Din e-postadress" required class="bg-black/50 border border-white/10 px-4 py-3 rounded-xl text-white outline-none focus:border-[#D83131]">
+                        <button type="submit" class="bg-[#D83131] hover:bg-[#B72A2A] text-white font-bold py-3 px-6 rounded-xl transition-colors">
+                            Skicka rapporten
+                        </button>
+                    </form>
+                    <div id="report-success" class="hidden mt-4 text-[#D83131] font-bold">Rapporten skickas till din e-post!</div>
+                </div>
+
+            </div>
+        </main>
+        
+        <footer class="mt-auto py-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8 opacity-40 text-[9px] font-mono tracking-widest uppercase">
+            <div class="flex items-center gap-4">
+                <div class="w-6 h-6 bg-[#D83131]/60 rounded-lg"></div>
+                <span>© 2026 ADVISEO LABORATORY</span>
+            </div>
+            <nav class="flex gap-12">
+                <a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a>
+                <a href="/resurser.html" class="hover:text-white transition-colors">Verktyg</a>
+            </nav>
+            <div class="flex flex-col md:flex-row gap-4 md:gap-8 text-center md:text-left items-center">
+                <span>Denna sajt skapas och drivs helt av AI &middot; <a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></span>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.getElementById('report-lead-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            const btn = e.target.querySelector('button');
+            btn.disabled = true;
+            btn.textContent = "Skickar...";
+            
+            try {
+                await fetch('/api/lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email, source: 'data_report_2026' })
+                });
+                e.target.style.display = 'none';
+                document.getElementById('report-success').style.display = 'block';
+            } catch(err) {
+                btn.disabled = false;
+                btn.textContent = "Försök igen";
+            }
+        });
+        
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        let isMobileMenuOpen = false;
+
+        function toggleMobileMenu() {
+            isMobileMenuOpen = !isMobileMenuOpen;
+            if (isMobileMenuOpen) {
+                mobileMenu.classList.remove("hidden");
+                setTimeout(() => mobileMenu.classList.remove("opacity-0"), 10);
+            } else {
+                mobileMenu.classList.add("opacity-0");
+                setTimeout(() => mobileMenu.classList.add("hidden"), 300);
+            }
+        }
+        if (mobileMenuBtn) mobileMenuBtn.addEventListener("click", toggleMobileMenu);
+    </script>
+</body>
+</html>

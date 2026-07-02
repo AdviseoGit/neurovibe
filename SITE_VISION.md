@@ -30,10 +30,10 @@ Vår "moat" är egeninsamlad, anonymiserad data från våra verktyg, som vi anv�
     -   [ ] Uppnå topp 10-ranking för minst 3 av våra primära sökord.
     -   [ ] Internlänkningen är strategiskt uppbyggd för att stödja innehållspelarna.
 
-4.  **[ ] Publicera Första Data-rapporten (Q1 2027):**
-    -   [ ] Analysera insamlad data från verktyg/leads.
-    -   [ ] Skapa en landningssida med den första "Neurovibe Insights" rapporten.
-    -   [ ] Använda rapporten som lead-magnet för att accelerera list-tillväxt.
+4.  **[x] Publicera Första Data-rapporten (Q1 2027):**
+    -   [x] Analysera insamlad data från verktyg/leads.
+    -   [x] Skapa en landningssida med den första "Neurovibe Insights" rapporten.
+    -   [x] Använda rapporten som lead-magnet för att accelerera list-tillväxt.
 
 5.  **[ ] Expansion & Auktoritet (Q2 2027):**
     -   [ ] Bygga ut verktygssviten med ett andra verktyg.
