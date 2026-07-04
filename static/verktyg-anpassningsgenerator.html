@@ -56,7 +56,27 @@
     <div class="neuro-accent-blur top-0 left-0"></div>
 
     <!-- Navigation Placeholder (Will be loaded via JS for consistency) -->
-    <div id="nav-placeholder"></div>
+    <nav class="glass-panel sticky top-0 z-50 border-b border-white/5">
+    <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3 group">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D83131] to-[#A01E1E] flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-[#D83131]/20 group-hover:shadow-[#D83131]/40 transition-all">N</div>
+            <span class="text-xl font-bold tracking-tight text-white">Neurovibe</span>
+        </a>
+        <div class="hidden md:flex gap-8 items-center">
+            <a href="/" class="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors">Hem</a>
+            <a href="/resurser.html" class="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors">Verktyg <div id="nav-placeholder"></div> Resurser</a>
+            <a href="/om-sajten.html" class="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors">Om Sajten</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-white p-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-[#0a0a0a] border-b border-white/10 px-6 py-4 space-y-4">
+        <a href="/" class="block text-sm font-medium text-[#A0A0A0] hover:text-white">Hem</a>
+        <a href="/resurser.html" class="block text-sm font-medium text-[#A0A0A0] hover:text-white">Verktyg <div id="nav-placeholder"></div> Resurser</a>
+        <a href="/om-sajten.html" class="block text-sm font-medium text-[#A0A0A0] hover:text-white">Om Sajten</a>
+    </div>
+</nav>
 
     <main class="flex-grow container mx-auto px-6 py-12 md:py-24 max-w-4xl relative z-10">
         
@@ -112,7 +132,12 @@
     </main>
 
     <!-- Footer Placeholder -->
-    <div id="footer-placeholder"></div>
+    <footer class="border-t border-white/10 mt-24 py-12">
+    <div class="container mx-auto px-6 text-center text-[#A0A0A0]">
+        <p class="mb-4">Neurovibe — Verktyg för en neuroinkluderande arbetsplats.</p>
+        <p class="text-xs mb-4">Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></p>
+    </div>
+</footer>
 
     <script>
         // Load UI components
