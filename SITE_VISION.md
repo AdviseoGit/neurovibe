@@ -36,7 +36,7 @@ Vår "moat" är egeninsamlad, anonymiserad data från våra verktyg, som vi anv�
     -   [x] Använda rapporten som lead-magnet för att accelerera list-tillväxt.
 
 5.  **[ ] Expansion & Auktoritet (Q2 2027):**
-    -   [ ] Bygga ut verktygssviten med ett andra verktyg.
+    -   [x] Bygga ut verktygssviten med ett andra verktyg (har nu 5 st).
     -   [ ] Börja outreach för att få rapporten citerad och länkad.
     -   [ ] Etablera en process för att löpande uppdatera innehållspelare och data.
 

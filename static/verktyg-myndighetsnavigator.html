@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="sv" class="bg-[#050505]">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YJG1D5GJPR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YJG1D5GJPR');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myndighetsnavigatorn | Hitta rätt stöd via Försäkringskassan & Arbetsförmedlingen | Neurovibe</title>
+    <meta name="description" content="Ett interaktivt verktyg för att ta reda på vilket stöd du kan få från Försäkringskassan eller Arbetsförmedlingen vid ADHD/Autism.">
+    <link rel="canonical" href="https://neurovibe.se/verktyg-myndighetsnavigator.html" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        
+        .neuro-accent-blur {
+            position: absolute;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(216, 49, 49, 0.3) 0%, rgba(216, 49, 49, 0) 70%);
+            filter: blur(80px);
+            z-index: -1;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .option-card {
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .option-card:hover {
+            border-color: rgba(216, 49, 49, 0.5);
+            background: rgba(216, 49, 49, 0.05);
+        }
+
+        .option-card.selected {
+            border-color: #D83131;
+            background: rgba(216, 49, 49, 0.1);
+        }
+    </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Myndighetsnavigatorn",
+  "url": "https://neurovibe.se/verktyg-myndighetsnavigator.html",
+  "description": "Navigera rätt bland stödinsatser från Försäkringskassan och Arbetsförmedlingen.",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "All"
+}
+</script>
+</head>
+<body class="text-[#E0E0E0] min-h-screen flex flex-col">
+
+    <div class="neuro-accent-blur top-0 left-0"></div>
+
+    <nav class="glass-panel sticky top-0 z-50 border-b border-white/5">
+    <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3 group">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D83131] to-[#A01E1E] flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-[#D83131]/20 group-hover:shadow-[#D83131]/40 transition-all">N</div>
+            <span class="text-xl font-bold tracking-tight text-white">Neurovibe</span>
+        </a>
+        <div class="hidden md:flex gap-8 items-center">
+            <a href="/" class="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors">Hem</a>
+            <a href="/resurser.html" class="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors">Verktyg & Resurser</a>
+            <a href="/om-sajten.html" class="text-sm font-medium text-[#A0A0A0] hover:text-white transition-colors">Om Sajten</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-white p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-[#0a0a0a] border-b border-white/10 px-6 py-4 space-y-4">
+        <a href="/" class="block text-sm font-medium text-[#A0A0A0] hover:text-white">Hem</a>
+        <a href="/resurser.html" class="block text-sm font-medium text-[#A0A0A0] hover:text-white">Verktyg & Resurser</a>
+        <a href="/om-sajten.html" class="block text-sm font-medium text-[#A0A0A0] hover:text-white">Om Sajten</a>
+    </div>
+</nav>
+
+    <main class="flex-grow container mx-auto px-6 py-12 md:py-24 max-w-4xl relative z-10">
+        
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D83131]/10 border border-[#D83131]/20 text-[#D83131] text-sm font-medium mb-6">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                Interaktivt Verktyg
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Myndighetsnavigatorn</h1>
+            <p class="text-xl text-[#A0A0A0] max-w-2xl mx-auto">Ta reda på vilket statligt stöd du har rätt till via Försäkringskassan eller Arbetsförmedlingen för NPF-anpassningar på jobbet.</p>
+        </div>
+
+        <!-- Navigator Form -->
+        <div id="navigator-form" class="glass-panel p-8 md:p-12 rounded-2xl mb-8">
+            <div id="question-container" class="space-y-8">
+                <!-- Vart är du? -->
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-4">1. Hur ser din anställningssituation ut?</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="option-card p-4 border border-white/10 rounded-xl" onclick="selectOption('status', 'employed')">
+                            <h4 class="font-bold text-white mb-1">Anställd (>12 mån)</h4>
+                            <p class="text-sm text-[#A0A0A0]">Jag har varit på min nuvarande arbetsplats i över ett år.</p>
+                        </div>
+                        <div class="option-card p-4 border border-white/10 rounded-xl" onclick="selectOption('status', 'new')">
+                            <h4 class="font-bold text-white mb-1">Ny eller arbetssökande</h4>
+                            <p class="text-sm text-[#A0A0A0]">Jag söker jobb eller har varit anställd under 12 månader.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Utmaning -->
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-4">2. Vad är din största utmaning?</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="option-card p-4 border border-white/10 rounded-xl" onclick="selectOption('challenge', 'physical')">
+                            <h4 class="font-bold text-white mb-1">Arbetsmiljön</h4>
+                            <p class="text-sm text-[#A0A0A0]">Ljud, ljus, intryck eller brist på fysiska verktyg (t.ex. brusreducerande lurar).</p>
+                        </div>
+                        <div class="option-card p-4 border border-white/10 rounded-xl" onclick="selectOption('challenge', 'cognitive')">
+                            <h4 class="font-bold text-white mb-1">Struktur & Planering</h4>
+                            <p class="text-sm text-[#A0A0A0]">Kognitiv överbelastning, tidsuppfattning, svårt att bryta ner uppgifter.</p>
+                        </div>
+                        <div class="option-card p-4 border border-white/10 rounded-xl" onclick="selectOption('challenge', 'energy')">
+                            <h4 class="font-bold text-white mb-1">Ork & Kapacitet</h4>
+                            <p class="text-sm text-[#A0A0A0]">Svårt att jobba 100%, utmattning, behöver anpassad arbetstakt.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diagnos -->
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-4">3. Har du en formell NPF-diagnos?</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="option-card p-4 border border-white/10 rounded-xl" onclick="selectOption('diagnosis', 'yes')">
+                            <h4 class="font-bold text-white mb-1">Ja</h4>
+                            <p class="text-sm text-[#A0A0A0]">Jag har en fastställd diagnos (t.ex. ADHD, Autism, ADD).</p>
+                        </div>
+                        <div class="option-card p-4 border border-white/10 rounded-xl" onclick="selectOption('diagnosis', 'no')">
+                            <h4 class="font-bold text-white mb-1">Nej / Under utredning</h4>
+                            <p class="text-sm text-[#A0A0A0]">Jag har ingen formell diagnos ännu.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 flex justify-end">
+                <button id="generate-btn" class="bg-[#D83131] hover:bg-[#B72A2A] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hidden" onclick="generateResult()">
+                    Visa mina stödmöjligheter
+                </button>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div id="results-container" class="hidden glass-panel p-8 md:p-12 rounded-2xl mb-8 border-t-4 border-[#D83131]">
+            <!-- Injected by JS -->
+        </div>
+        
+        <div id="lead-magnet-container"></div>
+
+    </main>
+
+    <footer class="border-t border-white/10 mt-24 py-12">
+    <div class="container mx-auto px-6 text-center text-[#A0A0A0]">
+        <p class="mb-4">Neurovibe — Verktyg för en neuroinkluderande arbetsplats.</p>
+        <p class="text-xs mb-4">Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></p>
+    </div>
+    </footer>
+
+    <script>
+        fetch("/lead-magnet-snippet.html").then(r => r.text()).then(html => {
+            if(html && !html.includes("404")) document.getElementById("lead-magnet-container").innerHTML = html;
+        }).catch(e => console.log(e));
+
+        const state = {
+            status: null,
+            challenge: null,
+            diagnosis: null
+        };
+
+        function selectOption(category, value) {
+            state[category] = value;
+            
+            // Update UI
+            const cards = document.querySelectorAll(`[onclick="selectOption('${category}', '${value}')"]`).forEach(el => {
+                // Find parent and remove selected from siblings
+                Array.from(el.parentElement.children).forEach(sibling => {
+                    sibling.classList.remove('selected', 'border-[#D83131]');
+                });
+                el.classList.add('selected', 'border-[#D83131]');
+            });
+
+            checkCompletion();
+        }
+
+        function checkCompletion() {
+            if (state.status && state.challenge && state.diagnosis) {
+                document.getElementById('generate-btn').classList.remove('hidden');
+            }
+        }
+
+        async function generateResult() {
+            document.getElementById('navigator-form').classList.add('hidden');
+            const resultDiv = document.getElementById('results-container');
+            resultDiv.classList.remove('hidden');
+            
+            let primaryAuthority = state.status === 'employed' ? 'Försäkringskassan & Arbetsgivaren' : 'Arbetsförmedlingen';
+            let supportTitle = "";
+            let supportDesc = "";
+            let actionSteps = "";
+
+            // Logic Tree
+            if (state.diagnosis === 'no') {
+                supportTitle = "Arbetsgivarens ansvar & Vårdkontakt";
+                supportDesc = "Utan formell diagnos kan du inte få statligt ekonomiskt stöd för hjälpmedel, men <strong>din arbetsgivare har fortfarande ansvar</strong> för din arbetsmiljö enligt Arbetsmiljölagen och Diskrimineringslagen.";
+                actionSteps = `
+                    <ul class="list-disc pl-5 space-y-2 text-[#A0A0A0] mt-4">
+                        <li>Be om basala anpassningar från din chef (t.ex. sitta avskilt, flexibla tider).</li>
+                        <li>Kontakta företagshälsovården för en arbetsmiljökartläggning.</li>
+                        <li>Sök vård för att påbörja en eventuell NPF-utredning om problemen är omfattande.</li>
+                    </ul>
+                `;
+            } else {
+                if (state.status === 'new') {
+                    if (state.challenge === 'physical' || state.challenge === 'cognitive') {
+                        supportTitle = "SIUS & Stöd från Arbetsförmedlingen";
+                        supportDesc = "När du är ny på jobbet eller söker jobb är det Arbetsförmedlingen som gäller. En SIUS-konsulent kan följa med dig ut på arbetsplatsen och hjälpa till med rutiner, struktur och att prata med chefen om vilka hjälpmedel du behöver.";
+                    } else {
+                        supportTitle = "Lönebidrag & Arbetsträning";
+                        supportDesc = "Om din arbetsförmåga är nedsatt på grund av din diagnos kan Arbetsförmedlingen erbjuda lönebidrag till arbetsgivaren, så att du kan arbeta i din egen takt eller procent. Du kan också få stöd för arbetsträning.";
+                    }
+                } else {
+                    // Employed > 12m
+                    if (state.challenge === 'physical') {
+                        supportTitle = "Bidrag för arbetshjälpmedel (Försäkringskassan)";
+                        supportDesc = "Du eller din arbetsgivare kan söka bidrag från Försäkringskassan för fysiska hjälpmedel, t.ex. brusreducerande hörlurar, skärmväggar eller anpassad belysning. Bidraget täcker upp till 50 000 kr (ofta 50% av kostnaden, ibland 100%).";
+                    } else if (state.challenge === 'cognitive') {
+                        supportTitle = "Kognitiva mjukvaror & Hjälpmedel (Försäkringskassan)";
+                        supportDesc = "Försäkringskassan kan ge bidrag för kognitiva hjälpmedel som planeringsmjukvaror, text-till-tal-program och licenser. De kan även täcka expertstöd för att lära sig använda mjukvaran.";
+                    } else {
+                        supportTitle = "Arbetsprövning med bibehållen sjukpenning";
+                        supportDesc = "Om din ork brister kan du behöva vara sjukskriven på deltid. Försäkringskassan erbjuder möjlighet till arbetsprövning där du kan testa att jobba under anpassade former utan att förlora din sjukpenning.";
+                    }
+                }
+                actionSteps = `
+                    <ul class="list-disc pl-5 space-y-2 text-[#A0A0A0] mt-4">
+                        <li>Logga in på ${primaryAuthority === 'Arbetsförmedlingen' ? 'Arbetsförmedlingen' : 'Försäkringskassan'}s "Mina Sidor".</li>
+                        <li>Boka tid med en handläggare och förklara situationen.</li>
+                        <li>Se till att ha kopia på ditt läkarintyg/diagnosutlåtande redo.</li>
+                        <li>Läs vår djupgående guide om <a href="/forsakringskassan-arbetsformedlingen-stod.html" class="text-[#D83131] hover:underline">Stöd från Försäkringskassan & Arbetsförmedlingen</a>.</li>
+                    </ul>
+                `;
+            }
+
+            resultDiv.innerHTML = `
+                <div class="flex justify-between items-center mb-6">
+                    <span class="text-sm font-bold tracking-widest text-[#D83131] uppercase">Din rekommendation</span>
+                    <button onclick="location.reload()" class="text-sm text-[#A0A0A0] hover:text-white">Börja om</button>
+                </div>
+                <h2 class="text-3xl font-bold text-white mb-4">${supportTitle}</h2>
+                <div class="bg-white/5 border border-white/10 p-6 rounded-xl mb-6">
+                    <p class="text-lg text-white leading-relaxed">${supportDesc}</p>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">Nästa steg:</h3>
+                ${actionSteps}
+            `;
+
+            // Data Capture for moat
+            try {
+                await fetch('/api/tool-usage', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        tool: "Myndighetsnavigatorn",
+                        modules: [state.status, state.challenge, state.diagnosis],
+                        metadata: { result: supportTitle }
+                    })
+                });
+            } catch(e) {
+                console.error("Data capture error:", e);
+            }
+        }
+    </script>
+</body>
+</html>

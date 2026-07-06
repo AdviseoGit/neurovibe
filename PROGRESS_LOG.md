@@ -1,3 +1,4 @@
+2026-07-06 | TILLVÄXT | Nytt verktyg: Myndighetsnavigatorn (Stöd från FK/AF) | Leadflow & Data-Moat | nästa: Fånga upp FK-guiden i interaktivt verktyg är KLART, bygg ny innehållspelare kring lagkrav
 2026-07-05 | SEO | Lade till saknad Schema.org-uppmärkning på alla 7 verktyg/artiklar utan | Struktur & SEO | nästa: Fånga upp FK-guiden i verktyg
 2026-07-04 | TILLVÄXT | Nytt verktyg: Anpassningsgeneratorn | Leadflow & SEO & Data | nästa: Bygg ny innehållspelare kring lagkrav
 -e 2026-07-03 | DESIGN/AI-TRANSPARENS | Säkerställt att AI-transparens/footer finns överallt | AI-Transparens | nästa: Fånga upp FK-guiden i interaktivt verktyg eller data
