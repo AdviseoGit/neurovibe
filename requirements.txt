@@ -5,6 +5,7 @@ openai
 pydantic[email]
 python-dotenv
 psycopg2-binary
+psycopg2
 python-jose[cryptography]
 passlib[bcrypt]
 python-multipart
