@@ -392,7 +392,7 @@ async def get_resources():
             "color": "green",
             
         }
-        },
+        ,
         {
             "id": "guide-masking-workplace",
             "type": "guide",
