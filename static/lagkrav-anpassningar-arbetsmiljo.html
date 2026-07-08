@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="sv" class="bg-[#050505]">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lagkrav på anpassningar på arbetsplatsen (NPF) | Neurovibe</title>
+    <meta name="description" content="En komplett guide till Arbetsmiljölagen och Diskrimineringslagen gällande anpassningar för neurodivergenta (ADHD, Autism) på arbetsplatsen.">
+    <link rel="canonical" href="https://neurovibe.se/lagkrav-anpassningar-arbetsmiljo.html" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #FFFFFF 30%, #909090 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="text-[#E0E0E0] min-h-screen flex flex-col relative selection:bg-[#D83131] selection:text-white">
+    <div class="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] bg-[#D83131]/10 blur-[120px] rounded-full mix-blend-screen pointer-events-none z-0"></div>
+
+    <header class="relative z-10 border-b border-white/5 bg-[#050505]/80 backdrop-blur-md sticky top-0">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold tracking-tight text-white hover:opacity-80 transition-opacity">
+                Neuro<span class="text-[#D83131]">vibe</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="/resurser.html" class="text-[#A0A0A0] hover:text-white transition-colors">Resurser</a>
+                <a href="/verktyg-myndighetsnavigator.html" class="text-[#A0A0A0] hover:text-white transition-colors">Myndighetsnavigatorn</a>
+                <a href="/verktyg-anpassningsgenerator.html" class="text-[#A0A0A0] hover:text-white transition-colors">Anpassningsgeneratorn</a>
+                <a href="/om-sajten.html" class="text-[#A0A0A0] hover:text-white transition-colors">Om Sajten</a>
+            </nav>
+
+            <button class="md:hidden text-white" onclick="toggleMobileMenu()" aria-label="Meny">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-[#0B0B0B] border-b border-white/5 py-4 px-6 flex flex-col gap-4 shadow-2xl">
+            <a href="/resurser.html" class="block text-sm font-medium text-[#A0A0A0] hover:text-white">Resurser</a>
+            <a href="/verktyg-myndighetsnavigator.html" class="block text-sm font-medium text-[#A0A0A0] hover:text-white">Myndighetsnavigatorn</a>
+            <a href="/verktyg-anpassningsgenerator.html" class="block text-sm font-medium text-[#A0A0A0] hover:text-white">Anpassningsgeneratorn</a>
+            <a href="/om-sajten.html" class="block text-sm font-medium text-[#A0A0A0] hover:text-white">Om Sajten</a>
+        </div>
+    </header>
+
+    <main class="relative z-10 flex-grow max-w-4xl mx-auto px-6 py-16">
+        <a href="/resurser.html" class="inline-flex items-center text-sm text-[#808080] hover:text-white transition-colors mb-8">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Tillbaka till resurser
+        </a>
+
+        <article class="glass-panel p-8 md:p-12">
+            <header class="mb-12 border-b border-white/10 pb-8">
+                <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">Vilka krav ställer lagen på arbetsplatsanpassningar?</h1>
+                <p class="text-xl text-[#A0A0A0] leading-relaxed">Arbetsgivarens ansvar för anpassningar är inte bara en fråga om goodwill – det är reglerat i lag. Här går vi igenom vad Arbetsmiljölagen och Diskrimineringslagen faktiskt kräver när det gäller neuropsykiatriska funktionsnedsättningar (NPF) som ADHD och Autism.</p>
+            </header>
+
+            <div class="prose prose-invert prose-lg max-w-none">
+                <h2 class="text-2xl font-semibold text-white mt-12 mb-6">1. Diskrimineringslagen (2008:567)</h2>
+                <p class="text-[#D0D0D0] mb-6">Diskrimineringslagen förbjuder diskriminering som har samband med funktionsnedsättning. En central del av detta för arbetslivet är kravet på <strong>skäliga stöd- och anpassningsåtgärder</strong>.</p>
+                <ul class="list-disc pl-6 mb-8 text-[#D0D0D0] space-y-2">
+                    <li><strong>Bristande tillgänglighet är diskriminering:</strong> Om en person missgynnas genom att arbetsgivaren inte vidtar skäliga anpassningsåtgärder för att individen ska komma i en jämförbar situation med personer utan funktionsnedsättningen, kan det klassas som diskriminering.</li>
+                    <li><strong>Skälighetsbedömningen:</strong> Vad som är "skäligt" beror på verksamhetens storlek, ekonomi och anpassningens varaktighet. För ett stort företag förväntas mer än för ett litet. Enkla kognitiva anpassningar (som tydligare scheman, brusreducerande hörlurar, eller justerad belysning) bedöms i princip alltid som skäliga, eftersom de sällan är kostsamma.</li>
+                    <li><strong>Gäller även vid rekrytering:</strong> Skyldigheten gäller inte bara anställda, utan även arbetssökande (exempelvis anpassningar under en anställningsintervju).</li>
+                </ul>
+
+                <h2 class="text-2xl font-semibold text-white mt-12 mb-6">2. Arbetsmiljölagen (1977:1160)</h2>
+                <p class="text-[#D0D0D0] mb-6">Arbetsmiljölagen slår fast att arbetsförhållandena ska anpassas till människors olika förutsättningar i fysiskt och psykiskt avseende. Arbetsgivaren har huvudansvaret för arbetsmiljön.</p>
+                
+                <h3 class="text-xl font-medium text-white mt-8 mb-4">Föreskrifter om Arbetsanpassning (AFS 2020:5)</h3>
+                <p class="text-[#D0D0D0] mb-6">Dessa föreskrifter från Arbetsmiljöverket preciserar hur arbetsgivaren ska arbeta med anpassningar:</p>
+                <ul class="list-disc pl-6 mb-8 text-[#D0D0D0] space-y-2">
+                    <li><strong>Proaktivt arbete:</strong> Arbetsgivaren ska ha rutiner för hur arbetsanpassning ska hanteras.</li>
+                    <li><strong>Individuella behov:</strong> När behov uppstår (t.ex. när en anställd berättar om sin NPF-diagnos och utmaningar kopplade till den), ska arbetsgivaren utreda behovet av anpassningar.</li>
+                    <li><strong>Fysisk, organisatorisk och social anpassning:</strong> Det handlar inte bara om det fysiska skrivbordet, utan även om hur arbetet leds och fördelas, mötesstrukturer och sociala krav.</li>
+                </ul>
+
+                <div class="bg-[#101010] p-6 rounded-xl border border-white/10 my-10">
+                    <h3 class="text-lg font-semibold text-white mb-3 flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-[#D83131]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Måste man ha en formell diagnos?
+                    </h3>
+                    <p class="text-[#D0D0D0] text-sm">
+                        Enligt Arbetsmiljölagen och AFS 2020:5 styrs skyldigheten att anpassa av <strong>behovet</strong>, inte av en fastställd diagnos. Om en anställd upplever nedsatt arbetsförmåga eller hälsorisker på grund av arbetsmiljön (exempelvis stress över hög sensorisk belastning), ska arbetsgivaren agera, oavsett om ett läkarintyg finns eller inte. För att skyddas fullt ut av Diskrimineringslagen krävs dock ofta en fastställd funktionsnedsättning.
+                    </p>
+                </div>
+
+                <h2 class="text-2xl font-semibold text-white mt-12 mb-6">Exempel på rimliga anpassningar vid NPF</h2>
+                <p class="text-[#D0D0D0] mb-4">Dessa anpassningar har låg kostnad men hög effekt, och bedöms oftast som skäliga krav på arbetsgivaren:</p>
+                <ul class="list-disc pl-6 mb-8 text-[#D0D0D0] space-y-2">
+                    <li><strong>Minskad sensorisk belastning:</strong> Skrivbordsplacering i ett hörn istället för mitt i landskapet, brusreducerande hörlurar, möjlighet att dämpa belysning.</li>
+                    <li><strong>Kognitiv avlastning:</strong> Tydliga skriftliga instruktioner istället för bara muntliga, tillgång till planeringsmjukvara (som text-till-tal eller visuella kalendrar).</li>
+                    <li><strong>Organisatoriska justeringar:</strong> Ökad flexibilitet i arbetstider (för att undvika rusningstrafik), möjlighet till fokustid utan avbrott, och anpassade mötesformat (t.ex. med kamera av ibland eller tydliga agendor).</li>
+                </ul>
+
+                <p class="text-[#D0D0D0] mb-8">
+                    Är du osäker på vad du ska be om? Använd <a href="/verktyg-anpassningsgenerator.html" class="text-white underline hover:text-[#D83131]">Anpassningsgeneratorn</a> för att få konkreta förslag baserat på dina utmaningar.
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="mt-auto border-t border-white/5 bg-[#050505] py-8 text-center text-[#808080] text-sm relative z-10">
+        <p class="mb-2">Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="hover:text-white transition-colors underline">Om sajten</a></p>
+        <p>© 2026 Neurovibe. Designad för kognitiv vila.</p>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

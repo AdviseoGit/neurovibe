@@ -1,3 +1,4 @@
+2026-07-08 | TILLVÄXT | Ny innehållspelare: Lagkrav för anpassningar | SEO & Leads | nästa: Bygg ut data-capture backend för nytt verktyg
 2026-07-07 | TEKNIK | Fixade FastAPI backend 502 (psycopg2) och länkade nya verktyg på startsidan | Uptime & Intern länkning | nästa: Bygg ny innehållspelare kring lagkrav för anpassningar
 2026-07-06 | TILLVÄXT | Nytt verktyg: Myndighetsnavigatorn (Stöd från FK/AF) | Leadflow & Data-Moat | nästa: Fånga upp FK-guiden i interaktivt verktyg är KLART, bygg ny innehållspelare kring lagkrav
 2026-07-05 | SEO | Lade till saknad Schema.org-uppmärkning på alla 7 verktyg/artiklar utan | Struktur & SEO | nästa: Fånga upp FK-guiden i verktyg
