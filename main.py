@@ -198,7 +198,32 @@ async def save_tool_usage(data: ToolUsageData):
         
     return {"status": "success"}
 
+
+class MyndighetData(BaseModel):
+    selectedSupport: str
+    selectedAgency: str
+    difficulty: int
+    helpFound: bool
+
+@app.post("/api/myndighet-data")
+async def save_myndighet_data(data: MyndighetData):
+    os.makedirs("data", exist_ok=True)
+    file_path = os.path.join("data", "myndighet_data.csv")
+    
+    file_exists = os.path.isfile(file_path)
+    
+    with open(file_path, "a", encoding="utf-8") as f:
+        if not file_exists:
+            f.write("timestamp,selectedSupport,selectedAgency,difficulty,helpFound\n")
+        
+        import time
+        timestamp = int(time.time())
+        f.write(f"{timestamp},{data.selectedSupport},{data.selectedAgency},{data.difficulty},{data.helpFound}\n")
+        
+    return {"status": "success"}
+
 @app.post("/api/burnout-data")
+
 async def save_burnout_data(data: BurnoutData):
     os.makedirs("data", exist_ok=True)
     file_path = os.path.join("data", "burnout_data.csv")
