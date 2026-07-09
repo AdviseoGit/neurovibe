@@ -1,3 +1,4 @@
+2026-07-09 | LEADFLOW | Lagt till lead-magnet på Lagkrav-sidan och länkat på index | Leadflow & Konvertering | nästa: Bygg ut data-capture backend
 2026-07-08 | DATA | Lade till data-capture endpoint för Myndighetsnavigatorn | Data-Moat | nästa: Få leads från Myndighetsnavigatorn
 2026-07-08 | TILLVÄXT | Ny innehållspelare: Lagkrav för anpassningar | SEO & Leads | nästa: Bygg ut data-capture backend för nytt verktyg
 2026-07-07 | TEKNIK | Fixade FastAPI backend 502 (psycopg2) och länkade nya verktyg på startsidan | Uptime & Intern länkning | nästa: Bygg ny innehållspelare kring lagkrav för anpassningar
