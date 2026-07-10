@@ -358,7 +358,8 @@
     </script>
 
     <!-- Footer -->
-    <footer class="border-t border-white/5 bg-[#050505] pt-16 pb-8 mt-auto">
+        <div id="lead-magnet-container" class="max-w-4xl mx-auto px-6 mt-12 mb-8"></div>
+<footer class="border-t border-white/5 bg-[#050505] pt-16 pb-8 mt-auto">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1 md:col-span-2">
@@ -425,5 +426,11 @@
                 });
             </script>
         
+    <script>
+        fetch("/lead-magnet-snippet.html").then(r => r.text()).then(html => {
+            const container = document.getElementById("lead-magnet-container");
+            if(container) container.innerHTML = html;
+        });
+    </script>
 </body>
 </html>
