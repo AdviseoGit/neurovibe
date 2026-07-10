@@ -1,3 +1,4 @@
+2026-07-10 | LEADFLOW/DATA | Förbättrad UX och data capture; AI-disclaimer rekrytering | Leadflow & AI | nästa: Implementera backend för ny UX tracker
 2026-07-09 | LEADFLOW | Lagt till lead-magnet på Lagkrav-sidan och länkat på index | Leadflow & Konvertering | nästa: Bygg ut data-capture backend
 2026-07-08 | DATA | Lade till data-capture endpoint för Myndighetsnavigatorn | Data-Moat | nästa: Få leads från Myndighetsnavigatorn
 2026-07-08 | TILLVÄXT | Ny innehållspelare: Lagkrav för anpassningar | SEO & Leads | nästa: Bygg ut data-capture backend för nytt verktyg
