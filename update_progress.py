@@ -1,11 +1,13 @@
-import datetime
+from datetime import datetime
 
-today = datetime.datetime.now().strftime("%Y-%m-%d")
-log_entry = f"{today} | LEADFLOW/DATA | Förbättrad UX och data capture; AI-disclaimer rekrytering | Leadflow & AI | nästa: Implementera backend för ny UX tracker\n"
-
-with open("/data/workspace/projects/neurovibe/PROGRESS_LOG.md", "r") as f:
+with open("PROGRESS_LOG.md", "r") as f:
     content = f.read()
 
-with open("/data/workspace/projects/neurovibe/PROGRESS_LOG.md", "w") as f:
-    f.write(log_entry + content)
-print("Updated PROGRESS_LOG.md")
+# Make sure we prepend the log
+today = datetime.now().strftime("%Y-%m-%d")
+new_log = f"{today} | DATA | Bytt till SQLite för leads capture istället för fallback/Postgres | Data-tillgång | nästa: Bygg ut datarapport med insamlad myndighets- och burnout-data\n"
+content = new_log + content
+
+with open("PROGRESS_LOG.md", "w") as f:
+    f.write(content)
+
