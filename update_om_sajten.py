@@ -1,20 +1,16 @@
-import re
+import os
+import glob
 
-with open('/data/workspace/projects/neurovibe/static/om-sajten.html', 'r') as f:
-    content = f.read()
+# Neutralize any expert copy that might be present in newly generated html files
+for file in glob.glob("static/*.html"):
+    with open(file, "r") as f:
+        content = f.read()
+    
+    if "vårt team av experter" in content or "branschexperter" in content or "Våra experter" in content:
+        content = content.replace("vårt team av experter", "vi")
+        content = content.replace("branschexperter", "personer")
+        content = content.replace("Våra experter", "Vi")
+        
+        with open(file, "w") as f:
+            f.write(content)
 
-new_content = re.sub(
-    r'<title>Om Oss \| Neurovibe</title>',
-    r'<title>Om Sajten | Neurovibe</title>',
-    content
-)
-
-# Replace the specific title inside to "Om sajten"
-new_content = re.sub(
-    r'<h1 class="text-4xl font-bold tracking-tight text-white mb-6">Om Oss</h1>',
-    r'<h1 class="text-4xl font-bold tracking-tight text-white mb-6">Om sajten</h1>',
-    new_content
-)
-
-with open('/data/workspace/projects/neurovibe/static/om-sajten.html', 'w') as f:
-    f.write(new_content)

@@ -5,6 +5,8 @@ from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from pydantic import BaseModel, EmailStr
 import os
+import sqlite3
+
 import asyncio
 from openai import OpenAI
 import psycopg2
@@ -277,39 +279,38 @@ async def serve_html(filename: str):
 @app.post("/api/lead")
 async def save_lead(req: LeadRequest, background: BackgroundTasks):
     background.add_task(_deliver_welcome_nv, req.email)
-    if not DATABASE_URL:
-        # Fallback if DB not connected
-        print(f"LEAD CAPTURED (No DB): {req.email}")
-        return {"status": "success", "message": "Email saved (offline)"}
+    
+    os.makedirs("data", exist_ok=True)
+    db_path = os.path.join("data", "neurovibe.db")
     
     try:
-        conn = psycopg2.connect(DATABASE_URL)
+        import sqlite3
+        conn = sqlite3.connect(db_path)
         cur = conn.cursor()
         cur.execute(
-            """
+            '''
             CREATE TABLE IF NOT EXISTS neurovibe_leads (
-                id SERIAL PRIMARY KEY,
-                email VARCHAR(255) UNIQUE NOT NULL,
-                source VARCHAR(64),
-                created_at TIMESTAMP DEFAULT NOW()
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                email TEXT UNIQUE NOT NULL,
+                source TEXT,
+                created_at DATETIME DEFAULT CURRENT_TIMESTAMP
             )
-            """
+            '''
         )
         cur.execute(
-            "INSERT INTO neurovibe_leads (email, source) VALUES (%s, %s) ON CONFLICT (email) DO NOTHING",
-            (req.email, "beta_landing")
+            "INSERT OR IGNORE INTO neurovibe_leads (email, source) VALUES (?, ?)",
+            (req.email, req.source)
         )
         conn.commit()
-        cur.close()
         conn.close()
-        return {"status": "success"}
+        print(f"LEAD CAPTURED (SQLite): {req.email} source: {req.source}")
+        return {"status": "success", "message": "Email saved"}
     except Exception as e:
-        print(f"DB Error: {e}")
-        raise HTTPException(status_code=500, detail="Could not save email")
-
+        print(f"SQLite Error: {e}")
+        return {"status": "error", "message": "Failed to save email"}
 
 @app.post("/api/feedback")
-async def save_feedback(req: FeedbackRequest):
+: FeedbackRequest):
     if not DATABASE_URL:
         print(f"FEEDBACK CAPTURED (No DB): Tool={req.tool}, Rating={req.rating}, Comment={req.comment}")
         return {"status": "success", "message": "Feedback saved (offline)"}
