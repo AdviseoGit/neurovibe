@@ -148,6 +148,7 @@ class ChatRequest(BaseModel):
 
 class LeadRequest(BaseModel):
     email: EmailStr
+    source: str = "unknown"
 
 class FeedbackRequest(BaseModel):
     tool: str
@@ -310,7 +311,7 @@ async def save_lead(req: LeadRequest, background: BackgroundTasks):
         return {"status": "error", "message": "Failed to save email"}
 
 @app.post("/api/feedback")
-: FeedbackRequest):
+async def save_feedback(req: FeedbackRequest):
     if not DATABASE_URL:
         print(f"FEEDBACK CAPTURED (No DB): Tool={req.tool}, Rating={req.rating}, Comment={req.comment}")
         return {"status": "success", "message": "Feedback saved (offline)"}
