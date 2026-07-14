@@ -1,3 +1,4 @@
+2026-07-14 | DATA/LEADFLOW | Bytte till SQLite för tool_usage och lade till lead magnets i alla verktyg | Datamoat & Konvertering | nästa: Fyll datarapporten med mer data eller utför outreach
 2026-07-12 | DATA | Bytt till SQLite för leads capture istället för fallback/Postgres | Data-tillgång | nästa: Bygg ut datarapport med insamlad myndighets- och burnout-data
 2026-07-11 | SEO | Fixade sitemap-indexering för två nya URL:er | Indexering | nästa: Bygg ut datarapport med insamlad myndighets- och burnout-data
 2026-07-10 | LEADFLOW/DATA | Förbättrad UX och data capture; AI-disclaimer rekrytering | Leadflow & AI | nästa: Implementera backend för ny UX tracker
