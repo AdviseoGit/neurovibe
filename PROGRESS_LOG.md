@@ -1,3 +1,4 @@
+2026-07-15 | DATA/OUTREACH | Uppdaterade datarapporten med insikter från Myndighetsnavigatorn och skapade B2B Outreach strategi | Thought Leadership & B2B Leads | nästa: Exekutera outreach och analysera trafiken
 2026-07-15 | INNEHÅLL/SEO | Expanderade Försäkringskassan-guiden med nya lönebidragsregler och konverterade till HTML med Schema.org | Innehållsbyggande & SEO | nästa: Bygg ut datarapport med insamlad myndighets- och burnout-data
 2026-07-15 | TILLVÄXT/DATA | Nytt verktyg: AI ROI-kalkylator för kognitiv belastning | Data-moat & Leads | nästa: Fyll datarapporten med ny data
 2026-07-15 | INNEHÅLL/SEO | Utökat ADHD-Diagnos guiden till >3000 ord och implementerat FAQ + Article Schema | Innehållsbyggande & SEO | nästa: Expandera Försäkringskassan-guiden
