@@ -1,4 +1,4 @@
-# Neurovibe - Next Session Quick Checklist
+content = """# Neurovibe - Next Session Quick Checklist
 **For:** Next maintenance run
 
 ---
@@ -30,3 +30,7 @@ cd /data/workspace/projects/neurovibe && git status
 ```
 
 *Last updated: July 15, 2026 by Medium*
+"""
+
+with open('/data/workspace/projects/neurovibe/NEXT_SESSION_CHECKLIST.md', 'w') as f:
+    f.write(content)
