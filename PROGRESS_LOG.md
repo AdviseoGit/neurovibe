@@ -1,4 +1,5 @@
 2026-07-15 | INNEHÅLL/SEO | Expanderade Försäkringskassan-guiden med nya lönebidragsregler och konverterade till HTML med Schema.org | Innehållsbyggande & SEO | nästa: Bygg ut datarapport med insamlad myndighets- och burnout-data
+2026-07-15 | TILLVÄXT/DATA | Nytt verktyg: AI ROI-kalkylator för kognitiv belastning | Data-moat & Leads | nästa: Fyll datarapporten med ny data
 2026-07-15 | INNEHÅLL/SEO | Utökat ADHD-Diagnos guiden till >3000 ord och implementerat FAQ + Article Schema | Innehållsbyggande & SEO | nästa: Expandera Försäkringskassan-guiden
 2026-07-14 | DATA/LEADFLOW | Bytte till SQLite för tool_usage och lade till lead magnets i alla verktyg | Datamoat & Konvertering | nästa: Fyll datarapporten med mer data eller utför outreach
 2026-07-12 | DATA | Bytt till SQLite för leads capture istället för fallback/Postgres | Data-tillgång | nästa: Bygg ut datarapport med insamlad myndighets- och burnout-data

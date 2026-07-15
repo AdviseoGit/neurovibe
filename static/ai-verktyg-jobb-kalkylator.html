@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="sv" class="bg-[#050505]">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YJG1D5GJPR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YJG1D5GJPR');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI ROI-kalkylator för Neurodiversitet | Räkna ut sparad tid | Neurovibe</title>
+    <meta name="description" content="Räkna ut hur mycket tid och energi du eller ditt team kan spara genom att använda AI-verktyg som kognitiva protester för exekutiv funktion.">
+    <link rel="canonical" href="https://neurovibe.se/ai-verktyg-jobb-kalkylator.html" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "AI ROI-kalkylator för Neurodiversitet",
+      "operatingSystem": "WebBrowser",
+      "applicationCategory": "BusinessApplication",
+      "description": "Ett verktyg för att beräkna tidsbesparing och kognitiv avlastning med hjälp av AI.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "SEK"
+      }
+    }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        .neuro-accent-blur { position: absolute; width: 40vw; height: 40vw; background: radial-gradient(circle, rgba(216, 49, 49, 0.3) 0%, rgba(216, 49, 49, 0) 70%); filter: blur(80px); z-index: -1; }
+        .glass-panel { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(30px); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="text-white min-h-screen flex flex-col relative">
+    <div class="neuro-accent-blur top-0 left-0"></div>
+    <div class="neuro-accent-blur bottom-0 right-0" style="background: radial-gradient(circle, rgba(160, 160, 160, 0.1) 0%, rgba(0,0,0,0) 70%);"></div>
+
+    <nav class="border-b border-white/10 relative z-10 backdrop-blur-md bg-black/50 sticky top-0">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold tracking-tight group">
+                Neuro<span class="text-[#D83131] transition-colors group-hover:text-white">vibe</span><span class="text-[#D83131]">.</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold text-[#A0A0A0]">
+                <a href="/adhd-anpassningar-jobb.html" class="hover:text-white transition-colors">ADHD Anpassningar</a>
+                <a href="/npf-arbetslivet.html" class="hover:text-white transition-colors">NPF i Arbetslivet</a>
+                <a href="/resurser.html" class="hover:text-white transition-colors">Verktyg & Resurser</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-[#A0A0A0] hover:text-white p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0a0a0a] border-b border-white/10 absolute w-full left-0 top-full">
+            <div class="px-6 py-4 flex flex-col space-y-4">
+                <a href="/adhd-anpassningar-jobb.html" class="text-white font-semibold">ADHD Anpassningar</a>
+                <a href="/npf-arbetslivet.html" class="text-white font-semibold">NPF i Arbetslivet</a>
+                <a href="/resurser.html" class="text-white font-semibold">Verktyg & Resurser</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow container mx-auto px-6 py-12 md:py-20 relative z-10 max-w-4xl">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Kognitiv ROI-kalkylator</h1>
+        <p class="text-xl text-[#A0A0A0] mb-12">Beräkna hur mycket tid och energi (kognitiva skedar) du sparar genom att delegera administrativa uppgifter och starttrösklar till AI-verktyg.</p>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="glass-panel p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold mb-6 border-b border-white/10 pb-4">Nuvarande uppgifter (Timmar per vecka)</h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-[#A0A0A0] mb-2">Sammanfatta möten & anteckningar</label>
+                        <input type="number" id="task1" value="3" class="w-full bg-black/50 border border-white/10 px-4 py-3 rounded-xl text-white outline-none focus:border-[#D83131]" min="0">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-[#A0A0A0] mb-2">Formulera & strukturera e-post (Starttröskel)</label>
+                        <input type="number" id="task2" value="4" class="w-full bg-black/50 border border-white/10 px-4 py-3 rounded-xl text-white outline-none focus:border-[#D83131]" min="0">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-[#A0A0A0] mb-2">Bryta ner stora projekt till deluppgifter</label>
+                        <input type="number" id="task3" value="2" class="w-full bg-black/50 border border-white/10 px-4 py-3 rounded-xl text-white outline-none focus:border-[#D83131]" min="0">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-[#A0A0A0] mb-2">Research och sortera information</label>
+                        <input type="number" id="task4" value="3" class="w-full bg-black/50 border border-white/10 px-4 py-3 rounded-xl text-white outline-none focus:border-[#D83131]" min="0">
+                    </div>
+                    <button onclick="calculateROI()" class="w-full mt-4 bg-[#D83131] hover:bg-[#B72A2A] text-white font-bold py-3 px-6 rounded-xl transition-colors">Beräkna Besparing</button>
+                </div>
+            </div>
+
+            <div class="glass-panel p-8 rounded-2xl border-[#D83131]/30">
+                <h2 class="text-2xl font-bold mb-6 border-b border-white/10 pb-4">Din Kognitiva Besparing</h2>
+                
+                <div id="results" class="hidden space-y-6">
+                    <div class="text-center p-6 bg-black/40 rounded-xl border border-white/5">
+                        <div class="text-[#A0A0A0] text-sm mb-1">Sparad tid per vecka</div>
+                        <div class="text-4xl font-bold text-white"><span id="saved-hours">0</span> <span class="text-xl">timmar</span></div>
+                    </div>
+                    
+                    <div class="text-center p-6 bg-[#D83131]/10 rounded-xl border border-[#D83131]/30">
+                        <div class="text-[#A0A0A0] text-sm mb-1">Sparad kognitiv energi (Skedar)</div>
+                        <div class="text-4xl font-bold text-[#D83131]"><span id="saved-spoons">0</span> <span class="text-xl">skedar</span></div>
+                        <p class="text-xs text-[#A0A0A0] mt-2">Baserat på hög ansträngning vid exekutiv dysfunktion</p>
+                    </div>
+
+                    <p class="text-sm text-[#A0A0A0] mt-4">AI kan reducera friktion vid "blankt papper"-syndrom med upp till 80% för neurodivergenta medarbetare.</p>
+                </div>
+                <div id="placeholder-result" class="text-center py-12 text-[#A0A0A0]">
+                    Fyll i dina timmar och klicka på beräkna för att se resultatet.
+                </div>
+            </div>
+        </div>
+
+        <div id="lead-magnet-container" class="mt-16"></div>
+
+    </main>
+
+    <footer class="border-t border-white/10 mt-24 py-12">
+        <div class="container mx-auto px-6 text-center text-[#A0A0A0]">
+            <p class="mb-4">Neurovibe — Verktyg för en neuroinkluderande arbetsplats.</p>
+            <p class="text-xs mb-4">Denna sajt skapas och drivs helt av AI &middot; <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        fetch("/lead-magnet-snippet.html").then(r => r.text()).then(html => {
+            if(html && !html.includes("404")) document.getElementById("lead-magnet-container").innerHTML = html;
+        }).catch(e => console.log(e));
+
+        async function calculateROI() {
+            const t1 = parseFloat(document.getElementById('task1').value) || 0;
+            const t2 = parseFloat(document.getElementById('task2').value) || 0;
+            const t3 = parseFloat(document.getElementById('task3').value) || 0;
+            const t4 = parseFloat(document.getElementById('task4').value) || 0;
+            
+            const totalHours = t1 + t2 + t3 + t4;
+            
+            // AI savings estimations
+            const savedHours = (t1 * 0.75) + (t2 * 0.8) + (t3 * 0.6) + (t4 * 0.5);
+            
+            // Cognitive load (spoons) is heavily tied to executive function tasks like T2 and T3
+            const savedSpoons = Math.round((t2 * 2.5) + (t3 * 2.0) + (t1 * 1.5) + (t4 * 1.0));
+
+            document.getElementById('saved-hours').innerText = savedHours.toFixed(1);
+            document.getElementById('saved-spoons').innerText = savedSpoons;
+            
+            document.getElementById('placeholder-result').classList.add('hidden');
+            document.getElementById('results').classList.remove('hidden');
+
+            try {
+                await fetch('/api/tool-usage', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        tool_name: "AI ROI Kalkylator",
+                        interaction_type: "calculate",
+                        metadata: { totalHours, savedHours, savedSpoons }
+                    })
+                });
+            } catch(e) {
+                console.error("Data capture error:", e);
+            }
+        }
+    </script>
+</body>
+</html>

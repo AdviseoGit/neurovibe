@@ -1,0 +1,9 @@
+--- ai-verktyg-jobb-kalkylator.html	2026-07-15 06:45:00.000000000 +0000
++++ ai-verktyg-jobb-kalkylator.html	2026-07-15 06:45:00.000000000 +0000
+@@ -107,4 +107,4 @@
+-                        tool: "AI ROI Kalkylator",
+-                        modules: [],
++                        tool_name: "AI ROI Kalkylator",
++                        interaction_type: "calculate",
+                         metadata: { totalHours, savedHours, savedSpoons }
+ 
