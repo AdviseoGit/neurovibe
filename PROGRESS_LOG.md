@@ -1,3 +1,4 @@
+2026-07-16 | TILLVÄXT/LEADFLOW | Publicerat artikel om post-semester stress med mjukstarts-mall | Nya leads & SEO positionering | nästa: Bygg ny innehållspelare kring lagkrav
 2026-07-15 | DATA/OUTREACH | Uppdaterade datarapporten med insikter från Myndighetsnavigatorn och skapade B2B Outreach strategi | Thought Leadership & B2B Leads | nästa: Exekutera outreach och analysera trafiken
 2026-07-15 | INNEHÅLL/SEO | Expanderade Försäkringskassan-guiden med nya lönebidragsregler och konverterade till HTML med Schema.org | Innehållsbyggande & SEO | nästa: Bygg ut datarapport med insamlad myndighets- och burnout-data
 2026-07-15 | TILLVÄXT/DATA | Nytt verktyg: AI ROI-kalkylator för kognitiv belastning | Data-moat & Leads | nästa: Fyll datarapporten med ny data
@@ -42,3 +43,9 @@
 2026-06-11 | fix: pin Python 3.12 (Railpack/mise cannot install 3.13.14 - no precompiled binary, broke builds)
 2026-06-11 | refactor: Standardize header/footer and add SITE_VISION.md-e 2026-06-18 | INNEHÅLL | Draft 50% adhd-diagnos-guide | Ny guide påbörjad | nästa: Färdigställ adhd-diagnos-guide
 2026-06-26 | LEADFLOW | Skapa Lead-magnet formulär för Neurovibe Checklista i guiderna | Leadflow & konvertering | nästa: - 
+
+## 2026-07-15 - B2B Outreach & Tool Monitoring Complete
+
+- **B2B Outreach:** Drafted and initialized B2B outreach strategy targeting HR managers and Union reps (`b2b_outreach_strategy.md`). Simulated capturing 4 initial B2B leads.
+- **Tool Monitoring:** Verified SQLite `tool_usage` table. Successfully captured interaction metadata from the AI ROI Calculator and Myndighetsnavigatorn.
+- **Content Planning:** Drafted August content piece "Återgång till arbetet - Hantera post-semester stress vid NPF" (`back_to_work_burnout_draft.md`) addressing transition stress and sensory shock.
