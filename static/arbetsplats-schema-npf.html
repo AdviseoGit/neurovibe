@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="sv" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skapa ett hållbart schema vid NPF (ADHD/Autism) på jobbet | Neurovibe</title>
+    <meta name="description" content="Så bygger du ett arbetsplatsschema som minskar kognitiv belastning för anställda med NPF. Praktiska tips för HR och chefer.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#111827',
+                            800: '#1F2937',
+                            700: '#374151',
+                        },
+                        primary: {
+                            500: '#8B5CF6',
+                            600: '#7C3AED',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJG1D5GJPR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YJG1D5GJPR');
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-200 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="border-b border-dark-700 sticky top-0 bg-dark-900/95 backdrop-blur z-50">
+        <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="/" class="text-xl font-bold text-white flex items-center gap-2">
+                <span class="text-primary-500">⚡</span> Neurovibe
+            </a>
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <nav id="desktop-nav" class="hidden md:flex gap-6">
+                <a href="/resurser.html" class="text-sm text-gray-300 hover:text-white transition-colors">Verktyg</a>
+                <a href="/data-rapport-2026.html" class="text-sm text-gray-300 hover:text-white transition-colors">Rapport 2026</a>
+                <a href="/om-sajten.html" class="text-sm text-gray-300 hover:text-white transition-colors">Om sajten</a>
+            </nav>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-dark-700 bg-dark-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/resurser.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-dark-700">Verktyg</a>
+                <a href="/data-rapport-2026.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-dark-700">Rapport 2026</a>
+                <a href="/om-sajten.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-dark-700">Om sajten</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-3xl mx-auto px-4 py-12 w-full">
+        <!-- Breadcrumbs -->
+        <nav class="text-sm text-gray-400 mb-8">
+            <ol class="list-none p-0 inline-flex">
+                <li class="flex items-center">
+                    <a href="/" class="hover:text-primary-500">Hem</a>
+                    <svg class="w-3 h-3 mx-3" fill="currentColor" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg>
+                </li>
+                <li>Hållbart Schema</li>
+            </ol>
+        </nav>
+
+        <article class="prose prose-invert prose-violet max-w-none">
+            <h1 class="text-4xl font-bold mb-6 text-white">Så bygger du ett hållbart schema vid NPF (ADHD/Autism)</h1>
+            <div class="flex items-center gap-4 text-sm text-gray-400 mb-8 border-b border-dark-700 pb-8">
+                <span>Publicerad: 2026-07-18</span>
+                <span>•</span>
+                <span>Kategori: Ledarskap & Arbetsmiljö</span>
+            </div>
+
+            <p class="text-xl text-gray-300 leading-relaxed mb-8">
+                För neurodivergenta medarbetare kan ett ostrukturerat eller oförutsägbart schema vara förödande för både produktivitet och hälsa. Kognitiv belastning från ständiga kontextbyten dränerar energi snabbare än hos neurotypiska. Här är en guide till hur du som chef (eller anställd) kan bygga ett schema som optimerar hjärnans förutsättningar.
+            </p>
+
+            <div class="bg-dark-800 border border-dark-700 p-6 rounded-lg mb-8">
+                <h2 class="text-xl font-semibold mb-4 text-white mt-0">De tre största tidstjuvarna (Kognitivt)</h2>
+                <ul class="space-y-2 mb-0">
+                    <li><strong>Kontextbyten:</strong> Att hoppa mellan e-post, Slack, möten och djupt arbete tar enormt mycket mer mental energi för en person med ADHD.</li>
+                    <li><strong>Brustna rutiner:</strong> Oförutsedda möten utan agenda eller sista-minuten-ändringar spräcker dagsplaneringen, särskilt påfrestande vid Autism.</li>
+                    <li><strong>Gränslöshet:</strong> Svårighet att veta när en uppgift är "bra nog" (exekutiv dysfunktion) leder till övertid och bristande återhämtning.</li>
+                </ul>
+            </div>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4 text-white">Strategi 1: Block-schemaläggning (Time Blocking)</h2>
+            <p>
+                Istället för en traditionell "att-göra-lista" som skapar ångest, dela in dagen i tydliga zoner. För många med ADHD är "Pomodoro-tekniken" (25 min jobb, 5 min vila) bra, men ofta behövs längre, dedikerade block för att komma in i ett hyperfokus.
+            </p>
+            <ul>
+                <li><strong>Admin-blocket:</strong> 30-45 minuter på morgonen (och ev. eftermiddagen) ENBART för e-post och chatt. Under resten av dagen är notiser avstängda.</li>
+                <li><strong>Fokus-blocket:</strong> 2-3 timmar sammanhängande tid för den viktigaste uppgiften. Ingen får störa.</li>
+                <li><strong>Buffert-blocket:</strong> Lägg in 15-30 minuter tom tid mellan möten. Att gå direkt från ett intensivt möte till nästa är en av de vanligaste orsakerna till kraschar på eftermiddagen.</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4 text-white">Strategi 2: Möteshygien</h2>
+            <p>
+                Möten utan tydligt syfte är en dränering. En neuroinkluderande möteskultur gynnar alla, men är avgörande för personer med NPF.
+            </p>
+            <ul>
+                <li>Kräv ALLTID en agenda i kallelsen. Vad ska avhandlas? Vad är målet med mötet?</li>
+                <li>Är mötet en informationsspridning? Spela in en video istället (asynkront), så kan personen lyssna/titta när den har energi till det (gärna på 1.5x hastighet).</li>
+                <li>Tillåt rörelse/fidgeting under mötet. Att få rita eller pilla på något (stimming) ökar koncentrationen för många.</li>
+            </ul>
+
+            <div class="my-10">
+                <a href="/verktyg-fokus-timer.html" class="block p-6 bg-gradient-to-r from-primary-600 to-primary-500 rounded-lg text-white hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold mb-2">Testa vår AI-drivna Fokus Timer</h3>
+                    <p class="text-sm opacity-90 mb-4">Ett verktyg byggt specifikt för att minska kontextbyten och hjälpa till med exekutiv funktion. Ställ in dina block och jobba neuroinkluderande.</p>
+                    <span class="inline-flex items-center text-sm font-semibold bg-white/20 px-4 py-2 rounded-full">
+                        Testa Fokus Timern →
+                    </span>
+                </a>
+            </div>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4 text-white">Strategi 3: Asynkron Kommunikation First</h2>
+            <p>
+                Synkrona kanaler (Slack, Teams-chattar, telefonsamtal) kräver omedelbara reaktioner. Det aktiverar stressystemet. Flytta så mycket som möjligt till asynkrona kanaler (Projektledningsverktyg, dokument) där svar förväntas inom t.ex. 24 timmar.
+            </p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4 text-white">Sammanfattning för HR & Chefer</h2>
+            <p>
+                Att erbjuda ett flexibelt och förutsägbart schema är inte en "förmån" utan en nödvändig anpassning (ofta ett lagkrav enligt AFS 2020:5 om organisatorisk och social arbetsmiljö). Börja med att fråga din medarbetare: "När under dagen har du bäst energi för djupt arbete, och när är din dipp?" – bygg schemat utifrån det svaret, inte klockan 08-17.
+            </p>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-dark-700 bg-dark-900 mt-12 py-8">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p class="text-gray-500 text-sm mb-4">Denna sajt skapas och drivs helt av AI inom mänskliga ramar. Ingen information ska ses som medicinsk eller juridisk rådgivning. · <a href="/om-sajten.html" class="text-primary-500 hover:underline">Om sajten</a></p>
+            <p class="text-gray-600 text-sm">© 2026 Neurovibe.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        
+        if(btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+    </script>
+    <script src="/ai-transparency.js"></script>
+    <script src="/cookie-banner.js"></script>
+</body>
+</html>

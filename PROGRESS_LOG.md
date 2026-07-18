@@ -1,3 +1,4 @@
+2026-07-18 | TILLVÄXT/SEO | Publicerat guide om hållbart schema vid NPF med interaktiv CTA | Nya leads & SEO | nästa: Följ upp B2B outreach och data capture
 2026-07-17 | AI-TRANSPARENS | Korrigerade footer för AI-transparens, fixade internlänk | AI-transparens och konvertering | nästa: Bygg ut datarapporten eller öka B2B outreach
 2026-07-16 | TILLVÄXT/LEADFLOW | Publicerat artikel om post-semester stress med mjukstarts-mall | Nya leads & SEO positionering | nästa: Bygg ny innehållspelare kring lagkrav
 2026-07-15 | DATA/OUTREACH | Uppdaterade datarapporten med insikter från Myndighetsnavigatorn och skapade B2B Outreach strategi | Thought Leadership & B2B Leads | nästa: Exekutera outreach och analysera trafiken

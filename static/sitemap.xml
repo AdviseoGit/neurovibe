@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://neurovibe.se/</loc>
@@ -126,4 +126,4 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-</urlset>
+<url><loc>https://neurovibe.se/arbetsplats-schema-npf.html</loc><lastmod>2026-07-18</lastmod></url></urlset>

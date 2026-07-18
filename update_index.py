@@ -1,19 +1,26 @@
 import re
 
-with open('/data/workspace/projects/neurovibe/static/index.html', 'r') as f:
-    html = f.read()
+file_path = '/data/workspace/projects/neurovibe/static/index.html'
 
-# Add link to post-semester guide in the resources section if it exists, otherwise just a general link
-new_link = '''<a href="/post-semester-stress-npf.html" class="block bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition-colors">
-            <h3 class="text-xl font-semibold mb-2">Hantera Post-Semester Stress vid NPF</h3>
-            <p class="text-gray-400 text-sm">Konkreta strategier för övergången tillbaka till arbetet för neurodivergenta och deras chefer.</p>
-        </a>'''
+with open(file_path, 'r', encoding='utf-8') as f:
+    content = f.read()
 
-if 'id="resurser"' in html and 'grid' in html.split('id="resurser"')[1][:500]:
-    html = re.sub(r'(id="resurser".*?<div class="grid.*?>)', r'\1\n        ' + new_link, html, count=1, flags=re.DOTALL)
-else:
-    # Append to some section
-    pass
+# Add link to the new guide in the Resurser & Guider section
+new_link = '''
+                <a href="/arbetsplats-schema-npf.html" class="block p-6 bg-dark-800 border border-dark-700 rounded-lg hover:border-primary-500 transition-colors group">
+                    <h3 class="text-xl font-bold mb-2 text-white group-hover:text-primary-500 transition-colors">Bygg ett hållbart schema vid NPF</h3>
+                    <p class="text-gray-400 text-sm">Praktisk guide för att minska kognitiv belastning och kontextbyten. För HR, chefer och medarbetare.</p>
+                </a>
+'''
 
-with open('/data/workspace/projects/neurovibe/static/index.html', 'w') as f:
-    f.write(html)
+# Find the resources grid and insert the new link
+insertion_point = content.find('<!-- Guider & Artiklar -->')
+if insertion_point != -1:
+    grid_start = content.find('<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">', insertion_point)
+    if grid_start != -1:
+        insert_index = content.find('>', grid_start) + 1
+        content = content[:insert_index] + new_link + content[insert_index:]
+
+with open(file_path, 'w', encoding='utf-8') as f:
+    f.write(content)
+print("Updated index.html")
