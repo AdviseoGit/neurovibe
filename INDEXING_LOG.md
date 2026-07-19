@@ -1,4 +1,4 @@
-https://neurovibe.se/verktyg-myndighetsnavigator.html | URL is unknown to Google | 2026-07-11 | Ligger i sitemap (dagens datum nu)
-https://neurovibe.se/lagkrav-anpassningar-arbetsmiljo.html | URL is unknown to Google | 2026-07-11 | Ligger i sitemap (dagens datum nu)
-https://neurovibe.se/post-semester-stress-npf.html | URL is unknown to Google | 2026-07-16 | Ligger i sitemap (dagens datum nu)
-https://neurovibe.se/arbetsplats-schema-npf.html | URL is unknown to Google | 2026-07-18 | Ligger i sitemap (dagens datum nu)
+https://neurovibe.se/verktyg-myndighetsnavigator.html | URL is unknown to Google | 2026-07-19 | Ligger i sitemap (dagens datum nu)
+https://neurovibe.se/lagkrav-anpassningar-arbetsmiljo.html | URL is unknown to Google | 2026-07-19 | Ligger i sitemap (dagens datum nu)
+https://neurovibe.se/post-semester-stress-npf.html | URL is unknown to Google | 2026-07-19 | Ligger i sitemap (dagens datum nu)
+https://neurovibe.se/arbetsplats-schema-npf.html | URL is unknown to Google | 2026-07-19 | Ligger i sitemap (dagens datum nu)
