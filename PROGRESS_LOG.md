@@ -1,3 +1,4 @@
+2026-07-19 | SEO | Åtgärdade saknad indexering för 4 sidor (schema, lagkrav, myndighetsnav, post-semester) via startsides-länkar och sitemap update | Fler sidor i index | nästa: Fyll datarapporten med ny data eller bygg leadflow för arbetsgivare
 2026-07-18 | TILLVÄXT/SEO | Publicerat guide om hållbart schema vid NPF med interaktiv CTA | Nya leads & SEO | nästa: Följ upp B2B outreach och data capture
 2026-07-17 | AI-TRANSPARENS | Korrigerade footer för AI-transparens, fixade internlänk | AI-transparens och konvertering | nästa: Bygg ut datarapporten eller öka B2B outreach
 2026-07-16 | TILLVÄXT/LEADFLOW | Publicerat artikel om post-semester stress med mjukstarts-mall | Nya leads & SEO positionering | nästa: Bygg ny innehållspelare kring lagkrav
