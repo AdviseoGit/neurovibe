@@ -1,3 +1,4 @@
+2026-07-21 | DATA/LEADFLOW | Ny data i rapporten (Insikt 4 ROI) & uppdaterad sitemap | Data-Moat & B2B Leads | nästa: Fyll datarapporten med mer data eller kör outreach
 2026-07-20 | DATA/LEADFLOW | Ny endpoint för mynighets-data samt lead-integration lagkrav | Leadflow & Data-Moat | nästa: Fyll datarapporten med ny data
 2026-07-19 | SEO | Åtgärdade saknad indexering för 4 sidor (schema, lagkrav, myndighetsnav, post-semester) via startsides-länkar och sitemap update | Fler sidor i index | nästa: Fyll datarapporten med ny data eller bygg leadflow för arbetsgivare
 2026-07-18 | TILLVÄXT/SEO | Publicerat guide om hållbart schema vid NPF med interaktiv CTA | Nya leads & SEO | nästa: Följ upp B2B outreach och data capture
