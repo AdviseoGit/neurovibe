@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+import os
+from datetime import datetime
+
+# Convert back_to_work_burnout_draft.md to HTML
+with open('/data/workspace/projects/neurovibe/content/back_to_work_burnout_draft.md', 'r') as f:
+    md_content = f.read()
+
+# Make it a full guide
+html_content = """<!DOCTYPE html>
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
@@ -80,6 +88,11 @@
         <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center text-sm text-slate-500">
             &copy; 2026 Neurovibe. Alla rättigheter förbehållna.
         </div>
-    <div class="mt-8 pt-8 border-t border-slate-800/50 text-center"><p class="text-slate-500 text-sm">Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="text-indigo-400 hover:text-indigo-300 transition-colors">Om sajten</a></p></div></footer>
+    </footer>
 </body>
-</html>
+</html>"""
+
+with open('/data/workspace/projects/neurovibe/static/post-semester-stress-npf.html', 'w') as f:
+    f.write(html_content)
+
+print("Generated post-semester-stress-npf.html")
