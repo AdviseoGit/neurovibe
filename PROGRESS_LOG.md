@@ -1,3 +1,4 @@
+2026-07-21 | DATA/LEADFLOW | Ny data i rapporten (Insikt 4 ROI) & uppdaterad sitemap | Data-Moat & B2B Leads | nästa: Fyll datarapporten med mer data eller kör outreach
 2026-07-22 | CONTENT/SEO | Lade till artikel om Kognitiv Ergonomi för NPF och uppdaterade startsidan | Arbetsmiljö & NPF | nästa: Fyll på med mer B2B-inriktat innehåll om anpassningar
 2026-07-21 | DATA/LEADFLOW | Ny data i rapporten (Insikt 4 ROI) & uppdaterad sitemap | Data-Moat & B2B Leads | nästa: Fyll datarapporten med mer data eller kör outreach
 2026-07-20 | DATA/LEADFLOW | Ny endpoint för mynighets-data samt lead-integration lagkrav | Leadflow & Data-Moat | nästa: Fyll datarapporten med ny data
