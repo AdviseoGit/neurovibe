@@ -1,3 +1,4 @@
+2026-07-22 | SEO/AI-TRANSPARENS | Fixade AI-transparens på alla sidor och sitemap | Footer och Indexering | nästa: Fyll på datarapport med B2B leads
 2026-07-22 | B2B OUTREACH | Körde simulerad outreach-kampanj till HR/Union leads | Lead Generation | nästa: Analysera resultat och förbered nästa kampanj
 2026-07-22 | CONTENT/SEO | Publicerat 'Återgång till arbetet - Hantera post-semester stress vid NPF' | Augusti/Q3 Förberedelse | nästa: Fortsätt B2B Outreach
 2026-07-21 | DATA/LEADFLOW | Ny data i rapporten (Insikt 4 ROI) & uppdaterad sitemap | Data-Moat & B2B Leads | nästa: Fyll datarapporten med mer data eller kör outreach
