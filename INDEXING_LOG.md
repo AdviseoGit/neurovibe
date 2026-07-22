@@ -3,4 +3,3 @@ https://neurovibe.se/lagkrav-anpassningar-arbetsmiljo.html | URL is unknown to G
 https://neurovibe.se/post-semester-stress-npf.html | URL is unknown to Google | 2026-07-19 | Ligger i sitemap (dagens datum nu)
 https://neurovibe.se/arbetsplats-schema-npf.html | URL is unknown to Google | 2026-07-19 | Ligger i sitemap (dagens datum nu)
 https://neurovibe.se/kognitiv-ergonomi-npf.html | URL is unknown to Google | 2026-07-22 | Ligger i sitemap (dagens datum nu)
-https://neurovibe.se/post-semester-stress-npf.html | URL is unknown to Google | 2026-07-22 | Ligger i sitemap (dagens datum nu)
