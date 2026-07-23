@@ -104,7 +104,22 @@
                 <a href="/adhd-diagnos-guide.html" class="text-[#D83131] hover:underline text-sm font-medium">Läs också: ADHD-Diagnos för Vuxna</a>
                 <a href="/neurodiversitet-arbetsplatsen.html" class="text-[#D83131] hover:underline text-sm font-medium">Läs också: Neurodiversitet på Arbetsplatsen</a>
             </div>
-        </article>
+        
+        <!-- INLINE LEAD MAGNET -->
+        <div id="lead-magnet-container"></div>
+        <script>
+            fetch("/lead-magnet-snippet.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("lead-magnet-container").innerHTML = html;
+                    const scripts = document.getElementById("lead-magnet-container").getElementsByTagName("script");
+                    for (let i = 0; i < scripts.length; i++) {
+                        eval(scripts[i].innerText);
+                    }
+                });
+        </script>
+
+</article>
     </main>
 
     <footer class="bg-[#0A0A0A] mt-12 border-t border-white/10">

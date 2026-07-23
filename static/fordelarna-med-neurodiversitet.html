@@ -177,7 +177,22 @@
             </div>
 
             <p class="mt-12 text-lg text-[#B0B0B0] font-semibold">Att investera i neurodiversitet är att investera i en mer dynamisk, motståndskraftig och intelligent organisation. Det handlar om att se potential där andra ser skillnader och att bygga ett team som är rustat för framtidens utmaningar.</p>
-        </article>
+        
+        <!-- INLINE LEAD MAGNET -->
+        <div id="lead-magnet-container"></div>
+        <script>
+            fetch("/lead-magnet-snippet.html")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("lead-magnet-container").innerHTML = html;
+                    const scripts = document.getElementById("lead-magnet-container").getElementsByTagName("script");
+                    for (let i = 0; i < scripts.length; i++) {
+                        eval(scripts[i].innerText);
+                    }
+                });
+        </script>
+
+</article>
     </main>
 
     

@@ -43,27 +43,34 @@
 </head>
 <body class="bg-[#050505] text-white antialiased min-h-screen flex flex-col font-sans">
 
-    <header class="border-b border-white/10 bg-[#0A0A0A] sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="/" class="flex items-center gap-3 group" aria-label="Neurovibe Hem">
-                    <div class="relative w-8 h-8 flex items-center justify-center">
-                        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="24" cy="24" r="20" stroke="#D83131" stroke-width="2" opacity="0.6"/>
-                            <circle cx="24" cy="24" r="8" fill="#D83131" opacity="0.8" class="animate-pulse"/>
-                        </svg>
-                    </div>
-                    <span class="text-xl font-semibold tracking-tight text-white">Neuro<span class="opacity-50 font-light">vibe</span></span>
-                </a>
-            <nav>
-                <a href="/resurser.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors">Resurser</a>
-                <a href="/om-sajten.html" class="text-sm font-medium text-white/70 hover:text-white transition-colors">Om sajten</a>
+    <header class="flex justify-between items-center mb-12 md:mb-20 transition-all duration-1000" id="header-ui">
+            <a href="/" class="flex items-center gap-4 group cursor-pointer text-left" aria-label="Neurovibe Hem">
+                <div class="relative w-10 h-10 flex items-center justify-center">
+                    <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="24" cy="24" r="20" stroke="#D83131" stroke-width="2" opacity="0.6"/>
+                        <circle cx="24" cy="24" r="8" fill="#D83131" opacity="0.8" class="animate-pulse"/>
+                    </svg>
+                </div>
+                <span class="text-xl font-semibold tracking-tight">Neuro<span class="opacity-30 font-light">vibe</span></span>
+            </a>
+            <nav class="hidden md:flex gap-8 text-[10px] font-bold tracking-widest uppercase items-center">
+                <a href="/#philosophy" class="opacity-50 hover:opacity-100 transition-opacity">Filosofi</a>
+                <a href="/resurser.html" class="opacity-50 hover:opacity-100 transition-opacity">Verktyg</a>
             </nav>
-        </div>
-    </header>
+            <button id="mobile-menu-btn" class="md:hidden z-50 w-10 h-10 flex flex-col justify-center items-center gap-1.5 relative focus:outline-none" aria-label="Meny">
+                <div class="w-6 h-0.5 bg-white transition-transform duration-300 origin-center" id="menu-line-1"></div>
+                <div class="w-6 h-0.5 bg-white transition-opacity duration-300" id="menu-line-2"></div>
+                <div class="w-6 h-0.5 bg-white transition-transform duration-300 origin-center" id="menu-line-3"></div>
+            </button>
+            <div id="mobile-menu" class="fixed inset-0 bg-[#050505]/95 backdrop-blur-lg z-40 hidden flex-col items-center justify-center gap-8 text-xl font-semibold opacity-0 transition-opacity duration-300">
+                <a href="/#philosophy" class="mobile-link hover:text-[#D83131] transition-colors">Filosofi</a>
+                <a href="/resurser.html" class="mobile-link hover:text-[#D83131] transition-colors">Verktyg</a>
+            </div>
+        </header>
 
     <main class="container mx-auto px-4 py-12">
-        <article class="max-w-3xl mx-auto bg-[#0A0A0A] p-8 rounded-lg shadow">
-            <h1 class="text-4xl font-bold mb-4 text-gray-900">Autism på arbetsplatsen: En guide för en mer inkluderande arbetsmiljö</h1>
+        <article class="glass-panel p-8 md:p-16 mb-16 max-w-4xl mx-auto prose prose-invert prose-lg">
+            <h1 class="text-4xl font-bold mb-4 text-gradient">Autism på arbetsplatsen: En guide för en mer inkluderande arbetsmiljö</h1>
             
             <div class="ad-slot my-8 p-4 bg-gray-100 rounded-md text-center">
                 <p class="text-sm text-white/50">Annonsplats</p>
@@ -71,10 +78,10 @@
             
             <p class="mb-4 text-gray-700">Autism, eller AST (autismspektrumtillstånd), är en vanlig del av neurodiversiteten. På en arbetsplats kan medarbetare med autism bidra med enorma styrkor som detaljfokus, lojalitet och innovativ problemlösning. Men traditionella arbetsmiljöer är sällan utformade för att stötta dessa individer fullt ut.</p>
 <p class="mb-4 text-gray-700">I den här guiden tittar vi närmare på hur du som arbetsgivare eller kollega kan skapa en mer inkluderande och fungerande arbetsmiljö för medarbetare med autism.</p>
-<h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">Förstå autism i arbetslivet</h2>
+<h2 class="text-2xl font-bold mt-8 mb-4 text-gradient">Förstå autism i arbetslivet</h2>
 <p class="mb-4 text-gray-700">Autism är ett spektrum, vilket innebär att det ser olika ut för varje individ. Vissa kan ha behov av tydlig struktur och rutin, medan andra är mer känsliga för sinnesintryck som ljud och ljus. Gemensamt är ofta att den sociala interaktionen kan ta mycket energi.</p>
 <p class="mb-4 text-gray-700">Genom att förstå att "normal" kommunikation och arbetsmiljö ofta är anpassad för neurotypiska, kan man börja göra små, men avgörande, förändringar.</p>
-<h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">Praktiska tips för en inkluderande arbetsmiljö</h2>
+<h2 class="text-2xl font-bold mt-8 mb-4 text-gradient">Praktiska tips för en inkluderande arbetsmiljö</h2>
 <p class="mb-4 text-gray-700">Här är några konkreta åtgärder som kan göra stor skillnad för en medarbetare med autism:</p>
 <h3 class="text-xl font-bold mt-6 mb-3 text-white">1. Tydlig och rak kommunikation</h3>
 <p class="mb-4 text-gray-700">Undvik underförstådda budskap och "läsa mellan raderna". Var tydlig med förväntningar, deadlines och mål. Skriftlig kommunikation är ofta att föredra framför muntlig, eftersom den ger möjlighet att processa informationen i egen takt.</p>
@@ -87,7 +94,7 @@
 <p class="mb-4 text-gray-700">Plötsliga förändringar kan skapa onödig stress. Håll fast vid rutiner och förvarna om förändringar i god tid. En tydlig agenda inför möten hjälper medarbetaren att förbereda sig.</p>
 <h3 class="text-xl font-bold mt-6 mb-3 text-white">4. Flexibilitet kring arbetstider och plats</h3>
 <p class="mb-4 text-gray-700">Möjligheten att arbeta hemifrån eller ha flexibla arbetstider kan drastiskt minska stress och öka produktiviteten.</p>
-<h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">Styrkorna överväger utmaningarna</h2>
+<h2 class="text-2xl font-bold mt-8 mb-4 text-gradient">Styrkorna överväger utmaningarna</h2>
 <p class="mb-4 text-gray-700">Att anpassa arbetsplatsen handlar inte bara om att underlätta för en individ, det är en investering för hela företaget. Medarbetare med autism kan erbjuda unika perspektiv, djupgående kunskap inom specialintressen och en hög grad av noggrannhet. Genom att skapa en inkluderande miljö där alla hjärnor får blomstra, bygger du ett starkare, mer innovativt och empatiskt företag.</p>
 
 
@@ -108,10 +115,82 @@
         </article>
     </main>
 
-    <footer class="bg-[#0A0A0A] mt-12 border-t border-gray-200">
-        <div class="container mx-auto px-4 py-6 text-center text-white/50">
-            <p>&copy; 2026 Neurovibe. Alla rättigheter förbehållna.</p><p class="mt-2 text-sm text-white/50">Denna sajt skapas och drivs helt av AI &middot; <a href="/om-sajten.html" class="underline hover:text-[#D83131]">Om sajten</a></p>
-        </div>
-    </footer>
+    <footer class="mt-auto py-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8 opacity-40 text-[9px] font-mono tracking-widest uppercase">
+            <div class="flex items-center gap-4">
+                <div class="w-6 h-6 bg-[#D83131]/60 rounded-lg"></div>
+                <span>© 2026 ADVISEO LABORATORY</span>
+            </div>
+            <nav class="flex gap-12">
+                <a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a>
+                <a href="/resurser.html" class="hover:text-white transition-colors">Verktyg</a>
+            </nav>
+            <div class="flex flex-col md:flex-row gap-4 md:gap-8 text-center md:text-left items-center">
+                <span>Denna sajt skapas och drivs helt av AI &middot; <a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></span>
+            </div>
+        </footer>
+<script>
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const line1 = document.getElementById("menu-line-1");
+    const line2 = document.getElementById("menu-line-2");
+    const line3 = document.getElementById("menu-line-3");
+    let isMenuOpen = false;
+
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener("click", () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove("hidden");
+                setTimeout(() => {
+                    mobileMenu.classList.remove("opacity-0");
+                    line1.style.transform = "rotate(45deg) translate(5px, 5px)";
+                    line2.style.opacity = "0";
+                    line3.style.transform = "rotate(-45deg) translate(5px, -5px)";
+                }, 10);
+            } else {
+                mobileMenu.classList.add("opacity-0");
+                line1.style.transform = "none";
+                line2.style.opacity = "1";
+                line3.style.transform = "none";
+                setTimeout(() => {
+                    mobileMenu.classList.add("hidden");
+                }, 300);
+            }
+        });
+    }
+</script>
+<script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const line1 = document.getElementById('menu-line-1');
+    const line2 = document.getElementById('menu-line-2');
+    const line3 = document.getElementById('menu-line-3');
+    let isMenuOpen = false;
+
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+                setTimeout(() => {
+                    mobileMenu.classList.remove('opacity-0');
+                    line1.style.transform = 'rotate(45deg) translate(5px, 5px)';
+                    line2.style.opacity = '0';
+                    line3.style.transform = 'rotate(-45deg) translate(5px, -5px)';
+                }, 10);
+            } else {
+                mobileMenu.classList.add('opacity-0');
+                line1.style.transform = 'none';
+                line2.style.opacity = '1';
+                line3.style.transform = 'none';
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                }, 300);
+            }
+        });
+    }
+</script>
 </body>
 </html>
