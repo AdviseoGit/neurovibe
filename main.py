@@ -40,6 +40,16 @@ async def _startup_leadengine():
     """Se till att lead-tabellen finns och att gamla leads flyttas in i den."""
     leadengine.init_db()
     leadengine.migrate_legacy_leads()
+    # Logga var databasen faktiskt hamnade. Är volymen monterad men NV_DATA_DIR
+    # osatt går skrivningarna till containerns filsystem, och det syns inte
+    # förrän nästa deploy redan har raderat leadsen.
+    info = leadengine.storage_info()
+    if info["persistent"]:
+        print(f"[nv] lead-databas på monterad volym: {info['db_path']}")
+    else:
+        print(f"[nv] VARNING: lead-databasen ligger i containern ({info['db_path']}). "
+              f"Sätt NV_DATA_DIR till volymens sökväg — annars försvinner "
+              f"leadsen vid nästa deploy.")
 
 
 # --- User & Auth Models ---
@@ -390,6 +400,7 @@ async def get_admin_leads(request: Request, segment: Optional[str] = None, limit
     return {
         "stats": leadengine.lead_stats(),
         "sla": leadengine.SLA,
+        "storage": leadengine.storage_info(),
         "leads": leadengine.list_leads(segment=segment, limit=min(limit, 1000)),
     }
 

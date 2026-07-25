@@ -44,6 +44,9 @@
 
     <main class="max-w-7xl mx-auto p-6 space-y-8">
 
+        <!-- Driftvarning: visas bara när något faktiskt är fel -->
+        <div id="storageWarning" class="hidden rounded-xl border p-5"></div>
+
         <!-- KPI-rad -->
         <section>
             <h1 class="text-2xl font-bold mb-1">Leads</h1>
@@ -226,6 +229,7 @@
                 .then(function (data) {
                     leadsCache = data.leads || [];
                     renderStats(data.stats || {});
+                    renderStorage(data.storage || {});
                     renderLeads(leadsCache);
                 })
                 .catch(function (e) { console.error(e); });
@@ -242,6 +246,34 @@
             document.getElementById('segIndivid').textContent = seg['individ'] || 0;
             document.getElementById('segArbetsgivare').textContent = seg['arbetsgivare'] || 0;
             document.getElementById('segPartner').textContent = seg['partner'] || 0;
+        }
+
+        // Två fel som annars upptäcks först när något gått förlorat: leads som
+        // skrivs till containerns filsystem, och SMTP som inte är satt (då går
+        // varken bekräftelser eller ägarnotiser ut, tyst).
+        function renderStorage(storage) {
+            var box = document.getElementById('storageWarning');
+            var problems = [];
+            if (storage.persistent === false) {
+                problems.push('<strong>Leadsen sparas i containern</strong> (' +
+                    esc(storage.db_path) + ') och försvinner vid nästa deploy. ' +
+                    'Sätt <code>NV_DATA_DIR</code> till volymens sökväg.');
+            }
+            if (storage.smtp_configured === false) {
+                problems.push('<strong>SMTP är inte konfigurerat.</strong> Inga ' +
+                    'bekräftelsemejl eller ägarnotiser skickas. Kontrollera ' +
+                    '<code>SMTP_USER</code> och <code>SMTP_PASS</code>.');
+            }
+            if (!problems.length) {
+                box.className = 'hidden rounded-xl border p-5';
+                box.innerHTML = '';
+                return;
+            }
+            box.className = 'rounded-xl border p-5 bg-white';
+            box.style.borderColor = '#d03b3b';
+            box.innerHTML = '<p class="font-bold mb-2" style="color:#d03b3b">' +
+                '⚠ Åtgärda innan lansering</p><ul class="list-disc pl-5 space-y-1 text-gray-700">' +
+                problems.map(function (p) { return '<li>' + p + '</li>'; }).join('') + '</ul>';
         }
 
         function renderLeads(leads) {

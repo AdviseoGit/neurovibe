@@ -195,6 +195,20 @@ försvinner vid varje deploy** om inte en volym monteras.
    produktionens leads med repots gamla kopia.
 3. Exportera CSV från `/admin.html` regelbundet tills volymen är på plats.
 
+**Så verifierar du att volymen faktiskt används.** Det räcker inte att volymen
+är monterad — är `NV_DATA_DIR` osatt hamnar skrivningarna i containern ändå, och
+det märks inte förrän en deploy har raderat leadsen. Två ställen visar sanningen:
+
+- **Deploy-loggen** vid uppstart: `[nv] lead-databas på monterad volym: …` är
+  rätt. `[nv] VARNING: lead-databasen ligger i containern …` betyder att
+  variabeln inte är satt.
+- **`/admin.html`** visar en röd ruta högst upp så länge något är fel — antingen
+  osatt `NV_DATA_DIR` eller saknad SMTP-konfiguration (då går varken
+  bekräftelser eller ägarnotiser ut, tyst). Rutan försvinner när båda är rätt.
+
+Sluttest när volymen är på plats: fyll i ett formulär, kontrollera att leaden
+syns i dashboarden, gör en ny deploy och se att den fortfarande är kvar.
+
 ### Miljövariabler
 
 | Variabel | Används till |
@@ -286,9 +300,11 @@ peka på, och höj sedan.
 ## 10. Kvar att göra
 
 **Innan lansering av leadflödet**
-- [ ] Montera volym i Railway + sätt `NV_DATA_DIR` (avsnitt 6)
+- [ ] Montera volym i Railway + sätt `NV_DATA_DIR`, och bekräfta i deploy-loggen
+      eller `/admin.html` att den används (avsnitt 6)
 - [ ] Verifiera att `SMTP_USER`/`SMTP_PASS` är satta — utan dem skickas inga mejl
-      (`mailer.configured()` loggar men kastar inte)
+      (`mailer.configured()` loggar men kastar inte). Syns som varning i
+      `/admin.html`.
 - [ ] Skicka ett testinskick per segment och kontrollera att båda mejlen kommer fram
 - [ ] Producera arbetsgivarpaketets dokument (avsnitt 3)
 - [ ] Fyll i trafiksiffror i mediakitet (avsnitt 8)

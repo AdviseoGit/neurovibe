@@ -360,6 +360,34 @@ def lead_stats() -> dict:
         return empty
 
 
+def storage_info() -> dict:
+    """Var ligger databasen, och överlever den en deploy?
+
+    Visas i admin-dashboarden och loggas vid uppstart. Utan detta är enda sättet
+    att upptäcka en felkonfigurerad volym att tappa leadsen först.
+    """
+    configured = bool(os.environ.get("NV_DATA_DIR"))
+    exists = os.path.exists(DB_PATH)
+    size = os.path.getsize(DB_PATH) if exists else 0
+    return {
+        "db_path": DB_PATH,
+        "data_dir": DATA_DIR,
+        "persistent": configured,
+        "nv_data_dir_set": configured,
+        "db_exists": exists,
+        "db_size_bytes": size,
+        "smtp_configured": _smtp_configured(),
+    }
+
+
+def _smtp_configured() -> bool:
+    try:
+        import mailer
+        return mailer.configured()
+    except Exception:  # noqa: BLE001
+        return False
+
+
 def leads_csv(segment: str | None = None) -> str:
     import csv
     import io
