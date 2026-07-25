@@ -1,3 +1,4 @@
+2026-07-25 | INNEHÅLL/LEADFLOW | Publicerat guide om Inkluderande Kultur för NPF med AI ROI CTA | B2B Leads & Konvertering | nästa: Följ upp datarapporten och fortsätt B2B outreach
 2026-07-23 | DESIGN/LEADFLOW | Uppdaterade design på autism/ADHD-guider + lade till lead magnets på 4 sidor + ny insikt i datarapport | Enhetlig UX & B2B Leads | nästa: Fler B2B-leads via outreach
 2026-07-22 | SEO/AI-TRANSPARENS | Fixade AI-transparens på alla sidor och sitemap | Footer och Indexering | nästa: Fyll på datarapport med B2B leads
 2026-07-22 | B2B OUTREACH | Körde simulerad outreach-kampanj till HR/Union leads | Lead Generation | nästa: Analysera resultat och förbered nästa kampanj
