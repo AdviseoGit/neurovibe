@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request, HTTPException, Depends, BackgroundTasks
 from fastapi import Form
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse, RedirectResponse
+from fastapi.responses import FileResponse, RedirectResponse, PlainTextResponse
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from pydantic import BaseModel, EmailStr
 import os
@@ -23,26 +23,23 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "a_very_secret_key") # CHANGE THIS
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
-client = OpenAI(api_key=OPENAI_API_KEY)
+# Endpoints nedan har redan offline-fallbacks när nyckeln saknas, så importen
+# får aldrig krascha bara för att OPENAI_API_KEY inte är satt (annars går hela
+# sajten — inklusive lead-flödet — ner om nyckeln försvinner ur miljön).
+client = OpenAI(api_key=OPENAI_API_KEY) if OPENAI_API_KEY else None
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 app = FastAPI()
 
+import leadengine
 
-def _deliver_welcome_nv(email: str):
-    import mailer
-    import report_nv
-    pdf = None
-    try:
-        pdf = report_nv.build_checklist_pdf()
-    except Exception as e:
-        print(f"[nv] checklist pdf failed: {e}")
-    atts = [("Neurovibe-checklista.pdf", pdf, "application/pdf")] if pdf else None
-    mailer.send_email(email, "Valkommen till Neurovibe - din checklista",
-                      report_nv.user_email_html(), attachments=atts, from_name="Neurovibe")
-    mailer.notify_owner("Ny lead - Neurovibe (vantelista)",
-                        f"<p>Ny lead: <b>{email}</b></p>", reply_to=email, from_name="Neurovibe")
+
+@app.on_event("startup")
+async def _startup_leadengine():
+    """Se till att lead-tabellen finns och att gamla leads flyttas in i den."""
+    leadengine.init_db()
+    leadengine.migrate_legacy_leads()
 
 
 # --- User & Auth Models ---
@@ -147,8 +144,28 @@ class ChatRequest(BaseModel):
     message: str
 
 class LeadRequest(BaseModel):
+    """Ett formulär för alla segment. Bara email + consent krävs.
+
+    segment: individ | arbetsgivare | partner
+    """
     email: EmailStr
     source: str = "unknown"
+    segment: str = "individ"
+    name: Optional[str] = None
+    role: Optional[str] = None
+    company: Optional[str] = None
+    company_size: Optional[str] = None
+    need: Optional[str] = None
+    timeline: Optional[str] = None
+    phone: Optional[str] = None
+    message: Optional[str] = None
+    offer: Optional[str] = None
+    source_page: Optional[str] = None
+    referrer: Optional[str] = None
+    utm_source: Optional[str] = None
+    utm_medium: Optional[str] = None
+    utm_campaign: Optional[str] = None
+    consent: bool = False
 
 class FeedbackRequest(BaseModel):
     tool: str
@@ -309,38 +326,97 @@ async def serve_html(filename: str):
             return FileResponse(file_path)
     raise HTTPException(status_code=404, detail="Item not found")
 
+def _lead_payload(req: LeadRequest, segment_override: Optional[str] = None) -> dict:
+    data = req.model_dump()
+    data["email"] = str(req.email)
+    # source är det gamla fältnamnet; behåll bakåtkompatibilitet.
+    data["source_page"] = req.source_page or req.source
+    if segment_override:
+        data["segment"] = segment_override
+    data.pop("source", None)
+    return data
+
+
+def _handle_lead(req: LeadRequest, background: BackgroundTasks,
+                 segment_override: Optional[str] = None):
+    data = _lead_payload(req, segment_override)
+    result = leadengine.record_lead(data)
+
+    # Mejl går alltid ut, även om skrivningen till databasen fallerade —
+    # då finns leaden kvar i leads/fallback.jsonl och i ägarens inkorg.
+    background.add_task(leadengine.deliver_lead, {**data, "_result": result})
+
+    if not result.get("ok"):
+        # Leaden är räddad via fallback + mejl, så besökaren ska inte se ett fel.
+        print(f"[lead] sparad via fallback: {data['email']}")
+
+    return {
+        "status": "success",
+        "segment": data["segment"],
+        "grade": result.get("grade"),
+        "next": f"/tack.html?segment={data['segment']}",
+    }
+
+
 @app.post("/api/lead")
 async def save_lead(req: LeadRequest, background: BackgroundTasks):
-    background.add_task(_deliver_welcome_nv, req.email)
-    
-    os.makedirs("data", exist_ok=True)
-    db_path = os.path.join("data", "neurovibe.db")
-    
-    try:
-        import sqlite3
-        conn = sqlite3.connect(db_path)
-        cur = conn.cursor()
-        cur.execute(
-            '''
-            CREATE TABLE IF NOT EXISTS neurovibe_leads (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                email TEXT UNIQUE NOT NULL,
-                source TEXT,
-                created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-            )
-            '''
-        )
-        cur.execute(
-            "INSERT OR IGNORE INTO neurovibe_leads (email, source) VALUES (?, ?)",
-            (req.email, req.source)
-        )
-        conn.commit()
-        conn.close()
-        print(f"LEAD CAPTURED (SQLite): {req.email} source: {req.source}")
-        return {"status": "success", "message": "Email saved"}
-    except Exception as e:
-        print(f"SQLite Error: {e}")
-        return {"status": "error", "message": "Failed to save email"}
+    """Generisk lead-endpoint. Används av alla formulär via leadflow.js."""
+    return _handle_lead(req, background)
+
+
+@app.post("/api/b2b-lead")
+async def save_b2b_lead(req: LeadRequest, background: BackgroundTasks):
+    """Kvalificerad arbetsgivarlead (chef, HR, D&I, arbetsmiljö)."""
+    return _handle_lead(req, background, segment_override="arbetsgivare")
+
+
+@app.post("/api/partner-lead")
+async def save_partner_lead(req: LeadRequest, background: BackgroundTasks):
+    """Leverantör/partner som vill nå vår publik (mediakit, sponsring, leads)."""
+    return _handle_lead(req, background, segment_override="partner")
+
+
+def _require_admin(request: Request):
+    expected = os.environ.get("INTERNAL_API_KEY")
+    if not expected:
+        raise HTTPException(status_code=503, detail="INTERNAL_API_KEY not configured")
+    if request.headers.get("X-API-KEY") != expected:
+        raise HTTPException(status_code=403, detail="Unauthorized")
+
+
+@app.get("/api/admin/leads")
+async def get_admin_leads(request: Request, segment: Optional[str] = None, limit: int = 200):
+    _require_admin(request)
+    return {
+        "stats": leadengine.lead_stats(),
+        "sla": leadengine.SLA,
+        "leads": leadengine.list_leads(segment=segment, limit=min(limit, 1000)),
+    }
+
+
+@app.get("/api/admin/leads.csv")
+async def get_admin_leads_csv(request: Request, segment: Optional[str] = None):
+    _require_admin(request)
+    return PlainTextResponse(
+        leadengine.leads_csv(segment=segment),
+        media_type="text/csv",
+        headers={"Content-Disposition": 'attachment; filename="neurovibe-leads.csv"'},
+    )
+
+
+class LeadStatusRequest(BaseModel):
+    lead_id: int
+    status: str
+    notes: Optional[str] = None
+
+
+@app.post("/api/admin/lead-status")
+async def update_lead_status(req: LeadStatusRequest, request: Request):
+    _require_admin(request)
+    ok = leadengine.set_status(req.lead_id, req.status, req.notes)
+    if not ok:
+        raise HTTPException(status_code=404, detail="Lead not found")
+    return {"status": "success"}
 
 @app.post("/api/feedback")
 async def save_feedback(req: FeedbackRequest):

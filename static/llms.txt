@@ -1,31 +1,60 @@
 # Neurovibe
-> Optimize your workplace for neurodiversity.
+> Svenska verktyg och underlag för neuropsykiatriska funktionsnedsättningar (NPF) i arbetslivet.
 
-This site is optimized for AI tools and Generative Engine Indexing.
+## Om oss
+Neurovibe.se är en svensk resurs för ADHD, autism och andra kognitiva profiler i
+arbetslivet. Vi levererar interaktiva verktyg, mallar och sammanställningar av
+svenska regelverk — inte allmänna texter om att neurodiversitet är en styrka.
 
-## About Us
-Neurovibe provides resources, AI tools, and knowledge to make modern workplaces neuro-inclusive. We specialize in productivity tools and environment optimization for individuals with ADHD, Autism, and other neurodivergent traits.
+Sajten ges ut av Adviseo (Stockholm). Innehållet produceras av AI-system inom
+mänskligt satta ramar. Det finns ingen legitimerad psykolog, läkare eller
+arbetsterapeut bakom innehållet, och vi ger aldrig medicinska råd. Hela
+produktionsprocessen, källpolicyn och rättelserutinen beskrivs på
+/redaktionell-policy.html.
 
-## Core Topics
-- Neuro-inclusive workplace design
-- ADHD & Autism productivity tools
-- Biohacking and cognitive performance
-- AdSense-ready high-value articles
+## Två målgrupper
+1. **Medarbetare och arbetssökande med NPF** — verktyg för exekutiv funktion,
+   belastning och att formulera anpassningsbehov. Ingång: /for-medarbetare.html
+2. **Chefer, HR och arbetsmiljöansvariga** — rutinmallar enligt AFS 2020:5,
+   anpassningsbibliotek, lagkravsunderlag. Ingång: /for-arbetsgivare.html
 
-## Privacy Policy
-We comply with GDPR and are AdSense-ready. We collect minimal data for analytics and lead generation. 
+Leverantörer som vill nå dessa grupper: /partner.html
 
-## Contact
-Email: simon@adviseo.se
-Location: Sweden
+## Kärnämnen
+- Arbetsanpassning vid NPF och vad AFS 2020:5 kräver av arbetsgivare
+- Skäliga tillgänglighetsåtgärder enligt diskrimineringslagen
+- Stöd från Försäkringskassan och Arbetsförmedlingen (arbetshjälpmedel, bidrag, lönebidrag)
+- Sensorisk belastning, maskering och utmattning i arbetsmiljön
+- Neuroinkluderande rekrytering och intervjumetodik
+- AI som kognitivt stöd vid nedsatt exekutiv funktion
 
-## Documentation
-For full API access and comprehensive articles, please refer to our main endpoints.
+## Interaktiva verktyg
+- [Uppgiftsnedbrytaren](/verktyg-nedbrytare.html): delar upp en överväldigande uppgift i tre små steg.
+- [Anpassningsgeneratorn](/verktyg-anpassningsgenerator.html): genererar ett anpassningsförslag att ta med till chefen.
+- [Burnout-kalkylatorn](/verktyg-burnout-kalkylator.html): väger sensorisk belastning, maskering, sömn och arbetstid.
+- [Fokus Timer](/verktyg-fokus-timer.html): visuell timer för tidsuppfattning.
+- [Myndighetsnavigatorn](/verktyg-myndighetsnavigator.html): vem ansvarar för vad hos FK och AF.
+- [Intervjuguiden](/intervju-guide.html): neuroinkluderande intervjumall för arbetsgivare.
+- [AI ROI-kalkylatorn](/ai-verktyg-jobb-kalkylator.html): beräknar tidsvinst av att delegera till AI.
 
-## Articles & Resources (Markdown)
+## Egen data
+[State of Neurodiversity at Work 2026](/data-rapport-2026.html) bygger på
+anonymiserad data från våra egna verktyg. Urvalet är självselekterat — personer
+som söker upp verktygen är sannolikt mer belastade än genomsnittet — och det
+redovisas tillsammans med siffrorna.
+
+## Artiklar i markdown
 - [Optimizing Remote Work for ADHD](/content/adhd-remote-work-2026.md)
 - [Biohacking for Neurodivergence](/content/biohacking-2026.md)
 - [LSS Updates 2026](/content/lss-updates-2026.md)
 - [Neurodiversitet och AI 2026](/content/neurodiversitet-och-ai-2026.md)
 - [Arbetsprövning 2026: Nya regler](/content/arbetsprovning-2026-forsakringskassan.md)
-- [AI som Kognitivt Stöd 2026 (Försäkringskassan)](/content/ai-kognitivt-stod-2026.md): Guide to new Försäkringskassan guidelines on AI tools as workplace accommodations.
+- [AI som Kognitivt Stöd 2026 (Försäkringskassan)](/content/ai-kognitivt-stod-2026.md)
+
+## Integritet
+Vi samlar in e-postadresser via formulär med angivet syfte, samt anonymiserad
+användningsdata från verktygen. Kontaktuppgifter säljs aldrig vidare. Se
+/integritetspolicy.html.
+
+## Kontakt
+simon@adviseo.se — Stockholm, Sverige

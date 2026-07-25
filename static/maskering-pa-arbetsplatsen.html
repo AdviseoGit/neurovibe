@@ -148,6 +148,7 @@
         <input type="email" id="lm-email" placeholder="Din e-postadress" required class="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-[#D83131] transition-colors">
         <button type="submit" class="bg-[#D83131] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#B72A2A] transition-colors whitespace-nowrap">Skicka guiden</button>
     </form>
+    <p class="nv-privacy-note" style="font-size:0.75rem;color:#808080;margin-top:0.75rem">Vi skickar det du bett om och enstaka mejl med nya verktyg. Avregistrering med ett svar. <a href="/integritetspolicy.html" style="color:#D83131">Integritetspolicy</a>.</p>
     <div id="lm-success" class="hidden mt-4 text-green-400 text-sm font-medium">Tack! Checklistan skickas till din e-post.</div>
     <div id="lm-error" class="hidden mt-4 text-[#D83131] text-sm font-medium">Något gick fel. Vänligen försök igen senare.</div>
 </div>
@@ -167,7 +168,13 @@ async function submitLeadMagnet(e) {
         const res = await fetch("/api/lead", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email: email })
+            body: JSON.stringify({
+                        email: email,
+                        source: 'legacy',
+                        segment: 'individ',
+                        offer: 'legacy',
+                        source_page: window.location.pathname
+                    })
         });
         if (res.ok) {
             form.style.display = "none";
@@ -194,16 +201,33 @@ fetch("/lead-magnet-snippet.html").then(r => r.text()).then(html => document.get
 </script>
 </main>
         
-        <!-- Footer -->
+        
+<!-- nv-segment-cta -->
+<div style="max-width:52rem;margin:4rem auto;padding:2rem;border:1px solid rgba(255,255,255,0.08);
+            border-left:3px solid #D83131;border-radius:16px;background:rgba(255,255,255,0.03)">
+  <p style="font-family:ui-monospace,monospace;font-size:0.7rem;letter-spacing:0.2em;
+            text-transform:uppercase;color:#D83131;margin:0 0 0.75rem">Nästa steg för er som arbetsgivare</p>
+  <h2 style="font-size:1.5rem;font-weight:700;color:#fff;margin:0 0 0.75rem;line-height:1.3">Vi har samlat underlaget ni behöver</h2>
+  <p style="color:#A0A0A0;line-height:1.7;margin:0 0 1.5rem">Rutinmall enligt AFS 2020:5, anpassningsbibliotek sorterat efter problem, samtalsmall för chefen och en översikt över vilka stöd ni kan söka. Kostnadsfritt, utan inloggning.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:0.75rem">
+    <a href="/for-arbetsgivare.html#arbetsgivarpaket" style="display:inline-block;background:#D83131;color:#fff;text-decoration:none;
+       padding:0.85rem 1.5rem;border-radius:10px;font-weight:600">Beställ arbetsgivarpaketet</a>
+    <a href="/for-arbetsgivare.html" style="display:inline-block;border:1px solid rgba(255,255,255,0.15);
+       color:#fff;text-decoration:none;padding:0.85rem 1.5rem;border-radius:10px;font-weight:600">Se vad det innehåller</a>
+  </div>
+</div>
+
+<!-- Footer -->
         <footer class="mt-auto py-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8 opacity-40 text-[9px] font-mono tracking-widest uppercase">
             <div class="flex items-center gap-4">
                 <div class="w-6 h-6 bg-[#D83131]/60 rounded-lg"></div>
                 <span>© 2026 ADVISEO LABORATORY</span>
             </div>
             <div class="flex flex-col md:flex-row gap-4 md:gap-8 text-center md:text-left items-center">
-                <span>Denna sajt skapas och drivs helt av AI &middot; <a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></span>
+                <span>Innehållet produceras av AI-system inom mänskligt satta ramar och utgör inte medicinsk rådgivning &middot; <a href="/redaktionell-policy.html" class="hover:text-white transition-colors">Redaktionell policy &amp; källor</a></span>
             </div>
         </footer>
     </div>
+    <script src="/static/leadflow.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tack — vi hör av oss | Neurovibe</title>
+    <meta name="description" content="Tack för din förfrågan. Här är nästa steg medan du väntar på vårt svar.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0A0A0A; color: #FFFFFF; }
+        .glass-panel { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJG1D5GJPR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YJG1D5GJPR');
+    </script>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-[#D83131] selection:text-white">
+
+    <header class="border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center">
+            <a href="/" class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-[#D83131] rounded flex items-center justify-center font-bold text-white tracking-tighter">NV</div>
+                <span class="font-mono font-bold tracking-widest text-lg">NEUROVIBE</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-3xl mx-auto px-6 py-20 w-full">
+        <div class="w-16 h-16 bg-[#D83131]/15 text-[#D83131] rounded-2xl flex items-center justify-center mb-8 border border-[#D83131]/25">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5"/>
+            </svg>
+        </div>
+
+        <h1 id="tack-rubrik" class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Tack — det är mottaget.</h1>
+        <p id="tack-text" class="text-xl text-[#A0A0A0] leading-relaxed mb-12">
+            Vi har skickat en bekräftelse till din e-post. Kolla skräpposten om den inte dyker
+            upp inom några minuter.
+        </p>
+
+        <div id="tack-nasta" class="space-y-4 mb-16"></div>
+
+        <p class="text-sm text-white/40">
+            Fick du inget mejl, eller vill du lägga till något? Svara direkt till
+            <a href="mailto:simon@adviseo.se" class="text-[#D83131] hover:underline">simon@adviseo.se</a>.
+        </p>
+    </main>
+
+    <div class="max-w-7xl mx-auto px-6 w-full">
+        <footer class="py-12 border-t border-white/10 flex flex-col md:flex-row gap-6 justify-between text-sm text-white/40">
+            <span>&copy; 2026 Adviseo &middot; Stockholm</span>
+            <div class="flex flex-wrap gap-6">
+                <a href="/redaktionell-policy.html" class="hover:text-white transition-colors">Redaktionell policy</a>
+                <a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a>
+                <a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Innehållet anpassas efter segmentet så att tacksidan faktiskt gör
+        // något nyttigt: nästa steg skiljer sig helt mellan en HR-chef som
+        // väntar på en offert och en medarbetare som väntar på en PDF.
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            var segment = params.get('segment') || 'individ';
+            var offer = params.get('offer') || '';
+
+            var COPY = {
+                arbetsgivare: {
+                    rubrik: 'Tack — arbetsgivarpaketet är på väg.',
+                    text: 'Paketet ligger i din inkorg om ett par minuter. Beskrev du ett ' +
+                          'pågående ärende hör vi av oss personligen inom en arbetsdag, ' +
+                          'annars inom tre.',
+                    nasta: [
+                        ['Läs lagkraven först',
+                         'Vad AFS 2020:5 och diskrimineringslagen faktiskt kräver av er — bra att ha läst innan vi pratar.',
+                         '/lagkrav-anpassningar-arbetsmiljo.html'],
+                        ['Se vår data',
+                         'State of Neurodiversity at Work 2026: vad medarbetare själva rapporterar om belastning och maskering.',
+                         '/data-rapport-2026.html'],
+                        ['Skicka vidare till era medarbetare',
+                         'Anpassningsgeneratorn låter medarbetaren formulera sina behov innan chefssamtalet.',
+                         '/verktyg-anpassningsgenerator.html']
+                    ]
+                },
+                partner: {
+                    rubrik: 'Tack — mediakitet kommer inom en arbetsdag.',
+                    text: 'Ni får aktuell trafik, målgruppsfördelning, format och priser, plus ' +
+                          'ett konkret förslag utifrån det ni beskrev.',
+                    nasta: [
+                        ['Läs våra spelregler',
+                         'Vad vi gör och inte gör med sponsrat innehåll — bra att känna till innan ni läser förslaget.',
+                         '/partner.html#format'],
+                        ['Se rapporten',
+                         'Underlaget bakom vår position i nischen, och exempel på hur ett datasamarbete kan se ut.',
+                         '/data-rapport-2026.html'],
+                        ['Se arbetsgivarsidan',
+                         'Det är här era framtida kunder landar. Bra att veta vilket sammanhang ni skulle synas i.',
+                         '/for-arbetsgivare.html']
+                    ]
+                },
+                individ: {
+                    rubrik: 'Tack — checklistan är på väg.',
+                    text: 'Den ligger som PDF i mejlet. Börja med ett steg, inte med hela listan. ' +
+                          'Kolla skräpposten om mejlet inte syns inom några minuter.',
+                    nasta: [
+                        ['Kom igång med något litet',
+                         'Uppgiftsnedbrytaren gör en luddig uppgift till tre steg, där det första är nästan fånigt lätt.',
+                         '/verktyg-nedbrytare.html'],
+                        ['Förbered chefssamtalet',
+                         'Anpassningsgeneratorn skriver ett sakligt förslag du kan skicka utan att nämna diagnos.',
+                         '/verktyg-anpassningsgenerator.html'],
+                        ['Kolla din belastning',
+                         'Burnout-kalkylatorn väger samman sensorisk belastning, maskering och sömn.',
+                         '/verktyg-burnout-kalkylator.html']
+                    ]
+                }
+            };
+
+            var copy = COPY[segment] || COPY.individ;
+            document.getElementById('tack-rubrik').textContent = copy.rubrik;
+            document.getElementById('tack-text').textContent = copy.text;
+
+            var container = document.getElementById('tack-nasta');
+            copy.nasta.forEach(function (item) {
+                var a = document.createElement('a');
+                a.href = item[2];
+                a.className = 'glass-panel p-6 rounded-2xl hover:bg-white/[0.06] transition-colors block';
+                var h = document.createElement('h2');
+                h.className = 'font-bold mb-2 text-lg';
+                h.textContent = item[0];
+                var p = document.createElement('p');
+                p.className = 'text-[#909090] text-[15px] leading-relaxed';
+                p.textContent = item[1];
+                a.appendChild(h);
+                a.appendChild(p);
+                container.appendChild(a);
+            });
+
+            if (typeof gtag === 'function') {
+                gtag('event', 'lead_thankyou_view', { segment: segment, offer: offer });
+            }
+        })();
+    </script>
+</body>
+</html>

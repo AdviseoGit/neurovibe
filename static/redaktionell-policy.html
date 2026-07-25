@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redaktionell policy, källor och AI-transparens | Neurovibe</title>
+    <meta name="description" content="Så tas Neurovibes innehåll fram: källpolicy, hur AI används, vad vi aldrig uttalar oss om, hur vi hanterar fel och hur sponsrat innehåll märks ut.">
+    <link rel="canonical" href="https://neurovibe.se/redaktionell-policy.html">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0A0A0A; color: #FFFFFF; }
+        .glass-panel { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
+        .mobile-menu-open { display: flex !important; }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJG1D5GJPR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YJG1D5GJPR');
+    </script>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-[#D83131] selection:text-white">
+
+    <header class="border-b border-white/10 sticky top-0 bg-[#0A0A0A]/90 backdrop-blur-md z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-[#D83131] rounded flex items-center justify-center font-bold text-white tracking-tighter">NV</div>
+                <span class="font-mono font-bold tracking-widest text-lg">NEUROVIBE</span>
+            </a>
+            <nav class="hidden md:flex gap-8 font-mono text-sm tracking-widest items-center">
+                <a href="/for-medarbetare.html" class="hover:text-[#D83131] transition-colors">För dig</a>
+                <a href="/for-arbetsgivare.html" class="hover:text-[#D83131] transition-colors">För arbetsgivare</a>
+                <a href="/partner.html" class="hover:text-[#D83131] transition-colors">Partner</a>
+                <a href="/resurser.html" class="hover:text-[#D83131] transition-colors">Verktyg</a>
+            </nav>
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-white" aria-label="Meny">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden flex-col bg-[#1A1A1A] border-t border-white/10 p-6 gap-4 font-mono text-sm tracking-widest absolute w-full left-0 top-20 shadow-2xl">
+            <a href="/for-medarbetare.html" class="hover:text-[#D83131] p-2">För dig</a>
+            <a href="/for-arbetsgivare.html" class="hover:text-[#D83131] p-2">För arbetsgivare</a>
+            <a href="/partner.html" class="hover:text-[#D83131] p-2">Partner</a>
+            <a href="/resurser.html" class="hover:text-[#D83131] p-2">Verktyg</a>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-3xl mx-auto px-6 py-20 w-full">
+        <p class="font-mono text-xs tracking-[0.3em] uppercase text-[#D83131] mb-6">Transparens</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Redaktionell policy och källor</h1>
+        <p class="text-xl text-[#A0A0A0] leading-relaxed mb-4">
+            Neurovibe skriver om arbetsmiljö, rättigheter och kognitiv belastning — områden där
+            fel information kan kosta någon deras jobb eller hälsa. Den här sidan beskriver exakt
+            hur innehållet tas fram, vad vi inte uttalar oss om, och vad du ska göra om du hittar
+            ett fel.
+        </p>
+        <p class="font-mono text-xs tracking-widest text-white/40 mb-16">SENAST UPPDATERAD 2026-07-25</p>
+
+        <div class="glass-panel p-8 rounded-2xl border-l-2 border-[#D83131] mb-16">
+            <h2 class="text-xl font-bold mb-4">Det viktigaste först</h2>
+            <ul class="space-y-3 text-[#A0A0A0] leading-relaxed">
+                <li><strong class="text-white">Innehållet produceras av AI-system</strong> inom ramar
+                    satta av en människa. Det finns ingen legitimerad psykolog, läkare eller
+                    arbetsterapeut anställd hos oss.</li>
+                <li><strong class="text-white">Vi ger aldrig medicinska råd.</strong> Inget på
+                    sajten ska användas som underlag för beslut om diagnos, behandling eller
+                    medicinering.</li>
+                <li><strong class="text-white">Regelverk hänvisas till namngiven källa</strong> så att
+                    du eller er jurist kan kontrollera vårt resonemang mot originaltexten.</li>
+                <li><strong class="text-white">Sponsrat innehåll märks ut</strong> varje gång, och
+                    påverkar inte vad vi rekommenderar.</li>
+            </ul>
+        </div>
+
+        <article class="space-y-14">
+
+            <section>
+                <h2 class="text-2xl font-bold mb-5">Hur innehållet tas fram</h2>
+                <p class="text-[#A0A0A0] leading-relaxed mb-4">
+                    Neurovibe drivs av Adviseo Experimental Lab som ett försök att se hur långt ett
+                    AI-drivet redaktionellt system kan komma inom en smal nisch. Praktiskt betyder
+                    det:
+                </p>
+                <ol class="space-y-4 text-[#A0A0A0] leading-relaxed list-decimal pl-6">
+                    <li><strong class="text-white">Ämnesval.</strong> Vi utgår från faktiska frågor —
+                        sökningar, forumtrådar och det användare skriver in i våra verktyg — inte
+                        från vad som råkar ge trafik.</li>
+                    <li><strong class="text-white">Underlag.</strong> För allt som rör regelverk,
+                        myndighetsprocesser och ersättningar utgår vi från primärkällor:
+                        lagtext, Arbetsmiljöverkets föreskrifter, samt Försäkringskassans och
+                        Arbetsförmedlingens egna vägledningar. För arbetsmiljöfrågor i övrigt
+                        används forskningssammanställningar.</li>
+                    <li><strong class="text-white">Produktion.</strong> Texten skrivs av ett
+                        AI-system med tillgång till det underlaget.</li>
+                    <li><strong class="text-white">Publicering.</strong> Innehållet publiceras inom
+                        den policy ägaren satt upp — bland annat förbudet mot medicinska
+                        påståenden. Men vi vill vara tydliga med vad det <em>inte</em> innebär:
+                        det finns ingen expertgranskning per sida, och ingen garanterad mänsklig
+                        genomläsning av varje publicerad text. Det är precis därför vi hänvisar
+                        till primärkällor — du ska kunna kontrollera oss, inte lita på oss.</li>
+                    <li><strong class="text-white">Uppdatering.</strong> Sidor som beskriver
+                        regelverk gås igenom när reglerna ändras. Datum för senaste ändring visas
+                        på sidan.</li>
+                </ol>
+                <p class="text-[#A0A0A0] leading-relaxed mt-5">
+                    Vi skriver det här rakt ut i stället för att dölja det, eftersom en läsare som
+                    ska fatta ett beslut om sin arbetssituation har rätt att veta hur säkert
+                    underlaget är.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold mb-5">Vad vi inte uttalar oss om</h2>
+                <p class="text-[#A0A0A0] leading-relaxed mb-4">
+                    Gränsen går vid allt som kräver en legitimation. Vi skriver aldrig om:
+                </p>
+                <ul class="space-y-3 text-[#A0A0A0] leading-relaxed">
+                    <li>&bull; Om du har eller inte har en diagnos.</li>
+                    <li>&bull; Val av medicinering, dosering eller utsättning.</li>
+                    <li>&bull; Behandlingsmetoder, terapiformer eller kosttillskott som påstås
+                        lindra ADHD eller autism.</li>
+                    <li>&bull; Bedömning av arbetsförmåga i enskilda fall.</li>
+                    <li>&bull; Juridisk rådgivning i pågående arbetsrättsliga tvister.</li>
+                </ul>
+                <p class="text-[#A0A0A0] leading-relaxed mt-5">
+                    Det vi <em>kan</em> göra är att beskriva hur processer fungerar, vilka
+                    anpassningar som brukar efterfrågas och vad regelverket säger — och peka dig
+                    vidare till någon som faktiskt får uttala sig i din situation: vårdcentral,
+                    företagshälsovård, ditt skyddsombud eller ditt fackförbund.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold mb-5">Våra egna data</h2>
+                <p class="text-[#A0A0A0] leading-relaxed mb-4">
+                    Delar av vårt innehåll bygger på data vi samlar in själva via verktygen på
+                    sajten — till exempel Burnout-kalkylatorn och Anpassningsgeneratorn. Om detta
+                    gäller:
+                </p>
+                <ul class="space-y-3 text-[#A0A0A0] leading-relaxed">
+                    <li>&bull; Data lagras anonymiserat och kopplas inte till e-postadresser eller
+                        identifierbara personer.</li>
+                    <li>&bull; Det är ett självselekterat urval — personer som söker upp våra
+                        verktyg är sannolikt mer belastade än genomsnittet. Det gör siffrorna
+                        användbara som riktning, men de är inte representativa för alla
+                        neurodivergenta i arbetslivet, och vi redovisar det tillsammans med
+                        siffrorna.</li>
+                    <li>&bull; Urvalsstorlek anges i
+                        <a href="/data-rapport-2026.html" class="text-[#D83131] hover:underline">rapporten</a>.
+                        Är underlaget för litet för en slutsats skriver vi ut det i stället för att
+                        presentera en procentsats.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold mb-5">Annonser, sponsring och partnerskap</h2>
+                <p class="text-[#A0A0A0] leading-relaxed mb-4">
+                    Neurovibe finansieras av samarbeten med leverantörer som vänder sig till samma
+                    målgrupp — företagshälsovård, utbildningsleverantörer, akustik- och
+                    hjälpmedelstillverkare. Reglerna för det är korta:
+                </p>
+                <ul class="space-y-3 text-[#A0A0A0] leading-relaxed">
+                    <li>&bull; Allt betalt innehåll märks ut som sponsrat på den plats där det står.</li>
+                    <li>&bull; Betalning kan aldrig ändra en rekommendation, ta bort ett förbehåll
+                        eller påverka en jämförelse.</li>
+                    <li>&bull; Vi förmedlar aldrig kontaktuppgifter till en leverantör utan att
+                        personen aktivt bett om det.</li>
+                    <li>&bull; Vi tar inte emot annonser för behandlingar eller produkter som utger
+                        sig för att lindra eller bota ADHD eller autism.</li>
+                </ul>
+                <p class="text-[#A0A0A0] leading-relaxed mt-5">
+                    Fullständiga spelregler finns på
+                    <a href="/partner.html" class="text-[#D83131] hover:underline">partnersidan</a>.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold mb-5">Om vi har fel</h2>
+                <p class="text-[#A0A0A0] leading-relaxed mb-4">
+                    Ett AI-producerat innehåll kan innehålla fel, och gör det ibland. Vi rättar
+                    hellre snabbt än ser bra ut:
+                </p>
+                <ul class="space-y-3 text-[#A0A0A0] leading-relaxed">
+                    <li>&bull; Mejla <a href="mailto:simon@adviseo.se" class="text-[#D83131] hover:underline">simon@adviseo.se</a>
+                        med sidans adress och vad som är fel.</li>
+                    <li>&bull; Sakfel om regelverk rättas eller så tas påståendet bort. Rör felet
+                        något väsentligt skriver vi in en rättelsenotis på sidan i stället för att
+                        ändra i tysthet.</li>
+                    <li>&bull; Kan vi inte belägga ett påstående tar vi bort det, även om det låter
+                        rimligt.</li>
+                </ul>
+            </section>
+
+            <section class="glass-panel p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold mb-4">Är du legitimerad psykolog, arbetsterapeut eller arbetsmiljöingenjör?</h2>
+                <p class="text-[#A0A0A0] leading-relaxed mb-6">
+                    Vi vill kunna sätta en riktig expertgranskning på våra tyngsta guider — och
+                    då krävs någon som får stå för den. Granskaren namnges med titel på de sidor
+                    hen granskat, och har full rätt att kräva att ett påstående ändras eller tas
+                    bort. Vi lägger aldrig ut ett namn utan skriftligt godkännande, och skriver
+                    aldrig "granskad" på en sida där ingen faktiskt granskat.
+                </p>
+                <a href="mailto:simon@adviseo.se?subject=Expertgranskning%20Neurovibe" class="inline-block bg-[#D83131] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#B72A2A] transition-colors">
+                    Hör av dig
+                </a>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold mb-5">Ansvarig</h2>
+                <p class="text-[#A0A0A0] leading-relaxed">
+                    Neurovibe.se ges ut av Adviseo, Stockholm, inom Adviseo Experimental Lab.
+                    Frågor om innehållet, rättelser och samarbeten går till
+                    <a href="mailto:simon@adviseo.se" class="text-[#D83131] hover:underline">simon@adviseo.se</a>.
+                    Läs mer om projektet på <a href="/om-sajten.html" class="text-[#D83131] hover:underline">Om sajten</a>,
+                    och om hur vi hanterar personuppgifter i
+                    <a href="/integritetspolicy.html" class="text-[#D83131] hover:underline">integritetspolicyn</a>.
+                </p>
+            </section>
+        </article>
+    </main>
+
+    <div class="max-w-7xl mx-auto px-6 w-full">
+        <footer class="py-12 border-t border-white/10 flex flex-col md:flex-row gap-6 justify-between text-sm text-white/40">
+            <span>&copy; 2026 Adviseo &middot; Stockholm</span>
+            <div class="flex flex-wrap gap-6">
+                <a href="/for-medarbetare.html" class="hover:text-white transition-colors">För dig</a>
+                <a href="/for-arbetsgivare.html" class="hover:text-white transition-colors">För arbetsgivare</a>
+                <a href="/partner.html" class="hover:text-white transition-colors">Partner</a>
+                <a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+            var menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('mobile-menu-open');
+        });
+    </script>
+</body>
+</html>

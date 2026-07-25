@@ -5,6 +5,7 @@
         <input type="email" id="lm-email" placeholder="Din e-postadress" required class="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-[#D83131] transition-colors">
         <button type="submit" class="bg-[#D83131] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#B72A2A] transition-colors whitespace-nowrap">Skicka guiden</button>
     </form>
+    <p class="nv-privacy-note" style="font-size:0.75rem;color:#808080;margin-top:0.75rem">Vi skickar det du bett om och enstaka mejl med nya verktyg. Avregistrering med ett svar. <a href="/integritetspolicy.html" style="color:#D83131">Integritetspolicy</a>.</p>
     <div id="lm-success" class="hidden mt-4 text-green-400 text-sm font-medium">Tack! Checklistan skickas till din e-post.</div>
     <div id="lm-error" class="hidden mt-4 text-[#D83131] text-sm font-medium">Något gick fel. Vänligen försök igen senare.</div>
 </div>
@@ -26,7 +27,13 @@ async function submitLeadMagnet(e) {
         const res = await fetch('/api/lead', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: email })
+            body: JSON.stringify({
+                        email: email,
+                        source: 'legacy',
+                        segment: 'individ',
+                        offer: 'legacy',
+                        source_page: window.location.pathname
+                    })
         });
         
         if (res.ok) {

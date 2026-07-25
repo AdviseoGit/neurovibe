@@ -238,7 +238,13 @@ async function submitLeadMagnet(e) {
         const res = await fetch('/api/lead', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: email })
+            body: JSON.stringify({
+                        email: email,
+                        source: 'legacy',
+                        segment: 'individ',
+                        offer: 'legacy',
+                        source_page: window.location.pathname
+                    })
         });
         
         if (res.ok) {
@@ -265,13 +271,29 @@ fetch("/lead-magnet-snippet.html").then(r => r.text()).then(html => document.get
         </main>
         
         <!-- Footer med AI-transparens -->
-        <footer class="mt-auto py-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8 opacity-40 text-[9px] font-mono tracking-widest uppercase">
+        
+<!-- nv-segment-cta -->
+<div style="max-width:52rem;margin:4rem auto;padding:2rem;border:1px solid rgba(255,255,255,0.08);
+            border-left:3px solid #D83131;border-radius:16px;background:rgba(255,255,255,0.03)">
+  <p style="font-family:ui-monospace,monospace;font-size:0.7rem;letter-spacing:0.2em;
+            text-transform:uppercase;color:#D83131;margin:0 0 0.75rem">Nästa steg</p>
+  <h2 style="font-size:1.5rem;font-weight:700;color:#fff;margin:0 0 0.75rem;line-height:1.3">Verktygen som gör det konkret</h2>
+  <p style="color:#A0A0A0;line-height:1.7;margin:0 0 1.5rem">Bryt ner det som känns för stort, mät din belastning eller få ett färdigt anpassningsförslag att ta med till chefen — utan att behöva förklara någon diagnos. Allt är gratis.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:0.75rem">
+    <a href="/for-medarbetare.html" style="display:inline-block;background:#D83131;color:#fff;text-decoration:none;
+       padding:0.85rem 1.5rem;border-radius:10px;font-weight:600">Till verktygslådan</a>
+    <a href="/for-medarbetare.html#checklista" style="display:inline-block;border:1px solid rgba(255,255,255,0.15);
+       color:#fff;text-decoration:none;padding:0.85rem 1.5rem;border-radius:10px;font-weight:600">Få checklistan i mejlen</a>
+  </div>
+</div>
+
+<footer class="mt-auto py-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8 opacity-40 text-[9px] font-mono tracking-widest uppercase">
             <div class="flex flex-col items-center md:items-start gap-4">
                 <div class="flex items-center gap-4">
                     <div class="w-6 h-6 bg-[#D83131]/60 rounded-lg"></div>
                     <span>© 2026 ADVISEO LABORATORY</span>
                 </div>
-                <span>Denna sajt skapas och drivs helt av AI &middot; <a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></span>
+                <span>Innehållet produceras av AI-system inom mänskligt satta ramar och utgör inte medicinsk rådgivning &middot; <a href="/redaktionell-policy.html" class="hover:text-white transition-colors">Redaktionell policy &amp; källor</a></span>
             </div>
             <div class="flex gap-12">
                 <a href="/#philosophy" class="hover:text-white transition-colors">Manifest</a>
@@ -341,5 +363,6 @@ fetch("/lead-magnet-snippet.html").then(r => r.text()).then(html => document.get
         if (mobileMenuBtn) mobileMenuBtn.addEventListener("click", toggleMobileMenu);
         document.querySelectorAll(".mobile-link").forEach(l => l.addEventListener("click", toggleMobileMenu));
     </script>
+    <script src="/static/leadflow.js" defer></script>
 </body>
 </html>

@@ -5,6 +5,10 @@ Neurovibe.se ska vara Sveriges ledande, mest trovärdiga och praktiskt användba
 
 Vår "moat" är egeninsamlad, anonymiserad data från våra verktyg, som vi använder för att publicera unika, datadrivna rapporter som ingen annan i nischen kan matcha.
 
+**Erbjudandet i en mening:** Neurovibe är en svensk verktygslåda för NPF i arbetslivet — medarbetare får färdiga anpassningsförslag och verktyg för exekutiv funktion, chefer och HR får rutinmallar, lagkravsunderlag och ett anpassningsbibliotek.
+
+Målgrupper, erbjudanden, lead scoring, SLA och prissättning: se **[LEADFLOW.md](LEADFLOW.md)**.
+
 ## Målbild (När vi är #1)
 - **Innehåll:** Vi har 3-5 djupa, ständigt uppdaterade innehållspelare (t.ex. "Anpassningar", "Chefsguiden", "Rättigheter & Stöd") som täcker sökintentionen för våra kärnämnen.
 - **Verktyg:** Vi har en svit av 3-4 interaktiva verktyg (t.ex. "Burnout-kalkylator", "Anpassnings-checklista", "Mötes-prep") som besökare använder och delar.
@@ -39,6 +43,17 @@ Vår "moat" är egeninsamlad, anonymiserad data från våra verktyg, som vi anv�
     -   [x] Bygga ut verktygssviten med ett andra verktyg (har nu 5 st).
     -   [ ] Börja outreach för att få rapporten citerad och länkad.
     -   [ ] Etablera en process för att löpande uppdatera innehållspelare och data.
+
+6.  **[ ] Lead-maskin & tydlighet (Q3 2027):**
+    -   [x] Tydlig målgruppsrouter på startsidan (medarbetare / arbetsgivare / partner).
+    -   [x] Egen landningssida per segment med konkret erbjudande och eget formulär.
+    -   [x] Segmenterad lead-fångst med scoring A–D, SLA och ägarnotis med prio.
+    -   [x] Admin-dashboard med pipeline, status och CSV-export.
+    -   [x] Redaktionell policy för E-E-A-T i stället för en ren experimentbeskrivning.
+    -   [ ] Persistent volym för lead-databasen i produktion (`NV_DATA_DIR`).
+    -   [ ] Producera arbetsgivarpaketets fem dokument.
+    -   [ ] Knyta en legitimerad granskare till de tre tyngsta guiderna.
+    -   [ ] Fylla mediakitet med verkliga GA4-siffror innan partner-outreach.
 
 
 ## DESIGN-SKULD (rapporterad av Sim 2026-06-11 — HÖGSTA PRIORITET)

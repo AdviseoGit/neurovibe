@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verktyg för dig med ADHD eller autism i arbetslivet | Neurovibe</title>
+    <meta name="description" content="Gratis verktyg och mallar för dig med ADHD, autism eller annan NPF: bryt ner uppgifter, mät din belastning, och få ett färdigt anpassningsförslag att ta med till chefen.">
+    <link rel="canonical" href="https://neurovibe.se/for-medarbetare.html">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Verktyg för dig med ADHD eller autism i arbetslivet | Neurovibe">
+    <meta property="og:description" content="Gratis verktyg och mallar för att hantera arbetsdagen och få rätt anpassningar.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0A0A0A; color: #FFFFFF; }
+        .glass-panel { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
+        .mobile-menu-open { display: flex !important; }
+        .field { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.10); border-radius: 10px; padding: 0.85rem 1rem; color: #fff; }
+        .field:focus { outline: none; border-color: #D83131; box-shadow: 0 0 0 2px rgba(216,49,49,0.2); }
+        .field option { background: #1A1A1A; }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJG1D5GJPR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YJG1D5GJPR');
+    </script>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-[#D83131] selection:text-white">
+
+    <!-- Header -->
+    <header class="border-b border-white/10 sticky top-0 bg-[#0A0A0A]/90 backdrop-blur-md z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-[#D83131] rounded flex items-center justify-center font-bold text-white tracking-tighter">NV</div>
+                <span class="font-mono font-bold tracking-widest text-lg">NEUROVIBE</span>
+            </a>
+            <nav class="hidden md:flex gap-8 font-mono text-sm tracking-widest items-center">
+                <a href="/for-medarbetare.html" class="text-[#D83131]">För dig</a>
+                <a href="/for-arbetsgivare.html" class="hover:text-[#D83131] transition-colors">För arbetsgivare</a>
+                <div class="relative group">
+                    <button class="hover:text-[#D83131] transition-colors flex items-center gap-1">Verktyg ▼</button>
+                    <div class="absolute top-full right-0 mt-2 w-56 bg-[#1A1A1A] border border-white/10 rounded-lg hidden group-hover:flex flex-col py-2">
+                        <a href="/verktyg-nedbrytare.html" class="px-4 py-2 hover:bg-white/5">Uppgiftsnedbrytaren</a>
+                        <a href="/verktyg-fokus-timer.html" class="px-4 py-2 hover:bg-white/5">Fokus Timer</a>
+                        <a href="/verktyg-burnout-kalkylator.html" class="px-4 py-2 hover:bg-white/5">Burnout-kalkylator</a>
+                        <a href="/verktyg-anpassningsgenerator.html" class="px-4 py-2 hover:bg-white/5">Anpassningsgeneratorn</a>
+                        <a href="/verktyg-myndighetsnavigator.html" class="px-4 py-2 hover:bg-white/5">Myndighetsnavigatorn</a>
+                        <a href="/resurser.html" class="px-4 py-2 hover:bg-white/5 text-white/60">Alla verktyg &rarr;</a>
+                    </div>
+                </div>
+                <a href="/data-rapport-2026.html" class="hover:text-[#D83131] transition-colors">Data 2026</a>
+                <a href="#checklista" class="bg-[#D83131] px-5 py-2.5 rounded-lg hover:bg-[#B72A2A] transition-colors text-white">Få checklistan</a>
+            </nav>
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-white" aria-label="Meny">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden flex-col bg-[#1A1A1A] border-t border-white/10 p-6 gap-4 font-mono text-sm tracking-widest absolute w-full left-0 top-20 shadow-2xl">
+            <a href="/for-medarbetare.html" class="text-[#D83131] p-2">För dig</a>
+            <a href="/for-arbetsgivare.html" class="hover:text-[#D83131] p-2">För arbetsgivare</a>
+            <a href="/resurser.html" class="hover:text-[#D83131] p-2">Alla verktyg</a>
+            <a href="/data-rapport-2026.html" class="hover:text-[#D83131] p-2">Data 2026</a>
+            <a href="#checklista" class="bg-[#D83131] text-white p-3 rounded-lg text-center mt-2">Få checklistan</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+
+        <!-- Hero -->
+        <section class="max-w-6xl mx-auto px-6 pt-20 pb-16">
+            <p class="font-mono text-xs tracking-[0.3em] uppercase text-[#D83131] mb-6">För dig med ADHD, autism eller annan NPF</p>
+            <h1 class="text-4xl md:text-6xl font-bold leading-[1.1] mb-8 max-w-4xl">
+                Du behöver inte<br>
+                <span class="text-white/50">jobba hårdare. Du behöver mindre friktion.</span>
+            </h1>
+            <p class="text-xl text-[#A0A0A0] leading-relaxed max-w-2xl mb-10">
+                Verktygen här är byggda för de dagar då den exekutiva funktionen inte
+                samarbetar. Inga röda notiser, ingen streak att förlora, ingen skuld. Allt är
+                gratis och kräver ingen inloggning.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#verktyg" class="bg-[#D83131] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#B72A2A] transition-colors text-center">
+                    Börja med ett verktyg
+                </a>
+                <a href="#checklista" class="glass-panel px-8 py-4 rounded-xl font-semibold hover:bg-white/5 transition-colors text-center">
+                    Få checklistan i mejlen
+                </a>
+            </div>
+        </section>
+
+        <!-- Startpunkter efter situation -->
+        <section id="verktyg" class="max-w-6xl mx-auto px-6 py-20 border-t border-white/10">
+            <p class="font-mono text-xs tracking-[0.3em] uppercase text-[#D83131] mb-6">Var är du just nu?</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Välj det som stämmer i dag</h2>
+            <p class="text-lg text-[#A0A0A0] mb-12 max-w-2xl">
+                Du behöver inte läsa allt. Ett steg räcker.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <a href="/verktyg-nedbrytare.html" class="glass-panel p-8 rounded-2xl hover:bg-white/[0.06] transition-colors group">
+                    <p class="font-mono text-xs tracking-widest text-[#D83131] mb-4">JAG KOMMER INTE IGÅNG</p>
+                    <h3 class="text-2xl font-bold mb-3">Uppgiftsnedbrytaren</h3>
+                    <p class="text-[#A0A0A0] leading-relaxed mb-6">
+                        Skriv in det som känns för stort. Du får tre steg tillbaka, varav det
+                        första är så litet att det nästan är fånigt. Det är hela poängen.
+                    </p>
+                    <span class="text-[#D83131] font-semibold group-hover:translate-x-1 inline-block transition-transform">Öppna verktyget &rarr;</span>
+                </a>
+
+                <a href="/verktyg-burnout-kalkylator.html" class="glass-panel p-8 rounded-2xl hover:bg-white/[0.06] transition-colors group">
+                    <p class="font-mono text-xs tracking-widest text-[#D83131] mb-4">JAG ORKAR SNART INTE</p>
+                    <h3 class="text-2xl font-bold mb-3">Burnout-kalkylatorn</h3>
+                    <p class="text-[#A0A0A0] leading-relaxed mb-6">
+                        Väg samman sensorisk belastning, maskering, sömn och arbetstid till en
+                        bild av var du faktiskt ligger — innan kroppen tar beslutet för dig.
+                    </p>
+                    <span class="text-[#D83131] font-semibold group-hover:translate-x-1 inline-block transition-transform">Mät din belastning &rarr;</span>
+                </a>
+
+                <a href="/verktyg-anpassningsgenerator.html" class="glass-panel p-8 rounded-2xl hover:bg-white/[0.06] transition-colors group">
+                    <p class="font-mono text-xs tracking-widest text-[#D83131] mb-4">JAG SKA PRATA MED MIN CHEF</p>
+                    <h3 class="text-2xl font-bold mb-3">Anpassningsgeneratorn</h3>
+                    <p class="text-[#A0A0A0] leading-relaxed mb-6">
+                        Kryssa i vad som är svårt i din arbetsmiljö. Du får ett färdigt,
+                        sakligt formulerat förslag att skicka till chefen — utan att du behöver
+                        förklara någon diagnos.
+                    </p>
+                    <span class="text-[#D83131] font-semibold group-hover:translate-x-1 inline-block transition-transform">Skapa mitt förslag &rarr;</span>
+                </a>
+
+                <a href="/verktyg-myndighetsnavigator.html" class="glass-panel p-8 rounded-2xl hover:bg-white/[0.06] transition-colors group">
+                    <p class="font-mono text-xs tracking-widest text-[#D83131] mb-4">JAG FASTNAR HOS MYNDIGHETERNA</p>
+                    <h3 class="text-2xl font-bold mb-3">Myndighetsnavigatorn</h3>
+                    <p class="text-[#A0A0A0] leading-relaxed mb-6">
+                        Vem ansvarar för vad hos Försäkringskassan och Arbetsförmedlingen, och i
+                        vilken ordning ska du söka? Navigatorn pekar ut nästa steg.
+                    </p>
+                    <span class="text-[#D83131] font-semibold group-hover:translate-x-1 inline-block transition-transform">Hitta rätt instans &rarr;</span>
+                </a>
+
+                <a href="/verktyg-fokus-timer.html" class="glass-panel p-8 rounded-2xl hover:bg-white/[0.06] transition-colors group">
+                    <p class="font-mono text-xs tracking-widest text-[#D83131] mb-4">TIDEN FÖRSVINNER</p>
+                    <h3 class="text-2xl font-bold mb-3">Fokus Timer</h3>
+                    <p class="text-[#A0A0A0] leading-relaxed mb-6">
+                        En visuell timer som gör tid till något du kan se i stället för något du
+                        ska känna. Korta pass, tydlig struktur, inga larm som skräms.
+                    </p>
+                    <span class="text-[#D83131] font-semibold group-hover:translate-x-1 inline-block transition-transform">Starta timern &rarr;</span>
+                </a>
+
+                <a href="/ai-verktyg-jobb-kalkylator.html" class="glass-panel p-8 rounded-2xl hover:bg-white/[0.06] transition-colors group">
+                    <p class="font-mono text-xs tracking-widest text-[#D83131] mb-4">JAG VILL ANVÄNDA AI SMARTARE</p>
+                    <h3 class="text-2xl font-bold mb-3">AI ROI-kalkylatorn</h3>
+                    <p class="text-[#A0A0A0] leading-relaxed mb-6">
+                        AI är en bra protes för svaga exekutiva funktioner: sammanfatta långa
+                        mejl, mjuka upp tonläget, dela upp projekt. Räkna ut vad du sparar.
+                    </p>
+                    <span class="text-[#D83131] font-semibold group-hover:translate-x-1 inline-block transition-transform">Räkna på det &rarr;</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Lead magnet -->
+        <section id="checklista" class="max-w-3xl mx-auto px-6 py-20 border-t border-white/10 scroll-mt-24">
+            <div class="glass-panel p-8 md:p-12 rounded-2xl border-l-2 border-[#D83131]">
+                <p class="font-mono text-xs tracking-[0.3em] uppercase text-[#D83131] mb-6">Gratis</p>
+                <h2 class="text-3xl font-bold mb-4">Executive Function-checklistan</h2>
+                <p class="text-[#A0A0A0] leading-relaxed mb-8">
+                    En sida att ta fram när hjärnan inte startar. Konkreta steg för att sänka
+                    kognitiv belastning, plus de formuleringar du kan använda när du behöver
+                    be om en anpassning på jobbet. Kommer som PDF i mejlen.
+                </p>
+
+                <form data-nv-lead
+                      data-segment="individ"
+                      data-offer="individ-checklista"
+                      data-success="#lm-success"
+                      data-error="#lm-error"
+                      class="space-y-4">
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <input class="field flex-1" type="email" name="email" required
+                               autocomplete="email" placeholder="din@epost.se" aria-label="E-postadress">
+                        <button type="submit" class="bg-[#D83131] text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-[#B72A2A] transition-colors whitespace-nowrap">
+                            Skicka checklistan
+                        </button>
+                    </div>
+                    <div>
+                        <label for="lm-role" class="sr-only">Din situation</label>
+                        <select class="field" id="lm-role" name="role">
+                            <option value="medarbetare">Jag är medarbetare / arbetssökande</option>
+                            <option value="chef">Jag är chef och vill förstå bättre</option>
+                            <option value="annat">Annat (anhörig, student, nyfiken)</option>
+                        </select>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <input type="checkbox" id="lm-consent" name="consent" required class="mt-1 w-4 h-4 accent-[#D83131] cursor-pointer">
+                        <label for="lm-consent" class="text-sm text-[#909090] leading-snug cursor-pointer">
+                            Skicka checklistan och enstaka mejl med nya verktyg. Avregistrering med
+                            ett svar. <a href="/integritetspolicy.html" class="text-[#D83131] hover:underline">Integritetspolicy</a>.
+                        </label>
+                    </div>
+                </form>
+                <div id="lm-success" class="hidden mt-6 text-[#4ADE80] font-medium">
+                    Tack! Checklistan är på väg till din inkorg. Kolla skräpposten om den inte
+                    dyker upp inom några minuter.
+                </div>
+                <div id="lm-error" class="hidden mt-6 text-[#FF6B6B] font-medium"></div>
+            </div>
+        </section>
+
+        <!-- Guider -->
+        <section class="max-w-6xl mx-auto px-6 py-20 border-t border-white/10">
+            <p class="font-mono text-xs tracking-[0.3em] uppercase text-[#D83131] mb-6">Läsa vidare</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12">Guider som svarar på det du googlar</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="/adhd-anpassningar-jobb.html" class="glass-panel p-6 rounded-2xl hover:bg-white/[0.06] transition-colors">
+                    <h3 class="font-bold mb-2">ADHD-anpassningar på jobbet</h3>
+                    <p class="text-sm text-[#909090]">Vilka anpassningar som faktiskt fungerar, och hur du ber om dem.</p>
+                </a>
+                <a href="/maskering-pa-arbetsplatsen.html" class="glass-panel p-6 rounded-2xl hover:bg-white/[0.06] transition-colors">
+                    <h3 class="font-bold mb-2">Maskering på arbetsplatsen</h3>
+                    <p class="text-sm text-[#909090]">Vad det kostar att spela neurotypisk hela dagarna — och alternativen.</p>
+                </a>
+                <a href="/adhd-diagnos-vuxen.html" class="glass-panel p-6 rounded-2xl hover:bg-white/[0.06] transition-colors">
+                    <h3 class="font-bold mb-2">ADHD-diagnos som vuxen</h3>
+                    <p class="text-sm text-[#909090]">Hur utredningen går till i Sverige, från vårdcentral till besked.</p>
+                </a>
+                <a href="/forsakringskassan-arbetsformedlingen-stod.html" class="glass-panel p-6 rounded-2xl hover:bg-white/[0.06] transition-colors">
+                    <h3 class="font-bold mb-2">Stöd från FK och AF</h3>
+                    <p class="text-sm text-[#909090]">Arbetshjälpmedel, bidrag och lönebidrag — vad som finns och hur du söker.</p>
+                </a>
+                <a href="/post-semester-stress-npf.html" class="glass-panel p-6 rounded-2xl hover:bg-white/[0.06] transition-colors">
+                    <h3 class="font-bold mb-2">Återgång till arbetet</h3>
+                    <p class="text-sm text-[#909090]">Mjukstart efter semester eller sjukskrivning, utan att slå i väggen igen.</p>
+                </a>
+                <a href="/ai-verktyg-neurodiversitet.html" class="glass-panel p-6 rounded-2xl hover:bg-white/[0.06] transition-colors">
+                    <h3 class="font-bold mb-2">AI som kognitivt stöd</h3>
+                    <p class="text-sm text-[#909090]">Konkreta sätt att låta AI ta över det som dränerar mest energi.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- För chefen -->
+        <section class="max-w-6xl mx-auto px-6 py-20 border-t border-white/10">
+            <div class="glass-panel p-8 md:p-12 rounded-2xl">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Din chef vet oftast inte vad de får göra</h2>
+                <p class="text-[#A0A0A0] leading-relaxed mb-8 max-w-2xl">
+                    Många anpassningar uteblir inte av ovilja, utan av osäkerhet — chefen vet
+                    inte vad lagen kräver, vad som är okej att fråga om eller vad det kostar.
+                    Skicka vidare arbetsgivarsidan och låt dem läsa själva.
+                </p>
+                <a href="/for-arbetsgivare.html" class="inline-block bg-white/10 border border-white/15 px-6 py-3 rounded-xl font-semibold hover:bg-white/15 transition-colors">
+                    Sidan för arbetsgivare &rarr;
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div class="max-w-7xl mx-auto px-6 w-full">
+        <footer class="py-12 border-t border-white/10 grid md:grid-cols-3 gap-8 text-sm">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-6 h-6 bg-[#D83131] rounded"></div>
+                    <span class="font-mono font-bold tracking-widest">NEUROVIBE</span>
+                </div>
+                <p class="text-white/40 leading-relaxed">
+                    Praktiska verktyg och underlag för neuroinkluderande arbetsliv i Sverige.
+                </p>
+            </div>
+            <div class="flex flex-col gap-2 text-white/50">
+                <a href="/for-medarbetare.html" class="hover:text-white transition-colors">För dig som är medarbetare</a>
+                <a href="/for-arbetsgivare.html" class="hover:text-white transition-colors">För arbetsgivare</a>
+                <a href="/partner.html" class="hover:text-white transition-colors">Partner &amp; annonsering</a>
+                <a href="/resurser.html" class="hover:text-white transition-colors">Alla verktyg</a>
+            </div>
+            <div class="flex flex-col gap-2 text-white/50">
+                <a href="/redaktionell-policy.html" class="hover:text-white transition-colors">Redaktionell policy &amp; källor</a>
+                <a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a>
+                <a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a>
+                <span class="text-white/30 mt-2 leading-relaxed">
+                    Innehållet produceras av AI-system inom mänskligt satta ramar och utgör inte
+                    medicinsk rådgivning. <a href="/redaktionell-policy.html" class="underline hover:text-white">Så arbetar vi</a>.
+                </span>
+                <span class="text-white/25">&copy; 2026 Adviseo &middot; Stockholm</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/static/leadflow.js" defer></script>
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+            var menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('mobile-menu-open');
+        });
+    </script>
+</body>
+</html>

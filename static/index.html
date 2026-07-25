@@ -12,7 +12,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neurovibe — Kognitiv Harmoni & Neuro-tips för Arbetslivet</title>
+    <title>Neurovibe — Verktyg och underlag för NPF i arbetslivet</title>
     <link rel="canonical" href="https://neurovibe.se/" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -71,10 +71,10 @@
 
     <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="Neurovibe — Din guide till kognitiv harmoni, neuro-tips och neuroinkluderande arbetsmiljöer. Vi optimerar vardagen för ADHD, autism och neurodiversitet.">
-    <meta name="keywords" content="neurodiversitet, ADHD arbetsplats, autism stöd, neuro-tips, biohacking Sverige, kognitiv optimering, neuroinkludering">
-    <meta property="og:title" content="Neurovibe | Kognitiv Harmoni">
-    <meta property="og:description" content="Guider och verktyg för en neuroinkluderande vardag och arbetsmiljö.">
+    <meta name="description" content="Svenska verktyg och mallar för ADHD, autism och NPF i arbetslivet. För dig som medarbetare: färdiga anpassningsförslag och kalkylatorer. För chefer och HR: rutinmall enligt AFS 2020:5 och lagkravsunderlag.">
+    <meta name="keywords" content="neurodiversitet arbetsplatsen, ADHD anpassningar jobb, autism arbetsmiljö, NPF arbetsliv, AFS 2020:5 arbetsanpassning, neuroinkludering">
+    <meta property="og:title" content="Neurovibe — Verktyg och underlag för NPF i arbetslivet">
+    <meta property="og:description" content="Färdiga anpassningsförslag, mallar och kalkylatorer för medarbetare, chefer och HR.">
     <meta property="og:type" content="website">
 </head>
 <body class="text-[#E0E0E0] selection:bg-[#D83131] selection:text-white min-h-screen flex flex-col scroll-smooth">
@@ -95,24 +95,28 @@
                 </div>
                 <span class="text-xl font-semibold tracking-tight">Neuro<span class="opacity-30 font-light">vibe</span></span>
             </button>
-            <nav class="hidden md:flex gap-8 text-[10px] font-bold tracking-widest uppercase items-center">
-                <a href="#philosophy" class="opacity-50 hover:opacity-100 transition-opacity">Filosofi</a>
-                <a href="#lab" class="opacity-50 hover:opacity-100 transition-opacity">Labbet</a>
+            <nav class="hidden md:flex gap-6 text-[10px] font-bold tracking-widest uppercase items-center">
+                <a href="/for-medarbetare.html" class="opacity-50 hover:opacity-100 transition-opacity">För dig</a>
+                <a href="/for-arbetsgivare.html" class="opacity-50 hover:opacity-100 transition-opacity">För arbetsgivare</a>
                 <a href="/resurser.html" class="opacity-50 hover:opacity-100 transition-opacity">Verktyg</a>
+                <a href="/data-rapport-2026.html" class="opacity-50 hover:opacity-100 transition-opacity">Data</a>
+                <a href="/partner.html" class="opacity-50 hover:opacity-100 transition-opacity">Partner</a>
                 <button onclick="toggleZen()" id="zen-btn" class="px-4 py-2 rounded-full border border-white/20 hover:bg-white/5 transition-all text-[9px] tracking-widest">ZEN MODE</button>
-                <button onclick="toggleModal('access')" class="bg-white/10 px-4 py-2 rounded-full hover:bg-white/20 transition-all border border-white/10">Få tillgång</button>
+                <button onclick="toggleModal('access')" class="bg-[#D83131] px-4 py-2 rounded-full hover:bg-[#B72A2A] transition-all">Få verktygen</button>
             </nav>
             <button id="mobile-menu-btn" class="md:hidden z-50 w-10 h-10 flex flex-col justify-center items-center gap-1.5 relative focus:outline-none" aria-label="Meny">
                 <div class="w-6 h-0.5 bg-white transition-transform duration-300 origin-center" id="menu-line-1"></div>
                 <div class="w-6 h-0.5 bg-white transition-opacity duration-300" id="menu-line-2"></div>
                 <div class="w-6 h-0.5 bg-white transition-transform duration-300 origin-center" id="menu-line-3"></div>
             </button>
-            <div id="mobile-menu" class="fixed inset-0 bg-[#050505]/95 backdrop-blur-lg z-40 hidden flex-col items-center justify-center gap-8 text-xl font-semibold opacity-0 transition-opacity duration-300">
-                <a href="#philosophy" class="mobile-link hover:text-[#D83131] transition-colors">Filosofi</a>
-                <a href="#lab" class="mobile-link hover:text-[#D83131] transition-colors">Labbet</a>
+            <div id="mobile-menu" class="fixed inset-0 bg-[#050505]/95 backdrop-blur-lg z-40 hidden flex-col items-center justify-center gap-6 text-xl font-semibold opacity-0 transition-opacity duration-300">
+                <a href="/for-medarbetare.html" class="mobile-link hover:text-[#D83131] transition-colors">För dig</a>
+                <a href="/for-arbetsgivare.html" class="mobile-link hover:text-[#D83131] transition-colors">För arbetsgivare</a>
                 <a href="/resurser.html" class="mobile-link hover:text-[#D83131] transition-colors">Verktyg</a>
+                <a href="/data-rapport-2026.html" class="mobile-link hover:text-[#D83131] transition-colors">Data 2026</a>
+                <a href="/partner.html" class="mobile-link hover:text-[#D83131] transition-colors">Partner</a>
                 <button onclick="toggleZen(); toggleMobileMenu();" class="px-6 py-3 rounded-full border border-white/20 hover:bg-white/5 transition-all text-sm tracking-widest">ZEN MODE</button>
-                <button onclick="toggleModal('access'); toggleMobileMenu();" class="bg-[#D83131] px-6 py-3 rounded-full hover:bg-[#B72A2A] transition-all text-sm">Få tillgång</button>
+                <button onclick="toggleModal('access'); toggleMobileMenu();" class="bg-[#D83131] px-6 py-3 rounded-full hover:bg-[#B72A2A] transition-all text-sm">Få verktygen</button>
             </div>
         </header>
 
@@ -124,18 +128,25 @@
                     <span class="w-1.5 h-1.5 rounded-full bg-[#D83131]"></span>
                     Adviseo Experimental Lab
                 </div>
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-gradient">
-                    Framtidens <br> arbetsplatser <br> bygger på <br> neurodiversitet.
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08] tracking-tight text-gradient">
+                    Verktygen som <br> gör anpassningar <br> konkreta.
                 </h1>
                 <p class="text-lg md:text-xl text-[#A0A0A0] font-light leading-relaxed max-w-md">
-                    Få tillgång till verktygen som gör det möjligt. Vi bygger broar mellan neurodivergent talang och inkluderande arbetsgivare.
+                    Neurovibe är en svensk verktygslåda för NPF i arbetslivet. Du får färdiga
+                    anpassningsförslag, mallar och kalkylatorer — inte fler artiklar om att
+                    neurodiversitet är en styrka.
                 </p>
-                <div class="flex flex-wrap gap-4 pt-4">
-                    <button onclick="toggleModal('access')" class="bg-[#D83131] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#B72A2A] transition-all shadow-lg shadow-[#D83131]/20">
-                        Få tillgång nu
-                    </button>
-                    <a href="#philosophy" class="glass-panel border-white/20 px-8 py-4 rounded-xl font-semibold hover:bg-white/5 transition-all text-center">
-                        Vårt manifest
+                <ul class="space-y-2.5 text-[15px] text-[#909090] font-light">
+                    <li class="flex gap-3"><span class="text-[#D83131]">&check;</span> 6 interaktiva verktyg, gratis och utan inloggning</li>
+                    <li class="flex gap-3"><span class="text-[#D83131]">&check;</span> Lagkrav och myndighetsprocesser förklarade på svenska</li>
+                    <li class="flex gap-3"><span class="text-[#D83131]">&check;</span> Egen data om belastning och maskering i arbetslivet</li>
+                </ul>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#vem-ar-du" class="bg-[#D83131] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#B72A2A] transition-all shadow-lg shadow-[#D83131]/20">
+                        Hitta din startpunkt
+                    </a>
+                    <a href="/for-arbetsgivare.html" class="glass-panel border-white/20 px-8 py-4 rounded-xl font-semibold hover:bg-white/5 transition-all text-center">
+                        Jag är chef eller HR
                     </a>
                 </div>
             </div>
@@ -181,6 +192,55 @@
                 </div>
             </section>
         </main>
+
+        <!-- Målgruppsrouter: tre vägar in, inga återvändsgränder -->
+        <section id="vem-ar-du" class="py-20 border-t border-white/10 scroll-mt-8">
+            <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#D83131] mb-6 block">Vem är du?</span>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Välj väg — vi visar rätt saker</h2>
+            <p class="text-lg text-[#A0A0A0] font-light mb-12 max-w-2xl">
+                Behoven skiljer sig helt beroende på var du sitter. En medarbetare vill komma
+                igång i dag. En HR-chef behöver ett underlag som håller vid en inspektion. En
+                leverantör vill nå båda.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="/for-medarbetare.html" class="glass-panel p-8 group hover:bg-white/[0.05] transition-all flex flex-col">
+                    <div class="w-11 h-11 rounded-xl bg-[#D83131]/15 text-[#D83131] flex items-center justify-center mb-6 border border-[#D83131]/20">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Jag har ADHD, autism eller annan NPF</h3>
+                    <p class="text-[#A0A0A0] text-[15px] font-light leading-relaxed mb-6 flex-grow">
+                        Verktyg för att komma igång, mäta din belastning och formulera vad du
+                        behöver till din chef — utan att behöva förklara någon diagnos.
+                    </p>
+                    <span class="text-[#D83131] font-semibold text-sm group-hover:translate-x-1 transition-transform inline-block">Till verktygslådan &rarr;</span>
+                </a>
+
+                <a href="/for-arbetsgivare.html" class="glass-panel p-8 group hover:bg-white/[0.05] transition-all flex flex-col border-[#D83131]/25">
+                    <div class="w-11 h-11 rounded-xl bg-[#D83131]/15 text-[#D83131] flex items-center justify-center mb-6 border border-[#D83131]/20">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Jag är chef, HR eller arbetsmiljöansvarig</h3>
+                    <p class="text-[#A0A0A0] text-[15px] font-light leading-relaxed mb-6 flex-grow">
+                        Rutinmall enligt AFS 2020:5, anpassningsbibliotek, samtalsmall och
+                        lagkravsöversikt. Beställ arbetsgivarpaketet kostnadsfritt.
+                    </p>
+                    <span class="text-[#D83131] font-semibold text-sm group-hover:translate-x-1 transition-transform inline-block">Till arbetsgivarsidan &rarr;</span>
+                </a>
+
+                <a href="/partner.html" class="glass-panel p-8 group hover:bg-white/[0.05] transition-all flex flex-col">
+                    <div class="w-11 h-11 rounded-xl bg-white/5 text-white/70 flex items-center justify-center mb-6 border border-white/10">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Vi säljer något till den här målgruppen</h3>
+                    <p class="text-[#A0A0A0] text-[15px] font-light leading-relaxed mb-6 flex-grow">
+                        Företagshälsovård, utbildning, akustik, hjälpmedel eller mjukvara. Se
+                        placeringar, leadgenerering och våra spelregler för sponsrat innehåll.
+                    </p>
+                    <span class="text-white/70 font-semibold text-sm group-hover:translate-x-1 transition-transform inline-block">Till partnersidan &rarr;</span>
+                </a>
+            </div>
+        </section>
 
         <!-- Philosophy Section -->
         <section id="philosophy" class="py-24 border-t border-white/10">
@@ -434,13 +494,15 @@
                 <div class="w-6 h-6 bg-[#D83131]/60 rounded-lg"></div>
                 <span>© 2026 ADVISEO LABORATORY</span>
             </div>
-            <div class="flex gap-12">
-                <a href="#philosophy" class="hover:text-white transition-colors">Manifest</a>
+            <div class="flex flex-wrap justify-center gap-6 md:gap-10">
+                <a href="/for-medarbetare.html" class="hover:text-white transition-colors">För dig</a>
+                <a href="/for-arbetsgivare.html" class="hover:text-white transition-colors">Arbetsgivare</a>
+                <a href="/partner.html" class="hover:text-white transition-colors">Partner</a>
                 <a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a>
                 <button onclick="toggleModal('privacy')" class="hover:text-white transition-colors uppercase">Integritet</button>
             </div>
             <div class="flex flex-col md:flex-row gap-4 md:gap-8 text-center md:text-left items-center">
-                <span>Denna sajt skapas och drivs helt av AI &middot; <a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></span>
+                <span>Innehållet produceras av AI-system inom mänskligt satta ramar och utgör inte medicinsk rådgivning &middot; <a href="/redaktionell-policy.html" class="hover:text-white transition-colors">Redaktionell policy &amp; källor</a></span>
                 <span>Stockholm</span>
                 <span>/</span>
                 <span>Digital First</span>
@@ -453,26 +515,50 @@
     <div id="access-modal" class="fixed inset-0 z-50 hidden modal-bg flex items-center justify-center p-6" role="dialog" aria-labelledby="modal-title">
         <div class="glass-panel w-full max-w-md p-10 md:p-12 relative border-white/20 animate-[fadeIn_0.4s_ease-out]">
             <button onclick="toggleModal('access')" class="absolute top-6 right-6 opacity-50 hover:opacity-100 text-2xl" aria-label="Stäng">&times;</button>
-            <div id="modal-content" class="text-center space-y-6">
-                <h3 id="modal-title" class="text-3xl font-bold tracking-tight">Få tillgång</h3>
-                <p class="text-[#A0A0A0] font-light text-sm">Ange din e-post för tillgång till våra neuroinkluderande verktyg och checklistor.</p>
-                <div class="space-y-4 pt-4 text-left">
+            <div id="modal-content" class="space-y-6">
+                <div class="text-center space-y-3">
+                    <h3 id="modal-title" class="text-3xl font-bold tracking-tight">Få verktygen</h3>
+                    <p class="text-[#A0A0A0] font-light text-sm">
+                        Vi skickar det som passar din roll — checklistan om du är medarbetare,
+                        arbetsgivarpaketet om du är chef eller HR.
+                    </p>
+                </div>
+
+                <!-- Samma formulär för båda segmenten. Rollvalet styr vilket
+                     erbjudande som skickas och var leaden hamnar. -->
+                <form id="access-form" data-nv-lead data-segment="individ"
+                      data-offer="individ-checklista" data-redirect="auto"
+                      data-error="#access-error" class="space-y-4 text-left">
                     <div>
-                        <label for="lead-email" class="sr-only">E-postadress</label>
-                        <input type="email" id="lead-email" placeholder="namn@exempel.se"
+                        <label for="access-role" class="sr-only">Din roll</label>
+                        <select id="access-role" name="role"
+                            class="w-full glass-panel bg-white/5 border-white/10 px-5 py-4 rounded-xl outline-none focus:border-[#D83131] transition-all input-glow">
+                            <option value="medarbetare">Jag är medarbetare eller arbetssökande</option>
+                            <option value="chef">Jag är chef med personalansvar</option>
+                            <option value="hr-chef">Jag arbetar med HR</option>
+                            <option value="arbetsmiljo">Jag är arbetsmiljöansvarig eller skyddsombud</option>
+                            <option value="foretagshalsovard">Jag arbetar inom företagshälsovård</option>
+                            <option value="annat">Annat</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="access-email" class="sr-only">E-postadress</label>
+                        <input type="email" id="access-email" name="email" required placeholder="namn@exempel.se"
                             class="w-full glass-panel bg-white/5 border-white/10 px-6 py-4 rounded-xl outline-none focus:border-[#D83131] transition-all input-glow">
                     </div>
-                    <div class="flex gap-3 items-start px-2 py-2">
-                        <input type="checkbox" id="lead-consent" class="mt-1 accent-[#D83131] w-4 h-4 cursor-pointer">
-                        <label for="lead-consent" class="text-[11px] leading-tight text-[#808080] font-light cursor-pointer">
+                    <div class="flex gap-3 items-start px-1">
+                        <input type="checkbox" id="access-consent" name="consent" required class="mt-1 accent-[#D83131] w-4 h-4 cursor-pointer">
+                        <label for="access-consent" class="text-[11px] leading-tight text-[#808080] font-light cursor-pointer">
                             Jag godkänner att mina uppgifter hanteras enligt <button type="button" onclick="toggleModal('privacy')" class="text-[#D83131] underline hover:text-[#FF4040]">integritetspolicyn</button>.
                         </label>
                     </div>
-                    <button id="submit-lead" class="w-full bg-[#D83131] text-white py-4 rounded-xl font-bold hover:bg-[#B72A2A] transition-all disabled:opacity-30 disabled:cursor-not-allowed shadow-lg shadow-[#D83131]/20">
-                        Begär inbjudan
+                    <button type="submit" class="w-full bg-[#D83131] text-white py-4 rounded-xl font-bold hover:bg-[#B72A2A] transition-all disabled:opacity-30 disabled:cursor-not-allowed shadow-lg shadow-[#D83131]/20">
+                        Skicka
                     </button>
-                </div>
-                <p class="text-[10px] uppercase tracking-widest opacity-30">Early access 2026 / Adviseo</p>
+                    <div id="access-error" class="hidden text-sm font-medium text-[#FF6B6B]"></div>
+                </form>
+
+                <p class="text-[10px] uppercase tracking-widest opacity-30 text-center">Gratis / Ingen inloggning / Adviseo</p>
             </div>
         </div>
     </div>
@@ -511,9 +597,6 @@
         const sendBtn = document.getElementById('send-btn');
         const accessModal = document.getElementById('access-modal');
         const privacyModal = document.getElementById('privacy-modal');
-        const leadEmail = document.getElementById('lead-email');
-        const leadConsent = document.getElementById('lead-consent');
-        const submitLead = document.getElementById('submit-lead');
         const modalContent = document.getElementById('modal-content');
         const mobileMenuBtn = document.getElementById("mobile-menu-btn");
         const mobileMenu = document.getElementById("mobile-menu");
@@ -569,44 +652,21 @@
             if (id === 'privacy') privacyModal.classList.toggle('hidden');
         }
 
-        async function handleLead() {
-            const email = leadEmail.value.trim();
-            if (!email) return;
-            if (!leadConsent.checked) {
-                alert("Du behöver godkänna integritetspolicyn för att fortsätta.");
-                return;
-            }
-            submitLead.disabled = true;
-            submitLead.textContent = "Sparar...";
-            try {
-                const response = await fetch('/api/lead', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email: email })
-                });
-                if (response.ok) {
-                    modalContent.innerHTML = `
-                        <div class='py-8 space-y-4'>
-                            <div class='w-16 h-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6'>
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </div>
-                            <h3 class='text-3xl font-bold tracking-tight text-white'>Du är på listan.</h3>
-                            <p class='text-[#808080] font-light'>Vi hör av oss så fort det finns en plats ledig för dig.</p>
-                            <button onclick="toggleModal('access')" class='mt-6 text-[10px] uppercase tracking-widest opacity-40 hover:opacity-100 transition-opacity'>Stäng</button>
-                        </div>
-                    `;
-                } else {
-                    throw new Error();
-                }
-            } catch (err) {
-                submitLead.disabled = false;
-                submitLead.textContent = "Begär inbjudan";
-                alert("Något gick fel. Testa igen eller ladda om sidan.");
-            }
-        }
+        // Rollvalet i modalen avgör segment och erbjudande. leadflow.js läser
+        // data-attributen vid submit, så det räcker att uppdatera dem här.
+        const accessForm = document.getElementById('access-form');
+        const accessRole = document.getElementById('access-role');
+        const EMPLOYER_ROLES = ['chef', 'hr-chef', 'arbetsmiljo', 'foretagshalsovard'];
 
-        submitLead.addEventListener('click', handleLead);
-        leadEmail.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleLead(); });
+        if (accessForm && accessRole) {
+            accessRole.addEventListener('change', () => {
+                const isEmployer = EMPLOYER_ROLES.includes(accessRole.value);
+                accessForm.dataset.segment = isEmployer ? 'arbetsgivare' : 'individ';
+                accessForm.dataset.offer = isEmployer ? 'b2b-anpassningspaket' : 'individ-checklista';
+                const btn = accessForm.querySelector('button[type="submit"]');
+                if (btn) btn.textContent = isEmployer ? 'Skicka arbetsgivarpaketet' : 'Skicka checklistan';
+            });
+        }
 
         function addMessage(text, isUser = false) {
             const div = document.createElement('div');
@@ -678,5 +738,6 @@
         }
         loadPosts();
     </script>
+    <script src="/static/leadflow.js" defer></script>
 </body>
 </html>

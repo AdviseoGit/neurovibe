@@ -249,11 +249,28 @@
                     Skicka mallen
                 </button>
             </form>
+    <p class="nv-privacy-note" style="font-size:0.75rem;color:#808080;margin-top:0.75rem">Vi skickar det du bett om och enstaka mejl med nya verktyg. Avregistrering med ett svar. <a href="/integritetspolicy.html" style="color:#D83131">Integritetspolicy</a>.</p>
             <div id="nedbrytare-success" class="hidden mt-4 text-[#D83131] font-bold">Mallen skickas till din e-post inom kort!</div>
         </div>
     </div>
 
-<footer class="py-8 text-center text-[#808080] text-sm border-t border-white/5 mt-16"><p>Denna sajt skapas och drivs helt av AI &middot; <a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></p></footer>
+
+<!-- nv-segment-cta -->
+<div style="max-width:52rem;margin:4rem auto;padding:2rem;border:1px solid rgba(255,255,255,0.08);
+            border-left:3px solid #D83131;border-radius:16px;background:rgba(255,255,255,0.03)">
+  <p style="font-family:ui-monospace,monospace;font-size:0.7rem;letter-spacing:0.2em;
+            text-transform:uppercase;color:#D83131;margin:0 0 0.75rem">Nästa steg</p>
+  <h2 style="font-size:1.5rem;font-weight:700;color:#fff;margin:0 0 0.75rem;line-height:1.3">Verktygen som gör det konkret</h2>
+  <p style="color:#A0A0A0;line-height:1.7;margin:0 0 1.5rem">Bryt ner det som känns för stort, mät din belastning eller få ett färdigt anpassningsförslag att ta med till chefen — utan att behöva förklara någon diagnos. Allt är gratis.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:0.75rem">
+    <a href="/for-medarbetare.html" style="display:inline-block;background:#D83131;color:#fff;text-decoration:none;
+       padding:0.85rem 1.5rem;border-radius:10px;font-weight:600">Till verktygslådan</a>
+    <a href="/for-medarbetare.html#checklista" style="display:inline-block;border:1px solid rgba(255,255,255,0.15);
+       color:#fff;text-decoration:none;padding:0.85rem 1.5rem;border-radius:10px;font-weight:600">Få checklistan i mejlen</a>
+  </div>
+</div>
+
+<footer class="py-8 text-center text-[#808080] text-sm border-t border-white/5 mt-16"><p>Innehållet produceras av AI-system inom mänskligt satta ramar och utgör inte medicinsk rådgivning &middot; <a href="/redaktionell-policy.html" class="hover:text-white transition-colors">Redaktionell policy &amp; källor</a></p></footer>
     <script>
         fetch("/lead-magnet-snippet.html").then(r => r.text()).then(html => {
             const container = document.getElementById("lead-magnet-container");
@@ -275,7 +292,13 @@
                     await fetch('/api/lead', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ email: email, source: 'nedbrytare_lead' })
+                        body: JSON.stringify({
+                        email: email,
+                        source: 'nedbrytare_lead',
+                        segment: 'individ',
+                        offer: 'nedbrytare_lead',
+                        source_page: window.location.pathname
+                    })
                     });
                     e.target.style.display = 'none';
                     document.getElementById('nedbrytare-success').style.display = 'block';
@@ -287,5 +310,6 @@
         }
     </script>
 
+    <script src="/static/leadflow.js" defer></script>
 </body>
 </html>

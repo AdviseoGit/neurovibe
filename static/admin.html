@@ -1,110 +1,196 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YJG1D5GJPR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-YJG1D5GJPR');
-</script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neurovibe - Admin Dashboard</title>
+    <title>Neurovibe Admin — Leads &amp; feedback</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
+        /* Klassbadge = sekventiell skala i en enda nyans (mörk = hetast lead).
+           Bokstaven bär betydelsen, färgen förstärker bara — aldrig färg ensam. */
+        .grade-A { background:#1d4ed8; color:#fff; }
+        .grade-B { background:#3b82f6; color:#fff; }
+        .grade-C { background:#bfdbfe; color:#1e3a8a; }
+        .grade-D { background:#e5e7eb; color:#374151; }
     </style>
 </head>
-<body class="bg-gray-100 min-h-screen">
-    <!-- Navbar -->
-    <nav class="bg-indigo-900 text-white p-4 shadow-md">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="font-bold text-xl tracking-tight">Neurovibe Admin</div>
-            <button onclick="logout()" class="text-sm bg-indigo-800 hover:bg-indigo-700 px-4 py-2 rounded">Logga ut</button>
+<body class="bg-gray-100 min-h-screen text-gray-900">
+
+    <nav class="bg-gray-900 text-white px-6 py-4 shadow">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <div class="font-bold text-lg tracking-tight">Neurovibe Admin</div>
+            <div class="flex items-center gap-3">
+                <button onclick="loadAll()" class="text-sm bg-white/10 hover:bg-white/20 px-4 py-2 rounded">Uppdatera</button>
+                <button onclick="logout()" class="text-sm bg-white/10 hover:bg-white/20 px-4 py-2 rounded">Logga ut</button>
+            </div>
         </div>
     </nav>
-            <button id="mobile-menu-btn" class="md:hidden z-50 w-10 h-10 flex flex-col justify-center items-center gap-1.5 relative focus:outline-none" aria-label="Meny">
-                <div class="w-6 h-0.5 bg-white transition-transform duration-300 origin-center" id="menu-line-1"></div>
-                <div class="w-6 h-0.5 bg-white transition-opacity duration-300" id="menu-line-2"></div>
-                <div class="w-6 h-0.5 bg-white transition-transform duration-300 origin-center" id="menu-line-3"></div>
-            </button>
-            <div id="mobile-menu" class="fixed inset-0 bg-[#050505]/95 backdrop-blur-lg z-40 hidden flex-col items-center justify-center gap-8 text-xl font-semibold opacity-0 transition-opacity duration-300">
-            </div>
 
-    <!-- Login Overlay -->
-    <div id="loginOverlay" class="fixed inset-0 bg-gray-900 bg-opacity-95 flex items-center justify-center z-50">
+    <!-- Login -->
+    <div id="loginOverlay" class="fixed inset-0 bg-gray-900/95 flex items-center justify-center z-50 p-6">
         <div class="bg-white p-8 rounded-xl shadow-2xl max-w-sm w-full">
-            <h2 class="text-2xl font-bold mb-6 text-gray-800">Admin Login</h2>
-            <input type="password" id="adminKey" placeholder="API Key" class="w-full p-3 border border-gray-300 rounded mb-4 focus:ring-2 focus:ring-indigo-500 outline-none">
-            <button onclick="login()" class="w-full bg-indigo-600 text-white font-bold p-3 rounded hover:bg-indigo-700">Lås upp</button>
+            <h2 class="text-2xl font-bold mb-2">Admin</h2>
+            <p class="text-sm text-gray-500 mb-6">Ange <code class="bg-gray-100 px-1 rounded">INTERNAL_API_KEY</code>.</p>
+            <input type="password" id="adminKey" placeholder="API-nyckel"
+                   class="w-full p-3 border border-gray-300 rounded mb-4 focus:ring-2 focus:ring-gray-900 outline-none">
+            <button onclick="login()" class="w-full bg-gray-900 text-white font-bold p-3 rounded hover:bg-gray-800">Lås upp</button>
+            <p id="loginError" class="hidden mt-4 text-sm text-[#d03b3b] font-medium">Ogiltig nyckel.</p>
         </div>
     </div>
 
-    <!-- Main Content -->
-    <div class="max-w-7xl mx-auto p-6 mt-6">
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                <div class="text-gray-500 text-sm font-medium mb-1">Totalt antal feedback</div>
-                <div class="text-3xl font-bold text-gray-800" id="statTotal">-</div>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                <div class="text-gray-500 text-sm font-medium mb-1">Snittbetyg</div>
-                <div class="text-3xl font-bold text-indigo-600" id="statAvg">-</div>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                <div class="text-gray-500 text-sm font-medium mb-1">Populäraste verktyg</div>
-                <div class="text-3xl font-bold text-gray-800" id="statTopTool">-</div>
-            </div>
-        </div>
+    <main class="max-w-7xl mx-auto p-6 space-y-8">
 
-        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-            <div class="p-6 border-b border-gray-200 flex justify-between items-center">
-                <h2 class="text-xl font-bold text-gray-800">Senaste Feedback</h2>
-                <button onclick="fetchData()" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium flex items-center gap-1">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
-                    Uppdatera
-                </button>
+        <!-- KPI-rad -->
+        <section>
+            <h1 class="text-2xl font-bold mb-1">Leads</h1>
+            <p class="text-sm text-gray-500 mb-5">A och B är säljbara kontakter. C och D går till nurture.</p>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="text-gray-500 text-sm font-medium mb-1">Totalt</div>
+                    <div class="text-3xl font-bold tabular-nums" id="kpiTotal">–</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="text-gray-500 text-sm font-medium mb-1">Senaste 7 dagarna</div>
+                    <div class="text-3xl font-bold tabular-nums" id="kpi7">–</div>
+                    <div class="text-xs text-gray-400 mt-1" id="kpi30">30 dagar: –</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="text-gray-500 text-sm font-medium mb-1">Pipeline (A + B)</div>
+                    <div class="text-3xl font-bold tabular-nums text-[#1d4ed8]" id="kpiPipeline">–</div>
+                    <div class="text-xs text-gray-400 mt-1">Arbetsgivare och partner</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="text-gray-500 text-sm font-medium mb-1">Obehandlade</div>
+                    <div class="text-3xl font-bold tabular-nums" id="kpiNew">–</div>
+                    <div class="text-xs text-gray-400 mt-1">Status "new"</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Segment -->
+        <section>
+            <h2 class="text-lg font-bold mb-4">Per segment</h2>
+            <div class="grid sm:grid-cols-3 gap-4">
+                <div class="bg-white p-5 rounded-xl border border-gray-200">
+                    <div class="text-gray-500 text-sm font-medium mb-1">Individ (publik)</div>
+                    <div class="text-2xl font-bold tabular-nums" id="segIndivid">–</div>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200">
+                    <div class="text-gray-500 text-sm font-medium mb-1">Arbetsgivare</div>
+                    <div class="text-2xl font-bold tabular-nums" id="segArbetsgivare">–</div>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200">
+                    <div class="text-gray-500 text-sm font-medium mb-1">Partner</div>
+                    <div class="text-2xl font-bold tabular-nums" id="segPartner">–</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lead-tabell -->
+        <section class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+            <div class="p-5 border-b border-gray-200 flex flex-wrap gap-3 justify-between items-center">
+                <div class="flex flex-wrap gap-2" id="segmentFilter">
+                    <button data-seg="" class="seg-btn px-3 py-1.5 text-sm rounded-full border border-gray-300 bg-gray-900 text-white">Alla</button>
+                    <button data-seg="arbetsgivare" class="seg-btn px-3 py-1.5 text-sm rounded-full border border-gray-300 hover:bg-gray-50">Arbetsgivare</button>
+                    <button data-seg="partner" class="seg-btn px-3 py-1.5 text-sm rounded-full border border-gray-300 hover:bg-gray-50">Partner</button>
+                    <button data-seg="individ" class="seg-btn px-3 py-1.5 text-sm rounded-full border border-gray-300 hover:bg-gray-50">Individ</button>
+                </div>
+                <button onclick="exportCsv()" class="text-sm font-medium text-[#1d4ed8] hover:underline">Exportera CSV</button>
             </div>
             <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse">
-                    <thead>
-                        <tr class="bg-gray-50 text-gray-600 text-sm border-b border-gray-200">
-                            <th class="p-4 font-medium">Datum</th>
-                            <th class="p-4 font-medium">Verktyg</th>
-                            <th class="p-4 font-medium">Betyg</th>
-                            <th class="p-4 font-medium w-1/2">Kommentar</th>
+                <table class="w-full text-left text-sm">
+                    <thead class="bg-gray-50 text-gray-600 border-b border-gray-200">
+                        <tr>
+                            <th class="p-3 font-medium">Klass</th>
+                            <th class="p-3 font-medium">Datum</th>
+                            <th class="p-3 font-medium">Kontakt</th>
+                            <th class="p-3 font-medium">Organisation</th>
+                            <th class="p-3 font-medium">Roll</th>
+                            <th class="p-3 font-medium">Behov</th>
+                            <th class="p-3 font-medium">Tidsram</th>
+                            <th class="p-3 font-medium">Källa</th>
+                            <th class="p-3 font-medium">Status</th>
                         </tr>
                     </thead>
-                    <tbody id="feedbackTableBody" class="divide-y divide-gray-100">
-                        <!-- Populated by JS -->
-                        <tr><td colspan="4" class="p-8 text-center text-gray-400">Väntar på data...</td></tr>
+                    <tbody id="leadRows" class="divide-y divide-gray-100">
+                        <tr><td colspan="9" class="p-8 text-center text-gray-400">Väntar på data…</td></tr>
                     </tbody>
                 </table>
             </div>
-        </div>
-    </div>
+            <div id="leadDetail" class="hidden border-t border-gray-200 bg-gray-50 p-5 text-sm"></div>
+        </section>
+
+        <!-- Feedback -->
+        <section class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+            <div class="p-5 border-b border-gray-200 flex justify-between items-center gap-4">
+                <h2 class="text-lg font-bold">Verktygsfeedback</h2>
+                <span class="text-sm text-gray-500" id="feedbackSummary">–</span>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm">
+                    <thead class="bg-gray-50 text-gray-600 border-b border-gray-200">
+                        <tr>
+                            <th class="p-3 font-medium">Datum</th>
+                            <th class="p-3 font-medium">Verktyg</th>
+                            <th class="p-3 font-medium">Betyg</th>
+                            <th class="p-3 font-medium w-1/2">Kommentar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="feedbackRows" class="divide-y divide-gray-100">
+                        <tr><td colspan="4" class="p-8 text-center text-gray-400">Väntar på data…</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="max-w-7xl mx-auto px-6 py-10 text-sm text-gray-400">
+        Intern sida. <a href="/redaktionell-policy.html" class="underline hover:text-gray-600">Redaktionell policy</a>
+    </footer>
 
     <script>
-        let apiKey = localStorage.getItem('neurovibe_admin_key');
-        
-        if (apiKey) {
-            document.getElementById('loginOverlay').style.display = 'none';
-            fetchData();
+        var apiKey = localStorage.getItem('neurovibe_admin_key');
+        var currentSegment = '';
+        var leadsCache = [];
+
+        var ROLE_LABELS = {
+            'hr-chef': 'HR-chef', 'hr-specialist': 'HR-specialist',
+            'di-ansvarig': 'D&I-ansvarig', 'chef': 'Chef', 'ledning': 'Ledning',
+            'arbetsmiljo': 'Arbetsmiljö', 'skyddsombud': 'Skyddsombud',
+            'foretagshalsovard': 'Företagshälsovård', 'fackligt': 'Fackligt',
+            'medarbetare': 'Medarbetare', 'annat': 'Annat'
+        };
+        var NEED_LABELS = {
+            'utbildning': 'Utbildning', 'policy': 'Policy/rutin',
+            'rekrytering': 'Rekrytering', 'individuellt-arende': 'Pågående ärende',
+            'lokaler': 'Lokaler/utrustning', 'verktyg': 'Verktyg',
+            'annonsera': 'Annonsera', 'annonsera-leads': 'Köpa leads',
+            'annonsera-data': 'Datasamarbete', 'orienterar': 'Orienterar sig'
+        };
+        var TIMELINE_LABELS = {
+            'omgaende': 'Omgående', 'detta-kvartal': 'Detta kvartal',
+            'i-ar': 'Under året', 'vet-ej': 'Obestämd'
+        };
+        var STATUSES = ['new', 'contacted', 'qualified', 'won', 'lost', 'nurture', 'legacy'];
+
+        function esc(value) {
+            if (value === null || value === undefined || value === '') return '';
+            return String(value).replace(/[&<>"']/g, function (c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+            });
         }
 
         function login() {
-            const key = document.getElementById('adminKey').value;
-            if (key) {
-                apiKey = key;
-                localStorage.setItem('neurovibe_admin_key', key);
-                document.getElementById('loginOverlay').style.display = 'none';
-                fetchData();
-            }
+            var key = document.getElementById('adminKey').value;
+            if (!key) return;
+            apiKey = key;
+            localStorage.setItem('neurovibe_admin_key', key);
+            document.getElementById('loginOverlay').style.display = 'none';
+            loadAll();
         }
 
         function logout() {
@@ -114,108 +200,170 @@
             document.getElementById('adminKey').value = '';
         }
 
-        async function fetchData() {
-            try {
-                const response = await fetch('/api/admin/feedback', {
-                    headers: { 'X-API-KEY': apiKey }
-                });
-
-                if (response.status === 403 || response.status === 401) {
-                    alert('Ogiltig API-nyckel');
+        function authFetch(url, options) {
+            options = options || {};
+            options.headers = Object.assign({ 'X-API-KEY': apiKey }, options.headers || {});
+            return fetch(url, options).then(function (res) {
+                if (res.status === 401 || res.status === 403) {
+                    document.getElementById('loginError').classList.remove('hidden');
                     logout();
-                    return;
+                    throw new Error('unauthorized');
                 }
-
-                const data = await response.json();
-                renderData(data);
-            } catch (error) {
-                console.error("Error fetching data", error);
-            }
+                return res;
+            });
         }
 
-        function renderData(data) {
-            const tbody = document.getElementById('feedbackTableBody');
-            
-            if (!data || data.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="4" class="p-8 text-center text-gray-500">Ingen feedback insamlad ännu.</td></tr>';
+        function loadAll() {
+            if (!apiKey) return;
+            loadLeads();
+            loadFeedback();
+        }
+
+        function loadLeads() {
+            var url = '/api/admin/leads' + (currentSegment ? '?segment=' + currentSegment : '');
+            authFetch(url)
+                .then(function (r) { return r.json(); })
+                .then(function (data) {
+                    leadsCache = data.leads || [];
+                    renderStats(data.stats || {});
+                    renderLeads(leadsCache);
+                })
+                .catch(function (e) { console.error(e); });
+        }
+
+        function renderStats(stats) {
+            var seg = stats.by_segment || {};
+            var status = stats.by_status || {};
+            document.getElementById('kpiTotal').textContent = stats.total || 0;
+            document.getElementById('kpi7').textContent = stats.last_7_days || 0;
+            document.getElementById('kpi30').textContent = '30 dagar: ' + (stats.last_30_days || 0);
+            document.getElementById('kpiPipeline').textContent = stats.pipeline_a_b || 0;
+            document.getElementById('kpiNew').textContent = status['new'] || 0;
+            document.getElementById('segIndivid').textContent = seg['individ'] || 0;
+            document.getElementById('segArbetsgivare').textContent = seg['arbetsgivare'] || 0;
+            document.getElementById('segPartner').textContent = seg['partner'] || 0;
+        }
+
+        function renderLeads(leads) {
+            var tbody = document.getElementById('leadRows');
+            if (!leads.length) {
+                tbody.innerHTML = '<tr><td colspan="9" class="p-8 text-center text-gray-400">Inga leads i detta segment ännu.</td></tr>';
                 return;
             }
+            tbody.innerHTML = leads.map(function (l) {
+                var date = (l.created_at || '').slice(0, 10);
+                var grade = l.grade || 'D';
+                var options = STATUSES.map(function (s) {
+                    return '<option value="' + s + '"' + (l.status === s ? ' selected' : '') + '>' + s + '</option>';
+                }).join('');
+                return '<tr class="hover:bg-gray-50 align-top">' +
+                    '<td class="p-3 whitespace-nowrap">' +
+                        '<span class="grade-' + grade + ' inline-flex items-center justify-center w-7 h-7 rounded-full font-bold text-xs">' + grade + '</span>' +
+                        '<span class="ml-2 text-gray-500 tabular-nums">' + (l.score || 0) + '</span></td>' +
+                    '<td class="p-3 whitespace-nowrap text-gray-500">' + esc(date) + '</td>' +
+                    '<td class="p-3"><a href="mailto:' + esc(l.email) + '" class="text-[#1d4ed8] hover:underline">' + esc(l.email) + '</a>' +
+                        (l.name ? '<div class="text-gray-500">' + esc(l.name) + '</div>' : '') +
+                        (l.phone ? '<div class="text-gray-500">' + esc(l.phone) + '</div>' : '') + '</td>' +
+                    '<td class="p-3">' + esc(l.company || '–') +
+                        (l.company_size ? '<div class="text-gray-400">' + esc(l.company_size) + ' anst.</div>' : '') + '</td>' +
+                    '<td class="p-3">' + esc(ROLE_LABELS[l.role] || l.role || '–') + '</td>' +
+                    '<td class="p-3">' + esc(NEED_LABELS[l.need] || l.need || '–') + '</td>' +
+                    '<td class="p-3">' + esc(TIMELINE_LABELS[l.timeline] || l.timeline || '–') + '</td>' +
+                    '<td class="p-3 text-gray-500 max-w-[12rem] truncate" title="' + esc(l.source_page) + '">' +
+                        esc(l.source_page || '–') +
+                        (l.utm_campaign ? '<div class="text-gray-400">' + esc(l.utm_campaign) + '</div>' : '') + '</td>' +
+                    '<td class="p-3"><select data-id="' + l.id + '" class="status-select border border-gray-300 rounded px-2 py-1">' +
+                        options + '</select>' +
+                        (l.message ? '<button class="msg-btn block mt-2 text-xs text-[#1d4ed8] hover:underline" data-id="' + l.id + '">Visa meddelande</button>' : '') +
+                    '</td></tr>';
+            }).join('');
 
-            // Calculate stats
-            document.getElementById('statTotal').textContent = data.length;
-            
-            const avg = data.reduce((acc, curr) => acc + curr.rating, 0) / data.length;
-            document.getElementById('statAvg').textContent = avg.toFixed(1) + ' / 5';
-
-            const toolsCount = {};
-            data.forEach(item => {
-                toolsCount[item.tool] = (toolsCount[item.tool] || 0) + 1;
+            Array.prototype.forEach.call(tbody.querySelectorAll('.status-select'), function (sel) {
+                sel.addEventListener('change', function () { setStatus(sel.dataset.id, sel.value); });
             });
-            const topTool = Object.keys(toolsCount).reduce((a, b) => toolsCount[a] > toolsCount[b] ? a : b);
-            
-            const toolNames = {
-                'nedbrytaren': 'Uppgiftsnedbrytaren',
-                'fokustimer': 'Fokus Timer',
-                'burnout': 'Burnout Calc',
-                'mallar': 'Arbetsplatsmallar'
-            };
-            document.getElementById('statTopTool').textContent = toolNames[topTool] || topTool;
-
-            // Render table
-            tbody.innerHTML = '';
-            data.forEach(item => {
-                const date = new Date(item.created_at).toLocaleDateString('sv-SE', { year: 'numeric', month: 'short', day: 'numeric' });
-                
-                // Stars HTML
-                let stars = '';
-                for(let i=0; i<5; i++) {
-                    stars += i < item.rating 
-                        ? '<span class="text-yellow-400">★</span>' 
-                        : '<span class="text-gray-300">★</span>';
-                }
-
-                tbody.innerHTML += `
-                    <tr class="hover:bg-gray-50">
-                        <td class="p-4 text-sm text-gray-500 whitespace-nowrap">${date}</td>
-                        <td class="p-4 text-sm font-medium text-gray-800">${toolNames[item.tool] || item.tool}</td>
-                        <td class="p-4 text-sm tracking-widest">${stars}</td>
-                        <td class="p-4 text-sm text-gray-600 italic">"${item.comment || '-'}"</td>
-                    </tr>
-                `;
+            Array.prototype.forEach.call(tbody.querySelectorAll('.msg-btn'), function (btn) {
+                btn.addEventListener('click', function () { showMessage(btn.dataset.id); });
             });
         }
-    </script>
 
-    <script>
-        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-        const mobileMenu = document.getElementById("mobile-menu");
-        let isMobileMenuOpen = false;
-
-        function toggleMobileMenu() {
-            isMobileMenuOpen = !isMobileMenuOpen;
-            const line1 = document.getElementById("menu-line-1");
-            const line2 = document.getElementById("menu-line-2");
-            const line3 = document.getElementById("menu-line-3");
-
-            if (isMobileMenuOpen) {
-                mobileMenu.classList.remove("hidden");
-                setTimeout(() => mobileMenu.classList.remove("opacity-0"), 10);
-                document.body.style.overflow = "hidden";
-                if(line1) line1.classList.add("translate-y-2", "rotate-45");
-                if(line2) line2.classList.add("opacity-0");
-                if(line3) line3.classList.add("-translate-y-2", "-rotate-45");
-            } else {
-                mobileMenu.classList.add("opacity-0");
-                setTimeout(() => mobileMenu.classList.add("hidden"), 300);
-                document.body.style.overflow = "";
-                if(line1) line1.classList.remove("translate-y-2", "rotate-45");
-                if(line2) line2.classList.remove("opacity-0");
-                if(line3) line3.classList.remove("-translate-y-2", "-rotate-45");
-            }
+        function showMessage(id) {
+            var lead = leadsCache.filter(function (l) { return String(l.id) === String(id); })[0];
+            if (!lead) return;
+            var box = document.getElementById('leadDetail');
+            box.classList.remove('hidden');
+            box.innerHTML = '<p class="font-semibold mb-2">' + esc(lead.company || lead.email) + '</p>' +
+                '<p class="whitespace-pre-wrap text-gray-700">' + esc(lead.message) + '</p>';
+            box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
-        if (mobileMenuBtn) mobileMenuBtn.addEventListener("click", toggleMobileMenu);
-        document.querySelectorAll(".mobile-link").forEach(l => l.addEventListener("click", toggleMobileMenu));
+
+        function setStatus(id, status) {
+            authFetch('/api/admin/lead-status', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ lead_id: Number(id), status: status })
+            }).then(function () { loadLeads(); }).catch(function (e) { console.error(e); });
+        }
+
+        function exportCsv() {
+            var url = '/api/admin/leads.csv' + (currentSegment ? '?segment=' + currentSegment : '');
+            authFetch(url)
+                .then(function (r) { return r.blob(); })
+                .then(function (blob) {
+                    var a = document.createElement('a');
+                    a.href = URL.createObjectURL(blob);
+                    a.download = 'neurovibe-leads.csv';
+                    a.click();
+                    URL.revokeObjectURL(a.href);
+                })
+                .catch(function (e) { console.error(e); });
+        }
+
+        Array.prototype.forEach.call(document.querySelectorAll('.seg-btn'), function (btn) {
+            btn.addEventListener('click', function () {
+                currentSegment = btn.dataset.seg;
+                Array.prototype.forEach.call(document.querySelectorAll('.seg-btn'), function (b) {
+                    b.className = 'seg-btn px-3 py-1.5 text-sm rounded-full border border-gray-300 ' +
+                        (b === btn ? 'bg-gray-900 text-white' : 'hover:bg-gray-50');
+                });
+                loadLeads();
+            });
+        });
+
+        function loadFeedback() {
+            authFetch('/api/admin/feedback')
+                .then(function (r) { return r.json(); })
+                .then(function (data) {
+                    var tbody = document.getElementById('feedbackRows');
+                    if (!data || !data.length) {
+                        tbody.innerHTML = '<tr><td colspan="4" class="p-8 text-center text-gray-400">Ingen feedback ännu.</td></tr>';
+                        document.getElementById('feedbackSummary').textContent = '0 svar';
+                        return;
+                    }
+                    var avg = data.reduce(function (a, c) { return a + (c.rating || 0); }, 0) / data.length;
+                    document.getElementById('feedbackSummary').textContent =
+                        data.length + ' svar · snitt ' + avg.toFixed(1) + ' / 5';
+                    tbody.innerHTML = data.map(function (item) {
+                        var stars = '';
+                        for (var i = 0; i < 5; i++) {
+                            stars += i < item.rating ? '★' : '<span class="text-gray-300">★</span>';
+                        }
+                        return '<tr class="hover:bg-gray-50">' +
+                            '<td class="p-3 text-gray-500 whitespace-nowrap">' + esc((item.created_at || '').slice(0, 10)) + '</td>' +
+                            '<td class="p-3 font-medium">' + esc(item.tool) + '</td>' +
+                            '<td class="p-3 tracking-widest text-[#fab219]">' + stars + '</td>' +
+                            '<td class="p-3 text-gray-600">' + esc(item.comment || '–') + '</td></tr>';
+                    }).join('');
+                })
+                .catch(function (e) { console.error(e); });
+        }
+
+        if (apiKey) {
+            document.getElementById('loginOverlay').style.display = 'none';
+            loadAll();
+        }
+        document.getElementById('adminKey').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') login();
+        });
     </script>
-<footer class="py-8 text-center text-[#808080] text-sm border-t border-white/5 mt-16"><p>Denna sajt skapas och drivs helt av AI &middot; <a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></p></footer>
 </body>
 </html>
