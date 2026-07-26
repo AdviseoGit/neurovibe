@@ -1,13 +1,18 @@
-from datetime import datetime
+import datetime
 
-with open("PROGRESS_LOG.md", "r") as f:
-    content = f.read()
+log_file = "/data/workspace/projects/neurovibe/PROGRESS_LOG.md"
 
-# Make sure we prepend the log
-today = datetime.now().strftime("%Y-%m-%d")
-new_log = f"{today} | DATA | Bytt till SQLite för leads capture istället för fallback/Postgres | Data-tillgång | nästa: Bygg ut datarapport med insamlad myndighets- och burnout-data\n"
-content = new_log + content
+date_str = datetime.datetime.now().strftime("%Y-%m-%d")
 
-with open("PROGRESS_LOG.md", "w") as f:
-    f.write(content)
+new_entry = f"{date_str} | LEADFLOW/INNEHÅLL | Producera arbetsgivarpaketets fem dokument | B2B Leads | nästa: Fyll mediakit med GA4-siffror\n"
 
+try:
+    with open(log_file, "r") as f:
+        lines = f.readlines()
+    
+    with open(log_file, "w") as f:
+        f.write(new_entry)
+        f.writelines(lines)
+    print("PROGRESS_LOG.md updated.")
+except Exception as e:
+    print(f"Error: {e}")
