@@ -1,3 +1,4 @@
+2026-07-27 | LEADFLOW | Producera arbetsgivarpaketets fem dokument | B2B Leads | nästa: Fyll mediakit med GA4-siffror
 2026-07-26 | LEADFLOW/INNEHÅLL | Producera arbetsgivarpaketets fem dokument | B2B Leads | nästa: Fyll mediakit med GA4-siffror
 2026-07-25 | LEADFLOW/POSITIONERING | Byggde segmenterad lead-maskin: målgruppsrouter, tre nya landningssidor, lead scoring A-D, admin-dashboard och redaktionell policy | Tydlighet & B2B-intäkt | nästa: montera volym för lead-DB, producera arbetsgivarpaketet, fyll mediakit med GA4-siffror
 2026-07-25 | INNEHÅLL/LEADFLOW | Publicerat guide om Inkluderande Kultur för NPF med AI ROI CTA | B2B Leads & Konvertering | nästa: Följ upp datarapporten och fortsätt B2B outreach
