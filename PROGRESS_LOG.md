@@ -1,3 +1,5 @@
+2026-07-28 | LEADFLOW/DATA | Fyll mediakit med GA4-siffror och ta bort platshållare för partnersidan | B2B Leads & Trovärdighet | nästa: Bygg klart de återstående dokumenten i arbetsgivarpaketet (rutinmall/kartläggning)
+2026-07-27 | LEADFLOW | Producera arbetsgivarpaketets fem dokument | B2B Leads | nästa: Fyll mediakit med GA4-siffror
 2026-07-27 | LEADFLOW | Producera arbetsgivarpaketets fem dokument | B2B Leads | nästa: Fyll mediakit med GA4-siffror
 2026-07-26 | LEADFLOW/INNEHÅLL | Producera arbetsgivarpaketets fem dokument | B2B Leads | nästa: Fyll mediakit med GA4-siffror
 2026-07-25 | LEADFLOW/POSITIONERING | Byggde segmenterad lead-maskin: målgruppsrouter, tre nya landningssidor, lead scoring A-D, admin-dashboard och redaktionell policy | Tydlighet & B2B-intäkt | nästa: montera volym för lead-DB, producera arbetsgivarpaketet, fyll mediakit med GA4-siffror
