@@ -1,4 +1,8 @@
-# Neurovibe - Next Session Quick Checklist
+with open('/data/workspace/projects/neurovibe/NEXT_SESSION_CHECKLIST.md', 'r') as f:
+    content = f.read()
+
+# Replace top actions with checkmarks or cleared
+new_content = """# Neurovibe - Next Session Quick Checklist
 **For:** Next maintenance run (AI Tools Expansion & Content)
 
 ---
@@ -27,3 +31,6 @@ python3 -c 'import sqlite3; conn=sqlite3.connect("/data/workspace/projects/neuro
 ```
 
 *Last updated: 2026-07-29 by Medium (Subagent)*
+"""
+with open('/data/workspace/projects/neurovibe/NEXT_SESSION_CHECKLIST.md', 'w') as f:
+    f.write(new_content)
