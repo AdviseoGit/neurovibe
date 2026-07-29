@@ -171,13 +171,19 @@
                 <div class="bg-gradient-to-br from-[#1A0505] to-[#0A0202] rounded-2xl p-8 border border-[#D83131]/20 my-12 text-center">
                     <h3 class="text-2xl font-bold text-white mb-3">Ladda ner hela rådatarapporten (PDF)</h3>
                     <p class="text-[#A0A0A0] mb-6">Få tillgång till all data, inklusive nedbrytning på specifika trigger-faktorer och rekommendationer för HR och chefer.</p>
-                    <form id="report-lead-form" class="max-w-md mx-auto flex flex-col gap-4">
-                        <input type="email" placeholder="Din e-postadress" required class="bg-black/50 border border-white/10 px-4 py-3 rounded-xl text-white outline-none focus:border-[#D83131]">
-                        <button type="submit" class="bg-[#D83131] hover:bg-[#B72A2A] text-white font-bold py-3 px-6 rounded-xl transition-colors">
+                    <form data-nv-lead data-segment="arbetsgivare" data-offer="b2b-datarapport" data-redirect="auto" data-error="#report-error" class="max-w-md mx-auto flex flex-col gap-4 text-left">
+                        <input type="email" name="email" placeholder="Din e-postadress" required class="bg-black/50 border border-white/10 px-4 py-3 rounded-xl text-white outline-none focus:border-[#D83131] w-full">
+                        <div class="flex gap-3 items-start pt-2">
+                            <input type="checkbox" id="report-consent" name="consent" required class="mt-1 w-4 h-4 accent-[#D83131] cursor-pointer">
+                            <label for="report-consent" class="text-sm text-[#909090] leading-snug cursor-pointer">
+                                Jag godkänner att Neurovibe sparar min e-postadress för att skicka rapporten och enstaka uppdateringar. <a href="/integritetspolicy.html" class="text-[#D83131] hover:underline">Integritetspolicy</a>.
+                            </label>
+                        </div>
+                        <button type="submit" class="bg-[#D83131] hover:bg-[#B72A2A] text-white font-bold py-3 px-6 rounded-xl transition-colors w-full">
                             Skicka rapporten
                         </button>
+                        <div id="report-error" class="hidden text-[#FF6B6B] text-sm"></div>
                     </form>
-    <p class="nv-privacy-note" style="font-size:0.75rem;color:#808080;margin-top:0.75rem">Vi skickar det du bett om och enstaka mejl med nya verktyg. Avregistrering med ett svar. <a href="/integritetspolicy.html" style="color:#D83131">Integritetspolicy</a>.</p>
                     <div id="report-success" class="hidden mt-4 text-[#D83131] font-bold">Rapporten skickas till din e-post!</div>
                 </div>
 
@@ -214,50 +220,7 @@
             </div>
         </footer>
     </div>
-    <script>
-        document.getElementById('report-lead-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const email = e.target.querySelector('input[type="email"]').value;
-            const btn = e.target.querySelector('button');
-            btn.disabled = true;
-            btn.textContent = "Skickar...";
-            
-            try {
-                await fetch('/api/lead', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        email: email,
-                        source: 'data_report_2026',
-                        segment: 'individ',
-                        offer: 'data_report_2026',
-                        source_page: window.location.pathname
-                    })
-                });
-                e.target.style.display = 'none';
-                document.getElementById('report-success').style.display = 'block';
-            } catch(err) {
-                btn.disabled = false;
-                btn.textContent = "Försök igen";
-            }
-        });
-        
-        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-        const mobileMenu = document.getElementById("mobile-menu");
-        let isMobileMenuOpen = false;
-
-        function toggleMobileMenu() {
-            isMobileMenuOpen = !isMobileMenuOpen;
-            if (isMobileMenuOpen) {
-                mobileMenu.classList.remove("hidden");
-                setTimeout(() => mobileMenu.classList.remove("opacity-0"), 10);
-            } else {
-                mobileMenu.classList.add("opacity-0");
-                setTimeout(() => mobileMenu.classList.add("hidden"), 300);
-            }
-        }
-        if (mobileMenuBtn) mobileMenuBtn.addEventListener("click", toggleMobileMenu);
-    </script>
+    
     <script src="/static/leadflow.js" defer></script>
 </body>
 </html>
