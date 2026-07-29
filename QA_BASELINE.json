@@ -1,7 +1,4 @@
 {
-  "hard_findings": [
-    "dead-link|https://neurovibe.se/verktyg/inkluderande-moten.html",
-    "error-page|https://neurovibe.se/verktyg/inkluderande-moten.html|404"
-  ],
-  "count": 2
+  "hard_findings": [],
+  "count": 0
 }
