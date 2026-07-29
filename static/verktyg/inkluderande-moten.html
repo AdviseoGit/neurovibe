@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inkluderande Möten | Neurovibe.se</title>
+    <meta name="description" content="Skapa inkluderande och tillgängliga möten som minskar stress och kognitiv överbelastning för alla, särskilt anpassat för neurodiversitet (ADHD, Autism).">
+    
+    <!-- Open Graph Data -->
+    <meta property="og:title" content="Checklista: Inkluderande Möten">
+    <meta property="og:description" content="Skapa möten som funkar för alla - minska stress och kognitiv belastning.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://neurovibe.se/verktyg/inkluderande-moten.html">
+    <meta property="og:image" content="https://neurovibe.se/images/neurovibe-og.jpg">
+    <meta property="og:site_name" content="Neurovibe">
+    
+    <!-- Tailwind CSS (via CDN för enkelhet i denna MVP, anpassa om projektet använder build step) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        :root {
+            --brand: #2563eb;
+            --brand-light: #eff6ff;
+            --brand-dark: #1d4ed8;
+            --text-main: #1f2937;
+            --bg-main: #f9fafb;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-main);
+            line-height: 1.6;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            font-weight: 500;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background-color: var(--brand);
+            color: white;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--brand-dark);
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            padding: 12px;
+            background: #f8fafc;
+            border-radius: 6px;
+            border-left: 4px solid var(--brand);
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-top: 5px;
+            margin-right: 12px;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--brand);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav (simplified placeholder) -->
+    <header class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="/" class="font-bold text-xl text-blue-600">Neurovibe</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="/for-arbetsgivare.html" class="text-gray-600 hover:text-blue-600">För Arbetsgivare</a>
+                <a href="/verktyg-anpassningsgenerator.html" class="text-gray-600 hover:text-blue-600">Verktyg</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="mb-12">
+            <h1 class="text-4xl font-bold mb-4 text-gray-900">Checklista: Neuroinkluderande Möten</h1>
+            <p class="text-xl text-gray-600">Ett verktyg för att strukturera möten som minskar kognitiv överbelastning och ökar tydligheten för alla deltagare.</p>
+        </div>
+
+        <div class="card bg-blue-50 border border-blue-100">
+            <h2 class="text-xl font-semibold mb-4">Varför är detta viktigt?</h2>
+            <p class="mb-0 text-gray-700">Otydliga agendor, sensorisk överbelastning och avsaknad av pauser är vanliga stressfaktorer, särskilt för personer med NPF (Neuropsykiatriska funktionsnedsättningar som ADHD och Autism). Genom att följa denna checklista skapar du en mer tillgänglig arbetsmiljö.</p>
+        </div>
+
+        <form id="meetingForm" class="mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <div class="card">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Mötestyp</label>
+                    <select id="meetingType" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2 border">
+                        <option value="status">Statusuppdatering (Informationsdelning)</option>
+                        <option value="brainstorm">Brainstorming / Workshop</option>
+                        <option value="oneonone">1-till-1 / Avstämning</option>
+                        <option value="decision">Beslutsmöte</option>
+                    </select>
+                </div>
+
+                <div class="card">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Format</label>
+                    <select id="meetingFormat" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2 border">
+                        <option value="digital">Digitalt (Teams/Zoom)</option>
+                        <option value="hybrid">Hybrid</option>
+                        <option value="physical">Fysiskt på kontoret</option>
+                    </select>
+                </div>
+
+                <div class="card">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Mötets Längd</label>
+                    <select id="meetingDuration" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2 border">
+                        <option value="short">Kort (Max 25 minuter)</option>
+                        <option value="medium">Standard (45-50 minuter)</option>
+                        <option value="long">Långt (Över 1 timme)</option>
+                    </select>
+                </div>
+                
+                <div class="card flex items-end">
+                     <button type="button" onclick="generateChecklist()" class="w-full btn btn-primary">Generera Checklista</button>
+                </div>
+            </div>
+        </form>
+
+        <div id="resultContainer" class="hidden">
+            <h2 class="text-2xl font-bold mb-6 text-gray-900 border-b pb-2">Din Anpassade Möteschecklista</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold mb-4 text-blue-700">1. Innan Mötet (Förberedelser)</h3>
+                <div id="beforeList"></div>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold mb-4 text-blue-700">2. Under Mötet (Genomförande)</h3>
+                <div id="duringList"></div>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold mb-4 text-blue-700">3. Efter Mötet (Uppföljning)</h3>
+                <div id="afterList"></div>
+            </div>
+
+            <!-- Email Capture / Lead Magnet -->
+            <div class="card bg-gray-50 border border-gray-200 mt-12">
+                <h3 class="text-xl font-bold mb-2">Vill du ha fler verktyg för en inkluderande arbetsplats?</h3>
+                <p class="text-gray-600 mb-4">Ladda ner vår omfattande guide "Datarapport 2026: Neurodiversitet i Arbetslivet" med konkreta tips för chefer och HR.</p>
+                <form action="#" method="POST" class="flex gap-2">
+                    <input type="email" placeholder="Din e-postadress" required class="flex-1 border-gray-300 rounded-md shadow-sm p-2 border">
+                    <button type="submit" class="btn btn-primary">Skicka Guiden</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-8 mt-12 text-center">
+        <p>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></p>
+    </footer>
+
+    <script>
+        const rules = {
+            before: {
+                always: [
+                    "Skicka en tydlig agenda minst 24 timmar i förväg.",
+                    "Klargör syftet: Är det för information, diskussion eller beslut?",
+                    "Ange uttryckligen om mötet kräver förberedelse (läsning) eller inte."
+                ],
+                brainstorm: [
+                    "Skicka ut ämnet/frågeställningen i förväg så introverta och de som behöver process-tid kan förbereda idéer."
+                ],
+                hybrid: [
+                    "Säkerställ att möteslänken finns tydligt i kallelsen."
+                ],
+                physical: [
+                    "Boka ett rum med dämpad belysning (undvik starka lysrör om möjligt) och god ventilation."
+                ]
+            },
+            during: {
+                always: [
+                    "Inled med att kort repetera syftet och agendan.",
+                    "Använd 'Parkeringen': En plats (t.ex. whiteboard eller chat) för viktiga frågor som ligger utanför dagens agenda."
+                ],
+                digital: [
+                    "Gör det tydligt att det är OK att ha kameran avstängd för att minska 'Zoom-trötthet' (kognitiv belastning).",
+                    "Uppmuntra användning av räck-upp-handen-funktionen för att undvika avbrott."
+                ],
+                long: [
+                    "Schemalägg en 5-10 minuters mikropaus varje 45 minuter. Ingen skärmtid under pausen."
+                ],
+                decision: [
+                    "Ge utrymme för tystnad (10-15 sekunder) efter en viktig fråga så alla hinner processa och formulera svar."
+                ]
+            },
+            after: {
+                always: [
+                    "Skicka en kort, punktad sammanfattning skriftligt (beslut och nästa steg) inom 24 timmar.",
+                    "Säkerställ att 'vem gör vad och när' är extremt tydligt dokumenterat."
+                ],
+                brainstorm: [
+                    "Tillåt att deltagare kan skicka in fler idéer via mail/chat under 24 timmar efter mötet (för de som processar långsammare)."
+                ]
+            }
+        };
+
+        function createChecklistItem(text) {
+            return `
+                <label class="checklist-item cursor-pointer hover:bg-gray-100 transition-colors">
+                    <input type="checkbox">
+                    <span class="text-gray-800">${text}</span>
+                </label>
+            `;
+        }
+
+        function generateChecklist() {
+            const type = document.getElementById('meetingType').value;
+            const format = document.getElementById('meetingFormat').value;
+            const duration = document.getElementById('meetingDuration').value;
+
+            let beforeItems = [...rules.before.always];
+            if (rules.before[type]) beforeItems.push(...rules.before[type]);
+            if (rules.before[format]) beforeItems.push(...rules.before[format]);
+            if (rules.before[duration]) beforeItems.push(...rules.before[duration]);
+
+            let duringItems = [...rules.during.always];
+            if (rules.during[type]) duringItems.push(...rules.during[type]);
+            if (rules.during[format]) duringItems.push(...rules.during[format]);
+            if (rules.during[duration]) duringItems.push(...rules.during[duration]);
+
+            let afterItems = [...rules.after.always];
+            if (rules.after[type]) afterItems.push(...rules.after[type]);
+            if (rules.after[format]) afterItems.push(...rules.after[format]);
+            if (rules.after[duration]) afterItems.push(...rules.after[duration]);
+
+            document.getElementById('beforeList').innerHTML = beforeItems.map(createChecklistItem).join('');
+            document.getElementById('duringList').innerHTML = duringItems.map(createChecklistItem).join('');
+            document.getElementById('afterList').innerHTML = afterItems.map(createChecklistItem).join('');
+
+            const resultContainer = document.getElementById('resultContainer');
+            resultContainer.classList.remove('hidden');
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    </script>
+</body>
+</html>

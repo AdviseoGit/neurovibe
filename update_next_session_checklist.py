@@ -1,4 +1,8 @@
-# Neurovibe - Next Session Quick Checklist
+import os
+
+path = "/data/workspace/projects/neurovibe/NEXT_SESSION_CHECKLIST.md"
+
+content = """# Neurovibe - Next Session Quick Checklist
 **For:** Next maintenance run (AI Tools Expansion & Content)
 
 ---
@@ -30,3 +34,9 @@ python3 -c 'import sqlite3; conn=sqlite3.connect("/data/workspace/projects/neuro
 ```
 
 *Last updated: 2026-07-29 by Medium*
+"""
+
+with open(path, "w", encoding="utf-8") as f:
+    f.write(content)
+
+print("NEXT_SESSION_CHECKLIST.md updated successfully.")
