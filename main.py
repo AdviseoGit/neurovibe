@@ -328,10 +328,10 @@ async def favicon():
     return FileResponse("static/favicon.svg")
 
 # Catch-all route to serve any .html file from the static directory from the root URL
-@app.get("/{filename}", response_class=FileResponse)
-async def serve_html(filename: str):
-    if filename.endswith(".html"):
-        file_path = os.path.join("static", filename)
+@app.get("/{path:path}", response_class=FileResponse)
+async def serve_html(path: str):
+    if path.endswith(".html"):
+        file_path = os.path.join("static", path)
         if os.path.exists(file_path):
             return FileResponse(file_path)
     raise HTTPException(status_code=404, detail="Item not found")

@@ -1,7 +1,7 @@
 {
   "hard_findings": [
-    "menu-bloat|https://neurovibe.se/for-arbetsgivare.html",
-    "menu-bloat|https://neurovibe.se/for-medarbetare.html"
+    "dead-link|https://neurovibe.se/verktyg/inkluderande-moten.html",
+    "error-page|https://neurovibe.se/verktyg/inkluderande-moten.html|404"
   ],
   "count": 2
 }

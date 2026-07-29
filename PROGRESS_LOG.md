@@ -1,3 +1,4 @@
+2026-07-29 | TEKNIK | Fixade 404 och felaktig mappstruktur för inkluderande möten-verktyget | Fixade regression från föregående pass | nästa: tillväxt, nytt verktyg eller artikel
 2026-07-29 | KATEGORI | Inkluderande möteschecklista skapad och publicerad | Engagemang och leads | nästa: Fler AI-verktyg
 2026-07-29 | B2B OUTREACH/TOOL | Skickade uppföljningsmail till Q3-leads och skapade blueprint för nytt AI-verktyg (Mötesgenerator) | B2B Leads & Trovärdighet | nästa: Utveckla mötesgeneratorn
 2026-07-29 | LEADFLOW/DATA | Migrerade inline-formuläret på datarapporten till <form data-nv-lead> med riktig samtyckesruta | B2B Leads & Konvertering | nästa: Fyll datarapporten med mer data eller utför B2B outreach
