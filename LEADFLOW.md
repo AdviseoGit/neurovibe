@@ -300,14 +300,14 @@ peka på, och höj sedan.
 ## 10. Kvar att göra
 
 **Innan lansering av leadflödet**
-- [ ] Montera volym i Railway + sätt `NV_DATA_DIR`, och bekräfta i deploy-loggen
+- [x] Montera volym i Railway + sätt `NV_DATA_DIR`, och bekräfta i deploy-loggen
       eller `/admin.html` att den används (avsnitt 6)
 - [ ] Verifiera att `SMTP_USER`/`SMTP_PASS` är satta — utan dem skickas inga mejl
       (`mailer.configured()` loggar men kastar inte). Syns som varning i
       `/admin.html`.
 - [ ] Skicka ett testinskick per segment och kontrollera att båda mejlen kommer fram
-- [ ] Producera arbetsgivarpaketets dokument (avsnitt 3)
-- [ ] Fyll i trafiksiffror i mediakitet (avsnitt 8)
+- [x] Producera arbetsgivarpaketets dokument (avsnitt 3)
+- [x] Fyll i trafiksiffror i mediakitet (avsnitt 8)
 
 **Nästa iteration av maskinen**
 - [ ] Migrera de återstående inline-formulären (`verktyg-*.html`,
