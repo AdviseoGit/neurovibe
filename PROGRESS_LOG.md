@@ -1,3 +1,4 @@
+2026-07-29 | LEADFLOW/DATA | Uppdaterade partner.html med GA4-siffror (310 sidvisningar) | B2B Leads & Trovärdighet | nästa: Fyll datarapporten med mer data eller utför B2B outreach
 2026-07-28 | LEADFLOW/DATA | Fyll mediakit med GA4-siffror och ta bort platshållare för partnersidan | B2B Leads & Trovärdighet | nästa: Bygg klart de återstående dokumenten i arbetsgivarpaketet (rutinmall/kartläggning)
 2026-07-27 | LEADFLOW | Producera arbetsgivarpaketets fem dokument | B2B Leads | nästa: Fyll mediakit med GA4-siffror
 2026-07-27 | LEADFLOW | Producera arbetsgivarpaketets fem dokument | B2B Leads | nästa: Fyll mediakit med GA4-siffror
