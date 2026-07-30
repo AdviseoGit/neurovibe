@@ -164,9 +164,16 @@
             <div class="card bg-gray-50 border border-gray-200 mt-12">
                 <h3 class="text-xl font-bold mb-2">Vill du ha fler verktyg för en inkluderande arbetsplats?</h3>
                 <p class="text-gray-600 mb-4">Ladda ner vår omfattande guide "Datarapport 2026: Neurodiversitet i Arbetslivet" med konkreta tips för chefer och HR.</p>
-                <form action="#" method="POST" class="flex gap-2">
-                    <input type="email" placeholder="Din e-postadress" required class="flex-1 border-gray-300 rounded-md shadow-sm p-2 border">
-                    <button type="submit" class="btn btn-primary">Skicka Guiden</button>
+                <form data-nv-lead data-segment="arbetsgivare" data-offer="b2b-datarapport" data-redirect="auto" data-error="#moten-error" class="flex flex-col gap-4 text-left mt-4">
+                    <input type="email" name="email" placeholder="Din e-postadress" required class="w-full border-gray-300 rounded-md shadow-sm p-3 border focus:border-blue-500 focus:ring-blue-500 text-gray-900">
+                    <div class="flex gap-3 items-start pt-1">
+                        <input type="checkbox" id="moten-consent" name="consent" required class="mt-1 w-4 h-4 cursor-pointer">
+                        <label for="moten-consent" class="text-sm text-gray-600 leading-snug cursor-pointer">
+                            Jag godkänner att Neurovibe sparar min e-postadress för att skicka datarapporten och enstaka uppdateringar. <a href="/integritetspolicy.html" class="text-blue-600 hover:underline">Integritetspolicy</a>.
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full sm:w-auto">Skicka Guiden</button>
+                    <div id="moten-error" class="hidden text-red-600 text-sm"></div>
                 </form>
             </div>
         </div>

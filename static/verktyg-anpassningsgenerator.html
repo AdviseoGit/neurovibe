@@ -153,13 +153,19 @@
             <p class="text-[#A0A0A0] mb-8 max-w-2xl mx-auto">
                 Att be om anpassningar kan kännas nervöst. Ladda ner vår steg-för-steg checklista (PDF) som hjälper dig förbereda mötet med din chef, inklusive juridiska rättigheter och hur du bäst formulerar dina behov som en tillgång för företaget.
             </p>
-            <form id="generator-lead-form" class="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
-                <input type="email" placeholder="Din e-postadress" required class="flex-grow bg-black/50 border border-white/10 px-4 py-3 rounded-xl text-white outline-none focus:border-[#D83131]">
-                <button type="submit" class="bg-[#D83131] hover:bg-[#B72A2A] text-white font-bold py-3 px-6 rounded-xl transition-colors whitespace-nowrap">
+            <form data-nv-lead data-segment="medarbetare" data-offer="individ-checklista" data-redirect="auto" data-error="#generator-error" class="max-w-md mx-auto flex flex-col gap-4 text-left">
+                <input type="email" name="email" placeholder="Din e-postadress" required class="bg-black/50 border border-white/10 px-4 py-3 rounded-xl text-white outline-none focus:border-[#D83131] w-full">
+                <div class="flex gap-3 items-start pt-2">
+                    <input type="checkbox" id="generator-consent" name="consent" required class="mt-1 w-4 h-4 accent-[#D83131] cursor-pointer">
+                    <label for="generator-consent" class="text-sm text-[#909090] leading-snug cursor-pointer">
+                        Jag godkänner att Neurovibe sparar min e-postadress för att skicka checklistan och enstaka uppdateringar. <a href="/integritetspolicy.html" class="text-[#D83131] hover:underline">Integritetspolicy</a>.
+                    </label>
+                </div>
+                <button type="submit" class="bg-[#D83131] hover:bg-[#B72A2A] text-white font-bold py-3 px-6 rounded-xl transition-colors w-full">
                     Skicka checklistan
                 </button>
+                <div id="generator-error" class="hidden text-[#FF6B6B] text-sm"></div>
             </form>
-    <p class="nv-privacy-note" style="font-size:0.75rem;color:#808080;margin-top:0.75rem">Vi skickar det du bett om och enstaka mejl med nya verktyg. Avregistrering med ett svar. <a href="/integritetspolicy.html" style="color:#D83131">Integritetspolicy</a>.</p>
             <div id="generator-success" class="hidden mt-4 text-[#D83131] font-bold">Checklistan skickas till din e-post inom kort!</div>
         </div>
     </div>

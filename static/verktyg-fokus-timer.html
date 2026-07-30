@@ -281,11 +281,18 @@
             <p class="text-[#A0A0A0] mb-8 max-w-2xl mx-auto">
                 Ladda ner vår <strong>Distraktionsblockerings-strategi</strong> (PDF). Lär dig hur du strukturerar din dag utifrån din dopaminnivå och förhindrar överstimulans innan den sker.
             </p>
-            <form id="fokus-lead-form" class="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
-                <input type="email" placeholder="Din e-postadress" required class="flex-grow bg-black/50 border border-white/10 px-4 py-3 rounded-xl text-white outline-none focus:border-[#D83131]">
-                <button type="submit" class="bg-[#D83131] hover:bg-[#B72A2A] text-white font-bold py-3 px-6 rounded-xl transition-colors whitespace-nowrap">
+            <form data-nv-lead data-segment="medarbetare" data-offer="individ-checklista" data-redirect="auto" data-error="#fokus-error" class="max-w-md mx-auto flex flex-col gap-4 text-left">
+                <input type="email" name="email" placeholder="Din e-postadress" required class="bg-black/50 border border-white/10 px-4 py-3 rounded-xl text-white outline-none focus:border-[#D83131] w-full">
+                <div class="flex gap-3 items-start pt-2">
+                    <input type="checkbox" id="fokus-consent" name="consent" required class="mt-1 w-4 h-4 accent-[#D83131] cursor-pointer">
+                    <label for="fokus-consent" class="text-sm text-[#909090] leading-snug cursor-pointer">
+                        Jag godkänner att Neurovibe sparar min e-postadress för att skicka checklistan och enstaka uppdateringar. <a href="/integritetspolicy.html" class="text-[#D83131] hover:underline">Integritetspolicy</a>.
+                    </label>
+                </div>
+                <button type="submit" class="bg-[#D83131] hover:bg-[#B72A2A] text-white font-bold py-3 px-6 rounded-xl transition-colors w-full">
                     Skicka strategin
                 </button>
+                <div id="fokus-error" class="hidden text-[#FF6B6B] text-sm"></div>
             </form>
             <div id="fokus-success" class="hidden mt-4 text-[#D83131] font-bold">Strategin skickas till din e-post inom kort!</div>
         </div>
