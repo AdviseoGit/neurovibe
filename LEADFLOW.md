@@ -310,7 +310,7 @@ peka på, och höj sedan.
 - [x] Fyll i trafiksiffror i mediakitet (avsnitt 8)
 
 **Nästa iteration av maskinen**
-- [ ] Migrera de återstående inline-formulären (`verktyg-*.html`,
+- [x] Migrera de återstående inline-formulären (`verktyg-*.html`,
       `adhd-diagnos-*.html`, `data-rapport-2026.html` m.fl.) till
       `<form data-nv-lead>` med en riktig samtyckesruta. De har nu fått
       attribution och en integritetsnotis, men samtycket registreras inte i
