@@ -1,3 +1,5 @@
+2026-07-31 | LEADFLOW/INNEHÅLL | Färdigställde Samtalsmall i Arbetsgivarpaketet och länkade på plats | B2B Leads | nästa: Fyll datarapporten med mer data eller utför B2B outreach
+2026-07-31 | KATEGORI | Inkluderande möteschecklista skapad och publicerad | Engagemang och leads | nästa: Fler AI-verktyg
 -e 2026-07-30 | LEADFLOW/DATA | Migrerade alla kvarvarande inline-formulär på verktyg och diagnos-sidor till <form data-nv-lead> med riktig samtyckesruta | B2B Leads & Konvertering | nästa: Nurture-sekvens eller kalenderlänk på tack.html
 2026-07-29 | TEKNIK | Fixade 404 och felaktig mappstruktur för inkluderande möten-verktyget | Fixade regression från föregående pass | nästa: tillväxt, nytt verktyg eller artikel
 2026-07-29 | KATEGORI | Inkluderande möteschecklista skapad och publicerad | Engagemang och leads | nästa: Fler AI-verktyg
