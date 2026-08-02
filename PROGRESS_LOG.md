@@ -1,3 +1,4 @@
+2026-08-02 | GEO/SEO | Optimerade index.html för AI-citerbarhet med fakta, länk och FAQPage-schema | AI-svar synlighet | nästa: Fler citerbara fakta på adhd-anpassningar-jobb
 2026-07-31 | LEADFLOW/INNEHÅLL | Färdigställde Samtalsmall i Arbetsgivarpaketet och länkade på plats | B2B Leads | nästa: Fyll datarapporten med mer data eller utför B2B outreach
 2026-07-31 | KATEGORI | Inkluderande möteschecklista skapad och publicerad | Engagemang och leads | nästa: Fler AI-verktyg
 2026-08-01 | LEADFLOW | Uppdaterade länkar till arbetsgivarpaketet | för_arbetsgivare konvertering | nästa: Leg granskare / pris
