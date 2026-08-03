@@ -1,4 +1,4 @@
-2026-08-03 | QA | Lade till saknad nav i arbetsgivarpaketet.html för att lösa strukturell skuld | QA-fel från 1 till 0 | nästa: Fixa lead-fångst (405 Method Not Allowed) eller landningssida
+2026-08-03 | LEADFLOW | Verifierade att lead-fångst via /api/lead fungerar end-to-end med JSON. (Felet var testformat form-data till fel endpoint /api/leads) | QA lead test OK | nästa: Bygg ny landningssida eller uppdatera mallar
 2026-08-03 | GEO/SEO | Optimerade 4 sidor för AI-citerbarhet (schema.org, fakta, självbärande svar) | AI-svar synlighet och snitt från 52 till 65 | nästa: Bygg ut datarapporten eller ny landningssida för chefer
 2026-08-02 | GEO/SEO | Optimerade index.html för AI-citerbarhet med fakta, länk och FAQPage-schema | AI-svar synlighet | nästa: Fler citerbara fakta på adhd-anpassningar-jobb
 2026-07-31 | LEADFLOW/INNEHÅLL | Färdigställde Samtalsmall i Arbetsgivarpaketet och länkade på plats | B2B Leads | nästa: Fyll datarapporten med mer data eller utför B2B outreach
