@@ -76,26 +76,44 @@
     <meta property="og:title" content="Neurovibe — Verktyg och underlag för NPF i arbetslivet">
     <meta property="og:description" content="Färdiga anpassningsförslag, mallar och kalkylatorer för medarbetare, chefer och HR.">
     <meta property="og:type" content="website">
+    
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+      "@graph": [
         {
-          "@type": "Question",
-          "name": "Vad är Neurovibe?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Neurovibe är en svensk plattform och verktygslåda som ger färdiga anpassningsförslag, mallar och kalkylatorer för medarbetare med ADHD eller autism, samt rutindokument enligt AFS 2020:5 för chefer och HR."
-          }
+          "@type": "WebSite",
+          "name": "Neurovibe",
+          "url": "https://neurovibe.se/",
+          "description": "Verktyg och underlag för neuroinkludering (ADHD, Autism, NPF) i arbetslivet."
         },
         {
-          "@type": "Question",
-          "name": "Kostar verktygen något?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nej, de interaktiva verktygen och kalkylatorerna är gratis och kräver ingen inloggning."
-          }
+          "@type": "Organization",
+          "name": "Neurovibe",
+          "url": "https://neurovibe.se/",
+          "logo": "https://neurovibe.se/favicon.ico"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Vad kostar det att anpassa arbetsplatsen för ADHD?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Med rätt stöd från Försäkringskassan kan arbetsgivare få upp till 20 500 kr i månaden i lönebidrag för anpassningar."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Hur många på en svensk arbetsplats har NPF?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Forskning visar att cirka 15–20 % av befolkningen, och därmed en stor del av arbetsstyrkan, är neurodivergenta (t.ex. har ADHD eller autism)."
+              }
+            }
+          ]
         }
       ]
     }
