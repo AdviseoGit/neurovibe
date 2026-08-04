@@ -79,10 +79,25 @@ Det som gör den försvarbar mot konkurrens:
 `leadengine._attachment_for()`. Saknas den får leaden fel fil — vilket är precis
 vad som hände när rapportsidan lovade en rådatarapport och skickade checklistan.
 
-**Att bestämma innan paketet skickas första gången:** arbetsgivarpaketets fem
-dokument måste faktiskt finnas. Sidan säljer dem redan. Prioritera i denna
-ordning: (1) rutinmall, (2) anpassningsbibliotek, (3) lagkravsöversikt,
-(4) samtalsmall, (5) stöd & bidrag — de två första är det som efterfrågas mest.
+### Arbetsgivarpaketets status (`/arbetsgivarpaketet.html`, noindex)
+
+| Dokument | Status |
+|---|---|
+| 1. Rutinmall (AFS 2020:5) | Riktigt innehåll — fyra steg med ansvar och uppföljning |
+| 2. Anpassningsbiblioteket | Riktigt innehåll, men tunnare än de andra |
+| 3. Lagkravsöversikt | **Pekare** — sammanfattning + "läs hela guiden" |
+| 4. Samtalsmall | Riktigt innehåll — tio frågor utan medicin eller diagnos |
+| 5. Stöd & bidrag | **Pekare** — hänvisar till Myndighetsnavigatorn |
+
+Två av fem är alltså hänvisningar till sidor som redan fanns, inte egna
+dokument. Det är inte fel i sig — men sidan för arbetsgivare listar dem som fem
+leverabler, så antingen skrivs 3 och 5 ut som riktiga dokument, eller så
+formuleras listan om till det den är.
+
+**Motstridig prissättning att reda ut:** `/arbetsgivarpaketet.html` skriver
+"kostnadsfri genomlysning" i brödtexten men "Begär genomlysning (offert)" på
+knappen, och `/for-arbetsgivare.html` säger "Pris efter omfattning". Samma
+erbjudande beskrivs som gratis och offererat på samma sida.
 
 ---
 

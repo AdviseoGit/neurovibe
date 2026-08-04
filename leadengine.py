@@ -550,10 +550,16 @@ def confirmation_email(data: dict) -> tuple[str, str]:
         {_btn("https://neurovibe.se/for-arbetsgivare.html", "Underlag för arbetsgivare")}
         """
     elif segment == "arbetsgivare":
-        subject = "Ditt underlag för neuroinkludering – Neurovibe"
+        subject = "Ditt arbetsgivarpaket – Neurovibe"
         body = f"""
         <p>{hello}</p>
-        <p>Tack för att du hörde av dig. Här är det du kan börja med direkt:</p>
+        <p>Tack för att du hörde av dig. <b>Arbetsgivarpaketet ligger här</b> —
+           spara länken, den kräver ingen inloggning:</p>
+        {_btn("https://neurovibe.se/arbetsgivarpaketet.html", "Öppna arbetsgivarpaketet")}
+        <p>Det tyngsta i paketet är rutinmallen enligt AFS 2020:5, anpassnings&shy;processens
+           fyra steg och samtalsmallen med de tio frågor en chef kan ställa utan att gå in
+           på diagnos eller hälsa.</p>
+        <p>Tre saker till som hör ihop med det:</p>
         <ul style="padding-left:20px">
           <li><b>Neurodiversitet i svenskt arbetsliv 2026</b> – tre mönster vi ser
               om maskering, exekutiv funktion och stödsystem, med en tydlig not om
