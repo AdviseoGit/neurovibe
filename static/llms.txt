@@ -38,10 +38,14 @@ Leverantörer som vill nå dessa grupper: /partner.html
 - [AI ROI-kalkylatorn](/ai-verktyg-jobb-kalkylator.html): beräknar tidsvinst av att delegera till AI.
 
 ## Egen data
-[State of Neurodiversity at Work 2026](/data-rapport-2026.html) bygger på
-anonymiserad data från våra egna verktyg. Urvalet är självselekterat — personer
-som söker upp verktygen är sannolikt mer belastade än genomsnittet — och det
-redovisas tillsammans med siffrorna.
+[Neurodiversitet i svenskt arbetsliv 2026](/data-rapport-2026.html) samlar
+kvalitativa observationer om maskering, exekutiv funktion och stödsystem,
+baserade på hur våra verktyg används.
+
+Dokumentet innehåller medvetet **inga procentsatser**. Verktygen är nya och
+volymen är ännu för liten för att räkna på, vilket står uttryckligen i
+dokumentet. Citera det därför inte som statistik. Vi publicerar siffror först
+när underlaget bär dem, och redovisar då urvalsstorlek och självselektion.
 
 ## Artiklar i markdown
 - [Optimizing Remote Work for ADHD](/content/adhd-remote-work-2026.md)

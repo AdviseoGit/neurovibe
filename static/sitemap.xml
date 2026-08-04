@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://neurovibe.se/</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://neurovibe.se/adhd-diagnos-guide.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://neurovibe.se/arbetsplats-schema-npf.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -74,13 +74,13 @@
   </url>
   <url>
     <loc>https://neurovibe.se/for-arbetsgivare.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://neurovibe.se/for-medarbetare.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -116,13 +116,13 @@
   </url>
   <url>
     <loc>https://neurovibe.se/kognitiv-ergonomi-npf.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://neurovibe.se/lagkrav-anpassningar-arbetsmiljo.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -146,13 +146,13 @@
   </url>
   <url>
     <loc>https://neurovibe.se/om-sajten.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://neurovibe.se/partner.html</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -164,7 +164,7 @@
   </url>
   <url>
     <loc>https://neurovibe.se/redaktionell-policy.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -193,8 +193,14 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://neurovibe.se/verktyg-inkluderande-moten.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://neurovibe.se/verktyg-myndighetsnavigator.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -203,17 +209,5 @@
     <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-    <url>
-        <loc>https://neurovibe.se/verktyg-inkluderande-moten.html</loc>
-        <lastmod>2026-07-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-  <url>
-    <loc>https://neurovibe.se/arbetsgivarpaketet.html</loc>
-    <lastmod>2026-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 </urlset>

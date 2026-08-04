@@ -421,7 +421,8 @@ GRADE_COLORS = {"A": "#137333", "B": "#b06000", "C": "#5f6368", "D": "#9aa0a6"}
 OFFER_LABELS = {
     "b2b-anpassningspaket": "Anpassningspaketet (HR-kit)",
     "b2b-genomlysning": "Neuroinklusions-genomlysning",
-    "b2b-datarapport": "State of Neurodiversity-rapporten",
+    "datarapport-2026": "Observationsdokumentet 2026",
+    "data_report_2026": "Observationsdokumentet 2026 (gammalt formulär)",
     "b2b-samtal": "Bokat orienteringssamtal",
     "partner-mediakit": "Mediakit / annonsering",
     "individ-checklista": "Executive Function-checklistan",
@@ -523,18 +524,41 @@ def _btn(href: str, label: str) -> str:
 def confirmation_email(data: dict) -> tuple[str, str]:
     """Returnerar (subject, html) anpassat efter segment."""
     segment = data.get("segment", "individ")
+    offer = data.get("offer") or ""
     name = (data.get("name") or "").split(" ")[0]
     hello = f"Hej {_esc(name)}," if name else "Hej,"
 
-    if segment == "arbetsgivare":
+    if is_report_offer(offer):
+        subject = "Neurodiversitet i svenskt arbetsliv 2026 – dina observationer"
+        body = f"""
+        <p>{hello}</p>
+        <p>Dokumentet ligger som bilaga. Det innehåller de tre observationerna från
+           sidan, diskussionsfrågorna för ledningsgruppen och en not om vad
+           underlaget är och inte är.</p>
+        <p>En sak vi hellre säger direkt än begraver i en fotnot: det här är
+           <b>inte statistik</b>. Våra verktyg är nya och volymen är än så länge
+           för liten för att räkna procent på, så vi publicerar inga siffror.
+           Använd dokumentet som underlag för ett samtal — inte som mätdata.</p>
+        <p>Vill du ha det som faktiskt är konkret i dag:</p>
+        <ul style="padding-left:20px">
+          <li><b>Lagkrav &amp; anpassningar</b> – vad AFS 2020:5 och
+              diskrimineringslagen kräver av en arbetsgivare.
+              <a href="https://neurovibe.se/lagkrav-anpassningar-arbetsmiljo.html">Läs guiden</a></li>
+          <li><b>Anpassningsgeneratorn</b> – ett färdigt förslag att ta till chefen.
+              <a href="https://neurovibe.se/verktyg-anpassningsgenerator.html">Öppna verktyget</a></li>
+        </ul>
+        {_btn("https://neurovibe.se/for-arbetsgivare.html", "Underlag för arbetsgivare")}
+        """
+    elif segment == "arbetsgivare":
         subject = "Ditt underlag för neuroinkludering – Neurovibe"
         body = f"""
         <p>{hello}</p>
         <p>Tack för att du hörde av dig. Här är det du kan börja med direkt:</p>
         <ul style="padding-left:20px">
-          <li><b>State of Neurodiversity at Work 2026</b> – vår egen data om
-              sensorisk belastning, maskering och utbrändhetsrisk.
-              <a href="https://neurovibe.se/data-rapport-2026.html">Läs rapporten</a></li>
+          <li><b>Neurodiversitet i svenskt arbetsliv 2026</b> – tre mönster vi ser
+              om maskering, exekutiv funktion och stödsystem, med en tydlig not om
+              vad underlaget är och inte är.
+              <a href="https://neurovibe.se/data-rapport-2026.html">Läs observationerna</a></li>
           <li><b>Lagkrav &amp; anpassningar</b> – vad arbetsmiljölagen, AFS 2020:5 och
               diskrimineringslagen faktiskt kräver av er som arbetsgivare.
               <a href="https://neurovibe.se/lagkrav-anpassningar-arbetsmiljo.html">Läs guiden</a></li>
@@ -587,6 +611,25 @@ def confirmation_email(data: dict) -> tuple[str, str]:
     return subject, _shell(subject, body)
 
 
+def is_report_offer(offer: str | None) -> bool:
+    """Både nya `datarapport-2026` och gamla `data_report_2026` — det senare
+    ligger kvar i cachade sidor hos besökare ett tag efter en deploy."""
+    return bool(offer) and ("datarapport" in offer or "data_report" in offer)
+
+
+def _attachment_for(offer: str | None, segment: str) -> tuple[str | None, str]:
+    """(byggarfunktion i report_nv, filnamn) för ett erbjudande.
+
+    Lovar en sida en PDF ska den PDF:en finnas här — annars får leaden fel fil,
+    vilket är exakt vad som hände när rapportsidan skickade ut checklistan.
+    """
+    if is_report_offer(offer):
+        return "build_report_pdf", "Neurovibe-observationer-2026.pdf"
+    if segment == "individ":
+        return "build_checklist_pdf", "Neurovibe-checklista.pdf"
+    return None, ""
+
+
 def deliver_lead(data: dict) -> None:
     """Körs som BackgroundTask: bekräftelse till leaden + notis till ägaren."""
     import mailer
@@ -594,15 +637,18 @@ def deliver_lead(data: dict) -> None:
     result = data.pop("_result", {}) or {}
     subject, html = confirmation_email(data)
 
+    # Bilagan styrs av erbjudandet, inte av segmentet. Den som bad om
+    # observationsdokumentet ska få det, inte checklistan.
     attachments = None
-    if data.get("segment", "individ") == "individ":
+    builder, filename = _attachment_for(data.get("offer"), data.get("segment", "individ"))
+    if builder:
         try:
             import report_nv
-            pdf = report_nv.build_checklist_pdf()
+            pdf = getattr(report_nv, builder)()
             if pdf:
-                attachments = [("Neurovibe-checklista.pdf", pdf, "application/pdf")]
+                attachments = [(filename, pdf, "application/pdf")]
         except Exception as exc:  # noqa: BLE001
-            print(f"[lead] checklist pdf misslyckades: {exc}")
+            print(f"[lead] {builder} misslyckades: {exc}")
 
     try:
         mailer.send_email(data["email"], subject, html,

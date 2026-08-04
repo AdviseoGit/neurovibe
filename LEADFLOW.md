@@ -71,9 +71,13 @@ Det som gör den försvarbar mot konkurrens:
 |---|---|---|---|
 | `b2b-anpassningspaket` | arbetsgivare | Rutinmall (AFS 2020:5), anpassningsbibliotek, samtalsmall, lagkravsöversikt, stöd & bidrag | `/for-arbetsgivare.html#arbetsgivarpaket` |
 | `b2b-genomlysning` | arbetsgivare | Prioriterad åtgärdslista efter genomgång av deras miljö och rutiner | Offert |
-| `b2b-datarapport` | arbetsgivare | State of Neurodiversity at Work 2026 | `/data-rapport-2026.html` |
+| `datarapport-2026` | individ/arbetsgivare | Observationsdokumentet 2026 (PDF, byggs av `report_nv.build_report_pdf`) | `/data-rapport-2026.html` |
 | `partner-mediakit` | partner | Trafik, målgruppsfördelning, format, priser + förslag | `/partner.html#mediakit` |
 | `individ-checklista` | individ | Executive Function-checklistan (PDF) | `/for-medarbetare.html#checklista` |
+
+**Varje `offer` med en PDF måste ha en byggare i `report_nv.py`**, kopplad i
+`leadengine._attachment_for()`. Saknas den får leaden fel fil — vilket är precis
+vad som hände när rapportsidan lovade en rådatarapport och skickade checklistan.
 
 **Att bestämma innan paketet skickas första gången:** arbetsgivarpaketets fem
 dokument måste faktiskt finnas. Sidan säljer dem redan. Prioritera i denna
@@ -264,6 +268,13 @@ Det som skulle lyfta auktoriteten mest härifrån, i ordning:
 ---
 
 ## 8. ⚠️ Innan du gör outreach — tre saker som inte får hittas på
+
+0. **Inga siffror utan belagd källa.** Rapportsidan presenterade tidigare
+   "68% i riskzon" och "82% hög maskeringsgrad" som egen data. Underlaget var
+   1 rad i `burnout_data.csv` och 4 rader simulerad `tool_usage` från
+   `simulate_tool_usage.py`. Siffrorna är borttagna överallt, inklusive från
+   startsidan, en guide och outreach-mallen. Låt dem inte komma tillbaka:
+   regelverk får citeras, egen data först när den finns.
 
 1. **Trafiksiffrorna på `/partner.html` är avsiktligt tomma.** Sidan säger att
    aktuella siffror skickas i mediakitet. Fyll i dem från GA4 (`G-YJG1D5GJPR`)

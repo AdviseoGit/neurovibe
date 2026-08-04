@@ -57,7 +57,7 @@ html_content = """<!DOCTYPE html>
                     <ul>
                         <li><strong>Övergångsproblematik:</strong> Att bryta en rutin (semester) för att skapa en ny/gammal rutin (jobb) kräver enormt mycket exekutiv funktion. Varje litet steg måste planeras på nytt innan det blir automatiserat.</li>
                         <li><strong>Sensorisk chock:</strong> Att gå från en kontrollerad miljö (hemma/stugan) till ett öppet kontorslandskap är ett sensoriskt trauma för hjärnan. Ljudnivåer, belysning och sociala interaktioner överbelastar systemet direkt.</li>
-                        <li><strong>Maskerings-återfallet:</strong> Semestern innebar ofta att man kunde vara sig själv. Att plötsligt tvingas in i "arbets-masken" igen dränerar all energi på några dagar. Enligt data från Neurovibe (Q2 2026) lägger 68% av neurodivergenta medarbetare enorm energi på maskering, vilket är en primär orsak till utbrändhet.</li>
+                        <li><strong>Maskerings-återfallet:</strong> Semestern innebar ofta att man kunde vara sig själv. Att plötsligt tvingas in i "arbets-masken" igen dränerar all energi på några dagar. Maskering är arbete som inte syns i något tidrapporteringssystem, men som tar av samma ändliga kapacitet som arbetsuppgifterna — och är en vanlig väg in i utmattning.</li>
                     </ul>
 
                     <h2>2. Strategier för medarbetaren (Actionable advice)</h2>
@@ -76,7 +76,7 @@ html_content = """<!DOCTYPE html>
 
                     <div class="mt-12 bg-indigo-50 border border-indigo-100 rounded-xl p-6">
                         <h3 class="text-lg font-bold text-indigo-900 mt-0">Dela denna guide med ditt HR-team</h3>
-                        <p class="text-indigo-700">Vill ni ha fler insikter kring hur ni stöttar neurodivergenta medarbetare? Ladda ner vår <a href="/data-rapport-2026.html" class="font-semibold underline">State of Neurodiversity 2026-rapport</a>.</p>
+                        <p class="text-indigo-700">Vill ni ha fler insikter kring hur ni stöttar neurodivergenta medarbetare? Läs våra <a href="/data-rapport-2026.html" class="font-semibold underline">observationer om neurodiversitet i svenskt arbetsliv</a>.</p>
                     </div>
                 </div>
             </div>

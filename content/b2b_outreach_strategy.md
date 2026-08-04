@@ -1,43 +1,74 @@
 # B2B Outreach Strategy - Neurovibe
 
-**Target:** HR-chefer, fackförbund och D&I (Diversity & Inclusion) ansvariga i Sverige.
-**Lead Magnet:** State of Neurodiversity at Work 2026 (Rådatarapport)
-**Goal:** Establish authority, capture B2B email leads, and position Neurovibe as a thought leader in neuroinclusive workplaces.
+**Target:** HR-chefer, fackförbund och D&I-ansvariga i Sverige.
+**Lead magnet:** Arbetsgivarpaketet (rutinmall enligt AFS 2020:5, anpassningsbibliotek,
+samtalsmall, lagkravsöversikt).
+**Mål:** Bygga auktoritet, fånga B2B-leads och positionera Neurovibe som den
+praktiska resursen för neuroinkluderande arbetsplatser.
 
-## The Hook
-*Neurodivergenta medarbetare (ADHD, Autism) lägger 30-40% av sin kognitiva kapacitet på att "maskera" i arbetsmiljön.*
+## Hooken
 
-## Email Sequence Drafts
+Bygg aldrig hooken på en siffra vi inte kan belägga. Vi har ingen statistik som
+håller ännu — se `/redaktionell-policy.html`. Det vi kan säga och stå för:
 
-### Email 1: The Insight Drop (Cold Outreach)
-**Subject:** 68% av neurodivergenta medarbetare är i riskzon för utbrändhet
+> *AFS 2020:5 kräver att arbetsgivaren har en skriftlig rutin för
+> arbetsanpassning. De flesta organisationer har ingen — inte av ovilja, utan för
+> att ingen vet vad den ska innehålla.*
 
-Hej [Namn],
+Det är ett påstående om regelverket, inte om en population, och det går att
+kontrollera mot föreskriften.
 
-Som HR-ansvarig på [Företag] arbetar du sannolikt mycket med stressprevention. Vår senaste data från Neurovibe (Q2 2026) visar att hela 68% av neurodivergenta medarbetare ligger i den direkta riskzonen för utmattning på grund av hög sensorisk belastning och kognitiv maskering.
+## Mejlsekvens
 
-Vi har sammanställt den fullständiga "State of Neurodiversity 2026"-rapporten som belyser glappet mellan lagkrav (AFS 2020:5) och de faktiska utmaningarna i arbetsmiljön, samt vilka anpassningar som faktiskt fungerar.
-
-Ladda ner rapporten utan kostnad här: https://neurovibe.se/data-rapport-2026.html
-
-Med vänliga hälsningar,
-Neurovibe Team
-
-### Email 2: The Actionable Tools (Follow-up)
-**Subject:** Konkreta verktyg för en neuroinkluderande arbetsplats
+### Mejl 1: Lagkravet (kall kontakt)
+**Ämne:** Har ni er rutin för arbetsanpassning på plats?
 
 Hej [Namn],
 
-Tänkte bara följa upp mitt tidigare mail angående "State of Neurodiversity 2026".
+AFS 2020:5 kräver att ni som arbetsgivare har en skriftlig rutin för
+arbetsanpassning — hur behov uppmärksammas, vem som utreder, hur beslut
+dokumenteras och när det följs upp. I praktiken saknas den hos de flesta, och
+frågan blir akut först när någon redan är sjukskriven.
 
-Ett av de största problemen vi ser är att ansvaret ofta faller på individen att kräva anpassningar, vilket i sig kostar kognitiv energi. För att underlätta för både chefer och medarbetare har vi utvecklat gratisverktyg som:
+Vi har byggt en färdig mall som täcker de moment som efterfrågas vid inspektion,
+tillsammans med ett anpassningsbibliotek sorterat efter problem — sensorisk
+belastning, tidsuppfattning, avbrott, muntliga instruktioner — där det framgår
+vilka åtgärder som kostar noll kronor.
 
-- **AI Kognitiv ROI-kalkylator:** https://neurovibe.se/ai-verktyg-jobb-kalkylator.html
-- **Anpassningsgeneratorn:** https://neurovibe.se/verktyg-anpassningsgenerator.html
-
-Dessa verktyg hjälper medarbetare att konkretisera sina behov inför samtal med sin chef, och säkerställer att ni möter lagkraven på ett proaktivt sätt.
-
-Låt mig veta om ni vill ha fler tips på hur ni kan jobba proaktivt med neuroinkludering.
+Kostnadsfritt, ingen inloggning: https://neurovibe.se/for-arbetsgivare.html
 
 Vänliga hälsningar,
-Neurovibe Team
+Neurovibe
+
+### Mejl 2: Verktygen (uppföljning)
+**Ämne:** Konkreta verktyg för en neuroinkluderande arbetsplats
+
+Hej [Namn],
+
+En uppföljning på mitt förra mejl.
+
+Ett av de vanligaste problemen vi ser är att ansvaret för att formulera en
+anpassning hamnar hos den medarbetare vars exekutiva funktion redan är ansträngd.
+Det är den sämsta möjliga fördelningen av arbetet.
+
+Två verktyg som flyttar det ansvaret:
+
+- **Anpassningsgeneratorn** — medarbetaren kryssar i vad som är svårt och får ett
+  sakligt formulerat förslag att skicka till chefen, utan att nämna diagnos:
+  https://neurovibe.se/verktyg-anpassningsgenerator.html
+- **Intervjuguiden** — neuroinkluderande intervjumall som mäter kompetens i
+  stället för förmågan att kallprata:
+  https://neurovibe.se/intervju-guide.html
+
+Säg till om ni vill att jag tittar på er situation specifikt.
+
+Vänliga hälsningar,
+Neurovibe
+
+## Regler för outreach
+
+1. Inga siffror utan belagd källa. Regelverk får citeras, egen data inte förrän
+   den finns.
+2. Länka till arbetsgivarsidan, inte till observationsdokumentet — det senare är
+   medvetet försiktigt formulerat och säljer inte.
+3. Följ upp en gång. Ingen tredje påminnelse.

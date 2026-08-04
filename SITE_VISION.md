@@ -13,7 +13,7 @@ Målgrupper, erbjudanden, lead scoring, SLA och prissättning: se **[LEADFLOW.md
 - **Innehåll:** Vi har 3-5 djupa, ständigt uppdaterade innehållspelare (t.ex. "Anpassningar", "Chefsguiden", "Rättigheter & Stöd") som täcker sökintentionen för våra kärnämnen.
 - **Verktyg:** Vi har en svit av 3-4 interaktiva verktyg (t.ex. "Burnout-kalkylator", "Anpassnings-checklista", "Mötes-prep") som besökare använder och delar.
 - **Leadflow:** Vår primära lead-magnet är inte en PDF, utan tillgång till "Pro"-versioner av våra verktyg eller en djupare data-rapport. E-postlistan är segmenterad (Anställd, Chef, HR).
-- **Data:** Vi publicerar en årlig "State of Neurodiversity at Work" rapport baserad på vår egen data, vilket cementerar vår position som thought leader.
+- **Data:** Vi publicerar ett årligt observationsdokument baserat på vår egen data. Procentsatser publiceras först när urvalet bär dem — tills dess redovisas mönster kvalitativt, med underlaget deklarerat. Trovärdigheten är hela poängen med moaten.
 - **Design/UX:** Sajten är 100% enhetlig, professionell, snabb och mobilanpassad. Varumärket är igenkännbart och inger förtroende.
 
 ## Milstolpar till Visionen
