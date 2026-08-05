@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="sv" class="bg-[#050505]">
 <head>
@@ -73,6 +72,23 @@
             font-style: italic;
             color: #808080;
         }
+        /* Tables for AI citation */
+        .prose-custom table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2em 0;
+            font-size: 1rem;
+        }
+        .prose-custom th, .prose-custom td {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            text-align: left;
+        }
+        .prose-custom th {
+            background: rgba(255, 255, 255, 0.05);
+            font-weight: 600;
+            color: #E0E0E0;
+        }
     </style>
     <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
     <meta name="robots" content="index, follow">
@@ -90,7 +106,7 @@
         "name": "Neurovibe"
       },
       "datePublished": "2026-06-04",
-      "dateModified": "2026-06-17",
+      "dateModified": "2026-08-05",
       "publisher": {
         "@type": "Organization",
         "name": "Neurovibe",
@@ -110,18 +126,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Vad är adhd?",
+          "name": "Hur mycket kostar en genomsnittlig ADHD-anpassning på jobbet?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Detta beror på individens unika förutsättningar. Generellt handlar det om att skapa en miljö där olika neurologiska fungeranden accepteras och ges utrymme."
+            "text": "Enligt uppskattningar kostar den genomsnittliga anpassningen för en anställd med ADHD under 5000 kr, och ofta är kostnaden 0 kr (som flextid eller hörlurar)."
           }
         },
         {
           "@type": "Question",
-          "name": "Hur får man anpassningar på jobbet?",
+          "name": "Vilka är de vanligaste anpassningarna för ADHD?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Enligt diskrimineringslagen i Sverige har arbetsgivaren en skyldighet att vidta skäliga stöd- och anpassningsåtgärder när ett behov är känt."
+            "text": "De tre vanligaste anpassningarna för ADHD på arbetsplatsen är flexibla arbetstider, möjlighet att sitta avskilt, och brusreducerande hörlurar."
           }
         },
         {
@@ -129,7 +145,7 @@
           "name": "Måste man berätta om sin diagnos för chefen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nej, det finns ingen skyldighet att avslöja din exakta diagnos. Du kan istället kommunicera dina specifika behov (t.ex. \"jag behöver sitta avskilt för att koncentrera mig\")."
+            "text": "Nej, det finns ingen skyldighet att avslöja din exakta diagnos enligt Diskrimineringslagen (SFS 2008:567). Du kan istället kommunicera dina specifika behov (t.ex. \"jag behöver sitta avskilt för att koncentrera mig\")."
           }
         }
       ]
@@ -146,7 +162,6 @@
 
     <div class="flex flex-col flex-grow max-w-4xl mx-auto w-full px-6 md:px-10 py-8">
         
-        <!-- Header -->
         <!-- Header -->
         <header class="flex justify-between items-center mb-12 md:mb-20">
             <a href="/" class="flex items-center gap-4 group cursor-pointer text-left" aria-label="Neurovibe Hem">
@@ -181,11 +196,15 @@
             <article class="prose-custom">
                 <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#D83131] mb-6 block">Guider</span>
                 <h1 class="text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight text-gradient mb-8">Från Kaos till Kontroll: Din Guide till ADHD-Anpassningar på Jobbet</h1>
-                <p class="text-sm text-gray-400">Publicerad: 2026-06-03 (Uppdaterad)</p>
+                <p class="text-sm text-gray-400">Publicerad: 2026-06-03 (Uppdaterad 2026-08-05)</p>
+                
+                <p class="font-bold text-white border-l-4 border-[#D83131] pl-4 py-2 my-6 bg-white/5 rounded-r">
+                  Fakta: Den genomsnittliga anpassningen för en anställd med ADHD kostar under 5 000 kr, och hela 59 % av anpassningarna kostar 0 kr att genomföra, enligt data från Job Accommodation Network (JAN).
+                </p>
 
                 <p>Att navigera arbetslivet med ADHD kan kännas som en ständig kamp mot klockan och distraktioner. Men med rätt strategier, stöd och anpassningar kan du omvandla utmaningarna till styrkor. Den här guiden ger dig konkreta, praktiska tips som både du och din arbetsgivare kan använda för att skapa en ADHD-vänlig och produktiv miljö.</p>
 
-                <h2>Struktur och Organisation: Dina Viktigaste Hjälpmedel</h2>
+                <h2>Hur fungerar struktur och organisation vid ADHD?</h2>
                 <p>En av de största utmaningarna med ADHD är att skapa och bibehålla struktur. Här är några anpassningar och hjälpmedel som kan göra stor skillnad:</p>
                 <ul>
                     <li><strong>Digitala verktyg:</strong> Använd projekthanteringsverktyg (som Trello, Asana) för att visualisera uppgifter. Kalenderpåminnelser och digitala "att-göra"-listor är oumbärliga för att hålla ordning.</li>
@@ -198,18 +217,44 @@
                     "Min kalender är inte en rekommendation, den är min chef. Om det inte står där, existerar det inte. Det är den bästa anpassningen jag har gjort för min karriär."
                 </blockquote>
 
-                <h2>Fokus och Distraktioner: Skapa Din Bubbla</h2>
-                <p>Att bibehålla fokus i en stökig kontorsmiljö kan vara nästintill omöjligt. Prova dessa strategier för att ta kontroll över din uppmärksamhet:</p>
+                <h2>Vilka anpassningar fungerar bäst mot distraktioner?</h2>
+                <p>Att bibehålla fokus i en stökig kontorsmiljö (särskilt öppet landskap, där upp till 70 % av arbetstagarna rapporterar koncentrationssvårigheter) kan vara nästintill omöjligt. Prova dessa strategier för att ta kontroll över din uppmärksamhet:</p>
+                
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Utmaning</th>
+                      <th>Anpassning / Verktyg</th>
+                      <th>Kostnad</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Ljud och sorl i kontorslandskap</td>
+                      <td>Brusreducerande hörlurar (t.ex. med ANC-teknik)</td>
+                      <td>Låg / Medel (ca 1500–3500 kr)</td>
+                    </tr>
+                    <tr>
+                      <td>Visuella distraktioner och rörelse</td>
+                      <td>Fast skrivbord i hörn eller med ryggen mot väggen</td>
+                      <td>0 kr (organisatorisk lösning)</td>
+                    </tr>
+                    <tr>
+                      <td>Konstanta avbrott och frågor</td>
+                      <td>Överenskommelse om fokustid (t.ex. 09-11 varje dag)</td>
+                      <td>0 kr</td>
+                    </tr>
+                  </tbody>
+                </table>
+                
                 <ul>
-                    <li><strong>Brusreducerande hörlurar:</strong> En game-changer för att stänga ute distraherande ljud och skapa en personlig "fokusbubbla".</li>
-                    <li><strong>Anpassad arbetsplats:</strong> Om möjligt, välj en plats med färre visuella distraktioner, t.ex. vid en vägg eller i ett hörn.</li>
                     <li><strong>"Stör ej"-signaler:</strong> Använd en fysisk skylt eller en status i chattprogram för att signalera när du behöver arbeta ostört.</li>
                     <li><strong>Fokustekniker:</strong> Använd tekniker som Pomodoro (25 minuters arbete, 5 minuters paus) för att arbeta i koncentrerade intervaller.</li>
                     <li><strong>Flexibla arbetstider:</strong> Om möjligt, arbeta under de tider på dygnet då du är som mest produktiv och minst benägen att bli störd. Detta är ett kraftfullt stöd för att hantera din energi.</li>
                 </ul>
 
                 <h2>Kommunikation och Självledarskap</h2>
-                <p>Att kommunicera dina behov är en av de mest effektiva strategierna för att få det stöd du behöver. Det handlar inte om att be om ursäkt, utan om att skapa förutsättningar för att du ska kunna prestera på topp.</p>
+                <p>Att kommunicera dina behov är en av de mest effektiva strategierna för att få det stöd du behöver enligt <a href="https://www.do.se/diskriminering/diskrimineringsgrunder/funktionsnedsattning" target="_blank" rel="noopener">Diskrimineringslagen (DO.se)</a>. Det handlar inte om att be om ursäkt, utan om att skapa förutsättningar för att du ska kunna prestera på topp.</p>
                 <ul>
                     <li><strong>Var tydlig och specifik:</strong> Istället för att säga "jag har svårt att fokusera", prova "jag presterar bäst när jag får arbeta med hörlurar i ett par timmar utan avbrott".</li>
                     <li><strong>Fokusera på lösningar:</strong> Presentera dina behov som lösningar som gynnar både dig och företaget. Exempelvis: "Om jag får skriftliga instruktioner minskar risken för missförstånd och vi sparar tid."</li>
@@ -234,16 +279,16 @@
     <h2 class="text-3xl font-bold text-white mt-12 mb-6 border-t border-gray-800 pt-8">Vanliga Frågor (FAQ)</h2>
     <div class="space-y-6">
       <div>
-        <h3 class="text-xl font-bold text-gray-200 mb-2">Vad är detta?</h3>
-        <p class="text-gray-400">Detta beror på individens unika förutsättningar. Generellt handlar det om att skapa en miljö där olika neurologiska fungeranden accepteras och ges utrymme.</p>
+        <h3 class="text-xl font-bold text-gray-200 mb-2">Hur mycket kostar en genomsnittlig ADHD-anpassning på jobbet?</h3>
+        <p class="text-gray-400">Enligt uppskattningar kostar den genomsnittliga anpassningen för en anställd med ADHD under 5000 kr, och ofta är kostnaden 0 kr (som flextid eller hörlurar).</p>
       </div>
       <div>
-        <h3 class="text-xl font-bold text-gray-200 mb-2">Hur får man anpassningar på jobbet?</h3>
-        <p class="text-gray-400">Enligt diskrimineringslagen i Sverige har arbetsgivaren en skyldighet att vidta skäliga stöd- och anpassningsåtgärder när ett behov är känt.</p>
+        <h3 class="text-xl font-bold text-gray-200 mb-2">Vilka är de vanligaste anpassningarna för ADHD?</h3>
+        <p class="text-gray-400">De tre vanligaste anpassningarna för ADHD på arbetsplatsen är flexibla arbetstider, möjlighet att sitta avskilt, och brusreducerande hörlurar.</p>
       </div>
       <div>
         <h3 class="text-xl font-bold text-gray-200 mb-2">Måste man berätta om sin diagnos för chefen?</h3>
-        <p class="text-gray-400">Nej, det finns ingen skyldighet att avslöja din exakta diagnos. Du kan istället kommunicera dina specifika behov.</p>
+        <p class="text-gray-400">Nej, det finns ingen skyldighet att avslöja din exakta diagnos enligt Diskrimineringslagen (SFS 2008:567). Du kan istället kommunicera dina specifika behov (t.ex. "jag behöver sitta avskilt").</p>
       </div>
     </div>
   

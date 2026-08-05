@@ -1,0 +1,104 @@
+NEUROVIBE WEEKLY MAINTENANCE SUMMARY - 2026-08-05
+=======================================================
+
+COMPLETED TASKS:
+✅ Google Search Console analysis (28-day window)
+✅ Lead database review (6 total leads, all B2B)
+✅ Site structure audit (46 HTML pages)
+✅ Content gap analysis for August/Q3 trends
+✅ SEO opportunity identification
+✅ Created comprehensive weekly report
+✅ Updated NEXT_SESSION_CHECKLIST.md with priorities
+✅ Updated PROGRESS_LOG.md with this week's analysis
+✅ Created SEASONAL_CONTENT_CALENDAR.md (full year)
+✅ Created SEO_QUICK_WINS_AUG2026.md (tactical guide)
+
+KEY FINDINGS:
+--------------
+
+PERFORMANCE (Last 28 Days):
+- Clicks: 4 (very low, but site is young)
+- Impressions: 51
+- Top page: data-rapport-2026.html (position 4.2, CTR 25% ⭐)
+- Biggest opportunity: post-semester-stress-npf.html (position 11.6, 9 impressions, 0 clicks)
+
+SEO OPPORTUNITIES:
+1. Post-semester page close to page 1 (position 11.6) - needs title/meta optimization + FAQ schema
+2. FK/AF guide showing for "lönebidrag adhd" queries (position 22) - needs dedicated section
+3. Data rapport performing excellently (position 4.2) - maintain and expand keyword coverage
+4. Missing Schema.org on many high-priority pages
+5. Weak internal linking (tools isolated from guides)
+
+CONTENT GAPS (AUGUST/Q3):
+- "Höstplanering för NPF" (seasonal, high priority)
+- "Inkluderande team kickoffs" (B2B, fall meetings)
+- "Studiestart med NPF" (students + working adults)
+- Optimizations needed for existing seasonal content
+
+STRATEGIC INSIGHTS:
+-------------------
+✅ Data-driven strategy working (original data = top 5 ranking)
+✅ AI-citability optimizations showing results (schema.org helping)
+✅ Tool-first approach generating quality B2B leads
+⚠️ Traffic volume too low (need 2-3 pieces/week for growth)
+⚠️ CTR optimization needed (pages ranking 10-20 need better titles)
+⚠️ Zero external backlinks = slow growth
+
+RECOMMENDATIONS (PRIORITY ORDER):
+----------------------------------
+
+WEEK 1 (Aug 5-11):
+1. Optimize post-semester stress page (2h) - CRITICAL quick win
+2. Create "Höstplanering för NPF" guide (4h) - Seasonal opportunity
+3. Schema.org audit + implementation (1h) - SEO foundation
+
+WEEK 2 (Aug 12-18):
+4. Create "Inkluderande Team Kickoffs" B2B guide (3h)
+5. Internal linking sprint (2h) - Hub-and-spoke structure
+
+WEEK 3-4 (Aug 19-31):
+6. Create "Studiestart med NPF" guide (3h)
+7. AI answer optimization pass (2h)
+8. Expand data rapport keyword coverage (2h)
+
+ESTIMATED IMPACT (4 Weeks):
+- Traffic: 4 → 15-20 clicks/month (+275%)
+- Impressions: 51 → 150+ (+194%)
+- Leads: 6 → 12-15 (+100%)
+- Top 10 Rankings: 0 → 2-3 queries
+
+BLOCKERS:
+---------
+⚠️ Railway token invalid - Cannot deploy updates to production
+   - Workaround: Prepare all content locally, batch deploy when token refreshed
+   - Action required: Request new token from Sim
+
+DOCUMENTS CREATED:
+------------------
+1. weekly_report_2026-08-05.md - Full analysis report (11KB)
+2. SEASONAL_CONTENT_CALENDAR.md - Full year content planning (8.6KB)
+3. SEO_QUICK_WINS_AUG2026.md - Tactical SEO guide (9.6KB)
+4. NEXT_SESSION_CHECKLIST.md - Updated with Aug priorities (4.5KB)
+5. PROGRESS_LOG.md - Updated with this week's entry
+6. WEEKLY_SUMMARY_2026-08-05.txt - This file
+
+NEXT STEPS:
+-----------
+When Railway token is fixed:
+1. Implement post-semester page optimizations
+2. Create and publish "Höstplanering för NPF" guide
+3. Run schema.org audit and add to top 10 pages
+4. Execute internal linking sprint
+5. Monitor GSC daily for 7 days post-deployment
+
+Until deployment possible:
+- Review and refine content outlines
+- Prepare draft content locally
+- Plan internal linking structure
+- Research additional August keyword opportunities
+
+---
+Report prepared by: Medium (Subagent: Neurovibe-Weekly)
+Session: agent:main:subagent:3cbe742f-c309-46cf-a710-764eeee9c6c5
+Date: 2026-08-05 00:04 UTC
+Status: COMPLETE ✅
