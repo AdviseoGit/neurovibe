@@ -41,7 +41,7 @@ Det som gör den försvarbar mot konkurrens:
 | **Vad de söker på** | "arbetsanpassning adhd", "afs 2020:5 rutin", "anpassningar autism arbetsplats", "skäliga anpassningar diskrimineringslagen" |
 | **Vad de faktiskt vill** | Något att klistra in i ett dokument i dag. Inte förståelse — underlag. |
 | **Ingång** | `/for-arbetsgivare.html` |
-| **Erbjudande** | Arbetsgivarpaketet (gratis) → genomlysning (offert) → leverantörsmatchning (gratis för dem, betald av leverantören) |
+| **Erbjudande** | Arbetsgivarpaketet (gratis) → genomlysning (gratis för närvarande) → leverantörsmatchning (gratis för dem, betald av leverantören) |
 
 ### Segment B — Individ (publik, inte köpare)
 
@@ -70,7 +70,7 @@ Det som gör den försvarbar mot konkurrens:
 | ID (`offer`) | Segment | Vad leaden får | Var |
 |---|---|---|---|
 | `b2b-anpassningspaket` | arbetsgivare | Rutinmall (AFS 2020:5), anpassningsbibliotek, samtalsmall, lagkravsöversikt, stöd & bidrag | `/for-arbetsgivare.html#arbetsgivarpaket` |
-| `b2b-genomlysning` | arbetsgivare | Prioriterad åtgärdslista efter genomgång av deras miljö och rutiner | Offert |
+| `b2b-genomlysning` | arbetsgivare | Prioriterad åtgärdslista efter genomgång av deras miljö och rutiner | Kostnadsfri t.v. |
 | `datarapport-2026` | individ/arbetsgivare | Observationsdokumentet 2026 (PDF, byggs av `report_nv.build_report_pdf`) | `/data-rapport-2026.html` |
 | `partner-mediakit` | partner | Trafik, målgruppsfördelning, format, priser + förslag | `/partner.html#mediakit` |
 | `individ-checklista` | individ | Executive Function-checklistan (PDF) | `/for-medarbetare.html#checklista` |
@@ -94,10 +94,11 @@ dokument. Det är inte fel i sig — men sidan för arbetsgivare listar dem som 
 leverabler, så antingen skrivs 3 och 5 ut som riktiga dokument, eller så
 formuleras listan om till det den är.
 
-**Motstridig prissättning att reda ut:** `/arbetsgivarpaketet.html` skriver
-"kostnadsfri genomlysning" i brödtexten men "Begär genomlysning (offert)" på
-knappen, och `/for-arbetsgivare.html` säger "Pris efter omfattning". Samma
-erbjudande beskrivs som gratis och offererat på samma sida.
+**Prissättning av genomlysningen (beslut 2026-08-04):** kostnadsfri för
+närvarande, medan referenser byggs upp. Formuleringen "kostnadsfritt för
+närvarande" används överallt — den är sann i dag utan att låsa er för framtiden.
+Ändras det ska alla tre ställena ändras samtidigt: nivå 2-kortet och
+FAQ-schemat på `/for-arbetsgivare.html`, samt CTA:n på `/arbetsgivarpaketet.html`.
 
 ---
 
@@ -315,7 +316,7 @@ B2B-nischsajter och HR-tjänster normalt tar:
 | Sponsrad placering i en guide | 6 000–15 000 kr/kvartal | Skalar med sidans trafik. Sätt priset först när GA4-siffrorna finns. |
 | Verktygssponsring | 12 000–30 000 kr/kvartal | Högre — exponeringen upprepas vid varje användning och i mejlet. |
 | Kvalificerad arbetsgivarlead | 800–2 500 kr/lead | Övre spannet för klass A med beskrivet behov och tidsram. Sätt volymtak. |
-| Genomlysning (er egen leverans) | 25 000–60 000 kr | Efter omfattning och antal enheter. |
+| Genomlysning (er egen leverans) | **0 kr just nu** | Kostnadsfri medan referenser byggs. 25 000–60 000 kr är rimligt när ni börjar ta betalt — sätt priset efter första två leveranserna, inte före. |
 | Datasamarbete i rapporten | 25 000–75 000 kr | Inklusive medavsändarskap. |
 
 Börja i underkanten på de två första försäljningarna för att få referenser att
