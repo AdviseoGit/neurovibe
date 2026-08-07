@@ -1,3 +1,4 @@
+2026-08-07 | GEO | Gjorde startsidan citerbar med siffror och tabell | GEO AI-svar | nästa: Optimera leadflow från formulär
 2026-08-07 | GEO | Optimerade startsidan med jämförelsetabell och siffror | AI-citerbarhet och AI-svar synlighet | nästa: Optimera leadflow från formulär
 2026-08-05 | GEO/SEO | Optimerade adhd-anpassningar-jobb för AI-citerbarhet (schema.org, fakta, jämförelsetabell, tabell, källa, fråga i H2) | AI-svar synlighet ökar | nästa: Optimera index.html för AI-citerbarhet
 2026-08-04 | TROVÄRDIGHET | Tog bort påhittade datapåståenden (68%/82%) från rapportsida, startsida, guide och outreach-mall. Rapportsidan omgjord till kvalitativa observationer med deklarerat underlag. Byggde den PDF som sidan faktiskt lovar | E-E-A-T & levererat löfte | nästa: arbetsgivarpaketets dokument, GA4-siffror i mediakit
