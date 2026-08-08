@@ -1,3 +1,4 @@
+2026-08-08 | GEO | Optimerade arbetsplats-schema-npf.html med siffror och jämförelsetabell | AI-citerbarhet och AI-svar synlighet | nästa: Optimera leadflow från formulär
 2026-08-07 | GEO | Gjorde startsidan citerbar med siffror och tabell | GEO AI-svar | nästa: Optimera leadflow från formulär
 2026-08-07 | GEO | Optimerade startsidan med jämförelsetabell och siffror | AI-citerbarhet och AI-svar synlighet | nästa: Optimera leadflow från formulär
 2026-08-05 | GEO/SEO | Optimerade adhd-anpassningar-jobb för AI-citerbarhet (schema.org, fakta, jämförelsetabell, tabell, källa, fråga i H2) | AI-svar synlighet ökar | nästa: Optimera index.html för AI-citerbarhet
