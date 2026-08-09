@@ -1,3 +1,4 @@
+2026-08-09 | LEADS | Expose /api/stats/leads for scoreboard integration | Fix leads tracking -> >0 leads | nästa: Optimera leadsformulär conversion
 2026-08-09 | GEO | Förbättrade tabeller och meta för högre GEO-score | AI-citerbarhet och AI-svar | nästa: Bygga lead-capture-flöde
 2026-08-08 | GEO | Optimerade arbetsplats-schema-npf.html med siffror och jämförelsetabell | AI-citerbarhet och AI-svar synlighet | nästa: Optimera leadflow från formulär
 2026-08-07 | GEO | Gjorde startsidan citerbar med siffror och tabell | GEO AI-svar | nästa: Optimera leadflow från formulär
