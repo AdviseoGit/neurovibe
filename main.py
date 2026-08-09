@@ -678,3 +678,12 @@ if __name__ == "__main__":
     import uvicorn
     port = int(os.environ.get("PORT", 8080))
     uvicorn.run(app, host="0.0.0.0", port=port)
+
+@app.get("/api/stats/leads")
+async def get_stats_leads():
+    # Publika leads-stats för scoreboard
+    stats = leadengine.lead_stats()
+    return {
+        "total": stats.get("total", 0),
+        "last_7_days": stats.get("last_7_days", 0)
+    }
