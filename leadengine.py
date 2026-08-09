@@ -679,7 +679,7 @@ def migrate_legacy_leads() -> int:
         if not cur.fetchone():
             conn.close()
             return 0
-        cur.execute("SELECT email, source, created_at FROM neurovibe_leads")
+        cur.execute("SELECT email, source, timestamp FROM neurovibe_leads")
         legacy = cur.fetchall()
         moved = 0
         for row in legacy:
@@ -687,7 +687,7 @@ def migrate_legacy_leads() -> int:
                 """INSERT OR IGNORE INTO leads
                    (email, segment, offer, source_page, score, grade, status, created_at)
                    VALUES (?, 'individ', 'individ-checklista', ?, 10, 'D', 'legacy', ?)""",
-                (row["email"], row["source"], row["created_at"]))
+                (row["email"], row["source"], row["timestamp"]))
             moved += cur.rowcount
         conn.commit()
         conn.close()
