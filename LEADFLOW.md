@@ -229,11 +229,28 @@ det märks inte förrän en deploy har raderat leadsen. Två ställen visar sann
 Sluttest när volymen är på plats: fyll i ett formulär, kontrollera att leaden
 syns i dashboarden, gör en ny deploy och se att den fortfarande är kvar.
 
+### Domän och indexering
+
+Icke-www är primär: `sitemap.xml`, `robots.txt` och samtliga canonicals pekar dit.
+En middleware i `main.py` flyttar `www.neurovibe.se` → `neurovibe.se` och
+`/index.html` → `/` med 301, i ett enda hopp och alltid till https.
+
+Bara exakt `www.<CANONICAL_HOST>` flyttas — en okänd host serveras som vanligt,
+så en felkonfigurerad proxy kan inte skapa en redirect-loop. Byter ni domän,
+sätt `NV_CANONICAL_HOST`.
+
+**Search Console-meddelandet "Alternativ sida med korrekt kanonisk tagg" är inte
+ett fel.** Det betyder att Google hittat en dubblett och följt canonical-taggen
+rätt. Klicka inte "Verifiera att åtgärder vidtagits" på det — det finns inget att
+åtgärda, och meddelandet försvinner av sig självt när 301:orna gjort att Google
+slutar crawla www-varianterna.
+
 ### Miljövariabler
 
 | Variabel | Används till |
 |---|---|
 | `NV_DATA_DIR` | Sökväg till monterad volym för databasen |
+| `NV_CANONICAL_HOST` | Primär domän för 301-redirecten (default `neurovibe.se`) |
 | `INTERNAL_API_KEY` | Skyddar `/api/admin/*` och låser upp `/admin.html` |
 | `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM` | Brevo, för bekräftelser och notiser |
 | `LEAD_NOTIFY_EMAIL` | Vart ägarnotiser går (default `simon@adviseo.se`) |

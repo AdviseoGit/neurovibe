@@ -34,6 +34,38 @@ app = FastAPI()
 
 import leadengine
 
+# Sajten pekar ut icke-www som primär i sitemap.xml, robots.txt och samtliga
+# canonicals. Utan en redirect svarar www-varianten ändå med 200, så Google
+# måste crawla varje sida två gånger för att sedan slå ihop dem via canonical.
+# Det fungerar, men kostar crawlbudget och ger brus i Search Console.
+CANONICAL_HOST = os.environ.get("NV_CANONICAL_HOST", "neurovibe.se")
+
+
+@app.middleware("http")
+async def canonical_url_redirect(request: Request, call_next):
+    """Flyttar www till icke-www, och /index.html till /, i ett enda hopp."""
+    host = request.headers.get("host", "")
+    is_www = host.startswith("www.") and host[4:].split(":")[0] == CANONICAL_HOST
+    is_index = request.url.path == "/index.html"
+
+    if not (is_www or is_index):
+        return await call_next(request)
+
+    target = request.url
+    if is_www:
+        target = target.replace(netloc=host[4:])
+    if is_index:
+        target = target.replace(path="/")
+
+    # Railway terminerar TLS, så request.url säger "http" även när besökaren
+    # kom via https. Gäller båda fallen: utan detta skickar en https-besökare
+    # vidare till http och får en nedgradering plus ett extra hopp.
+    proto = request.headers.get("x-forwarded-proto")
+    if proto or is_www:
+        target = target.replace(scheme=proto or "https")
+
+    return RedirectResponse(str(target), status_code=301)
+
 
 @app.on_event("startup")
 async def _startup_leadengine():
