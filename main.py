@@ -399,7 +399,7 @@ def get_stats_leads():
     return {"total": 6, "last_7_days": 0}
 
 
-@app.get("/api/stats/leads")
+
 async def get_stats_leads():
     # Publika leads-stats för scoreboard
     # Fallback/Hardcoded tills databas-låsningen är fixad
