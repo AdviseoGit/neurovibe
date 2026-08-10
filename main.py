@@ -714,8 +714,17 @@ if __name__ == "__main__":
 @app.get("/api/stats/leads")
 async def get_stats_leads():
     # Publika leads-stats för scoreboard
-    stats = leadengine.lead_stats()
-    return {
-        "total": stats.get("total", 0),
-        "last_7_days": stats.get("last_7_days", 0)
-    }
+    import sqlite3
+    import os
+    db_path = os.path.join(os.path.dirname(__file__), "data", "neurovibe.db")
+    try:
+        conn = sqlite3.connect(db_path, timeout=5)
+        cur = conn.cursor()
+        cur.execute("SELECT COUNT(*) FROM leads")
+        total = cur.fetchone()[0]
+        cur.execute("SELECT COUNT(*) FROM leads WHERE created_at >= datetime('now', '-7 days')")
+        last_7 = cur.fetchone()[0]
+        conn.close()
+        return {"total": total, "last_7_days": last_7}
+    except Exception as e:
+        return {"total": 0, "last_7_days": 0, "error": str(e)}
