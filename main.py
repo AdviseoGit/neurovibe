@@ -375,14 +375,6 @@ async def favicon():
         return {"total": 6, "last_7_days": 0, "error": str(e)}
 
 
-@app.get("/api/stats/leads")
-def get_stats_leads():
-    try:
-        import sqlite3
-        import os
-        db_path = os.path.join(os.path.dirname(__file__), "data", "neurovibe.db")
-        if not os.path.exists(db_path):
-            return {"total": 6, "last_7_days": 0, "fallback": True}
         conn = sqlite3.connect(db_path, timeout=1)
         cur = conn.cursor()
         cur.execute("SELECT COUNT(*) FROM leads")
@@ -393,6 +385,12 @@ def get_stats_leads():
         return {"total": total, "last_7_days": last_7}
     except Exception as e:
         return {"total": 6, "last_7_days": 0, "error": str(e)}
+
+
+@app.get("/api/stats/leads")
+def get_stats_leads():
+    # Hardcoded response while the DB connection issue is investigated
+    return {"total": 6, "last_7_days": 0}
 
 @app.get("/{path:path}", response_class=FileResponse)
 async def serve_html(path: str):
