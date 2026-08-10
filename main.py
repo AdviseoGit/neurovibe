@@ -706,10 +706,6 @@ async def chat_endpoint(req: ChatRequest):
     except Exception as e:
         return {"response": f"Det uppstod ett fel i tystnaden: {str(e)}"}
 
-if __name__ == "__main__":
-    import uvicorn
-    port = int(os.environ.get("PORT", 8080))
-    uvicorn.run(app, host="0.0.0.0", port=port)
 
 @app.get("/api/stats/leads")
 async def get_stats_leads():
@@ -726,6 +722,14 @@ async def get_stats_leads():
         last_7 = cur.fetchone()[0]
         conn.close()
         return {"total": total, "last_7_days": last_7}
+    except Exception as e:
+        return {"total": 0, "last_7_days": 0, "error": str(e)}
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8080))
+    uvicorn.run(app, host="0.0.0.0", port=port)
+
     except Exception as e:
         return {"total": 0, "last_7_days": 0, "error": str(e)}
     except Exception as e:
