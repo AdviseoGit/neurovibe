@@ -393,9 +393,16 @@ def get_stats_leads():
     return {"total": 6, "last_7_days": 0}
 
 
-@app.get("/api/stats/leads")
+
 def get_stats_leads():
     # Hardcoded response while the DB connection issue is investigated
+    return {"total": 6, "last_7_days": 0}
+
+
+@app.get("/api/stats/leads")
+async def get_stats_leads():
+    # Publika leads-stats för scoreboard
+    # Fallback/Hardcoded tills databas-låsningen är fixad
     return {"total": 6, "last_7_days": 0}
 
 @app.get("/{path:path}", response_class=FileResponse)
