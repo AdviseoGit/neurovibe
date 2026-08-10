@@ -1,13 +1,11 @@
-import datetime
-import os
+from datetime import datetime
 
-today = datetime.datetime.utcnow().strftime("%Y-%m-%d")
-progress_log = "/data/workspace/projects/neurovibe/PROGRESS_LOG.md"
+with open('/data/workspace/projects/neurovibe/PROGRESS_LOG.md', 'r') as f:
+    lines = f.readlines()
 
-entry = f"{today} | LEADS | Expose /api/stats/leads for scoreboard integration | Fix leads tracking -> >0 leads | nästa: Optimera leadsformulär conversion\n"
+new_log_entry = f"{datetime.now().strftime('%Y-%m-%d')} | LEADS | Lagt till ovan-vecket lead capture-formulär för arbetsgivare | Fix leads tracking -> >0 leads | nästa: Utvärdera leads\n"
 
-with open(progress_log, "r") as f:
-    content = f.read()
+lines.insert(0, new_log_entry)
 
-with open(progress_log, "w") as f:
-    f.write(entry + content)
+with open('/data/workspace/projects/neurovibe/PROGRESS_LOG.md', 'w') as f:
+    f.writelines(lines)
