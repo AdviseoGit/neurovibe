@@ -4,7 +4,7 @@ Målsiffra: Leads 7d från osynligt -> spårbart (>0).
 Löptid: pass 2 av 3
 Kill-kriterium: Har vi inte spårbara leads efter 3 pass går vi tillbaka till att driva ren trafik för att fylla tratten innan vi optimerar konvertering.
 Steg: 
-[x] Fixat endpoint för /api/stats/leads
+[ ] Fixat endpoint för /api/stats/leads (misslyckades i detta pass pga 502)
 [x] Lägg till lead capture-komponent tydligare "above the fold" på startsidan (neurovibe.se).
 [ ] Utvärdera leads.
 
