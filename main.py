@@ -360,51 +360,6 @@ async def favicon():
     return FileResponse("static/favicon.svg")
 
 # Catch-all route to serve any .html file from the static directory from the root URL
-
-            
-        import sqlite3
-        conn = sqlite3.connect(db_path, timeout=1)
-        cur = conn.cursor()
-        cur.execute("SELECT COUNT(*) FROM leads")
-        total = cur.fetchone()[0]
-        cur.execute("SELECT COUNT(*) FROM leads WHERE created_at >= datetime('now', '-7 days')")
-        last_7 = cur.fetchone()[0]
-        conn.close()
-        return {"total": total, "last_7_days": last_7}
-    except Exception as e:
-        return {"total": 6, "last_7_days": 0, "error": str(e)}
-
-
-        conn = sqlite3.connect(db_path, timeout=1)
-        cur = conn.cursor()
-        cur.execute("SELECT COUNT(*) FROM leads")
-        total = cur.fetchone()[0]
-        cur.execute("SELECT COUNT(*) FROM leads WHERE created_at >= datetime('now', '-7 days')")
-        last_7 = cur.fetchone()[0]
-        conn.close()
-        return {"total": total, "last_7_days": last_7}
-    except Exception as e:
-        return {"total": 6, "last_7_days": 0, "error": str(e)}
-
-
-
-def get_stats_leads():
-    # Hardcoded response while the DB connection issue is investigated
-    return {"total": 6, "last_7_days": 0}
-
-
-
-def get_stats_leads():
-    # Hardcoded response while the DB connection issue is investigated
-    return {"total": 6, "last_7_days": 0}
-
-
-
-async def get_stats_leads():
-    # Publika leads-stats för scoreboard
-    # Fallback/Hardcoded tills databas-låsningen är fixad
-    return {"total": 6, "last_7_days": 0}
-
 @app.get("/{path:path}", response_class=FileResponse)
 async def serve_html(path: str):
     if path.endswith(".html"):
@@ -751,18 +706,19 @@ async def chat_endpoint(req: ChatRequest):
     except Exception as e:
         return {"response": f"Det uppstod ett fel i tystnaden: {str(e)}"}
 
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8080))
+    uvicorn.run(app, host="0.0.0.0", port=port)
 
-    except Exception as e:
-        return {"total": 0, "last_7_days": 0, "error": str(e)}
-
-
-    except Exception as e:
-        return {"total": 0, "last_7_days": 0, "error": str(e)}
-
-
-            
-        import sqlite3
-        conn = sqlite3.connect(db_path, timeout=1, uri=True)
+@app.get("/api/stats/leads")
+async def get_stats_leads():
+    # Publika leads-stats för scoreboard
+    import sqlite3
+    import os
+    db_path = os.path.join(os.path.dirname(__file__), "data", "neurovibe.db")
+    try:
+        conn = sqlite3.connect(db_path, timeout=5)
         cur = conn.cursor()
         cur.execute("SELECT COUNT(*) FROM leads")
         total = cur.fetchone()[0]
@@ -770,16 +726,5 @@ async def chat_endpoint(req: ChatRequest):
         last_7 = cur.fetchone()[0]
         conn.close()
         return {"total": total, "last_7_days": last_7}
-    except Exception as e:
-        # Fallback to local file read if DB is locked
-        return {"total": 6, "last_7_days": 0, "error": str(e)}
-
-if __name__ == "__main__":
-    import uvicorn
-    port = int(os.environ.get("PORT", 8080))
-    uvicorn.run(app, host="0.0.0.0", port=port)
-
-    except Exception as e:
-        return {"total": 0, "last_7_days": 0, "error": str(e)}
     except Exception as e:
         return {"total": 0, "last_7_days": 0, "error": str(e)}
