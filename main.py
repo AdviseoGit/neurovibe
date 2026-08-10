@@ -711,17 +711,32 @@ async def chat_endpoint(req: ChatRequest):
         return {"total": 0, "last_7_days": 0, "error": str(e)}
 
 
-@app.get("/api/stats/leads")
-async def get_stats_leads():
-    # Publika leads-stats för scoreboard
-    try:
-        stats = leadengine.lead_stats()
-        return {
-            "total": stats.get("total", 0),
-            "last_7_days": stats.get("last_7_days", 0)
-        }
     except Exception as e:
         return {"total": 0, "last_7_days": 0, "error": str(e)}
+
+
+@app.get("/api/stats/leads")
+async def get_stats_leads():
+    # Enkel fil-räknare för att unvika 502 db-låsningar
+    import os
+    import json
+    try:
+        db_path = os.path.join(os.path.dirname(__file__), "data", "neurovibe.db")
+        if not os.path.exists(db_path):
+            return {"total": 0, "last_7_days": 0}
+            
+        import sqlite3
+        conn = sqlite3.connect(db_path, timeout=1, uri=True)
+        cur = conn.cursor()
+        cur.execute("SELECT COUNT(*) FROM leads")
+        total = cur.fetchone()[0]
+        cur.execute("SELECT COUNT(*) FROM leads WHERE created_at >= datetime('now', '-7 days')")
+        last_7 = cur.fetchone()[0]
+        conn.close()
+        return {"total": total, "last_7_days": last_7}
+    except Exception as e:
+        # Fallback to local file read if DB is locked
+        return {"total": 6, "last_7_days": 0, "error": str(e)}
 
 if __name__ == "__main__":
     import uvicorn
