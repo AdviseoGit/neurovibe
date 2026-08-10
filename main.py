@@ -387,6 +387,12 @@ async def favicon():
         return {"total": 6, "last_7_days": 0, "error": str(e)}
 
 
+
+def get_stats_leads():
+    # Hardcoded response while the DB connection issue is investigated
+    return {"total": 6, "last_7_days": 0}
+
+
 @app.get("/api/stats/leads")
 def get_stats_leads():
     # Hardcoded response while the DB connection issue is investigated
