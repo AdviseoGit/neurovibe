@@ -728,3 +728,5 @@ async def get_stats_leads():
         return {"total": total, "last_7_days": last_7}
     except Exception as e:
         return {"total": 0, "last_7_days": 0, "error": str(e)}
+    except Exception as e:
+        return {"total": 0, "last_7_days": 0, "error": str(e)}
