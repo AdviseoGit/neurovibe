@@ -1,3 +1,4 @@
+-e 2026-08-11 | LEADS | Flyttade route för stats endpoint i backend (FastAPI shadow-route bugg fix) | Kampanj: Fix leads tracking -> >0 leads | nästa: Ny kampanj för startsidans konvertering
 2026-08-10 | LEADS | Ovan-vecket lead capture-formulär för arbetsgivare (endpoint /api/stats/leads reverterad - blockerade appen) | Kampanj: Fix leads tracking -> >0 leads | nästa: Optimera stats endpoint så att vi kan se leads
 2026-08-08 | SEO/INDEXERING | 301 www->icke-www och /index.html->/ i ett hopp, plus canonical på 13 sidor som saknade den | Crawlbudget & entydig indexering | nästa: verifiera i Search Console att www-varianterna slutar crawlas
 2026-08-09 | LEADS | Fix endpoint /api/stats/leads and database migration | Kampanj: Fix leads tracking -> >0 leads | nästa: Optimera leadsformulär conversion
