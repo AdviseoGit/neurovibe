@@ -13,17 +13,17 @@ vad siffrorna faktiskt gjorde. Ändra den inte för hand.
 | ctr | 0.0% | 4.52% | +4.52 |
 | snittposition | 38.1 | 34.2 | -3.9 (lägre=bättre) |
 | sessioner (14d) | – | 25 | engagemang 40.0% |
+| leads totalt | – | 8 | senaste 7d: 4 |
 
 ## HISTORIK (ett mätvärde per pass)
 | datum | klick | visningar | position | sessioner | leads 7d |
 |---|---|---|---|---|---|
 | 2026-08-09 | 6 | 98 | 21.9 | 29 | – |
 | 2026-08-10 | 6 | 118 | 30.0 | 27 | – |
-| 2026-08-11 | 7 | 155 | 34.2 | 25 | – |
+| 2026-08-11 | 7 | 155 | 34.2 | 25 | 4 |
 
 ## TRIGGERS (beräknade ur datan — inte agentens bedömning)
 - **VINNARE** [HÖG] — neurovibe.se rör sig ÅT RÄTT HÅLL (klick 0->4, position 29->36). Detta är det enda som bevisat fungerar just nu — häll på mer av samma i stället för att starta något nytt: fördjupa sidan, bygg intilliggande intent, länka internt till den.
-- **LEADS_OMÄTT** [HÖG] — leadflödet mäts inte automatiskt — mål 3 av 3 är osynligt för både dig och nästa pass. Koppla in en riktig räkning (intern endpoint eller db-count, INTE en publik social-proof-siffra) innan du optimerar det.
 
 ## SIDOR RANKADE PÅ MÖJLIGHET (klick som ligger på bordet)
 Rankat på visningar sidan REDAN får gånger den CTR den missar genom att inte
