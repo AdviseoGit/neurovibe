@@ -360,13 +360,6 @@ async def favicon():
     return FileResponse("static/favicon.svg")
 
 # Catch-all route to serve any .html file from the static directory from the root URL
-@app.get("/{path:path}", response_class=FileResponse)
-async def serve_html(path: str):
-    if path.endswith(".html"):
-        file_path = os.path.join("static", path)
-        if os.path.exists(file_path):
-            return FileResponse(file_path)
-    raise HTTPException(status_code=404, detail="Item not found")
 
 def _lead_payload(req: LeadRequest, segment_override: Optional[str] = None) -> dict:
     data = req.model_dump()
@@ -714,6 +707,15 @@ async def get_stats_leads():
         "total": stats.get("total", 0),
         "last_7_days": stats.get("last_7_days", 0)
     }
+
+# Catch-all route to serve any .html file from the static directory from the root URL
+@app.get("/{path:path}", response_class=FileResponse)
+async def serve_html(path: str):
+    if path.endswith(".html"):
+        file_path = os.path.join("static", path)
+        if os.path.exists(file_path):
+            return FileResponse(file_path)
+    raise HTTPException(status_code=404, detail="Not found")
 
 if __name__ == "__main__":
     import uvicorn
