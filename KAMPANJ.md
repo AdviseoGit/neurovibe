@@ -1,12 +1,13 @@
 ## AKTIV KAMPANJ
-Hypotes: Om vi fixar leads-spårningen så vi vet hur många som faktiskt konverterar, och sedan optimerar startskärmens konverteringsflöde, så kommer andelen leads/sessioner att öka från okänt till minst 5%.
-Målsiffra: Leads 7d från osynligt -> spårbart (>0).
-Löptid: pass 3 av 3
-Kill-kriterium: Har vi inte spårbara leads efter 3 pass går vi tillbaka till att driva ren trafik för att fylla tratten innan vi optimerar konvertering.
+Hypotes: Om vi stärker www.neurovibe.se/adhd-diagnos-guide.html (som har 141 visningar men pos 87.1 och 0 klick) med djupare, mer relevant intent-innehåll så kan vi flytta den till sida 1-2 (pos <20) och därmed dubbla sajtens totala trafik.
+Målsiffra: klick på adhd-diagnos-guide.html från 0 -> >5 per pass, snittposition <30.
+Löptid: pass 1 av 4
+Kill-kriterium: Har adhd-diagnos-guide.html inte rört sig mot pos <30 efter 4 pass (eller om total trafik inte ökar), avbryter vi SEO på denna sida och testar distribution/gästbloggning.
 Steg: 
-[x] Fixat endpoint för /api/stats/leads (misslyckades i detta pass pga 502)
-[x] Lägg till lead capture-komponent tydligare "above the fold" på startsidan (neurovibe.se).
-[x] Utvärdera leads.
+[x] Diagnostisera adhd-diagnos-guide.html och bygg ut innehåll för sökintent (detta pass).
+[ ] Förbättra internlänkning från index till adhd-diagnos-guide.html.
+[ ] Lägg till lead capture anpassad för adhd-diagnos.
 
 ## AVSLUTADE
-2026-08-11 | Fix leads tracking -> >0 leads | 4 | Spårningen fungerar nu. Nästa steg: optimera konvertering.
+2026-08-14 | Fix leads tracking -> >0 leads | 2 (senaste 7d) | Spårningen fungerar, mål uppnått, 8 leads totalt och 2 senaste veckan.
+2026-08-11 | Fix leads tracking -> >0 leads | 4 | Spårningen fungerar nu.
