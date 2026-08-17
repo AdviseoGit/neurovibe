@@ -71,3 +71,4 @@
 2026-08-17 | GEO | Optimerade ai-verktyg-neurodiversitet.html (100/100) för GEO citerbarhet | Höjer GEO poäng och CTR potential | nästa: Följ upp SCOREBOARD
 2026-08-17 | GEO | Optimerade arbetsplats-schema-npf.html (100/100) för GEO citerbarhet | Höjer GEO poäng och CTR potential | nästa: Följ upp SCOREBOARD
 2026-08-17 | GEO | Optimerade ai-verktyg-jobb-kalkylator.html (100/100) för GEO citerbarhet | Höjer GEO poäng och CTR potential | nästa: Följ upp SCOREBOARD
+2026-08-17 | GEO | Optimerade startsidan (100/100) för GEO citerbarhet | Höjer GEO poäng och CTR potential | nästa: Följ upp SCOREBOARD
