@@ -65,3 +65,4 @@
 2026-08-17 | GEO | Optimerade forsakringskassan-arbetsformedlingen-stod.html (100/100) för GEO citerbarhet | Höjer GEO poäng och CTR potential | nästa: Följ upp SCOREBOARD
 2026-08-17 | GEO | Optimerade arbetsprovning-2026-forsakringskassan.html (100/100) för GEO citerbarhet | Höjer GEO poäng och CTR potential | nästa: Följ upp SCOREBOARD
 2026-08-17 | GEO | Optimerade post-semester-stress-npf.html (100/100) för GEO citerbarhet | Höjer GEO poäng och CTR potential | nästa: Följ upp SCOREBOARD
+2026-08-17 | GEO | Optimerade lagkrav-anpassningar-arbetsmiljo.html (100/100) för GEO citerbarhet | Höjer GEO poäng och CTR potential | nästa: Följ upp SCOREBOARD
