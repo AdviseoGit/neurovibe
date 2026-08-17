@@ -75,3 +75,4 @@
 2026-08-17 | GEO | Optimerade adhd-diagnos-vuxen.html (100/100) för GEO citerbarhet | Höjer GEO poäng och CTR potential | nästa: Följ upp SCOREBOARD
 2026-08-17 | GEO | Optimerade neurodiversitet-arbetsplatsen.html (100/100) för GEO citerbarhet | Höjer GEO poäng och CTR potential | nästa: Följ upp SCOREBOARD
 2026-08-17 | GEO | Optimerade autism-arbetsplatsen-tips-guide.html (100/100) för GEO citerbarhet | Höjer GEO poäng och CTR potential | nästa: Följ upp SCOREBOARD
+2026-08-17 | GEO | Optimerade data-rapport-2026.html (100/100) för GEO citerbarhet | Höjer GEO poäng och CTR potential | nästa: Följ upp SCOREBOARD
