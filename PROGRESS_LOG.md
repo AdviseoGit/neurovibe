@@ -61,3 +61,4 @@
 2026-07-03 | DESIGN/AI-TRANSPARENS | Säkerställt att AI-transparens/footer finns överallt | AI-Transparens | nästa: Fånga upp FK-guiden i interaktivt verktyg eller data
 2026-07-02 | DATA | Publicerade första original-datarapporten State of Neurodiversity 2026 med lead capture | Data-Moat & Leadflow | nästa: Bygg ut datarapporten eller börja outreach
 2026-07-01 | DESIGN | Uppdaterat 3 guider till dark theme nordstjärna + AI-transparens + GA4 | Enhetlig UX & Spårning | nästa: Analysera data-capture for första rapport
+2026-08-17 | GEO | Optimerade adhd-diagnos-guide.html med frågebaserade H2 (100/100) | Höjer GEO poäng | nästa: Fortsätt utvärdera neurovibe regression och optimera fler sidor
