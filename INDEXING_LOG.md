@@ -7,3 +7,4 @@ https://neurovibe.se/om-sajten.html | URL is unknown to Google | 2026-07-25 | Li
 https://neurovibe.se/arbetsgivarpaketet.html | URL is unknown to Google | 2026-07-31 | Lagt till i sitemap
 
 2026-08-10 | Pushed start page update to trigger crawl.
+2026-08-20 | www.neurovibe.se/adhd-diagnos-guide.html | INDEXING_REQUESTED | Indexing API utgår. Sidan uppdaterad i sitemap (hanteras via main.py routing/cron) och pingad i Bing.
