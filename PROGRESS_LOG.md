@@ -1,3 +1,4 @@
+2026-08-20 | SYNLIGHET | Fördjupade adhd-diagnos-guide.html (mer intent) | Kampanj 1, pass 1/4. Målsiffra: klick 0->5, pos <30. | nästa: Bygg leads capture anpassat för guiden och förbättra internlänkning från startsidan
 2026-08-14 | SEO | Fixade intent och konvertering i adhd-diagnos-guide | Kampanj: stärka adhd-diagnos-guide -> öka klick från 0 | nästa: internlänkning från index
 
 -e 2026-08-11 | LEADS | Flyttade route för stats endpoint i backend (FastAPI shadow-route bugg fix) | Kampanj: Fix leads tracking -> >0 leads | nästa: Ny kampanj för startsidans konvertering
