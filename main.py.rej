@@ -1,0 +1,30 @@
+--- main.py
++++ main.py
+@@ -10,6 +10,7 @@
+ import json
+ import sqlite3
+ from datetime import datetime
++from datetime import timedelta
+ 
+ app = Flask(__name__, static_folder='static', static_url_path='')
+ CORS(app)
+@@ -131,6 +132,19 @@
+             return jsonify({'error': str(e)}), 500
+ 
+ 
++@app.route('/api/stats/leads')
++def stats_leads():
++    try:
++        with sqlite3.connect(DB_PATH) as conn:
++            c = conn.cursor()
++            c.execute("SELECT COUNT(*) FROM leads")
++            total = c.fetchone()[0]
++            c.execute("SELECT COUNT(*) FROM leads WHERE timestamp > datetime('now', '-7 days')")
++            last_7_days = c.fetchone()[0]
++            return jsonify({'total': total, 'last_7_days': last_7_days})
++    except Exception as e:
++        return jsonify({'error': str(e)}), 500
++
+ if __name__ == '__main__':
+     init_db()
+     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 3000)))

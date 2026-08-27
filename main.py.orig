@@ -12,7 +12,6 @@ from openai import OpenAI
 import psycopg2
 from datetime import datetime, timedelta
 from typing import Optional
-from fastapi import Response
 
 from jose import JWTError, jwt
 from passlib.context import CryptContext
@@ -454,22 +453,6 @@ async def update_lead_status(req: LeadStatusRequest, request: Request):
     if not ok:
         raise HTTPException(status_code=404, detail="Lead not found")
     return {"status": "success"}
-
-
-@app.get("/api/stats/leads")
-async def stats_leads():
-    """Returnerar totala leads och leads de senaste 7 dagarna."""
-    try:
-        stats = leadengine.lead_stats()
-        total = stats.get("total", 0)
-        # Stats from leadengine includes "last_7d"
-        last_7_days = stats.get("last_7d", 0)
-        return {"total": total, "last_7_days": last_7_days}
-    except Exception as e:
-        print(f"Error fetching lead stats: {e}")
-        # Fallback if leadengine fails
-        return {"total": 0, "last_7_days": 0}
-
 
 @app.post("/api/feedback")
 async def save_feedback(req: FeedbackRequest):
