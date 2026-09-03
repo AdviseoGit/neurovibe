@@ -1,12 +1,12 @@
-RAPPORT — neurovibe.se 2026-08-14
-SIFFRORNA: klick 1 -> 7, position 18.7 -> 52.6, sessioner 26, leads 8 (2 senaste 7d)
-RÖRDE SIG FÖRRA DRAGET NÅGOT? ja (klick ökade 1->7 och lead capture bevisades spara 2st senaste 7d). Snittpositionen tappade dock 18.7->52.6, troligen pga fler visningar för svagare long-tails.
-TRIGGER SOM STYRDE: POSITION_TAPP (snittposition försämrades) + VINNARE (klick rörde sig uppåt)
-KAMPANJ: stärka adhd-diagnos-guide.html (intent+konvertering) | klick: 0->>5 | pass 1 av 4 | Diagnostisera och bygg ut adhd-diagnos-guide.html
-PASSETS DRAG: Skrev om Del 4 i guiden för vuxendiagnos. Den har 141 visningar (näst mest) men 0 klick och pos 87. Istället för generisk text fokuserar den nu hårt på sökintent kring rättigheter på arbetsplatsen och länkar vidare till verktygen. Title/meta uppdaterades för intentet.
-FLASKHALS: Guiden för ADHD-diagnos som får visningar men ligger för långt bak (pos 87) och saknar klick.
-PUBLICERAT: JA | commit ca6aca6b49c68a1321f9d57419cee1d409ea82f8 | live 200 + visar innehåll JA | länkad + sitemap JA
-QA: NEW 0 | FIXED 0 | REMAINING 0
-LEADS: 2st senaste 7d, 8 totalt | end-to-end OK | överlever deploy: ja
-FIXAT: Uppdaterade tre döda/utdaterade utgående länkar (till av.se, 1177 och försäkringskassan) som QA:n upptäckte.
-NÄSTA: Förbättra internlänkning från index till adhd-diagnos-guide.html.
+RAPPORT — neurovibe.se 2026-09-03
+SIFFRORNA: klick 8 -> 4, visningar 582 -> 601, pos 59.8 -> 64.5, leads: 8 (0 senaste 7d)
+RÖRDE SIG FÖRRA DRAGET NÅGOT? För tidigt, adhd-diagnos-guide ligger fortfarande på 0 klick och snittposition 84.1, men sidan var knappt uppdaterad länge nog i GSC. Däremot visade arbetsprövningsguiden framsteg (pos 14->11 och 1 klick).
+TRIGGER SOM STYRDE: OSYNLIGHET (kritisk trigger) - 601 visningar, 4 klick (0.67% CTR).
+KAMPANJ: Om vi stärker adhd-diagnos-guide.html med mer intent-innehåll så kan vi flytta den till sida 1-2 | klick 0->5, pos <30 | pass 3 av 4 | Införde leadflow.js konvertering | Avbryts om ingen trafikökning
+PASSETS DRAG: Konverterade leads-formulären på ADHD-guiden och arbetsprövnings-guiden till leadflow.js-systemet. Uppdaterade internlänkar (startsida och guider) för att stärka intent och leda mer internlänkskraft mot båda dessa guider, vilket direkt adresseras till synlighetsproblemet (sidor på botten behöver internlänks-boost).
+FLASKHALS: Avsaknaden av konvertering av besökare och låg synlighet (positioner > 60 för viktiga intent-sidor).
+PUBLICERAT: JA | commit 3570208 | live 200 + visar innehåll JA (live API 200) | länkad + sitemap JA
+QA: NEW 0 | FIXED 0 | REMAINING 9 (dead external links i legacy)
+LEADS: 0 st 7d (totalt 8) | end-to-end OK (leadflow.js fixat) | överlever deploy: JA (sqlite i data dir).
+FIXAT: Uppdaterat leadsformulär till leadflow.js struktur med korrekta attribut.
+NÄSTA: Optimera lead conversion rate och bygg distribution/gästinlägg för adhd-diagnos-guiden om inte SEO rankingen (GSC) slagit igenom.
