@@ -1,3 +1,4 @@
+-e 2026-09-03 | LEADS/KONVERTERING | Införde leadflow.js på adhd-diagnos-guide och arbetsprovning-2026-forsakringskassan | adhd-diagnos klick > 5 | nästa: Optimera lead conversion rate
 2026-08-27 | SYNLIGHET | Lyfte in adhd-diagnos-guide.html i main nav och index | adhd-diagnos klick > 5 | nästa: Bygg leads capture anpassad för adhd-diagnos
 2026-08-20 | SYNLIGHET | Fördjupade adhd-diagnos-guide.html (mer intent) | Kampanj 1, pass 1/4. Målsiffra: klick 0->5, pos <30. | nästa: Bygg leads capture anpassat för guiden och förbättra internlänkning från startsidan
 2026-08-14 | SEO | Fixade intent och konvertering i adhd-diagnos-guide | Kampanj: stärka adhd-diagnos-guide -> öka klick från 0 | nästa: internlänkning från index
