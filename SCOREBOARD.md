@@ -1,6 +1,6 @@
-# SCOREBOARD — sc-domain:neurovibe.se (2026-09-03)
+# SCOREBOARD — sc-domain:neurovibe.se (2026-09-10)
 
-Fönster: **2026-08-18 .. 2026-08-31** jämfört med **2026-08-04 .. 2026-08-17** (14 dagar vardera, GSC-lag 3d).
+Fönster: **2026-08-25 .. 2026-09-07** jämfört med **2026-08-11 .. 2026-08-24** (14 dagar vardera, GSC-lag 3d).
 
 Denna fil skrivs av scoreboard.py och committas — den är passens ENDA minne av
 vad siffrorna faktiskt gjorde. Ändra den inte för hand.
@@ -8,12 +8,11 @@ vad siffrorna faktiskt gjorde. Ändra den inte för hand.
 ## LÄGE
 | mått | före | efter | delta |
 |---|---|---|---|
-| klick | 8 | **4** | -4 |
-| visningar | 582 | 601 | +19 |
-| ctr | 1.37% | 0.67% | -0.70 |
-| snittposition | 59.8 | 64.5 | +4.7 (lägre=bättre) |
-| sessioner (14d) | – | 14 | engagemang 50.0% |
-| leads totalt | – | 8 | senaste 7d: 0 |
+| klick | 4 | **8** | +4 |
+| visningar | 685 | 435 | -250 |
+| ctr | 0.58% | 1.84% | +1.26 |
+| snittposition | 63.8 | 55.7 | -8.1 (lägre=bättre) |
+| sessioner (14d) | – | 15 | engagemang 53.3% |
 
 ## HISTORIK (ett mätvärde per pass)
 | datum | klick | visningar | position | sessioner | leads 7d |
@@ -25,10 +24,12 @@ vad siffrorna faktiskt gjorde. Ändra den inte för hand.
 | 2026-08-20 | 8 | 580 | 60.0 | 24 | – |
 | 2026-08-27 | 4 | 685 | 63.8 | 18 | – |
 | 2026-09-03 | 4 | 601 | 64.5 | 14 | 0 |
+| 2026-09-10 | 8 | 435 | 55.7 | 15 | – |
 
 ## TRIGGERS (beräknade ur datan — inte agentens bedömning)
-- **OSYNLIG** [KRITISK] — 601 visningar men bara 4 klick (0.67% CTR) på 14 dagar, snittposition 64.5. Efterfrågan FINNS — sajten ligger inte i närheten av den. GEO/AI-citerbarhet kan INTE vara dagens drag: en sida på position 64 citeras inte av någon motor heller. Draget måste skapa SYNLIGHET (rankbar intent-sida, indexering, intern länkkraft) eller trafik utanför Google.
-- **VINNARE** [HÖG] — www.neurovibe.se/arbetsprovning-2026-forsakringskassan.html rör sig ÅT RÄTT HÅLL (klick 0->1, position 14->11). Detta är det enda som bevisat fungerar just nu — häll på mer av samma i stället för att starta något nytt: fördjupa sidan, bygg intilliggande intent, länka internt till den.
+- **VINNARE** [HÖG] — neurovibe.se/arbetsplats-schema-npf.html rör sig ÅT RÄTT HÅLL (klick 1->3, position 7->7). Detta är det enda som bevisat fungerar just nu — häll på mer av samma i stället för att starta något nytt: fördjupa sidan, bygg intilliggande intent, länka internt till den.
+- **REGRESSION** [HÖG] — www.neurovibe.se/adhd-diagnos-guide.html tappade visningar 484->210 (position 82->86). Något gick sönder eller blev omsprunget — undersök innan du bygger nytt.
+- **LEADS_OMÄTT** [HÖG] — leadflödet mäts inte automatiskt — mål 3 av 3 är osynligt för både dig och nästa pass. Koppla in en riktig räkning (intern endpoint eller db-count, INTE en publik social-proof-siffra) innan du optimerar det.
 
 ## SIDOR RANKADE PÅ MÖJLIGHET (klick som ligger på bordet)
 Rankat på visningar sidan REDAN får gånger den CTR den missar genom att inte
@@ -36,14 +37,14 @@ ligga på position 3. Detta — inte GEO-poäng — avgör vilken sida som är v
 
 | sida | visningar | position | klick nu | möjliga klick |
 |---|---|---|---|---|
-| www.neurovibe.se/adhd-diagnos-guide.html | 409 | 84.1 | 0 | ~45 |
-| www.neurovibe.se/arbetsprovning-2026-forsakringskassan.html | 62 | 11.0 | 1 | ~6 |
-| neurovibe.se/forsakringskassan-arbetsformedlingen-stod.html | 29 | 30.8 | 0 | ~3 |
-| neurovibe.se/npf-arbetslivet.html | 20 | 66.2 | 0 | ~2 |
-| neurovibe.se/arbetsplats-schema-npf.html | 28 | 7.2 | 1 | ~2 |
-| neurovibe.se/lagkrav-anpassningar-arbetsmiljo.html | 15 | 55 | 1 | ~2 |
-| neurovibe.se/maskering-pa-arbetsplatsen.html | 5 | 22.6 | 0 | ~1 |
-| www.neurovibe.se/autism-arbetsplatsen-tips-guide.html | 4 | 41.5 | 0 | ~0 |
-| neurovibe.se/neurodiversitet-arbetsplatsen.html | 5 | 5.8 | 0 | ~0 |
-| neurovibe.se/ai-verktyg-neurodiversitet.html | 4 | 7 | 0 | ~0 |
+| www.neurovibe.se/adhd-diagnos-guide.html | 210 | 86.3 | 0 | ~23 |
+| neurovibe.se/forsakringskassan-arbetsformedlingen-stod.html | 43 | 29.2 | 1 | ~4 |
+| www.neurovibe.se/arbetsprovning-2026-forsakringskassan.html | 47 | 13.0 | 2 | ~4 |
+| neurovibe.se/lagkrav-anpassningar-arbetsmiljo.html | 29 | 52.4 | 0 | ~3 |
+| neurovibe.se/npf-arbetslivet.html | 22 | 60.3 | 0 | ~2 |
+| neurovibe.se/arbetsplats-schema-npf.html | 29 | 6.6 | 3 | ~2 |
+| neurovibe.se/autism-arbetsplatsen-tips-guide.html | 13 | 50.2 | 0 | ~1 |
+| neurovibe.se/ai-verktyg-neurodiversitet.html | 8 | 10.2 | 0 | ~1 |
+| neurovibe.se/neurodiversitet-arbetsplatsen.html | 6 | 17.2 | 0 | ~1 |
+| neurovibe.se/maskering-pa-arbetsplatsen.html | 5 | 24.2 | 0 | ~1 |
 
