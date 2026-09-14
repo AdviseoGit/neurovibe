@@ -1,12 +1,12 @@
-RAPPORT — neurovibe.se 2026-09-03
-SIFFRORNA: klick 8 -> 4, visningar 582 -> 601, pos 59.8 -> 64.5, leads: 8 (0 senaste 7d)
-RÖRDE SIG FÖRRA DRAGET NÅGOT? För tidigt, adhd-diagnos-guide ligger fortfarande på 0 klick och snittposition 84.1, men sidan var knappt uppdaterad länge nog i GSC. Däremot visade arbetsprövningsguiden framsteg (pos 14->11 och 1 klick).
-TRIGGER SOM STYRDE: OSYNLIGHET (kritisk trigger) - 601 visningar, 4 klick (0.67% CTR).
-KAMPANJ: Om vi stärker adhd-diagnos-guide.html med mer intent-innehåll så kan vi flytta den till sida 1-2 | klick 0->5, pos <30 | pass 3 av 4 | Införde leadflow.js konvertering | Avbryts om ingen trafikökning
-PASSETS DRAG: Konverterade leads-formulären på ADHD-guiden och arbetsprövnings-guiden till leadflow.js-systemet. Uppdaterade internlänkar (startsida och guider) för att stärka intent och leda mer internlänkskraft mot båda dessa guider, vilket direkt adresseras till synlighetsproblemet (sidor på botten behöver internlänks-boost).
-FLASKHALS: Avsaknaden av konvertering av besökare och låg synlighet (positioner > 60 för viktiga intent-sidor).
-PUBLICERAT: JA | commit 3570208 | live 200 + visar innehåll JA (live API 200) | länkad + sitemap JA
-QA: NEW 0 | FIXED 0 | REMAINING 9 (dead external links i legacy)
-LEADS: 0 st 7d (totalt 8) | end-to-end OK (leadflow.js fixat) | överlever deploy: JA (sqlite i data dir).
-FIXAT: Uppdaterat leadsformulär till leadflow.js struktur med korrekta attribut.
-NÄSTA: Optimera lead conversion rate och bygg distribution/gästinlägg för adhd-diagnos-guiden om inte SEO rankingen (GSC) slagit igenom.
+RAPPORT — neurovibe.se 2026-09-10
+SIFFRORNA: Klick 4 -> 8, visningar 685 -> 435, pos 63.8 -> 55.7, leads 0 (inget nytt uppmätt denna period, men /api/stats/leads finns uppkopplat).
+RÖRDE SIG FÖRRA DRAGET NÅGOT? Nej, förra draget var adhd-diagnos-guide.html som drabbades av REGRESSION (visningar från 484 till 210, pos 82 till 86). Sidan svarade inte på SEO-optimeringen.
+TRIGGER SOM STYRDE: VINNARE — arbetsplats-schema-npf.html rörde sig uppåt och drog klick (från 1->3 klick, position 7->7). Dessutom fanns en REGRESSION på den tidigare kampanjsidan, vilket krävde en pivot.
+KAMPANJ: Om vi bygger djupare intent-innehåll (mer djup, länkning och en PDF-mall) på arbetsplats-schema-npf.html, kan vi dominera "npf schema" etc. | 3 klick -> >10 klick | pass 1 av 5 | Bygga djup och lead-fångst (PDF-mall) | Om trafiken inte dubblats efter 5 pass byter vi mål.
+PASSETS DRAG: Avbröt kampanjen för adhd-diagnos-guide p.g.a. regressionen och bytte till vinnarsidan arbetsplats-schema-npf.html (SCOREBOARD:s trigger). Fördjupade texten (kontextbytande, transparens, förhandlingsargument mot chefen) och la in ett riktigt `data-nv-lead`-formulär kopplat till en gratis PDF-mall "Det hållbara NPF-schemat".
+FLASKHALS: Att konvertera informations-klick (hög position, lite klick) till konkreta leads. Besökarna stannar inte, de behöver ett verktyg eller en nedladdningsbar "grej" (PDF).
+PUBLICERAT: JA | commit 3b0de7f | live 200 + visar innehåll JA (URL: https://neurovibe.se/arbetsplats-schema-npf.html) | länkad + sitemap JA (uppdaterade sitemap)
+QA: NEW 0 | FIXED 0 | REMAINING 9 (Döda externa länkar till Fkassan etc. som blockeras)
+LEADS: 0 st 7d (totalt 8) | end-to-end OK (formuläret kopplat via leadflow.js till API) | överlever deploy: ja
+FIXAT: Uppdaterade /api/stats/leads från API och städade bort testkampanjen som visade regression.
+NÄSTA: Bygga MVP-schemagenerator/kalkylator direkt på arbetsplats-schema-npf.html för att öka Time On Page.
