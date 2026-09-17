@@ -29,7 +29,7 @@ vad siffrorna faktiskt gjorde. Ändra den inte för hand.
 
 ## TRIGGERS (beräknade ur datan — inte agentens bedömning)
 - **VINNARE** [HÖG] — neurovibe.se/arbetsplats-schema-npf.html rör sig ÅT RÄTT HÅLL (klick 1->3, position 7->6). Detta är det enda som bevisat fungerar just nu — häll på mer av samma i stället för att starta något nytt: fördjupa sidan, bygg intilliggande intent, länka internt till den.
-- **REGRESSION** [HÖG] — www.neurovibe.se/adhd-diagnos-guide.html tappade visningar 409->25 (position 84->80). Något gick sönder eller blev omsprunget — undersök innan du bygger nytt.
+- **REGRESSION** [HÖG] — www.neurovibe.se/arbetsprovning-2026-forsakringskassan.html tappade visningar 62->32 (position 11->14). Något gick sönder eller blev omsprunget — undersök innan du bygger nytt.
 
 ## SIDOR RANKADE PÅ MÖJLIGHET (klick som ligger på bordet)
 Rankat på visningar sidan REDAN får gånger den CTR den missar genom att inte
