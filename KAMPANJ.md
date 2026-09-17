@@ -5,7 +5,7 @@ Löptid: pass 1 av 5
 Kill-kriterium: Har trafiken inte dubblerats efter 5 pass avbryter vi och bygger distribution/verktyg för en annan vinnare.
 Steg: 
 [x] Diagnostisera arbetsplats-schema-npf.html och lägg till lead capture (verktyg/mall) specifikt för npf-schema.
-[ ] Lägg till mer specifika exempel på scheman, utöka innehållet kring "hur man förhandlar med chefen".
+[x] Lägg till mer specifika exempel på scheman, utöka innehållet kring "hur man förhandlar med chefen".
 [ ] Skapa en "schema-generator"-MVP eller nedladdningsbar PDF-mall på sidan.
 
 ## AVSLUTADE
