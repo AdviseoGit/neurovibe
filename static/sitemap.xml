@@ -181,6 +181,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://neurovibe.se/verktyg-schema-generator.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://neurovibe.se/verktyg-burnout-kalkylator.html</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>

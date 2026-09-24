@@ -571,6 +571,15 @@ async def get_resources():
             "color": "red"
         },
         {
+            "id": "verktyg-schema-generator",
+            "type": "tool",
+            "title": "Schema-generatorn",
+            "description": "Ett verktyg för att designa ett hållbart arbetsveckoschema anpassat för ADHD eller Autism.",
+            "url": "/verktyg-schema-generator.html",
+            "icon": "<svg class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z\"></path></svg>",
+            "color": "indigo"
+        },
+        {
             "id": "verktyg-anpassningsgenerator",
             "type": "tool",
             "title": "Anpassningsgeneratorn",
@@ -715,15 +724,6 @@ async def chat_endpoint(req: ChatRequest):
         return {"response": response.choices[0].message.content}
     except Exception as e:
         return {"response": f"Det uppstod ett fel i tystnaden: {str(e)}"}
-
-@app.get("/api/stats/leads")
-async def get_stats_leads():
-    # Publika leads-stats för scoreboard
-    stats = leadengine.lead_stats()
-    return {
-        "total": stats.get("total", 0),
-        "last_7_days": stats.get("last_7_days", 0)
-    }
 
 # Catch-all route to serve any .html file from the static directory from the root URL
 @app.get("/{path:path}", response_class=FileResponse)

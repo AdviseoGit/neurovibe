@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schema-generator för NPF | Neurovibe</title>
+    <meta name="description" content="Skapa ett hållbart arbetsveckoschema anpassat för ADHD eller Autism. Balansera hyperfokus, återhämtning och möten.">
+    <link rel="canonical" href="https://neurovibe.se/verktyg-schema-generator.html">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 850: '#151f32' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050505; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+        .text-gradient { background: linear-gradient(135deg, #FFFFFF 0%, #A0A0A0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass-panel { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
+        .mobile-menu-btn span { display: block; width: 24px; height: 2px; background-color: white; transition: 0.3s; margin-bottom: 5px; }
+        .mobile-menu-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .mobile-menu-btn.open span:nth-child(2) { opacity: 0; }
+        .mobile-menu-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        
+        .timeline-item { position: relative; padding-left: 2rem; border-left: 2px solid rgba(255, 255, 255, 0.1); margin-bottom: 1.5rem; }
+        .timeline-item::before {
+            content: '';
+            position: absolute; left: -0.4rem; top: 0; width: 0.8rem; height: 0.8rem; border-radius: 50%;
+            background-color: #4ade80; border: 2px solid #050505;
+        }
+        .timeline-item.focus::before { background-color: #a78bfa; }
+        .timeline-item.meeting::before { background-color: #f87171; }
+        .timeline-item.recovery::before { background-color: #38bdf8; }
+        .timeline-item.admin::before { background-color: #fbbf24; }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Schema-generator för NPF",
+      "operatingSystem": "WebBrowser",
+      "applicationCategory": "ProductivityApplication",
+      "description": "Interaktivt verktyg för att generera ett hållbart arbetsveckoschema för personer med ADHD eller Autism.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "SEK"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Neurovibe"
+      }
+    }
+    </script>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <nav class="border-b border-white/5 bg-[#050505]/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="/" class="text-xl font-bold tracking-tight text-white hover:text-gray-300 transition-colors">
+                        Neurovibe<span class="text-indigo-400">.</span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="/autism-arbetsplatsen-tips-guide.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Autism på Jobbet</a>
+                    <a href="/adhd-anpassningar-jobb.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">ADHD Anpassningar</a>
+                    <a href="/data-rapport-2026.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Ny Data 2026</a>
+                    <a href="/verktyg-anpassningsgenerator.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Verktyg</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-btn" onclick="this.classList.toggle('open'); document.getElementById('mobile-menu').classList.toggle('hidden');">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-[#050505]">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/autism-arbetsplatsen-tips-guide.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Autism på Jobbet</a>
+                <a href="/adhd-anpassningar-jobb.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">ADHD Anpassningar</a>
+                <a href="/data-rapport-2026.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Ny Data 2026</a>
+                <a href="/verktyg-anpassningsgenerator.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Verktyg</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            
+            <a href="/arbetsplats-schema-npf.html" class="inline-flex items-center text-sm text-gray-400 hover:text-white mb-8 transition-colors">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Tillbaka till guiden för hållbara scheman
+            </a>
+
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight"><span class="text-gradient">Schema-generatorn</span> för NPF</h1>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Ett verktyg för att designa en hållbar arbetsdag. Vi bygger ett schema anpassat för din hjärnas unika rytm istället för nio-till-fem-mallen.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Vänsterkolumn: Formulär -->
+                <div class="glass-panel rounded-2xl p-6 sm:p-8">
+                    <h2 class="text-2xl font-semibold mb-6">Din Energi-profil</h2>
+                    
+                    <form id="schemaForm" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">1. När på dagen har du lättast för djupt fokus?</label>
+                            <select id="focusTime" class="w-full bg-white/5 border border-white/10 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                <option value="morning">Morgon (Före 10)</option>
+                                <option value="late-morning">Sen förmiddag (10-12)</option>
+                                <option value="afternoon">Eftermiddag (13-16)</option>
+                                <option value="evening">Sen eftermiddag/kväll (Efter 16)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">2. Vad dränerar dig snabbast?</label>
+                            <select id="drainer" class="w-full bg-white/5 border border-white/10 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                <option value="meetings">Långa eller ostrukturerade möten (Synkron tid)</option>
+                                <option value="context">Kontext-byten (Hoppa mellan uppgifter/slappa chattar)</option>
+                                <option value="sensory">Sensorisk överbelastning (Ljud, ljus, rörelse på kontoret)</option>
+                                <option value="admin">Tråkig admin och rutinuppgifter (Låg dopamin-stimulans)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">3. Hur länge varar ditt "hyperfokus" normalt när du väl är i flow?</label>
+                            <select id="hyperfocus" class="w-full bg-white/5 border border-white/10 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                <option value="short">~45-60 minuter</option>
+                                <option value="medium">1-2 timmar</option>
+                                <option value="long">2-4 timmar (behöver blockera halvdagar)</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="w-full bg-white text-black font-semibold py-4 px-6 rounded-lg hover:bg-gray-200 transition-colors duration-200 mt-8">
+                            Generera Hållbart Schema
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Högerkolumn: Resultat -->
+                <div class="glass-panel rounded-2xl p-6 sm:p-8 hidden" id="resultContainer">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-semibold">Ditt Hållbara Schema</h2>
+                        <button onclick="window.print()" class="text-sm text-gray-400 hover:text-white p-2 bg-white/5 rounded-md flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                            Spara PDF
+                        </button>
+                    </div>
+                    
+                    <div class="text-sm text-gray-400 mb-6 flex flex-wrap gap-3">
+                        <span class="flex items-center"><span class="w-3 h-3 rounded-full bg-purple-400 mr-2"></span> Djupt Fokus</span>
+                        <span class="flex items-center"><span class="w-3 h-3 rounded-full bg-red-400 mr-2"></span> Möten (Synkron tid)</span>
+                        <span class="flex items-center"><span class="w-3 h-3 rounded-full bg-sky-400 mr-2"></span> Återhämtning</span>
+                        <span class="flex items-center"><span class="w-3 h-3 rounded-full bg-amber-400 mr-2"></span> Admin / Asynkron</span>
+                    </div>
+
+                    <div id="scheduleTimeline" class="mt-4">
+                        <!-- Genererat schema hamnar här -->
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-white/10">
+                        <h3 class="font-medium text-white mb-2">Förhandla med chefen</h3>
+                        <p class="text-sm text-gray-400 mb-4">
+                            Säg inte "Jag kan inte jobba normalt". Säg: <em>"Jag har identifierat att min peak-produktivitet sker under dessa specifika timmar. För att maximera mitt värde föreslår jag att vi blockerar min kalender för djupt fokus då, och samlar synkron tid och möten till eftermiddagarna."</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lead Capture (Visas efter generering) -->
+            <div id="leadCapture" class="glass-panel rounded-2xl p-8 max-w-2xl mx-auto text-center hidden">
+                <h3 class="text-2xl font-bold mb-4">Vill du ta nästa steg?</h3>
+                <p class="text-gray-300 mb-6">
+                    Ladda ner hela guiden "Förhandla anpassningar med chefen" samt mallar för asynkron kommunikation. Vi skickar det till din e-post.
+                </p>
+                
+                <form id="leadForm" class="flex flex-col sm:flex-row gap-4" data-nv-lead>
+                    <input type="hidden" name="segment" value="individ">
+                    <input type="hidden" name="source_page" value="/verktyg-schema-generator.html">
+                    <input type="email" name="email" required placeholder="Din e-postadress" class="flex-grow bg-white/5 border border-white/10 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <button type="submit" class="bg-indigo-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-indigo-500 transition-colors duration-200">
+                        Skicka Guiden
+                    </button>
+                </form>
+                
+                <div class="mt-4 flex items-start">
+                    <div class="flex items-center h-5">
+                        <input id="consent" name="consent" type="checkbox" required form="leadForm" class="w-4 h-4 bg-white/5 border-white/10 rounded text-indigo-600 focus:ring-indigo-500 focus:ring-offset-gray-900">
+                    </div>
+                    <div class="ml-3 text-sm">
+                        <label for="consent" class="font-medium text-gray-400">Jag godkänner att Neurovibe sparar min e-postadress för att skicka mallen och relevanta tips (läs vår <a href="/integritetspolicy.html" class="text-indigo-400 hover:underline">policy</a>).</label>
+                    </div>
+                </div>
+                <div id="leadSuccessMsg" class="hidden mt-4 text-green-400 font-medium bg-green-400/10 py-3 rounded-lg">
+                    Guiden är skickad! Kolla din inkorg om en liten stund.
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="border-t border-white/5 bg-[#050505] pt-12 pb-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
+            <p>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></p>
+        </div>
+    </footer>
+
+    <script src="/js/leadflow.js" defer></script>
+    <script>
+        document.getElementById('schemaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const focus = document.getElementById('focusTime').value;
+            const drainer = document.getElementById('drainer').value;
+            const hyperfocus = document.getElementById('hyperfocus').value;
+            
+            let scheduleHtml = '';
+            
+            if (focus === 'morning') {
+                scheduleHtml += `
+                    <div class="timeline-item focus">
+                        <h4 class="font-bold">08:00 - 10:30 | Djupt Fokus-block</h4>
+                        <p class="text-sm text-gray-400 mt-1">Stängd slack. Din primära arbetstid för komplexa, tunga uppgifter. Ingen mail.</p>
+                    </div>
+                    <div class="timeline-item recovery">
+                        <h4 class="font-bold">10:30 - 11:00 | Kognitiv Återhämtning</h4>
+                        <p class="text-sm text-gray-400 mt-1">Lämna skärmen. Gå en sväng. Nollställ inför möten.</p>
+                    </div>
+                    <div class="timeline-item meeting">
+                        <h4 class="font-bold">11:00 - 12:00 | Synkron Tid (Möten)</h4>
+                        <p class="text-sm text-gray-400 mt-1">Gruppera alla dagens nödvändiga möten här.</p>
+                    </div>
+                    <div class="timeline-item recovery">
+                        <h4 class="font-bold">12:00 - 13:00 | Lunch & Low-stim</h4>
+                        <p class="text-sm text-gray-400 mt-1">Ät ej vid skrivbordet om du kan undvika.</p>
+                    </div>
+                    <div class="timeline-item admin">
+                        <h4 class="font-bold">13:00 - 15:00 | Asynkron Kommunikation & Admin</h4>
+                        <p class="text-sm text-gray-400 mt-1">Svara på mail, hantera Slack-trådar, rutin-uppgifter som kräver lägre bandbredd.</p>
+                    </div>
+                    <div class="timeline-item focus">
+                        <h4 class="font-bold">15:00 - 16:00 | Stäng-ner-rutin</h4>
+                        <p class="text-sm text-gray-400 mt-1">Förbered morgondagens prioritering så du slipper kontext-bytet i morgon bitti.</p>
+                    </div>
+                `;
+            } else if (focus === 'afternoon') {
+                scheduleHtml += `
+                    <div class="timeline-item admin">
+                        <h4 class="font-bold">09:00 - 10:00 | Mjukstart & Asynkront</h4>
+                        <p class="text-sm text-gray-400 mt-1">Svara på nattens mail. Planera dagen utan tunga krav.</p>
+                    </div>
+                    <div class="timeline-item meeting">
+                        <h4 class="font-bold">10:00 - 11:30 | Synkron Tid (Möten)</h4>
+                        <p class="text-sm text-gray-400 mt-1">Beta av dagens möten INNAN din enerig-peak infinner sig.</p>
+                    </div>
+                    <div class="timeline-item recovery">
+                        <h4 class="font-bold">11:30 - 13:00 | Lång Lunch & Nollställning</h4>
+                        <p class="text-sm text-gray-400 mt-1">Du behöver bryta kontexten helt för att kunna fokusera på eftermiddagen.</p>
+                    </div>
+                    <div class="timeline-item focus">
+                        <h4 class="font-bold">13:00 - 15:30 | Djupt Fokus-block</h4>
+                        <p class="text-sm text-gray-400 mt-1">Här är din peak. Stäng notiser. Do not disturb aktiverat.</p>
+                    </div>
+                    <div class="timeline-item admin">
+                        <h4 class="font-bold">15:30 - 16:30 | Stänga loopar</h4>
+                        <p class="text-sm text-gray-400 mt-1">Dokumentera var du slutade så du slipper hålla det i huvudet under kvällen.</p>
+                    </div>
+                `;
+            } else {
+                scheduleHtml += `
+                    <div class="timeline-item admin">
+                        <h4 class="font-bold">09:00 - 11:00 | Mjukstart & Rutin</h4>
+                        <p class="text-sm text-gray-400 mt-1">Gör det som kräver lägst energi tröskel. Mail, korta avstämningar.</p>
+                    </div>
+                    <div class="timeline-item meeting">
+                        <h4 class="font-bold">11:00 - 12:00 | Samlade Möten</h4>
+                        <p class="text-sm text-gray-400 mt-1">Håll möten begränsade och kräv agenda för asynkron förberedelse.</p>
+                    </div>
+                    <div class="timeline-item recovery">
+                        <h4 class="font-bold">12:00 - 13:30 | Återhämtning</h4>
+                        <p class="text-sm text-gray-400 mt-1">Viktigt att inte hoppa direkt från möte till fokus.</p>
+                    </div>
+                    <div class="timeline-item focus">
+                        <h4 class="font-bold">13:30 - 16:30 | Huvudblocket</h4>
+                        <p class="text-sm text-gray-400 mt-1">Ditt primära produktivitetsfönster. Bygg en "bubbla" och stäng av omvärlden.</p>
+                    </div>
+                `;
+            }
+            
+            // Adjust based on drainer
+            if (drainer === 'context') {
+                scheduleHtml = scheduleHtml.replace('Djupt Fokus-block', 'Djupt Fokus-block (Total kontext-karantän)');
+            } else if (drainer === 'meetings') {
+                scheduleHtml = scheduleHtml.replace('Synkron Tid (Möten)', 'Maximerad Synkron Tid (Tvinga in alla möten i detta fönster, vägra spridda skurar)');
+            }
+
+            document.getElementById('scheduleTimeline').innerHTML = scheduleHtml;
+            document.getElementById('resultContainer').classList.remove('hidden');
+            document.getElementById('leadCapture').classList.remove('hidden');
+            
+            // Log tool usage to endpoint
+            fetch('/api/tool-usage', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    tool: 'schema-generator',
+                    metadata: { focus: focus, drainer: drainer, hyperfocus: hyperfocus }
+                })
+            }).catch(e => console.error(e));
+
+            // Scroll down
+            document.getElementById('resultContainer').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // Lead form logic handled by leadflow.js, but we intercept success
+        document.getElementById('leadForm').addEventListener('submit', function() {
+            // Give leadflow a second to execute, then show success msg
+            setTimeout(() => {
+                document.getElementById('leadForm').classList.add('hidden');
+                document.getElementById('leadSuccessMsg').classList.remove('hidden');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

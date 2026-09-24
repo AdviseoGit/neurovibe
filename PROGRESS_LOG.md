@@ -1,3 +1,4 @@
+2026-09-24 | PRODUKT & POSITION | Schema-generatorn för NPF | arbetsplats-schema-npf.html klick -> 10 | nästa: Bygg ut schema-generatorn med PDF-export och fler anpassningar
 2026-09-17 | INNEHÅLL | Djupare intent, schema-exempel och lead magnet | arbetsplats-schema-npf.html klick -> 10 | nästa: Skapa MVP schema-generator på sidan
 2026-09-10 | INNEHÅLL | Djupare intent, tips & leadform på schema-vinnaren | arbetsplats-schema-npf.html, öka klick från 3 till 10 | nästa: Bygga MVP-schemagenerator på sidan
 -e 2026-09-03 | LEADS/KONVERTERING | Införde leadflow.js på adhd-diagnos-guide och arbetsprovning-2026-forsakringskassan | adhd-diagnos klick > 5 | nästa: Optimera lead conversion rate
