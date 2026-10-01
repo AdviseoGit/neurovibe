@@ -1,3 +1,4 @@
+2026-10-01 | KONVERTERING | Enhetligt lead-flöde på 6 bästa sidorna | Leads_omätt: 0 -> >0 uppmätt | nästa: Bygg klinik-sida för leads/partners
 2026-09-24 | PRODUKT & POSITION | Schema-generatorn för NPF | arbetsplats-schema-npf.html klick -> 10 | nästa: Bygg ut schema-generatorn med PDF-export och fler anpassningar
 2026-09-17 | INNEHÅLL | Djupare intent, schema-exempel och lead magnet | arbetsplats-schema-npf.html klick -> 10 | nästa: Skapa MVP schema-generator på sidan
 2026-09-10 | INNEHÅLL | Djupare intent, tips & leadform på schema-vinnaren | arbetsplats-schema-npf.html, öka klick från 3 till 10 | nästa: Bygga MVP-schemagenerator på sidan

@@ -1,12 +1,13 @@
 ## AKTIV KAMPANJ
 Hypotes: Om vi bygger djupare intent-innehåll (mer djup, verktyg och länkning) på neurovibe.se/arbetsplats-schema-npf.html så kan vi dominera sökningar på "npf schema", "adhd arbetsplats" och driva mer klick och leads, eftersom sidan redan visar sig vara en VINNARE i scoreboard (position 7).
 Målsiffra: klick från 3 -> >10, behålla pos <10.
-Löptid: pass 2 av 5
+Löptid: pass 3 av 5
 Kill-kriterium: Har trafiken inte dubblerats efter 5 pass avbryter vi och bygger distribution/verktyg för en annan vinnare.
 Steg: 
 [x] Diagnostisera arbetsplats-schema-npf.html och lägg till lead capture (verktyg/mall) specifikt för npf-schema.
 [x] Lägg till mer specifika exempel på scheman, utöka innehållet kring "hur man förhandlar med chefen".
 [x] Skapa en "schema-generator"-MVP eller nedladdningsbar PDF-mall på sidan.
+[x] (Detta pass) Enhetligt lead-flöde på de 6 starkaste intentsidorna, inklusive lagkrav och schema-sidan, för att vi faktiskt ska fånga det konverteringsvärde sidorna drar in och mäta dem på samma endpoint.
 [ ] Utöka Schema-generatorn med fler valmöjligheter och snyggare PDF-export.
 
 ## AVSLUTADE
