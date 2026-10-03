@@ -1,0 +1,79 @@
+{% extends "tool_base.html" %}
+{% block tool_title %}Veckoschemat{% endblock %}
+{% block tool_lead %}Bygg en arbetsvecka efter hur din energi faktiskt fungerar – med fokustid när du är skarpast, möten samlade och återhämtning inplanerad i stället för bortglömd.{% endblock %}
+{% block tool_body %}
+<div class="with-aside" style="padding-top:24px">
+  <div class="main-col">
+    <form class="panel" id="sched" novalidate>
+      <fieldset class="options option-grid" style="margin:0">
+        <legend style="font-weight:500;margin-bottom:10px">När har du lättast att fokusera?</legend>
+        <label class="option"><input type="radio" name="peak" value="morgon" checked><span class="t">Tidig morgon, före 10</span></label>
+        <label class="option"><input type="radio" name="peak" value="formiddag"><span class="t">Sen förmiddag, 10–12</span></label>
+        <label class="option"><input type="radio" name="peak" value="eftermiddag"><span class="t">Eftermiddag, 13–15</span></label>
+        <label class="option"><input type="radio" name="peak" value="sen"><span class="t">Sen eftermiddag, efter 15</span></label>
+      </fieldset>
+      <fieldset class="options" style="margin-top:22px">
+        <legend style="font-weight:500;margin-bottom:10px">Vad tar mest energi?</legend>
+        <label class="option"><input type="radio" name="drain" value="moten" checked><span class="t">Långa eller otydliga möten</span></label>
+        <label class="option"><input type="radio" name="drain" value="byten"><span class="t">Att hoppa mellan uppgifter och chattar</span></label>
+        <label class="option"><input type="radio" name="drain" value="intryck"><span class="t">Ljud, ljus och rörelse på kontoret</span></label>
+        <label class="option"><input type="radio" name="drain" value="admin"><span class="t">Rutinuppgifter och administration</span></label>
+      </fieldset>
+      <fieldset class="options option-grid" style="margin-top:22px">
+        <legend style="font-weight:500;margin-bottom:10px">Hur länge håller ett bra fokuspass?</legend>
+        <label class="option"><input type="radio" name="len" value="1"><span class="t">Ungefär en timme</span></label>
+        <label class="option"><input type="radio" name="len" value="2" checked><span class="t">1–2 timmar</span></label>
+        <label class="option"><input type="radio" name="len" value="3"><span class="t">2–4 timmar</span></label>
+      </fieldset>
+      <div class="tool-nav"><button type="submit" class="btn btn-primary">Skapa veckoschemat</button></div>
+    </form>
+    <div id="out" hidden style="margin-top:28px">
+      <div class="tool-nav no-print" style="margin-top:0"><button type="button" class="btn btn-primary" onclick="window.print()">Skriv ut eller spara som PDF</button></div>
+      <article class="doc" id="doc" style="margin-top:20px"></article>
+    </div>
+  </div>
+  <aside class="side-col"><div class="side-card"><h2>Ta upp det med chefen</h2><p>Säg inte "jag kan inte jobba som alla andra". Säg: "Jag gör mitt bästa arbete under de här timmarna. Kan vi lägga fokustid där och samla möten till andra tider?"</p></div></aside>
+</div>
+{% endblock %}
+{% block tool_after %}
+<div class="wrap no-print"><div class="with-aside" style="padding-top:0"><div class="main-col prose">
+  <h2>Ett schema som följer energin</h2>
+  <p>Många med ADHD eller autism har tydliga toppar och dalar under dagen. Ett schema som lägger det krävande arbetet i topparna och samlar möten och administration i dalarna kostar mindre energi – och gör det lättare att hålla samma nivå hela veckan.</p>
+  <p>Läs mer: <a href="/arbetsplats-schema-npf.html">Schema vid NPF</a> · <a href="/verktyg-fokus-timer.html">Fokustimern</a> · <a href="/verktyg-anpassningsgenerator.html">Anpassningsplanen</a></p>
+  {% include "partials/lead_box.html" %}
+</div></div></div>
+{% endblock %}
+{% block scripts %}
+<script>
+(function () {
+  var SLOTS = ['08–10', '10–12', '12–13', '13–15', '15–17'];
+  var PEAK = { morgon: 0, formiddag: 1, eftermiddag: 3, sen: 4 };
+  var DAYS = ['Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag'];
+  var C = { F: ['Fokus', '#1C5D73', '#fff'], M: ['Möten', '#E6EDE8', '#17242A'], A: ['Admin', '#FFFFFF', '#17242A'], L: ['Lunch', '#F2F5F1', '#4A5A5F'], R: ['Återhämtning', '#F4C84B', '#17242A'] };
+  document.getElementById('sched').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = function (n) { return (document.querySelector('input[name=' + n + ']:checked') || {}).value; };
+    var peak = PEAK[v('peak')], drain = v('drain'), len = +v('len');
+    var meetSlot = peak <= 1 ? 3 : 1;
+    var grid = DAYS.map(function (d, di) {
+      return SLOTS.map(function (s, si) {
+        if (si === 2) return 'L';
+        if (si === peak || (len >= 2 && Math.abs(si - peak) === 1 && si !== 2 && si !== meetSlot)) return 'F';
+        if (si === meetSlot && (drain !== 'moten' || di % 2 === 0)) return 'M';
+        if (si === 4 && drain === 'intryck') return 'R';
+        return di === 4 && si >= 3 ? 'R' : 'A';
+      });
+    });
+    var cell = function (k) { var c = C[k]; return '<td style="background:' + c[1] + ';color:' + c[2] + ';font-weight:500;border:1px solid #D6DDD7">' + c[0] + '</td>'; };
+    var tips = { moten: 'Möten samlas varannan dag så att resten av veckan har långa sammanhängande block.', byten: 'Chatt och mejl kollas i adminblocken, inte under fokus. Stäng aviseringar under fokusblocken.',
+      intryck: 'Sista blocket varje dag är återhämtning – gärna en lugn plats eller hemma.', admin: 'Administrationen ligger i korta block efter lunch, när kraven på fokus är lägre.' };
+    document.getElementById('doc').innerHTML = '<h2>Mitt veckoschema</h2><p class="doc-meta">Ett förslag att utgå från – justera efter verkligheten.</p>' +
+      '<div style="overflow-x:auto"><table style="min-width:560px;text-align:center"><thead><tr><th scope="col"></th>' + SLOTS.map(function (s) { return '<th scope="col" style="text-align:center">' + s + '</th>'; }).join('') + '</tr></thead><tbody>' +
+      grid.map(function (row, i) { return '<tr><th scope="row">' + DAYS[i] + '</th>' + row.map(cell).join('') + '</tr>'; }).join('') + '</tbody></table></div>' +
+      '<h3>Varför ser det ut så här</h3><ul><li>Fokusblocken ligger när du har lättast att koncentrera dig.</li><li>' + tips[drain] + '</li><li>Fredag eftermiddag är avsatt för återhämtning och att avsluta veckan.</li></ul>';
+    document.getElementById('out').hidden = false;
+    if (window.nv) window.nv.usage('schema-generatorn', { peak: v('peak'), drain: drain, len: len });
+  });
+})();
+</script>
+{% endblock %}

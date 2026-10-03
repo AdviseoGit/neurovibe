@@ -1,0 +1,68 @@
+{% extends "tool_base.html" %}
+{% block tool_title %}Intervjuguiden{% endblock %}
+{% block tool_lead %}Traditionella intervjuer sållar ofta bort kompetenta kandidater med ADHD eller autism, eftersom de mäter förmågan att improvisera socialt. Välj vad du vill ha med, så får du en intervjuplan som mäter det jobbet faktiskt kräver.{% endblock %}
+{% block tool_body %}
+<div class="with-aside" style="padding-top:24px">
+  <div class="main-col">
+    <form class="panel" id="iv" novalidate>
+      <fieldset class="options">
+        <legend style="font-weight:500;margin-bottom:10px">Ta med</legend>
+        <label class="option"><input type="checkbox" name="m" value="preparation" checked><span><span class="t">Före intervjun</span><span class="d">Information i förväg, tydligt format och erbjudna anpassningar.</span></span></label>
+        <label class="option"><input type="checkbox" name="m" value="questions" checked><span><span class="t">Hur frågorna ställs</span><span class="d">Konkreta, beteendebaserade frågor – en i taget.</span></span></label>
+        <label class="option"><input type="checkbox" name="m" value="environment"><span><span class="t">Miljö och format</span><span class="d">Lugn plats, alternativ som arbetsprov eller skriftliga svar.</span></span></label>
+        <label class="option"><input type="checkbox" name="m" value="evaluation" checked><span><span class="t">Rättvis bedömning</span><span class="d">Skilj ögonkontakt och småprat från yrkeskompetens.</span></span></label>
+      </fieldset>
+      <div class="tool-nav"><button type="submit" class="btn btn-primary">Skapa intervjuplanen</button></div>
+    </form>
+    <div id="out" hidden style="margin-top:28px">
+      <div class="tool-nav no-print" style="margin-top:0"><button type="button" class="btn btn-primary" onclick="window.print()">Skriv ut eller spara som PDF</button></div>
+      <article class="doc" id="doc" style="margin-top:20px"></article>
+    </div>
+  </div>
+  <aside class="side-col"><div class="side-card"><h2>Diskrimineringslagen</h2><p>Skyldigheten att vidta skäliga åtgärder för tillgänglighet gäller även arbetssökande – till exempel under en anställningsintervju.</p><p><a href="/lagkrav-anpassningar-arbetsmiljo.html">Läs om lagkraven</a></p></div></aside>
+</div>
+{% endblock %}
+{% block tool_after %}
+<div class="wrap no-print"><div class="with-aside" style="padding-top:0"><div class="main-col prose">
+  <h2>Varför vanliga intervjuer missar kompetens</h2>
+  <p>En klassisk intervju belönar snabba muntliga svar, ögonkontakt och förmågan att tolka outtalade förväntningar. Det säger lite om hur någon löser uppgifterna i jobbet. Genom att skicka frågor i förväg, ställa konkreta frågor och erbjuda arbetsprov får du en bättre bild av kandidaten – oavsett om hen har NPF eller inte.</p>
+  <p>Läs mer: <a href="/inkluderande-rekrytering-npf.html">Inkluderande rekrytering</a> · <a href="/for-arbetsgivare.html">För arbetsgivare</a></p>
+  {% include "partials/lead_box.html" %}
+</div></div></div>
+{% endblock %}
+{% block scripts %}
+<script>
+(function () {
+  var M = {
+    preparation: ['Före intervjun', [
+      ['Skicka frågorna i förväg', 'Att få frågorna 24–48 timmar innan mäter analysförmåga, inte förmågan att improvisera under stress.'],
+      ['Beskriv logistiken i detalj', 'Var ni möts, vem kandidaten ska fråga efter, hur lokalen ser ut och vilka som deltar (namn och roll).'],
+      ['Beskriv formatet', 'Hur lång intervjun är, vilka typer av frågor som ställs och att det går bra att ha med anteckningar.'],
+      ['Erbjud anpassningar', 'Fråga: "Finns det något vi kan göra för att du ska kunna göra ditt bästa under intervjun?" i stället för att vänta på att kandidaten frågar.']]],
+    questions: ['Hur frågorna ställs', [
+      ['Undvik hypotetiska frågor', '"Hur skulle du…" besvaras ofta bokstavligt och fastnar i detaljer som saknas.'],
+      ['Använd beteendebaserade frågor', 'Fråga: "Berätta om en gång du löste problem X. Vilka steg tog du?"'],
+      ['En fråga i taget', 'Ställ en fråga, vänta på svaret, ställ nästa.'],
+      ['Säg vad du vill ha', 'Om du vill ha ett kort svar – säg det: "Kan du sammanfatta på två minuter…"']]],
+    environment: ['Miljö och format', [
+      ['Lugn plats', 'Ett tyst rum utan genomgångstrafik och utan flimrande lysrör.'],
+      ['Alternativa format', 'Ett arbetsprov, en skriftlig uppgift eller en inspelad presentation kan visa mer än ett samtal.'],
+      ['Tillåt hjälpmedel', 'Säg att det går bra att anteckna, titta i egna papper, ta en kort paus eller dricka vatten.']]],
+    evaluation: ['Rättvis bedömning', [
+      ['Ögonkontakt är inte kompetens', 'Lite eller mycket ögonkontakt betyder inte ointresse eller oärlighet – ofta är det ett sätt att fokusera på vad som sägs.'],
+      ['Bedöm det jobbet kräver', 'Kräver rollen verkligen social smidighet, eller bedöms kandidaten mot en allmän norm?'],
+      ['Rörelser och stimming', 'Små återkommande rörelser hjälper många att hantera stress. Låt dem inte påverka bedömningen.'],
+      ['Korta, direkta svar', 'Ett kort svar är oftast ett exakt svar på frågan. Ställ en följdfråga om du vill veta mer.']]]
+  };
+  document.getElementById('iv').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var sel = Array.prototype.map.call(document.querySelectorAll('input[name=m]:checked'), function (c) { return c.value; });
+    var html = '<h2>Intervjuplan</h2><p class="doc-meta">Neurovibe Intervjuguiden</p>' + sel.map(function (k, i) {
+      return '<h3>' + (i + 1) + '. ' + M[k][0] + '</h3><ul>' + M[k][1].map(function (x) { return '<li><strong style="font-weight:600">' + x[0] + '.</strong> ' + x[1] + '</li>'; }).join('') + '</ul>';
+    }).join('');
+    document.getElementById('doc').innerHTML = html || '<p>Välj minst ett område.</p>'; document.getElementById('out').hidden = false;
+    if (window.nv) window.nv.usage('intervjuguiden', { modules: sel });
+  });
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="wrap">
+  <header class="page-head">
+    <p class="crumbs"><a href="/">Neurovibe</a> / Verktyg</p>
+    <h1>Verktyg som gör anpassningar konkreta</h1>
+    <p class="lead">Alla verktyg är gratis, kräver inget konto och sparar det du skriver i din egen webbläsare. Börja med det som ligger närmast det du behöver göra i dag.</p>
+  </header>
+  <h2 class="section-title" style="margin-top:16px">Börja här</h2>
+  <ol class="rows" style="margin-top:24px">
+    {% for t in flagships %}
+    <li class="row">
+      <span class="num">{{ loop.index }}</span>
+      <div class="body"><h3><a href="/{{ t.path }}">{{ t.name }}</a></h3><p>{{ t.summary }}</p></div>
+      <dl><dt>Du får</dt><dd>{{ t.gets }}</dd><dt>För</dt><dd>{{ t.for }}</dd><dt>Tid</dt><dd>{{ t.time }}</dd></dl>
+      <a class="btn {{ 'btn-primary' if loop.first else 'btn-secondary' }}" href="/{{ t.path }}">Starta</a>
+    </li>
+    {% endfor %}
+  </ol>
+  <h2 class="section-title" style="margin-top:64px">Fler verktyg</h2>
+  <ul class="compact-list" style="margin:24px 0 72px">
+    {% for t in more_tools %}<li><a href="/{{ t.path }}">{{ t.name }}</a><span>{{ t.summary }} · {{ t.time }}</span></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

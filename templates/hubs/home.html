@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="wrap" style="padding-top:88px;padding-bottom:72px">
+  <p class="eyebrow">För dig med ADHD, autism eller annan NPF – och för din chef</p>
+  <h1 style="font-size:clamp(38px,5.2vw,60px);line-height:1.12;letter-spacing:-0.02em;max-width:20ch"><span class="mark">Ett steg i taget</span> mot ett jobb som fungerar.</h1>
+  <p class="lead">Svara på några frågor. Få ett färdigt underlag om anpassningar, stöd eller återgång – skrivet så att din chef eller handläggare kan använda det direkt.</p>
+
+  <form class="panel" style="margin-top:44px;max-width:880px" action="/verktyg.html" method="get" id="router">
+    <p style="margin:0 0 18px;font-size:15px;font-weight:500;color:var(--muted)">Börja här – välj det som stämmer</p>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;font-size:clamp(19px,2.2vw,24px);font-weight:400">
+      <label for="roll">Jag är</label>
+      <select id="roll" style="width:auto;min-height:52px;font-size:inherit;font-weight:500;border-color:var(--ink);background:var(--ground)">
+        <option value="medarbetare">medarbetare</option>
+        <option value="chef">chef</option>
+        <option value="hr">HR eller arbetsmiljöansvarig</option>
+      </select>
+      <label for="mal">och vill</label>
+      <select id="mal" style="width:auto;min-height:52px;font-size:inherit;font-weight:500;border-color:var(--ink);background:var(--ground)">
+        <option value="verktyg-anpassningsgenerator.html">be om eller ordna anpassningar</option>
+        <option value="verktyg-myndighetsnavigator.html">se vilket stöd som finns</option>
+        <option value="verktyg-atergangsplan.html">planera återgång efter sjukskrivning</option>
+        <option value="verktyg-fokus-timer.html">komma igång och hålla fokus</option>
+      </select>
+    </div>
+    <div style="margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px">
+      <button type="submit" class="btn btn-primary">Visa mitt nästa steg
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <span style="font-size:15px;color:var(--muted)">Tar 5–15 minuter · Ingen inloggning · Det du skriver stannar i din webbläsare</span>
+    </div>
+  </form>
+</section>
+
+<section class="band" aria-label="Om innehållet">
+  <div class="wrap">
+    <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C5D73" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Bygger på AFS 2023:2, diskrimineringslagen och myndigheternas egna sidor</span>
+    <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C5D73" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Gratis och utan konto</span>
+    <a href="/redaktionell-policy.html" style="font-weight:500">Så granskar vi innehållet</a>
+  </div>
+</section>
+
+<section class="wrap section" aria-labelledby="verktyg-rubrik">
+  <h2 class="section-title" id="verktyg-rubrik">Tre verktyg. Var och ett ger dig ett dokument.</h2>
+  <p class="section-lead">Inga artiklar att läsa först. Du svarar, verktyget skriver underlaget, du bestämmer vem som får se det.</p>
+  <ol class="rows">
+    {% for t in flagships %}
+    <li class="row">
+      <span class="num">{{ loop.index }}</span>
+      <div class="body"><h3><a href="/{{ t.path }}">{{ t.name }}</a></h3><p>{{ t.summary }}</p></div>
+      <dl><dt>Du får</dt><dd>{{ t.gets }}</dd><dt>För</dt><dd>{{ t.for }}</dd><dt>Tid</dt><dd>{{ t.time }}</dd></dl>
+      <a class="btn {{ 'btn-primary' if loop.first else 'btn-secondary' }}" href="/{{ t.path }}">Starta</a>
+    </li>
+    {% endfor %}
+  </ol>
+  <p style="margin-top:22px"><a href="/verktyg.html" style="font-weight:500">Alla verktyg – fokustimer, veckoschema, mötesguide med flera</a></p>
+</section>
+
+<section class="wrap section" style="padding-top:24px" aria-labelledby="mallar-rubrik">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px">
+    <h2 class="section-title" id="mallar-rubrik">Mallar för chef och HR</h2>
+    <a href="/arbetsgivarpaketet.html" style="font-weight:500">Alla mallar</a>
+  </div>
+  <ul class="compact-list" style="margin-top:24px">
+    {% for p in templates_list %}<li><a href="/{{ p.path }}">{{ p.short }}</a><span>{{ p.description[:110] }}{% if p.description|length > 110 %}…{% endif %}</span></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="wrap section" style="padding-top:24px" aria-labelledby="guider-rubrik">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px">
+    <h2 class="section-title" id="guider-rubrik">Mest lästa guider</h2>
+    <a href="/resurser.html" style="font-weight:500">Alla guider</a>
+  </div>
+  <ul class="compact-list" style="margin-top:24px">
+    {% for key in ['forsakringskassan-arbetsformedlingen-stod.html','lagkrav-anpassningar-arbetsmiljo.html','arbetsprovning-2026-forsakringskassan.html','arbetsplats-schema-npf.html','npf-arbetslivet.html','neurodiversitet-arbetsplatsen.html'] %}
+    {% set p = pages[key] %}<li><a href="/{{ p.path }}">{{ p.short }}</a><span>{{ p.read_min }} min</span></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}
+{% block scripts %}
+<script>
+  document.getElementById('router').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var role = document.getElementById('roll').value;
+    var dest = document.getElementById('mal').value;
+    if (role !== 'medarbetare' && dest === 'verktyg-myndighetsnavigator.html') dest = 'verktyg-myndighetsnavigator.html?roll=' + role;
+    if (role !== 'medarbetare' && dest === 'verktyg-anpassningsgenerator.html') dest = 'verktyg-anpassningsgenerator.html?roll=' + role;
+    window.location.href = '/' + dest;
+  });
+</script>
+{% endblock %}

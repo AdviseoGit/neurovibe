@@ -178,9 +178,13 @@ async def read_article():
 
 
 
+import site_render
+from fastapi.responses import HTMLResponse
+
+
 @app.get("/")
 async def read_index():
-    return FileResponse("static/index.html")
+    return HTMLResponse(site_render.resolve(""))
 
 # ... (rest of the original endpoints)
 class ChatRequest(BaseModel):
@@ -244,7 +248,6 @@ async def save_tool_usage(data: ToolUsageData):
     import time
     import json
     import sqlite3
-    import os
     
     timestamp = int(time.time())
     modules_str = json.dumps(data.modules) if data.modules else ""
@@ -354,7 +357,8 @@ async def schema_json():
 
 @app.get("/sitemap.xml")
 async def sitemap():
-    return FileResponse("static/sitemap.xml")
+    # Generated from the page and tool registries, so a new page can never be missing from it.
+    return Response(site_render.sitemap_xml(), media_type="application/xml")
 
 @app.get("/favicon.ico")
 async def favicon():
@@ -725,14 +729,17 @@ async def chat_endpoint(req: ChatRequest):
     except Exception as e:
         return {"response": f"Det uppstod ett fel i tystnaden: {str(e)}"}
 
-# Catch-all route to serve any .html file from the static directory from the root URL
-@app.get("/{path:path}", response_class=FileResponse)
+# Catch-all: every public page is rendered from the shared layout (site_render). The old
+# static/*.html files stay on disk only for the internal pages that are not in the registry
+# (admin.html). Unknown paths get a real 404 page — never a JSON blob in someone's menu.
+@app.get("/{path:path}")
 async def serve_html(path: str):
-    if path.endswith(".html"):
-        file_path = os.path.join("static", path)
-        if os.path.exists(file_path):
-            return FileResponse(file_path)
-    raise HTTPException(status_code=404, detail="Not found")
+    html = site_render.resolve(path)
+    if html is not None:
+        return HTMLResponse(html)
+    if path.endswith(".html") and path in ("admin.html",):
+        return FileResponse(os.path.join("static", path))
+    return HTMLResponse(site_render.render_404(), status_code=404)
 
 if __name__ == "__main__":
     import uvicorn

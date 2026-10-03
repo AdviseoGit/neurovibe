@@ -1,0 +1,117 @@
+{% extends "tool_base.html" %}
+{% block tool_title %}Anpassningsplanen{% endblock %}
+{% block tool_lead %}Beskriv vad som tar energi på jobbet och vad som hjälper. Du får ett färdigt underlag om anpassningar att gå igenom med din chef – utan att du behöver nämna någon diagnos.{% endblock %}
+{% block tool_body %}
+<form class="tool-layout" data-stepper="anpassningsplanen" novalidate>
+  <nav aria-label="Steg">
+    <p style="margin:0 0 18px;font-size:14px;font-weight:500;color:var(--muted)">Anpassningsplanen</p>
+    <ol class="steps-rail" data-rail>
+      <li><span class="dot">1</span><button type="button" data-goto="0">Din situation</button></li>
+      <li><span class="dot">2</span><button type="button" data-goto="1">Vad tar energi</button></li>
+      <li><span class="dot">3</span><button type="button" data-goto="2">Vad som hjälper</button></li>
+      <li><span class="dot">4</span><button type="button" data-goto="3">Förslag att ta upp</button></li>
+      <li><span class="dot">5</span><button type="button" data-goto="4">Ditt underlag</button></li>
+    </ol>
+    <button type="button" class="btn-link" data-reset style="margin-top:16px">Börja om</button>
+  </nav>
+
+  <div class="tool-main">
+    <div class="progress-bar" data-bar aria-hidden="true" style="margin-bottom:24px"><span></span><span></span><span></span><span></span><span></span></div>
+
+    <section class="tool-step" data-step="0">
+      <p class="step-count" data-step-count></p>
+      <h2>Vem fyller i?</h2>
+      <p class="intro">Underlaget blir likadant – bara tilltalet ändras.</p>
+      <fieldset class="options">
+        <legend class="visually-hidden">Vem fyller i</legend>
+        <label class="option"><input type="radio" name="roll" value="medarbetare" checked><span><span class="t">Jag själv, inför ett samtal med min chef</span></span></label>
+        <label class="option"><input type="radio" name="roll" value="chef"><span><span class="t">Jag är chef och fyller i tillsammans med en medarbetare</span></span></label>
+        <label class="option"><input type="radio" name="roll" value="hr"><span><span class="t">Jag är HR eller arbetsmiljöansvarig</span></span></label>
+      </fieldset>
+      <h2 style="margin-top:36px;font-size:24px">Hur ser arbetsplatsen ut?</h2>
+      <fieldset class="options option-grid" style="margin-top:14px">
+        <legend class="visually-hidden">Arbetsplats</legend>
+        <label class="option"><input type="radio" name="plats" value="kontor-oppet"><span class="t">Kontor, öppet landskap</span></label>
+        <label class="option"><input type="radio" name="plats" value="kontor-eget"><span class="t">Kontor, eget eller delat rum</span></label>
+        <label class="option"><input type="radio" name="plats" value="hybrid"><span class="t">Delvis hemifrån</span></label>
+        <label class="option"><input type="radio" name="plats" value="kund"><span class="t">Butik, vård eller kundmöten</span></label>
+        <label class="option"><input type="radio" name="plats" value="lager"><span class="t">Lager, produktion eller verkstad</span></label>
+        <label class="option"><input type="radio" name="plats" value="annat"><span class="t">Annat</span></label>
+      </fieldset>
+      <div class="tool-nav"><button type="button" class="btn btn-primary" data-next>Nästa: Vad tar energi</button></div>
+    </section>
+
+    <section class="tool-step" data-step="1" hidden>
+      <p class="step-count" data-step-count></p>
+      <h2>Vad tar mest energi under en arbetsdag?</h2>
+      <p class="intro">Välj upp till tre. Det du väljer blir rubrikerna i underlaget.</p>
+      <p class="explain more">Du behöver inte nämna någon diagnos. Arbetsgivarens skyldighet att anpassa utgår från hur arbetet fungerar för dig (AFS 2023:2 kap. 3), inte från en diagnos.</p>
+      <fieldset class="options" style="margin-top:20px" id="areas"></fieldset>
+      <p class="hint" id="area-count" role="status" style="margin-top:12px;color:var(--muted);font-size:15px"></p>
+      <p data-error hidden role="alert" style="color:var(--warn-ink);font-weight:500"></p>
+      <div class="tool-nav"><button type="button" class="btn btn-secondary" data-prev>Tillbaka</button><button type="button" class="btn btn-primary" data-next>Nästa: Vad som hjälper</button></div>
+    </section>
+
+    <section class="tool-step" data-step="2" hidden>
+      <p class="step-count" data-step-count></p>
+      <h2>Vad hjälper redan – eller har hjälpt förut?</h2>
+      <p class="intro">Hoppa över om du inte vet. Konkreta exempel gör det lättare för chefen att säga ja.</p>
+      <div id="helps"></div>
+      <div class="field" style="margin-top:24px">
+        <label for="egen">Något du vill lägga till med egna ord? <span style="font-weight:300;color:var(--muted)">(valfritt)</span></label>
+        <textarea id="egen" name="egen" placeholder="Till exempel: Jag gör mitt bästa arbete före lunch."></textarea>
+      </div>
+      <div class="tool-nav"><button type="button" class="btn btn-secondary" data-prev>Tillbaka</button><button type="button" class="btn btn-primary" data-next>Nästa: Förslag att ta upp</button></div>
+    </section>
+
+    <section class="tool-step" data-step="3" hidden>
+      <p class="step-count" data-step-count></p>
+      <h2>Vilka förslag vill du ta upp?</h2>
+      <p class="intro">Förslagen är sorterade från enkla och billiga till större förändringar. Välj de som känns rimliga att prova först – två till fem brukar räcka.</p>
+      <div id="suggestions"></div>
+      <p data-error hidden role="alert" style="color:var(--warn-ink);font-weight:500"></p>
+      <div class="tool-nav"><button type="button" class="btn btn-secondary" data-prev>Tillbaka</button><button type="button" class="btn btn-primary" data-next>Visa mitt underlag</button></div>
+    </section>
+
+    <section class="tool-step" data-step="4" hidden>
+      <p class="step-count" data-step-count></p>
+      <h2>Ditt underlag är klart</h2>
+      <p class="intro">Läs igenom, ändra om något inte stämmer, och ta med det till samtalet. Det sparas bara här i din webbläsare.</p>
+      <div class="field">
+        <label for="uppfoljning">När ska ni följa upp?</label>
+        <input type="date" id="uppfoljning" name="uppfoljning">
+        <span class="hint">Förslag: om fyra veckor. Anpassningar ska följas upp och ändras om de inte fungerar.</span>
+      </div>
+      <div class="tool-nav no-print" style="margin-top:20px">
+        <button type="button" class="btn btn-primary" onclick="window.print()">Skriv ut eller spara som PDF</button>
+        <button type="button" class="btn btn-secondary" id="copy-doc">Kopiera texten</button>
+      </div>
+      <article class="doc" id="doc" style="margin-top:28px" aria-label="Ditt underlag"></article>
+      <div class="tool-nav no-print"><button type="button" class="btn btn-secondary" data-prev>Tillbaka och ändra</button><button type="button" class="btn-link" data-reset>Börja om med ett nytt underlag</button></div>
+    </section>
+  </div>
+
+  <aside aria-label="Ditt underlag så här långt">
+    <div class="side-card">
+      <h2>Så här långt</h2>
+      <div id="live" style="font-size:15px;margin-top:10px;color:var(--ink-2)"></div>
+      <p style="margin-top:16px;padding-top:12px;border-top:1px solid #E1E7E2;font-size:13px;color:var(--muted)">Inget skickas till oss. Det du skriver stannar i den här webbläsaren tills du klickar på Börja om.</p>
+    </div>
+  </aside>
+</form>
+{% endblock %}
+{% block tool_after %}
+<div class="wrap no-print"><div class="with-aside" style="padding-top:0">
+  <div class="main-col prose">
+    <h2>Vad säger reglerna om anpassningar?</h2>
+    <p>Sedan 1 januari 2025 regleras arbetsanpassning i Arbetsmiljöverkets föreskrifter AFS 2023:2, kapitel 3, som ersatte AFS 2020:5. Arbetsgivaren ska utreda behovet av anpassning när en medarbetare har nedsatt förmåga att utföra sitt arbete, vidta de åtgärder som behövs och följa upp dem. Diskrimineringslagen räknar dessutom bristande tillgänglighet som en form av diskriminering när rimliga åtgärder inte vidtas.</p>
+    <p>Du behöver alltså inte ha en diagnos för att be om anpassningar. Det som räknas är hur arbetet fungerar – och det är precis det underlaget beskriver.</p>
+    <p>Läs mer: <a href="/lagkrav-anpassningar-arbetsmiljo.html">Lagkrav på anpassningar</a> · <a href="/arbetsgivarpaketet/anpassningsbibliotek.html">Anpassningsbiblioteket</a> · <a href="/adhd-anpassningar-jobb.html">ADHD-anpassningar på jobbet</a></p>
+    {% include "partials/lead_box.html" %}
+  </div>
+</div></div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/assets/stepper.js?v={{ asset_v }}" defer></script>
+<script src="/static/assets/tools/anpassningsplanen.js?v={{ asset_v }}" defer></script>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "tool_base.html" %}
+{% block tool_title %}Belastningskollen{% endblock %}
+{% block tool_lead %}Väg det som tar energi mot det som ger energi. Du ser var balansen tippar – och vad som är rimligast att ändra först. Det här är en självskattning, inte ett test eller en bedömning av din hälsa.{% endblock %}
+{% block tool_body %}
+<div class="with-aside" style="padding-top:24px">
+  <div class="main-col">
+    <form class="panel" id="bl" novalidate>
+      <h2 style="font-size:22px">Det som tar energi</h2>
+      <div class="field" style="margin-top:16px"><label for="sens">Ljud, ljus och intryck på jobbet: <span id="sens-v"></span></label><input type="range" id="sens" min="1" max="10" value="5" style="width:100%;accent-color:var(--action)"><span class="hint">1 = lugnt, 10 = kaos</span></div>
+      <div class="field"><label for="kog">Kognitiva krav – byten, otydlighet, möten: <span id="kog-v"></span></label><input type="range" id="kog" min="1" max="10" value="5" style="width:100%;accent-color:var(--action)"><span class="hint">1 = låga, 10 = höga</span></div>
+      <div class="field"><label for="mask">Hur mycket måste du hålla inne eller dölja hur du fungerar: <span id="mask-v"></span></label><input type="range" id="mask" min="1" max="10" value="5" style="width:100%;accent-color:var(--action)"><span class="hint">1 = inte alls, 10 = hela tiden</span></div>
+      <div class="field"><label for="tim">Arbetstid per vecka, timmar</label><input type="number" id="tim" min="0" max="80" value="40" inputmode="numeric"></div>
+      <h2 style="font-size:22px;margin-top:32px">Det som ger energi</h2>
+      <div class="field" style="margin-top:16px"><label for="somn">Hur är sömnen: <span id="somn-v"></span></label><input type="range" id="somn" min="1" max="10" value="6" style="width:100%;accent-color:var(--action)"><span class="hint">1 = dålig, 10 = mycket bra</span></div>
+      <div class="field"><label for="egen">Tid för det du tycker om och vilar i</label>
+        <select id="egen"><option value="1">Nästan aldrig</option><option value="3">Sällan</option><option value="5" selected>Ibland</option><option value="8">Ofta</option><option value="10">Varje dag</option></select></div>
+      <div class="tool-nav"><button type="submit" class="btn btn-primary">Visa min balans</button></div>
+    </form>
+    <div id="out" hidden style="margin-top:28px" aria-live="polite"></div>
+  </div>
+  <aside class="side-col"><div class="side-card"><h2>Om du mår dåligt</h2><p>Belastningskollen ersätter inte vården. Om du har varit trött och nedstämd länge – prata med vårdcentralen eller ring 1177.</p></div></aside>
+</div>
+{% endblock %}
+{% block tool_after %}
+<div class="wrap no-print"><div class="with-aside" style="padding-top:0"><div class="main-col prose">
+  <h2>Belastning och återhämtning</h2>
+  <p>Utmattning handlar sällan om en enskild sak. Det är summan av belastning – intryck, krav, att hålla masken uppe – som över tid är större än återhämtningen. För många med ADHD eller autism kostar vardagen på jobbet mer energi än det syns utifrån, och därför behöver återhämtningen planeras lika noga som arbetet.</p>
+  <p>Läs mer: <a href="/maskering-pa-arbetsplatsen.html">Maskering på arbetsplatsen</a> · <a href="/kognitiv-ergonomi-npf.html">Kognitiv ergonomi</a> · <a href="/post-semester-stress-npf.html">Återgång efter ledighet</a></p>
+  {% include "partials/lead_box.html" %}
+</div></div></div>
+{% endblock %}
+{% block scripts %}
+<script>
+(function () {
+  var ids = ['sens', 'kog', 'mask', 'somn'];
+  ids.forEach(function (id) { var el = document.getElementById(id), out = document.getElementById(id + '-v'); var f = function () { out.textContent = el.value; }; el.addEventListener('input', f); f(); });
+  var FIX = {
+    sens: ['Ljud och intryck', 'Brusreducerande hörlurar, en lugnare plats eller möjlighet att arbeta hemifrån vissa dagar.'],
+    kog: ['Kognitiva krav', 'Färre parallella uppgifter, tydlig prioritering och fasta tider för möten.'],
+    mask: ['Att hålla masken uppe', 'Ett samtal med chefen om vad du behöver – utan att du måste förklara en diagnos.'],
+    tim: ['Arbetstiden', 'Se över arbetstid eller arbetsmängd tillsammans med chefen.'],
+    somn: ['Sömnen', 'Sömnen är den största källan till återhämtning. Långvariga problem är värda att ta upp med vården.'],
+    egen: ['Tid för dig själv', 'Planera in återhämtning i kalendern på samma sätt som möten – annars försvinner den.']
+  };
+  document.getElementById('bl').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var g = function (id) { return +document.getElementById(id).value; };
+    var hours = Math.max(0, Math.min(80, g('tim') || 40));
+    var load = (g('sens') + g('kog') + g('mask') * 1.2) / 3.2 * 10 + Math.max(0, hours - 40) * 1.5;
+    var rec = (g('somn') * 0.6 + g('egen') * 0.4) * 10 - g('mask') * 1.5;
+    load = Math.round(Math.max(0, Math.min(100, load))); rec = Math.round(Math.max(0, Math.min(100, rec)));
+    var gap = load - rec, state;
+    if (gap <= 0) state = ['I balans', 'chip chip-yes', 'Återhämtningen väger upp belastningen just nu. Håll koll på det som ger energi, så att det inte är det första som stryks när det blir mycket.'];
+    else if (gap <= 25) state = ['Tippar över', 'chip chip-maybe', 'Belastningen är något större än återhämtningen. Det håller en tid, men inte länge. Ändra en sak nu – innan det behövs tre.'];
+    else state = ['Belastningen är för stor', 'chip chip-maybe', 'Belastningen är tydligt större än återhämtningen. Ta upp det med din chef snart, och prata med vården om du har varit trött länge.'];
+    var factors = [['sens', g('sens')], ['kog', g('kog')], ['mask', g('mask')], ['tim', hours > 40 ? 6 + (hours - 40) / 3 : 0], ['somn', 11 - g('somn')], ['egen', 11 - g('egen')]]
+      .sort(function (a, b) { return b[1] - a[1]; }).slice(0, 2);
+    var bar = function (label, v, color) { return '<div style="margin-top:14px"><div style="display:flex;justify-content:space-between;font-size:15px"><span>' + label + '</span><strong style="font-weight:600">' + v + ' av 100</strong></div><div style="height:16px;border-radius:8px;background:var(--sage);margin-top:6px"><div style="height:100%;width:' + v + '%;background:' + color + ';border-radius:8px"></div></div></div>'; };
+    document.getElementById('out').innerHTML = '<div class="result-card"><div class="top"><h3>Din balans just nu</h3><span class="' + state[1] + '">' + state[0] + '</span></div>' +
+      bar('Belastning', load, 'var(--action)') + bar('Återhämtning', rec, 'var(--mark)') + '<p style="margin:18px 0 0;color:var(--ink-2)">' + state[2] + '</p></div>' +
+      '<div class="result-card"><h3>Det här är rimligast att ändra först</h3><dl>' + factors.map(function (f) { return '<div><dt>' + FIX[f[0]][0] + '</dt><dd>' + FIX[f[0]][1] + '</dd></div>'; }).join('') + '</dl></div>' +
+      '<div class="next-step"><div><p class="k">Nästa steg</p><p class="v"><span class="mark">Gör ett underlag om anpassningar</span> och ta med det till chefen.</p></div><a class="btn" href="/verktyg-anpassningsgenerator.html">Öppna Anpassningsplanen</a></div>';
+    document.getElementById('out').hidden = false;
+    try { fetch('/api/burnout-data', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ sensoryLoad: g('sens'), cognitiveLoad: g('kog'), workHours: hours, sleepQuality: g('somn'), hyperfocusTime: g('egen'), maskingLevel: g('mask'), riskPercentage: Math.max(0, Math.min(100, 50 + gap)) }) }); } catch (er) {}
+    if (window.nv) window.nv.track('tool_result', { tool: 'belastningskollen', state: state[0] });
+  });
+})();
+</script>
+{% endblock %}

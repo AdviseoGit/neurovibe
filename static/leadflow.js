@@ -111,8 +111,9 @@
     // Ingen förberedd ruta på sidan — skapa en så att användaren aldrig
     // lämnas utan återkoppling.
     var created = document.createElement("p");
-    created.className = "nv-flash mt-4 text-sm font-medium";
-    created.style.color = tone === "error" ? "#FF6B6B" : "#4ADE80";
+    created.className = "nv-flash";
+    created.setAttribute("role", tone === "error" ? "alert" : "status");
+    created.style.cssText = "margin:14px 0 0;font-weight:500;color:" + (tone === "error" ? "#7A3410" : "#1C5D73");
     created.textContent = fallbackText;
     form.parentNode.insertBefore(created, form.nextSibling);
     return created;

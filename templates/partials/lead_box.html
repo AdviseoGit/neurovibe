@@ -1,0 +1,27 @@
+{% if lead_segment == 'arbetsgivare' %}
+<section class="lead-box" aria-labelledby="lead-title">
+  <h2 id="lead-title">Få mallarna och regeländringarna till inkorgen</h2>
+  <p>För chef, HR och arbetsmiljöansvariga: vi mejlar när en mall uppdateras eller när reglerna för arbetsanpassning ändras. Ingen säljpress.</p>
+  <form data-nv-lead data-segment="arbetsgivare" data-offer="mallar-{{ page.slug | replace('/', '-') }}">
+    <div class="inline">
+      <label class="visually-hidden" for="lead-email">E-postadress</label>
+      <input id="lead-email" type="email" name="email" required autocomplete="email" placeholder="namn@arbetsplats.se">
+      <button type="submit" class="btn btn-primary">Prenumerera</button>
+    </div>
+    <label class="check"><input type="checkbox" name="consent" required> Jag godkänner att Neurovibe sparar min e-postadress för de här utskicken. <a href="/integritetspolicy.html">Integritetspolicy</a></label>
+  </form>
+</section>
+{% else %}
+<section class="lead-box" aria-labelledby="lead-title">
+  <h2 id="lead-title">Få nya verktyg när de är klara</h2>
+  <p>Ett kort mejl när vi släpper ett nytt verktyg eller när regler för stöd ändras. Avsluta när du vill.</p>
+  <form data-nv-lead data-segment="individ" data-offer="nyheter-{{ page.slug | replace('/', '-') }}">
+    <div class="inline">
+      <label class="visually-hidden" for="lead-email">E-postadress</label>
+      <input id="lead-email" type="email" name="email" required autocomplete="email" placeholder="din@epost.se">
+      <button type="submit" class="btn btn-primary">Prenumerera</button>
+    </div>
+    <label class="check"><input type="checkbox" name="consent" required> Jag godkänner att Neurovibe sparar min e-postadress för de här utskicken. <a href="/integritetspolicy.html">Integritetspolicy</a></label>
+  </form>
+</section>
+{% endif %}

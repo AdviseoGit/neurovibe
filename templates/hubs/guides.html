@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="wrap">
+  <header class="page-head">
+    <p class="crumbs"><a href="/">Neurovibe</a> / Guider</p>
+    <h1>Guider om NPF i arbetslivet</h1>
+    <p class="lead">Fördjupning när du behöver förstå varför – och länkar till verktyget som gör det konkret.</p>
+  </header>
+  {% set groups = [('stod','Stöd från myndigheter'),('arbetsgivare','För chef och HR'),('guide','Anpassningar och vardag'),('medarbetare','För dig som medarbetare'),('data','Data')] %}
+  {% for key, label in groups %}
+  {% set items = guides | selectattr('section', 'equalto', key) | list %}
+  {% if items %}
+  <h2 class="section-title" style="margin-top:40px;font-size:26px">{{ label }}</h2>
+  <ul class="compact-list" style="margin-top:16px">
+    {% for p in items %}<li><a href="/{{ p.path }}">{{ p.short }}</a><span>{% if p.read_min %}{{ p.read_min }} min{% endif %}</span></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endfor %}
+  <div style="height:72px"></div>
+</div>
+{% endblock %}

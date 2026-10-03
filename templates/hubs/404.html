@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="wrap-narrow" style="padding:88px 0 96px">
+  <p class="eyebrow">Sidan finns inte</p>
+  <h1 style="font-size:40px">Den här sidan har flyttat eller tagits bort.</h1>
+  <p class="lead">Inget du gjort fel. Här är det som de flesta letar efter:</p>
+  <ul class="compact-list" style="margin-top:28px">
+    {% for t in flagships %}<li><a href="/{{ t.path }}">{{ t.name }}</a><span>{{ t.summary }}</span></li>{% endfor %}
+    <li><a href="/resurser.html">Alla guider</a><span>Stöd, lagkrav och anpassningar</span></li>
+  </ul>
+</div>
+{% endblock %}

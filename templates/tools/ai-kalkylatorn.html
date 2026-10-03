@@ -1,0 +1,54 @@
+{% extends "tool_base.html" %}
+{% block tool_title %}Tidskalkylatorn{% endblock %}
+{% block tool_lead %}Hur många timmar i veckan går till det som kostar mest energi – sammanfattningar, mejl, planering och letande? Fyll i dina timmar och din egen bedömning av hur mycket stödverktyg kan ta bort, så ser du vad det blir på ett år.{% endblock %}
+{% block tool_body %}
+<div class="with-aside" style="padding-top:24px">
+  <div class="main-col">
+    <form class="panel" id="tk" novalidate>
+      <div class="table-wrap" style="margin:0">
+        <table>
+          <thead><tr><th scope="col">Uppgift</th><th scope="col">Timmar per vecka</th><th scope="col">Kan stöd ta bort</th></tr></thead>
+          <tbody>
+            {% for key, label in [('moten','Anteckningar och sammanfattningar av möten'),('mejl','Formulera mejl och meddelanden'),('plan','Dela upp och planera uppgifter'),('sok','Söka och sortera information')] %}
+            <tr><td>{{ label }}</td>
+              <td><label class="visually-hidden" for="h-{{ key }}">Timmar per vecka: {{ label }}</label><input type="number" id="h-{{ key }}" min="0" max="40" value="2" inputmode="decimal" style="max-width:110px"></td>
+              <td><label class="visually-hidden" for="p-{{ key }}">Andel som kan tas bort: {{ label }}</label>
+                <select id="p-{{ key }}" style="max-width:150px"><option value="0">Inget</option><option value="0.25" selected>En fjärdedel</option><option value="0.5">Hälften</option><option value="0.75">Tre fjärdedelar</option></select></td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="tool-nav"><button type="submit" class="btn btn-primary">Räkna</button></div>
+    </form>
+    <div id="out" hidden style="margin-top:28px" aria-live="polite"></div>
+  </div>
+  <aside class="side-col"><div class="side-card"><h2>Din egen bedömning</h2><p>Vi gissar inte hur mycket tid du sparar – det beror på uppgifterna och verktygen. Kalkylatorn räknar på din egen uppskattning, så att siffran går att lita på.</p></div></aside>
+</div>
+{% endblock %}
+{% block tool_after %}
+<div class="wrap no-print"><div class="with-aside" style="padding-top:0"><div class="main-col prose">
+  <h2>Stödverktyg som avlastar</h2>
+  <p>Automatiska mötesanteckningar, hjälp att formulera mejl och verktyg som delar upp uppgifter kan avlasta arbetsminnet och sänka tröskeln för att komma igång. Hur mycket det ger skiljer sig mellan personer och arbetsuppgifter – därför räknar kalkylatorn på din egen bedömning.</p>
+  <p>Kan ett stödverktyg vara ett arbetshjälpmedel? Ibland. Se vad som gäller i <a href="/verktyg-myndighetsnavigator.html">Stödkollen</a>, och läs mer i <a href="/ai-verktyg-neurodiversitet.html">AI-verktyg och neurodiversitet</a>.</p>
+  {% include "partials/lead_box.html" %}
+</div></div></div>
+{% endblock %}
+{% block scripts %}
+<script>
+(function () {
+  document.getElementById('tk').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var keys = ['moten', 'mejl', 'plan', 'sok'], total = 0, freed = 0;
+    keys.forEach(function (k) { var h = Math.max(0, Math.min(40, parseFloat(document.getElementById('h-' + k).value.replace(',', '.')) || 0)); total += h; freed += h * +document.getElementById('p-' + k).value; });
+    var f1 = function (n) { return (Math.round(n * 10) / 10).toString().replace('.', ','); };
+    document.getElementById('out').innerHTML = '<div class="result-card"><h3>Ditt resultat</h3><dl>' +
+      '<div><dt>Tid på de här uppgifterna</dt><dd>' + f1(total) + ' timmar i veckan</dd></div>' +
+      '<div><dt>Tid som kan frigöras</dt><dd><span class="mark">' + f1(freed) + ' timmar i veckan</span></dd></div>' +
+      '<div><dt>På ett arbetsår (44 veckor)</dt><dd>' + f1(freed * 44) + ' timmar</dd></div>' +
+      '<div><dt>Räknat på</dt><dd>Din egen bedömning av hur mycket som kan tas bort.</dd></div></dl></div>';
+    document.getElementById('out').hidden = false;
+    if (window.nv) window.nv.usage('ai-kalkylatorn', { total: total, freed: freed });
+  });
+})();
+</script>
+{% endblock %}

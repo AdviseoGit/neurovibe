@@ -1,0 +1,600 @@
+[
+ {
+  "path": "adhd-anpassningar-jobb.html",
+  "slug": "adhd-anpassningar-jobb",
+  "section": "guide",
+  "title": "Från Kaos till Kontroll: Din Guide till ADHD-Anpassningar på Jobbet - Neurovibe",
+  "description": "Upptäck konkreta strategier, stöd och hjälpmedel för att hantera ADHD på jobbet. Skapa en arbetsmiljö där du kan fokusera, prestera och må bra.",
+  "h1": "Från Kaos till Kontroll: Din Guide till ADHD-Anpassningar på Jobbet",
+  "lead": "",
+  "updated": "2026-06-03",
+  "jsonld": [
+   "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@context\": \"https://schema.org\",\n      \"@type\": \"Article\",\n      \"headline\": \"ADHD-anpassningar på Jobbet: Praktisk Guide för Arbetsgivare och Medarbetare\",\n      \"author\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Neurovibe\"\n      },\n      \"datePublished\": \"2026-06-04\",\n      \"dateModified\": \"2026-08-05\",\n      \"publisher\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Neurovibe\",\n        \"logo\": {\n          \"@type\": \"ImageObject\",\n          \"url\": \"https://neurovibe.se/static/favicon.svg\"\n        }\n      },\n      \"description\": \"Konkreta strategier och anpassningar för en ADHD-vänlig arbetsplats. Från fysisk miljö till arbetssätt och kommunikation.\",\n      \"mainEntityOfPage\": {\n        \"@type\": \"WebPage\",\n        \"@id\": \"https://neurovibe.se/adhd-anpassningar-jobb.html\"\n      }\n    },\n    {\n      \"@type\": \"FAQPage\",\n      \"mainEntity\": [\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Hur mycket kostar en genomsnittlig ADHD-anpassning på jobbet?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Enligt uppskattningar kostar den genomsnittliga anpassningen för en anställd med ADHD under 5000 kr, och ofta är kostnaden 0 kr (som flextid eller hörlurar).\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Vilka är de vanligaste anpassningarna för ADHD?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"De tre vanligaste anpassningarna för ADHD på arbetsplatsen är flexibla arbetstider, möjlighet att sitta avskilt, och brusreducerande hörlurar.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Måste man berätta om sin diagnos för chefen?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Nej, det finns ingen skyldighet att avslöja din exakta diagnos enligt Diskrimineringslagen (SFS 2008:567). Du kan istället kommunicera dina specifika behov (t.ex. \\\"jag behöver sitta avskilt för att koncentrera mig\\\").\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+  ],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 803,
+  "links": [
+   "/resurser.html"
+  ]
+ },
+ {
+  "path": "adhd-diagnos-guide.html",
+  "slug": "adhd-diagnos-guide",
+  "section": "guide",
+  "title": "ADHD-utredning för Vuxna 2026: Kostnad, Kötider & Privat Guide",
+  "description": "Komplett guide till ADHD-utredning för vuxna (2026). Så går du via regionen eller privat, vad det kostar, vänteköer, och vilka anpassningar du har rätt till på jobbet.",
+  "h1": "ADHD-utredning för Vuxna: Köer, Kostnad & Privat väg (2026)",
+  "lead": "Att få en ADHD-diagnos i vuxen ålder kan vara en omvälvande, men ofta befriande upplevelse. Plötsligt finns det en förklaring till varför vissa saker, som planering, fokus och tidsuppfattning, alltid har varit en utmaning. Men vägen till en diagnos, och tiden därefter, kan kännas som en snårskog av byråkrati.",
+  "updated": "",
+  "jsonld": [
+   "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Article\",\n  \"headline\": \"ADHD-Diagnos för Vuxna i Sverige: En Komplett Guide (2026)\",\n  \"datePublished\": \"2026-07-15\",\n  \"dateModified\": \"2026-07-15\",\n  \"author\": {\n    \"@type\": \"Organization\",\n    \"name\": \"Neurovibe\"\n  },\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"Neurovibe\",\n    \"logo\": {\n      \"@type\": \"ImageObject\",\n      \"url\": \"https://neurovibe.se/favicon.svg\"\n    }\n  },\n  \"description\": \"Allt du behöver veta om att utredas för ADHD som vuxen i Sverige år 2026. Kostnader, väntetider, Försäkringskassan och rättigheter på jobbet.\"\n}",
+   "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"FAQPage\",\n  \"mainEntity\": [\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Hur lång tid tar en ADHD-utredning i offentlig vård?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"År 2026 varierar det kraftigt mellan olika regioner, men du kan tyvärr räkna med mellan 12 och 24 månaders väntetid i stora delar av Sverige.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Täcks en privat utredning av frikortet?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Nej, som regel bekostar du en privat utredning helt själv (ofta 25 000–40 000 kr). Däremot gäller frikortet och högkostnadsskyddet för medicineringen i efterhand, förutsatt att du får receptet från en läkare inom (eller med avtal med) den offentliga vården.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Kan man bli av med sin diagnos?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"ADHD är en livslång funktionsnedsättning, så du växer inte ifrån den. Däremot kan symtomen minska och hanteringen förbättras avsevärt med rätt strategier, mognad, medicin och anpassningar, så att den inte längre utgör ett lika stort funktionshinder.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Måste jag berätta för min arbetsgivare?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Nej, du har ingen laglig skyldighet att berätta om din diagnos. Men om du inte berättar kan du heller inte kräva anpassningar enligt diskrimineringslagen (tex flexibla arbetstider eller hjälpmedel).\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Påverkar en ADHD-diagnos mitt körkort?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Transportstyrelsen kräver att du anmäler diagnoser som kan påverka körförmågan. För de flesta med ADHD utgör diagnosen inget hinder för att ha körkort, men du behöver ofta lämna in ett läkarintyg som bekräftar att tillståndet är stabilt.\"\n      }\n    }\n  ]\n}"
+  ],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 3322,
+  "links": [
+   "/",
+   "/arbetsprovning-2026-forsakringskassan.html",
+   "/forsakringskassan-arbetsformedlingen-stod.html",
+   "/index.html",
+   "/lagkrav-anpassningar-arbetsmiljo.html"
+  ]
+ },
+ {
+  "path": "adhd-diagnos-vuxen.html",
+  "slug": "adhd-diagnos-vuxen",
+  "section": "guide",
+  "title": "Maskering på arbetsplatsen: Komplett Guide 2026 - Neurovibe",
+  "description": "En djupgående guide om maskering (camouflaging) på arbetsplatsen för personer med ADHD och autism. Vi går igenom hur det påverkar energinivåer, karriär och vad arbetsgivare kan göra.",
+  "h1": "Maskering på Arbetsplatsen: Den Dolda Kostnaden och Vägen till Autenticitet",
+  "lead": "Självbärande svar: Maskering på arbetsplatsen (att ständigt dölja neurodivergenta drag) är kognitivt utmattande och ökar risken för utbrändhet markant. Enligt Hjärnfonden kan maskering konsumera upp till 40 % till 60 % mer kognitiv energi än för en neurotypisk kollega.",
+  "updated": "",
+  "jsonld": [
+   "{\n      \"@context\": \"https://schema.org\",\n      \"@graph\": [\n        {\n          \"@type\": \"Article\",\n          \"headline\": \"Vägen till ADHD-diagnos som Vuxen: Kostnader, Väntetider och Rättigheter\",\n          \"datePublished\": \"2026-06-18\",\n          \"dateModified\": \"2026-08-03\",\n          \"author\": {\n            \"@type\": \"Organization\",\n            \"name\": \"Neurovibe\"\n          },\n          \"publisher\": {\n            \"@type\": \"Organization\",\n            \"name\": \"Neurovibe\",\n            \"logo\": {\n              \"@type\": \"ImageObject\",\n              \"url\": \"https://neurovibe.se/favicon.ico\"\n            }\n          },\n          \"description\": \"En komplett guide (2026) till maskering på arbetsplatsen för neurodivergenta. Förstå vad det kostar och hur du kan börja unmaska på ett hållbart sätt.\"\n        },\n        {\n          \"@type\": \"FAQPage\",\n          \"mainEntity\": [\n            {\n              \"@type\": \"Question\",\n              \"name\": \"Hur mycket energi tar maskering på jobbet för neurodivergenta?\",\n              \"acceptedAnswer\": {\n                \"@type\": \"Answer\",\n                \"text\": \"Maskering på arbetsplatsen ökar risken för utbrändhet och kan konsumera upp till 40 % till 60 % mer kognitiv energi jämfört med neurotypiska kollegor.\"\n              }\n            },\n            {\n              \"@type\": \"Question\",\n              \"name\": \"Vad är konsekvenserna av maskering vid ADHD och Autism?\",\n              \"acceptedAnswer\": {\n                \"@type\": \"Answer\",\n                \"text\": \"Kontinuerlig maskering leder till extrem trötthet, sämre exekutiv funktion och i längden en kraftigt förhöjd risk för sjukskrivning.\"\n              }\n            }\n          ]\n        }\n      ]\n    }"
+  ],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 2718,
+  "links": []
+ },
+ {
+  "path": "ai-verktyg-neurodiversitet.html",
+  "slug": "ai-verktyg-neurodiversitet",
+  "section": "guide",
+  "title": "AI-verktyg och Neurodiversitet: Så skapar tekniken en mer inkluderande arbetsplats 2026 - Neurovibe",
+  "description": "Upptäck hur AI-verktyg som ChatGPT, Grammarly och struktur-appar kan underlätta arbetsdagen för dig med ADHD eller autism. Skapa en mer neuroinkluderande arbetsplats med rätt teknik.",
+  "h1": "AI-verktyg och Neurodiversitet: Så skapar tekniken en mer inkluderande arbetsplats",
+  "lead": "Självbärande svar: Generativ AI (som ChatGPT och Copilot) fungerar som kognitiva proteser för neurodivergenta (ADHD/Autism) på arbetsplatsen. Genom att delegera exekutivt tunga uppgifter som strukturering, e-postsammanfattning och uppgiftsnedbrytning till AI, minskar den kognitiva belastningen med upp till 40 % . Detta frigör i snitt 12 timmar i veckan och sänker drastiskt risken för utbrändhet.",
+  "updated": "",
+  "jsonld": [
+   "{\n      \"@context\": \"https://schema.org\",\n      \"@graph\": [\n        {\n          \"@type\": \"Article\",\n          \"headline\": \"AI-verktyg för Neurodiversitet på Arbetsplatsen: Från Assistenter till Avlastning\",\n          \"datePublished\": \"2026-06-25\",\n          \"dateModified\": \"2026-08-03\",\n          \"author\": {\n            \"@type\": \"Organization\",\n            \"name\": \"Neurovibe\"\n          },\n          \"publisher\": {\n            \"@type\": \"Organization\",\n            \"name\": \"Neurovibe\",\n            \"logo\": {\n              \"@type\": \"ImageObject\",\n              \"url\": \"https://neurovibe.se/favicon.ico\"\n            }\n          },\n          \"description\": \"Hur AI som ChatGPT och Copilot fungerar som kognitiva proteser och avlastar exekutiva funktioner vid ADHD och Autism på jobbet.\"\n        },\n        {\n          \"@type\": \"FAQPage\",\n          \"mainEntity\": [\n            {\n              \"@type\": \"Question\",\n              \"name\": \"Hur kan AI-verktyg hjälpa neurodivergenta på arbetsplatsen?\",\n              \"acceptedAnswer\": {\n                \"@type\": \"Answer\",\n                \"text\": \"AI fungerar som en kognitiv protes som avlastar exekutiva funktioner, till exempel genom att bryta ner komplexa projekt i små steg, vilket minskar den kognitiva belastningen med upp till 40%.\"\n              }\n            },\n            {\n              \"@type\": \"Question\",\n              \"name\": \"Vilka AI-verktyg är bäst för ADHD på jobbet?\",\n              \"acceptedAnswer\": {\n                \"@type\": \"Answer\",\n                \"text\": \"Verktyg som ChatGPT (för struktur och brainstorming) och Microsoft Copilot (för e-postsammanfattning och mötesanteckningar) är mycket effektiva för att kompensera för nedsatt exekutiv funktion vid ADHD.\"\n              }\n            }\n          ]\n        }\n      ]\n    }"
+  ],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 783,
+  "links": [
+   "/adhd-anpassningar-jobb.html",
+   "/autism-arbetsplatsen-tips-guide.html",
+   "/fem-tips-for-chefer.html",
+   "/neurodiversitet-arbetsplatsen.html",
+   "/resurser.html",
+   "/verktyg-nedbrytare.html"
+  ]
+ },
+ {
+  "path": "arbetsplats-schema-npf.html",
+  "slug": "arbetsplats-schema-npf",
+  "section": "guide",
+  "title": "Arbetsplats Schema vid NPF (ADHD & Autism) - Skapa Hållbara Arbetsdagar | Neurovibe",
+  "description": "Hur du skapar ett hållbart schema och arbetsdag för personer med ADHD eller Autism. Guider för kognitiv avlastning och energihantering.",
+  "h1": "Skapa ett hållbart schema vid NPF (ADHD & Autism)",
+  "lead": "För personer med NPF-diagnoser som ADHD eller Autism kan ett traditionellt \"9 till 5\"-schema vara onödigt dränerande. Bristen på inflytande över energiförbrukningen, kombinerat med kognitiv överbelastning från miljö och otydliga förväntningar, leder ofta till utmattning i förtid. Att designa ett arbetsplats-schema med neurodivergens i åtanke handlar inte om att jobba mindre, utan om att jobba hållbart .",
+  "updated": "2026-07-18",
+  "jsonld": [
+   "{\n      \"@context\": \"https://schema.org\",\n      \"@graph\": [\n        {\n          \"@type\": \"Article\",\n          \"headline\": \"Arbetsplats Schema vid NPF (ADHD & Autism) - Skapa Hållbara Arbetsdagar\",\n          \"datePublished\": \"2026-07-18\",\n          \"dateModified\": \"2026-08-03\",\n          \"author\": {\n            \"@type\": \"Organization\",\n            \"name\": \"Neurovibe\"\n          },\n          \"publisher\": {\n            \"@type\": \"Organization\",\n            \"name\": \"Neurovibe\",\n            \"logo\": {\n              \"@type\": \"ImageObject\",\n              \"url\": \"https://neurovibe.se/favicon.ico\"\n            }\n          },\n          \"description\": \"Hur du skapar ett hållbart schema och arbetsdag för personer med ADHD eller Autism. Guider för kognitiv avlastning och energihantering.\"\n        },\n        {\n          \"@type\": \"FAQPage\",\n          \"mainEntity\": [\n            {\n              \"@type\": \"Question\",\n              \"name\": \"Hur strukturerar man bäst en arbetsdag vid NPF?\",\n              \"acceptedAnswer\": {\n                \"@type\": \"Answer\",\n                \"text\": \"Ett hållbart arbetsplatsschema för en person med NPF bör inkludera blockplanering, 25% oplanerad bufferttid och regelbundna återhämtningspauser.\"\n              }\n            },\n            {\n              \"@type\": \"Question\",\n              \"name\": \"Varför är energi-budgetering viktigt vid ADHD och Autism på jobbet?\",\n              \"acceptedAnswer\": {\n                \"@type\": \"Answer\",\n                \"text\": \"Kognitiv belastning tar olika mycket energi för neurodivergenta individer, upp till 40% mer för exekutiva funktioner, varför schemat måste anpassas efter individens energinivåer, inte bara tidsåtgången.\"\n              }\n            }\n          ]\n        }\n      ]\n    }"
+  ],
+  "tool": "schema-generatorn",
+  "noindex": false,
+  "words": 1045,
+  "links": [
+   "/autism-arbetsplatsen-tips-guide.html",
+   "/lagkrav-anpassningar-arbetsmiljo.html",
+   "/verktyg-schema-generator.html"
+  ]
+ },
+ {
+  "path": "arbetsprovning-2026-forsakringskassan.html",
+  "slug": "arbetsprovning-2026-forsakringskassan",
+  "section": "stod",
+  "title": "Arbetsprövning & Försäkringskassan 2026 (ADHD/Autism) - Neurovibe",
+  "description": "Förstå Försäkringskassans nya regler 2026 för arbetsprövning med NPF, ADHD och Autism. Arbetshjälpmedel, lönebidrag och myndighetskontakter.",
+  "h1": "Arbetsprövning 2026: Nya möjligheter för dig med ADHD och NPF",
+  "lead": "Självbärande svar: Från 2026 har Försäkringskassan infört nya regler för arbetsträning och lönebidrag vid NPF (ADHD/Autism). Arbetsgivare kan nu få lönebidrag upp till 20 500 kr/mån under en 12-månaders \"Kognitiv inkörningsperiod\" , vilken därefter kan förlängas i upp till 48 månader .",
+  "updated": "2026-07-15",
+  "jsonld": [
+   "{\n      \"@context\": \"https://schema.org\",\n      \"@graph\": [\n        {\n          \"@type\": \"Article\",\n          \"headline\": \"Arbetsträning vid NPF 2026: Nya Regler från Försäkringskassan\",\n          \"datePublished\": \"2026-07-15\",\n          \"dateModified\": \"2026-08-03\",\n          \"author\": {\n            \"@type\": \"Organization\",\n            \"name\": \"Neurovibe\"\n          },\n          \"publisher\": {\n            \"@type\": \"Organization\",\n            \"name\": \"Neurovibe\",\n            \"logo\": {\n              \"@type\": \"ImageObject\",\n              \"url\": \"https://neurovibe.se/favicon.ico\"\n            }\n          },\n          \"description\": \"Förstå de nya reglerna för arbetsträning och lönebidrag 2026 från Försäkringskassan vid ADHD och Autism.\"\n        },\n        {\n          \"@type\": \"FAQPage\",\n          \"mainEntity\": [\n            {\n              \"@type\": \"Question\",\n              \"name\": \"Vad innebär de nya reglerna för arbetsträning 2026 vid NPF?\",\n              \"acceptedAnswer\": {\n                \"@type\": \"Answer\",\n                \"text\": \"Från 2026 möjliggör Försäkringskassans nya regler en 12-månaders 'Kognitiv inkörningsperiod' med lönebidrag upp till 20 500 kr/mån för anställda med NPF (såsom ADHD och autism).\"\n              }\n            },\n            {\n              \"@type\": \"Question\",\n              \"name\": \"Hur länge kan man få förlängt lönebidrag?\",\n              \"acceptedAnswer\": {\n                \"@type\": \"Answer\",\n                \"text\": \"Den första perioden med lönebidrag för kognitiv inkörning är 12 månader, och kan enligt de nya reglerna förlängas i upp till 48 månader baserat på kontinuerliga utvärderingar.\"\n              }\n            }\n          ]\n        }\n      ]\n    }"
+  ],
+  "tool": "atergangsplanen",
+  "noindex": false,
+  "words": 1047,
+  "links": [
+   "/adhd-diagnos-guide.html",
+   "/ai-verktyg-neurodiversitet.html"
+  ]
+ },
+ {
+  "path": "autism-arbetsplatsen-tips-guide.html",
+  "slug": "autism-arbetsplatsen-tips-guide",
+  "section": "guide",
+  "title": "Autism på arbetsplatsen: En guide för en mer inkluderande arbetsmiljö - Neurovibe",
+  "description": "Praktiska tips för arbetsgivare och kollegor för att skapa en inkluderande och fungerande arbetsmiljö för medarbetare med autism.",
+  "h1": "Autism på arbetsplatsen: En guide för en mer inkluderande arbetsmiljö",
+  "lead": "",
+  "updated": "2026-08-17",
+  "jsonld": [
+   "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"Article\",\n      \"headline\": \"Autism på arbetsplatsen: En guide\",\n      \"description\": \"Lär dig mer om hur du kan skapa en inkluderande och stöttande arbetsmiljö för medarbetare med autism. Praktiska tips för en mer neurodivers arbetsplats.\",\n      \"author\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Neurovibe\"\n      },\n      \"datePublished\": \"2026-06-01\",\n      \"dateModified\": \"2026-08-17\"\n    },\n    {\n      \"@type\": \"FAQPage\",\n      \"mainEntity\": [{\n        \"@type\": \"Question\",\n        \"name\": \"Hur påverkar autism arbetslivet?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Autism kan innebära utmaningar med otydlig kommunikation, intryckskänslighet och förändringar. Samtidigt medför det ofta starkt logiskt tänkande, noggrannhet och djup koncentration.\"\n        }\n      }, {\n        \"@type\": \"Question\",\n        \"name\": \"Vilka anpassningar skapar en inkluderande arbetsmiljö för autism?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Tydlig skriftlig kommunikation (ex. agenda inför möten), möjlighet att skärma av intryck (brusreducerande hörlurar, eget rum), och förutsägbara rutiner är de mest effektiva anpassningarna.\"\n        }\n      }]\n    }\n  ]\n}"
+  ],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 456,
+  "links": []
+ },
+ {
+  "path": "data-rapport-2026.html",
+  "slug": "data-rapport-2026",
+  "section": "data",
+  "title": "Neurodiversitet i svenskt arbetsliv 2026 — observationer från våra verktyg | Neurovibe",
+  "description": "Tre kvalitativa observationer om maskering, exekutiv funktion och stödsystem i svenskt arbetsliv — och varför vi ännu inte publicerar procentsatser om dem.",
+  "h1": "Neurodiversitet i svenskt arbetsliv 2026",
+  "lead": "Fyra mönster vi ser om utmattning, exekutiv funktion, stödsystem och möten — och varför vi ännu inte publicerar några procentsatser om dem.",
+  "updated": "",
+  "jsonld": [
+   "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"Article\",\n      \"headline\": \"Neurodiversitet i svenskt arbetsliv 2026\",\n      \"description\": \"Exklusiv data och observationer från hundratals interaktioner med yrkesverksamma svenskar med ADHD och autism. Vi analyserar vad som fungerar och vad som brister på arbetsplatser idag.\",\n      \"author\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Neurovibe\"\n      },\n      \"datePublished\": \"2026-06-01\",\n      \"dateModified\": \"2026-08-17\"\n    },\n    {\n      \"@type\": \"FAQPage\",\n      \"mainEntity\": [{\n        \"@type\": \"Question\",\n        \"name\": \"Varför är maskering ett dolt arbete?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Maskering (att dölja neurodivergenta drag) tar mycket kognitiv energi. Det leder till extrem trötthet efter jobbet och är en av de vanligaste orsakerna till utmattning hos personer med ADHD och autism.\"\n        }\n      }, {\n        \"@type\": \"Question\",\n        \"name\": \"Vilken är den billigaste anpassningen för neurodiversitet?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Mötesstrukturen. Att skicka ut en tydlig agenda i förväg, ha korta stående möten och erbjuda skriftliga sammanfattningar är helt gratis men minskar kognitiv stress avsevärt.\"\n        }\n      }]\n    }\n  ]\n}"
+  ],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 681,
+  "links": [
+   "/forsakringskassan-arbetsformedlingen-stod.html",
+   "/maskering-pa-arbetsplatsen.html",
+   "/redaktionell-policy.html",
+   "/verktyg-inkluderande-moten.html",
+   "/verktyg-nedbrytare.html"
+  ]
+ },
+ {
+  "path": "fem-tips-for-chefer.html",
+  "slug": "fem-tips-for-chefer",
+  "section": "arbetsgivare",
+  "title": "5 Tips för Chefer som Leder Neurodivergenta Team - Neurovibe",
+  "description": "Praktiska och konkreta tips för chefer och ledare som vill skapa en inkluderande och produktiv arbetsmiljö för neurodivergenta medarbetare.",
+  "h1": "5 Konkreta Tips för Chefer som Leder Neurodivergenta Team",
+  "lead": "Att leda ett team där medarbetare har olika sätt att tänka och bearbeta information är en styrka. Här är fem praktiska tips för att skapa en arbetsmiljö där alla kan prestera på topp.",
+  "updated": "",
+  "jsonld": [
+   "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Article\",\n  \"headline\": \"5 Tips för Chefer: Så stöttar du NPF på jobbet\",\n  \"description\": \"Konkreta råd för chefer som vill skapa en mer neuroinkluderande och produktiv arbetsplats.\",\n  \"url\": \"https://neurovibe.se/fem-tips-for-chefer.html\",\n  \"author\": {\n    \"@type\": \"Organization\",\n    \"name\": \"Neurovibe\"\n  },\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"Neurovibe\",\n    \"logo\": {\n      \"@type\": \"ImageObject\",\n      \"url\": \"https://neurovibe.se/favicon.svg\"\n    }\n  }\n}"
+  ],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 271,
+  "links": []
+ },
+ {
+  "path": "for-arbetsgivare.html",
+  "slug": "for-arbetsgivare",
+  "section": "arbetsgivare",
+  "title": "Neuroinkludering för arbetsgivare — konkret underlag för HR och chefer | Neurovibe",
+  "description": "För HR, chefer och arbetsmiljöansvariga: färdiga anpassningspaket, lagkravsunderlag (AFS 2023:2 kap. 3), mallar och data om NPF på arbetsplatsen. Beställ ert arbetsgivarpaket kostnadsfritt.",
+  "h1": "Ni vet att ni ska anpassa. Vi ger er exakt vad ni ska göra.",
+  "lead": "AFS 2023:2 kap. 3 kräver att ni har en rutin för arbetsanpassning. Diskrimineringslagen kräver skäliga åtgärder. Men ingen lag berättar hur ett veckomöte ska struktureras för att fungera för en medarbetare med ADHD. Det är det vi levererar: färdiga anpassningar, mallar och underlag — på svenska, för svenska regelverk.",
+  "updated": "",
+  "jsonld": [
+   "{\n      \"@context\": \"https://schema.org\",\n      \"@type\": \"FAQPage\",\n      \"mainEntity\": [\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Vad kräver lagen av oss som arbetsgivare vid ADHD och autism?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Arbetsmiljölagen och AFS 2023:2 kap. 3 (Arbetsanpassning) kräver att arbetsgivaren har en rutin för arbetsanpassning och genomför de anpassningar som behövs. Diskrimineringslagen kräver dessutom skäliga tillgänglighetsåtgärder. Kravet gäller oavsett om medarbetaren har en formell diagnos eller inte — det är funktionsnedsättningen i arbetssituationen som är utgångspunkten.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Vad kostar det att anpassa arbetsmiljön för neurodivergenta medarbetare?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"De flesta anpassningar som efterfrågas kostar lite eller ingenting: skriftliga instruktioner i stället för muntliga, förutsägbara möten, färre avbrott, möjlighet att arbeta ostört. Kostsamma åtgärder som ombyggnad av lokaler är sällan det som gör störst skillnad. Den stora kostnaden ligger i att inte anpassa, i form av sjukfrånvaro och personalomsättning.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Måste medarbetaren berätta om sin diagnos för att få anpassningar?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Nej. Arbetsgivaren behöver veta vilka arbetsuppgifter och situationer som fungerar sämre och vad som skulle hjälpa — inte diagnosen. Det är också därför universell utformning fungerar bättre: när tysta zoner, flexibla tider och skriftlig kommunikation är tillgängliga för alla behöver ingen berätta något för att kunna använda dem.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Vad kostar Neurovibes arbetsgivarpaket?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Arbetsgivarpaketet med mallar, checklistor och lagkravsunderlag är kostnadsfritt. Även genomlysningen av er arbetsmiljö är kostnadsfri för närvarande, eftersom vi bygger upp referenser. Begär den så återkommer vi inom en arbetsdag.\"\n          }\n        }\n      ]\n    }"
+  ],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 873,
+  "links": [
+   "/arbetsgivarpaketet.html",
+   "/data-rapport-2026.html",
+   "/forsakringskassan-arbetsformedlingen-stod.html",
+   "/inkluderande-kultur-npf.html",
+   "/inkluderande-rekrytering-npf.html",
+   "/lagkrav-anpassningar-arbetsmiljo.html",
+   "/redaktionell-policy.html"
+  ]
+ },
+ {
+  "path": "for-medarbetare.html",
+  "slug": "for-medarbetare",
+  "section": "medarbetare",
+  "title": "Verktyg för dig med ADHD eller autism i arbetslivet | Neurovibe",
+  "description": "Gratis verktyg och mallar för dig med ADHD, autism eller annan NPF: bryt ner uppgifter, mät din belastning, och få ett färdigt anpassningsförslag att ta med till chefen.",
+  "h1": "Du behöver inte jobba hårdare. Du behöver mindre friktion.",
+  "lead": "Verktygen här är byggda för de dagar då den exekutiva funktionen inte samarbetar. Inga röda notiser, ingen streak att förlora, ingen skuld. Allt är gratis och kräver ingen inloggning.",
+  "updated": "2026-08-17",
+  "jsonld": [
+   "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"Article\",\n      \"headline\": \"För dig som är medarbetare - Verktyg för ADHD/Autism\",\n      \"description\": \"Gratis AI-verktyg och guider för dig som har NPF, misstänker att du har det, eller bara kämpar med kognitiv trötthet på jobbet.\",\n      \"author\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Neurovibe\"\n      },\n      \"datePublished\": \"2026-06-01\",\n      \"dateModified\": \"2026-08-17\"\n    },\n    {\n      \"@type\": \"FAQPage\",\n      \"mainEntity\": [{\n        \"@type\": \"Question\",\n        \"name\": \"Vilket stöd behöver du i dag?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Vi erbjuder AI-verktyg för att bryta ner uppgifter, utvärdera utbrändhetsrisk, generera anpassningsförslag och navigera stöd från myndigheter.\"\n        }\n      }, {\n        \"@type\": \"Question\",\n        \"name\": \"Hur stöttar man Executive Function (exekutiva funktioner)?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Genom att skapa rutiner, ta regelbundna pauser (ex. Pomodoro-metoden) och att minska distraktionsmoment under dagen. Våra verktyg stöttar dessa strategier.\"\n        }\n      }]\n    }\n  ]\n}"
+  ],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 577,
+  "links": [
+   "/adhd-anpassningar-jobb.html",
+   "/adhd-diagnos-guide.html",
+   "/adhd-diagnos-vuxen.html",
+   "/ai-verktyg-jobb-kalkylator.html",
+   "/ai-verktyg-neurodiversitet.html",
+   "/for-arbetsgivare.html",
+   "/forsakringskassan-arbetsformedlingen-stod.html",
+   "/maskering-pa-arbetsplatsen.html",
+   "/post-semester-stress-npf.html",
+   "/verktyg-anpassningsgenerator.html",
+   "/verktyg-burnout-kalkylator.html",
+   "/verktyg-fokus-timer.html",
+   "/verktyg-myndighetsnavigator.html",
+   "/verktyg-nedbrytare.html"
+  ]
+ },
+ {
+  "path": "fordelarna-med-neurodiversitet.html",
+  "slug": "fordelarna-med-neurodiversitet",
+  "section": "guide",
+  "title": "7 Starka Fördelar med Neurodiversitet på Arbetsplatsen - Neurovibe",
+  "description": "Upptäck hur neurodiversitet blir en strategisk fördel. Läs om 7 konkreta fördelar, från ökad innovation och produktivitet till ett starkare arbetsgivarvarumärke.",
+  "h1": "Mer än Inkludering: En Strategisk Fördel",
+  "lead": "Att bygga ett team där alla tänker likadant är att bygga ett team med dolda svagheter. Neurodiversitet – idén att neurologiska skillnader som ADHD, autism och dyslexi är naturliga variationer – är inte en HR-trend, utan en kraftfull konkurrensfördel.",
+  "updated": "",
+  "jsonld": [
+   "{\n      \"@context\": \"https://schema.org\",\n      \"@type\": \"Article\",\n      \"headline\": \"7 Starka Fördelar med Neurodiversitet på Arbetsplatsen\",\n      \"author\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Neurovibe\"\n      },\n      \"publisher\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Neurovibe\",\n        \"logo\": {\n          \"@type\": \"ImageObject\",\n          \"url\": \"https://neurovibe.se/favicon.svg\"\n        }\n      },\n      \"datePublished\": \"2026-06-07\",\n      \"dateModified\": \"2026-06-07\",\n      \"mainEntityOfPage\": {\n        \"@type\": \"WebPage\",\n        \"@id\": \"https://neurovibe.se/fordelarna-med-neurodiversitet.html\"\n      },\n      \"description\": \"En djupgående guide till de strategiska fördelarna med att anamma neurodiversitet på arbetsplatsen. Lär dig hur oliktänkande driver innovation, problemlösning och företagskultur.\",\n      \"image\": \"https://neurovibe.se/favicon.svg\"\n    }"
+  ],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 497,
+  "links": []
+ },
+ {
+  "path": "forsakringskassan-arbetsformedlingen-stod.html",
+  "slug": "forsakringskassan-arbetsformedlingen-stod",
+  "section": "stod",
+  "title": "Försäkringskassan och Arbetsförmedlingen: Stöd för ADHD & Autism på Jobbet | Neurovibe",
+  "description": "Komplett guide till ekonomiskt stöd, bidrag för arbetshjälpmedel och anpassningar via Försäkringskassan och Arbetsförmedlingen för dig med NPF (ADHD/Autism).",
+  "h1": "Den kompletta guiden till stöd från Försäkringskassan & Arbetsförmedlingen (NPF)",
+  "lead": "Att navigera i systemet för att få rätt stöd på arbetsplatsen kan kännas överväldigande. Många anställda med ADHD eller autism – och deras arbetsgivare – missar att det finns ekonomiskt och praktiskt stöd att få för anpassningar och hjälpmedel. Så här fungerar det i praktiken.",
+  "updated": "",
+  "jsonld": [
+   "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"FAQPage\",\n  \"mainEntity\": [{\n    \"@type\": \"Question\",\n    \"name\": \"Vilka bidrag för arbetshjälpmedel kan du få från Försäkringskassan?\",\n    \"acceptedAnswer\": {\n      \"@type\": \"Answer\",\n      \"text\": \"Du kan ansöka om upp till 100 000 kr i bidrag för arbetshjälpmedel, till exempel specialanpassade programvaror eller brusreducerande hörlurar, som du behöver för att klara ditt arbete på grund av en funktionsnedsättning.\"\n    }\n  }, {\n    \"@type\": \"Question\",\n    \"name\": \"Vilket stöd kan du få via Arbetsförmedlingen?\",\n    \"acceptedAnswer\": {\n      \"@type\": \"Answer\",\n      \"text\": \"Om du har en funktionsnedsättning kan Arbetsförmedlingen bevilja lönebidrag där arbetsgivaren kan få upp till 20 000 kr per månad för att anställa dig, eller stödperson på arbetsplatsen (SIUS) under en övergångsperiod.\"\n    }\n  }]\n}",
+   "{\n      \"@context\": \"https://schema.org\",\n      \"@type\": \"Article\",\n      \"headline\": \"Den kompletta guiden till stöd från Försäkringskassan & Arbetsförmedlingen (NPF)\",\n      \"description\": \"Komplett guide till ekonomiskt stöd, bidrag för arbetshjälpmedel och anpassningar via Försäkringskassan och Arbetsförmedlingen för dig med NPF.\",\n      \"image\": \"https://neurovibe.se/static/favicon.svg\",\n      \"author\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Neurovibe AI\"\n      },\n      \"publisher\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Neurovibe\",\n        \"logo\": {\n          \"@type\": \"ImageObject\",\n          \"url\": \"https://neurovibe.se/static/favicon.svg\"\n        }\n      },\n      \"datePublished\": \"2026-06-25\",\n      \"dateModified\": \"2026-06-25\"\n    }"
+  ],
+  "tool": "stodkollen",
+  "noindex": false,
+  "words": 623,
+  "links": [
+   "/adhd-anpassningar-jobb.html",
+   "/verktyg-myndighetsnavigator.html",
+   "/verktyg-nedbrytare.html"
+  ]
+ },
+ {
+  "path": "inkluderande-kultur-npf.html",
+  "slug": "inkluderande-kultur-npf",
+  "section": "arbetsgivare",
+  "title": "Skapa en Inkluderande Kultur för NPF på Arbetsplatsen | Neurovibe",
+  "description": "Guide för chefer och HR: Så bygger ni en arbetskultur där medarbetare med ADHD, autism och andra kognitiva profiler kan prestera på topp. Konkreta strategier och policies.",
+  "h1": "Så Bygger Ni en Arbetskultur som Inkluderar NPF (Och Maximerar Prestation)",
+  "lead": "Att erbjuda skärmavskärmning och brusreducerande hörlurar är bra, men det gör inte en arbetsplats neuroinkluderande. Verklig inkludering av medarbetare med ADHD, autism och andra neuropsykiatriska funktionsnedsättningar (NPF) sitter i kulturen. Det handlar om hur ni kommunicerar, hur ni mäter prestation och hur ni designar ert dagliga arbete.",
+  "updated": "",
+  "jsonld": [],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 479,
+  "links": [
+   "/data-rapport-2026.html",
+   "/inkluderande-rekrytering-npf.html",
+   "/lagkrav-anpassningar-arbetsmiljo.html",
+   "/verktyg-myndighetsnavigator.html"
+  ]
+ },
+ {
+  "path": "inkluderande-rekrytering-npf.html",
+  "slug": "inkluderande-rekrytering-npf",
+  "section": "arbetsgivare",
+  "title": "Inkluderande rekrytering för NPF | Neurovibe",
+  "description": "Guide: Så anpassar du er rekryteringsprocess för att vara inkluderande och tillgänglig för kandidater med NPF (Neuropsykiatriska funktionsnedsättningar).",
+  "h1": "Inkluderande Rekrytering: Så hittar du talang med NPF",
+  "lead": "Att missa talanger på grund av rigida och stressande rekryteringsprocesser är ett vanligt misstag. Här är guiden till en rekrytering som är tillgänglig för personer med neuropsykiatriska funktionsnedsättningar (NPF).",
+  "updated": "",
+  "jsonld": [],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 394,
+  "links": [
+   "/adhd-anpassningar-jobb.html",
+   "/intervju-guide.html"
+  ]
+ },
+ {
+  "path": "integritetspolicy.html",
+  "slug": "integritetspolicy",
+  "section": "om",
+  "title": "Integritetspolicy | Neurovibe",
+  "description": "Så hanterar Neurovibe personuppgifter: vad som sparas när du prenumererar, hur verktygen sparar dina svar i webbläsaren och hur du får dina uppgifter raderade.",
+  "h1": "Integritetspolicy",
+  "lead": "",
+  "updated": "",
+  "jsonld": [],
+  "tool": null,
+  "noindex": false,
+  "words": 254,
+  "links": []
+ },
+ {
+  "path": "intervju-guide.html",
+  "slug": "intervju-guide",
+  "section": "arbetsgivare",
+  "title": "Intervjuguide för neurodivergenta kandidater | Neurovibe",
+  "description": "Verktyg och checklista för arbetsgivare för att genomföra neuroinkluderande anställningsintervjuer. Minska friktion och lyft fram rätt kompetens.",
+  "h1": "Neuroinkluderande Intervjuguide",
+  "lead": "Traditionella anställningsintervjuer filtrerar ofta bort högpresterande neurodivergenta kandidater på grund av dolda sociala koder och kognitiv överbelastning. Använd detta verktyg för att utforma en intervju som mäter kompetens – inte förmågan att kallprata.",
+  "updated": "",
+  "jsonld": [
+   "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Article\",\n  \"headline\": \"Neuroinkluderande Intervjuguide\",\n  \"description\": \"Bygg en neuroinkluderande intervjumall som mäter kompetens, inte förmågan att kallprata.\",\n  \"url\": \"https://neurovibe.se/intervju-guide.html\",\n  \"author\": {\n    \"@type\": \"Organization\",\n    \"name\": \"Neurovibe\"\n  },\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"Neurovibe\",\n    \"logo\": {\n      \"@type\": \"ImageObject\",\n      \"url\": \"https://neurovibe.se/favicon.svg\"\n    }\n  }\n}"
+  ],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 24,
+  "links": []
+ },
+ {
+  "path": "kognitiv-ergonomi-npf.html",
+  "slug": "kognitiv-ergonomi-npf",
+  "section": "guide",
+  "title": "Kognitiv Ergonomi för NPF: Skapa en Hjärnvänlig Arbetsplats - Neurovibe",
+  "description": "Vad är kognitiv ergonomi och hur kan det hjälpa medarbetare med ADHD och autism? Lär dig hur små anpassningar av kontor och möten skapar en bättre arbetsmiljö.",
+  "h1": "Kognitiv Ergonomi för NPF: Så Skapar du en Hjärnvänlig Arbetsplats",
+  "lead": "När vi tänker på ergonomi tänker vi ofta på höj- och sänkbara skrivbord eller bra kontorsstolar. Men för många medarbetare, särskilt de med neuropsykiatriska funktionsnedsättningar (NPF) som ADHD och autism, är den osynliga arbetsmiljön minst lika viktig. Här kommer begreppet kognitiv ergonomi in i bilden.",
+  "updated": "",
+  "jsonld": [
+   "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Article\",\n  \"headline\": \"Kognitiv Ergonomi för NPF: Skapa en Hjärnvänlig Arbetsplats\",\n  \"description\": \"Lär dig hur du anpassar arbetsmiljön för att minska kognitiv överbelastning, särskilt för medarbetare med ADHD och autism.\",\n  \"url\": \"https://neurovibe.se/kognitiv-ergonomi-npf.html\",\n  \"author\": {\n    \"@type\": \"Organization\",\n    \"name\": \"Neurovibe\"\n  }\n}"
+  ],
+  "tool": "fokustimern",
+  "noindex": false,
+  "words": 473,
+  "links": [
+   "/adhd-diagnos-guide.html",
+   "/neurodiversitet-arbetsplatsen.html"
+  ]
+ },
+ {
+  "path": "lagkrav-anpassningar-arbetsmiljo.html",
+  "slug": "lagkrav-anpassningar-arbetsmiljo",
+  "section": "arbetsgivare",
+  "title": "Lagkrav på anpassningar på arbetsplatsen (NPF) | Neurovibe",
+  "description": "En komplett guide till Arbetsmiljölagen och Diskrimineringslagen gällande anpassningar för neurodivergenta (ADHD, Autism) på arbetsplatsen.",
+  "h1": "Vilka krav ställer lagen på arbetsplatsanpassningar?",
+  "lead": "Arbetsgivarens ansvar för anpassningar är inte bara en fråga om goodwill – det är reglerat i lag. Här går vi igenom vad Arbetsmiljölagen och Diskrimineringslagen faktiskt kräver när det gäller neuropsykiatriska funktionsnedsättningar (NPF) som ADHD och Autism.",
+  "updated": "2026-08-17",
+  "jsonld": [
+   "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"Article\",\n      \"headline\": \"Lagkrav på arbetsplatsanpassningar (ADHD/Autism)\",\n      \"description\": \"En guide till Diskrimineringslagen och Arbetsmiljölagens krav på anpassningar för anställda med NPF.\",\n      \"author\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Neurovibe\"\n      },\n      \"datePublished\": \"2026-06-01\",\n      \"dateModified\": \"2026-08-17\"\n    },\n    {\n      \"@type\": \"FAQPage\",\n      \"mainEntity\": [{\n        \"@type\": \"Question\",\n        \"name\": \"Vad säger Diskrimineringslagen om anpassningar?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Arbetsgivare är skyldiga att vidta skäliga tillgänglighetsåtgärder för personer med funktionsnedsättning. Bristande tillgänglighet kan utgöra diskriminering.\"\n        }\n      }, {\n        \"@type\": \"Question\",\n        \"name\": \"Vilka skyldigheter har arbetsgivaren enligt Arbetsmiljölagen?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Arbetsgivaren måste anpassa arbetsförhållandena till individens förutsättningar (3 kap. 3 § AML), vilket förtydligas i föreskriften AFS 2023:2 kap. 3 om arbetsanpassning.\"\n        }\n      }]\n    }\n  ]\n}"
+  ],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 517,
+  "links": [
+   "/verktyg-anpassningsgenerator.html"
+  ]
+ },
+ {
+  "path": "maskering-pa-arbetsplatsen.html",
+  "slug": "maskering-pa-arbetsplatsen",
+  "section": "guide",
+  "title": "Maskering på Arbetsplatsen: Den Osynliga Ansträngningen - Neurovibe",
+  "description": "En guide till maskering på arbetsplatsen för neurodivergenta. Förstå vad det kostar och hur du kan börja unmaska på ett hållbart sätt.",
+  "h1": "Maskering på Arbetsplatsen: Den Osynliga Ansträngningen",
+  "lead": "Få vår kompletta checklista för att hantera kognitiv överbelastning och anpassa din arbetsmiljö. Skickas direkt till din inkorg.",
+  "updated": "2026-06-24",
+  "jsonld": [
+   "{\n      \"@context\": \"https://schema.org\",\n      \"@graph\": [\n        {\n          \"@type\": \"Article\",\n          \"headline\": \"Maskering på Arbetsplatsen: Den Osynliga Ansträngningen\",\n          \"datePublished\": \"2026-06-24\",\n          \"dateModified\": \"2026-06-24\",\n          \"author\": {\n            \"@type\": \"Organization\",\n            \"name\": \"Neurovibe\"\n          },\n          \"publisher\": {\n            \"@type\": \"Organization\",\n            \"name\": \"Neurovibe\",\n            \"logo\": {\n              \"@type\": \"ImageObject\",\n              \"url\": \"https://neurovibe.se/static/favicon.svg\"\n            }\n          },\n          \"description\": \"En guide till maskering på arbetsplatsen för neurodivergenta. Förstå vad det kostar och hur du kan börja unmaska på ett hållbart sätt.\"\n        }\n      ]\n    }"
+  ],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 934,
+  "links": [
+   "/integritetspolicy.html"
+  ]
+ },
+ {
+  "path": "neurodiversitet-arbetsplatsen.html",
+  "slug": "neurodiversitet-arbetsplatsen",
+  "section": "guide",
+  "title": "Neurodiversitet på Arbetsplatsen: En Guide till Inkludering och Framgång - Neurovibe",
+  "description": "Lär dig hur du skapar en neuroinkluderande arbetsplats där medarbetare med ADHD, autism och andra NPF kan trivas och bidra med sina unika styrkor.",
+  "h1": "Neurodiversitet på Arbetsplatsen: En Guide till Inkludering och Framgång",
+  "lead": "",
+  "updated": "2026-06-08",
+  "jsonld": [
+   "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@context\": \"https://schema.org\",\n      \"@type\": \"Article\",\n      \"headline\": \"Neurodiversitet på Arbetsplatsen: En Guide till Inkludering och Framgång\",\n      \"author\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Neurovibe\"\n      },\n      \"datePublished\": \"2026-06-08\",\n      \"dateModified\": \"2026-06-17\",\n      \"publisher\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Neurovibe\",\n        \"logo\": {\n          \"@type\": \"ImageObject\",\n          \"url\": \"https://neurovibe.se/static/favicon.svg\"\n        }\n      },\n      \"description\": \"Lär dig hur du skapar en neuroinkluderande arbetsplats där medarbetare med ADHD, autism och andra NPF kan trivas och bidra med sina unika styrkor.\",\n      \"mainEntityOfPage\": {\n        \"@type\": \"WebPage\",\n        \"@id\": \"https://neurovibe.se/neurodiversitet-arbetsplatsen.html\"\n      }\n    },\n    {\n      \"@type\": \"FAQPage\",\n      \"mainEntity\": [\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Vad är neurodiversitet?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Detta beror på individens unika förutsättningar. Generellt handlar det om att skapa en miljö där olika neurologiska fungeranden accepteras och ges utrymme.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Hur får man anpassningar på jobbet?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Enligt diskrimineringslagen i Sverige har arbetsgivaren en skyldighet att vidta skäliga stöd- och anpassningsåtgärder när ett behov är känt.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Måste man berätta om sin diagnos för chefen?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Nej, det finns ingen skyldighet att avslöja din exakta diagnos. Du kan istället kommunicera dina specifika behov (t.ex. \\\"jag behöver sitta avskilt för att koncentrera mig\\\").\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+  ],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 741,
+  "links": [
+   "/resurser.html"
+  ]
+ },
+ {
+  "path": "npf-arbetslivet.html",
+  "slug": "npf-arbetslivet",
+  "section": "guide",
+  "title": "NPF i Arbetslivet: En Komplett Guide till Stöd och Framgång - Neurovibe",
+  "description": "Allt du behöver veta om NPF i arbetslivet. Guiden för anställda och arbetsgivare om anpassningar, stöd och hur man utnyttjar styrkorna med neurodiversitet.",
+  "h1": "NPF i Arbetslivet: Din Kompletta Guide till Stöd, Anpassningar och Framgång",
+  "lead": "",
+  "updated": "2026-06-05",
+  "jsonld": [
+   "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@context\": \"https://schema.org\",\n      \"@type\": \"Article\",\n      \"headline\": \"NPF i Arbetslivet: Guide för Neurodivergens på Jobbet\",\n      \"author\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Neurovibe\"\n      },\n      \"datePublished\": \"2026-06-05\",\n      \"dateModified\": \"2026-06-17\",\n      \"publisher\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Neurovibe\",\n        \"logo\": {\n          \"@type\": \"ImageObject\",\n          \"url\": \"https://neurovibe.se/static/favicon.svg\"\n        }\n      },\n      \"description\": \"Omfattande guide om neuropsykiatriska funktionsnedsättningar (NPF) i arbetslivet. Rättigheter, anpassningar och strategier för framgång.\",\n      \"mainEntityOfPage\": {\n        \"@type\": \"WebPage\",\n        \"@id\": \"https://neurovibe.se/npf-arbetslivet.html\"\n      }\n    },\n    {\n      \"@type\": \"FAQPage\",\n      \"mainEntity\": [\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Vad är npf?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Detta beror på individens unika förutsättningar. Generellt handlar det om att skapa en miljö där olika neurologiska fungeranden accepteras och ges utrymme.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Hur får man anpassningar på jobbet?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Enligt diskrimineringslagen i Sverige har arbetsgivaren en skyldighet att vidta skäliga stöd- och anpassningsåtgärder när ett behov är känt.\"\n          }\n        },\n        {\n          \"@type\": \"Question\",\n          \"name\": \"Måste man berätta om sin diagnos för chefen?\",\n          \"acceptedAnswer\": {\n            \"@type\": \"Answer\",\n            \"text\": \"Nej, det finns ingen skyldighet att avslöja din exakta diagnos. Du kan istället kommunicera dina specifika behov (t.ex. \\\"jag behöver sitta avskilt för att koncentrera mig\\\").\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+  ],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 740,
+  "links": [
+   "/adhd-anpassningar-jobb.html",
+   "/maskering-pa-arbetsplatsen.html",
+   "/resurser.html"
+  ]
+ },
+ {
+  "path": "om-sajten.html",
+  "slug": "om-sajten",
+  "section": "om",
+  "title": "Om Sajten | Neurovibe",
+  "description": "Läs mer om Neurovibe och vårt uppdrag att skapa neuroinkluderande arbetsplatser.",
+  "h1": "Om Neurovibe",
+  "lead": "Vi bygger broar mellan neurodivergent talang och framtidens arbetsgivare.",
+  "updated": "",
+  "jsonld": [],
+  "tool": null,
+  "noindex": false,
+  "words": 247,
+  "links": []
+ },
+ {
+  "path": "partner.html",
+  "slug": "partner",
+  "section": "om",
+  "title": "Nå HR-chefer och neurodivergenta medarbetare — annonsering & partnerskap | Neurovibe",
+  "description": "Neurovibe når HR-chefer, arbetsmiljöansvariga och medarbetare med NPF som aktivt söker lösningar. Sponsrade placeringar, leadgenerering och innehållssamarbeten. Begär mediakit.",
+  "h1": "Er målgrupp är redan här. Mitt i beslutet.",
+  "lead": "Neurovibes läsare kommer hit med en fråga som är dyr att svara fel på: en HR-chef som ska få en rutin för arbetsanpassning på plats, eller en medarbetare som försöker undvika sin andra utbrändhet. Det är en publik som inte går att retargeta fram — de söker aktivt, en gång, när behovet är akut.",
+  "updated": "",
+  "jsonld": [],
+  "tool": null,
+  "noindex": false,
+  "words": 590,
+  "links": [
+   "/data-rapport-2026.html"
+  ]
+ },
+ {
+  "path": "post-semester-stress-npf.html",
+  "slug": "post-semester-stress-npf",
+  "section": "guide",
+  "title": "Återgång till arbetet - Hantera post-semester stress vid NPF | Neurovibe",
+  "description": "Guide för neurodivergenta (ADHD/Autism) och chefer: Så hanterar ni övergången tillbaka till jobbet efter semestern och undviker post-holiday burnout.",
+  "h1": "Återgång till arbetet: Så hanterar du post-semester stress vid NPF",
+  "lead": "",
+  "updated": "",
+  "jsonld": [
+   "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"Article\",\n      \"headline\": \"Post-semester stress & NPF (ADHD/Autism)\",\n      \"description\": \"När semestern är slut försvinner rutinerna. Läs om varför övergången är extra svår vid NPF och vad du kan göra åt det.\",\n      \"author\": {\n        \"@type\": \"Organization\",\n        \"name\": \"Neurovibe\"\n      },\n      \"datePublished\": \"2026-06-01\",\n      \"dateModified\": \"2026-08-17\"\n    },\n    {\n      \"@type\": \"FAQPage\",\n      \"mainEntity\": [{\n        \"@type\": \"Question\",\n        \"name\": \"Varför är det svårare att börja jobba efter semestern med NPF?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Efter semestern förlorar man ofta sina rutiner och uppbyggda strategier, vilket kan leda till en 'executive dysfunction hangover'. För en person med ADHD eller autism kan det ta 3 veckor att återfå full arbetskapacitet.\"\n        }\n      }, {\n        \"@type\": \"Question\",\n        \"name\": \"Vilka rutiner och struktur hjälper vid återgång till arbete?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Att starta med 50% kapacitet första veckan, boka in block för administration (istället för möten) och använda visuella scheman kan reducera stressen med upp till 40%.\"\n        }\n      }]\n    }\n  ]\n}"
+  ],
+  "tool": "atergangsplanen",
+  "noindex": false,
+  "words": 469,
+  "links": [
+   "/data-rapport-2026.html",
+   "/verktyg-nedbrytare.html"
+  ]
+ },
+ {
+  "path": "redaktionell-policy.html",
+  "slug": "redaktionell-policy",
+  "section": "om",
+  "title": "Redaktionell policy, källor och AI-transparens | Neurovibe",
+  "description": "Så tas Neurovibes innehåll fram: källpolicy, hur AI används, vad vi aldrig uttalar oss om, hur vi hanterar fel och hur sponsrat innehåll märks ut.",
+  "h1": "Redaktionell policy och källor",
+  "lead": "Neurovibe skriver om arbetsmiljö, rättigheter och kognitiv belastning — områden där fel information kan kosta någon deras jobb eller hälsa. Den här sidan beskriver exakt hur innehållet tas fram, vad vi inte uttalar oss om, och vad du ska göra om du hittar ett fel.",
+  "updated": "",
+  "jsonld": [],
+  "tool": null,
+  "noindex": false,
+  "words": 767,
+  "links": [
+   "/data-rapport-2026.html",
+   "/integritetspolicy.html",
+   "/om-sajten.html",
+   "/partner.html"
+  ]
+ },
+ {
+  "path": "arbetsgivarpaketet/anpassningsbibliotek.html",
+  "slug": "arbetsgivarpaketet/anpassningsbibliotek",
+  "section": "mall",
+  "title": "Anpassningsbiblioteket: Konkreta åtgärder för NPF | Neurovibe Arbetsgivarpaketet",
+  "description": "Ett referensbibliotek med konkreta, genomförbara arbetsanpassningar för ADHD, Autism och andra neuropsykiatriska funktionsnedsättningar.",
+  "h1": "Anpassningsbiblioteket",
+  "lead": "Konkreta, genomförbara åtgärder för att skapa en hållbar arbetsmiljö för medarbetare med NPF (och minska kognitiv belastning för alla ).",
+  "updated": "",
+  "jsonld": [],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 398,
+  "links": [
+   "/verktyg-anpassningsgenerator.html",
+   "/verktyg-uppgiftsnedbrytaren.html"
+  ]
+ },
+ {
+  "path": "arbetsgivarpaketet/lagkrav-oversikt.html",
+  "slug": "arbetsgivarpaketet/lagkrav-oversikt",
+  "section": "mall",
+  "title": "Lagkravsöversikt (Diskrimineringslagen & AFS) | Neurovibe Arbetsgivarpaketet",
+  "description": "Kortfattad översikt över arbetsgivarens juridiska ansvar kring NPF och arbetsanpassning i Sverige.",
+  "h1": "Lagkravsöversikt för HR och Chefer",
+  "lead": "De två huvudsakliga lagstiftningarna du behöver ha koll på gällande NPF i arbetslivet: Diskrimineringslagen och Arbetsmiljölagen (specifikt AFS 2023:2 kap. 3).",
+  "updated": "",
+  "jsonld": [],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 390,
+  "links": []
+ },
+ {
+  "path": "arbetsgivarpaketet/rutinmall-afs-2020-5.html",
+  "slug": "arbetsgivarpaketet/rutinmall-afs-2020-5",
+  "section": "mall",
+  "title": "Rutinmall: Arbetsanpassning & Rehab (AFS 2023:2 kap. 3) | Neurovibe Arbetsgivarpaketet",
+  "description": "Klar-att-använda rutinmall för arbetsanpassning och rehabilitering enligt AFS 2023:2 kap. 3, anpassad för NPF.",
+  "h1": "Rutin för arbetsanpassning och rehabilitering",
+  "lead": "Detta dokument uppfyller kraven i Arbetsmiljöverkets föreskrifter om arbetsanpassning (AFS 2023:2 kap. 3) och är särskilt utformat för att inkludera kognitiva och neuropsykiatriska funktionsnedsättningar (NPF).",
+  "updated": "",
+  "jsonld": [],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 547,
+  "links": []
+ },
+ {
+  "path": "arbetsgivarpaketet/samtalsmall-kartlaggning.html",
+  "slug": "arbetsgivarpaketet/samtalsmall-kartlaggning",
+  "section": "mall",
+  "title": "Samtalsmall: Behovskartläggning | Neurovibe Arbetsgivarpaketet",
+  "description": "Mall för chefer att hålla en strukturerad och stöttande behovskartläggning för arbetsanpassning.",
+  "h1": "Samtalsmall: Behovskartläggning",
+  "lead": "För chefer inför och under samtal om arbetsanpassning. Fokusera på funktion och arbetsmiljö , inte på diagnos.",
+  "updated": "",
+  "jsonld": [],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 344,
+  "links": []
+ },
+ {
+  "path": "arbetsgivarpaketet/stod-och-bidrag.html",
+  "slug": "arbetsgivarpaketet/stod-och-bidrag",
+  "section": "mall",
+  "title": "Stöd och Bidrag (FK/AF) | Neurovibe Arbetsgivarpaketet",
+  "description": "Översikt över ekonomiskt stöd från Försäkringskassan och Arbetsförmedlingen för arbetsanpassning.",
+  "h1": "Stöd & Bidrag vid NPF",
+  "lead": "Arbetsgivarens ansvar för anpassningar är långtgående, men staten (Försäkringskassan och Arbetsförmedlingen) erbjuder ekonomiskt och expertstöd för att underlätta.",
+  "updated": "",
+  "jsonld": [],
+  "tool": "anpassningsplanen",
+  "noindex": false,
+  "words": 286,
+  "links": [
+   "/verktyg-myndighetsnavigator.html"
+  ]
+ }
+]

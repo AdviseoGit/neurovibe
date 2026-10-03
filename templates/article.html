@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="wrap">
+  <header class="page-head">
+    <p class="crumbs"><a href="/">Neurovibe</a> / <a href="{{ section.href }}">{{ section.label }}</a></p>
+    <h1>{{ page.h1 }}</h1>
+    {% if page.lead %}<p class="lead">{{ page.lead }}</p>{% endif %}
+    <div class="meta-row">
+      {% if page.updated %}<span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Uppdaterad {{ page.updated }}</span>{% endif %}
+      {% if page.read_min %}<span>Lästid cirka {{ page.read_min }} min</span>{% endif %}
+      <span><a href="/redaktionell-policy.html">Så tar vi fram innehållet</a></span>
+    </div>
+  </header>
+
+  <div class="with-aside">
+    <article class="main-col">
+      <div class="prose">
+{{ body | safe }}
+      </div>
+
+      {% if tool %}
+      <div class="next-step">
+        <div>
+          <p class="k">Gör det konkret</p>
+          <p class="v"><span class="mark" style="color:var(--ink)">{{ tool.name }}</span> – {{ tool.summary }}</p>
+        </div>
+        <a class="btn" href="/{{ tool.path }}">Öppna {{ tool.name }}</a>
+      </div>
+      {% endif %}
+
+      {% include "partials/lead_box.html" %}
+    </article>
+
+    <aside class="side-col" aria-label="Verktyg och relaterat">
+      <div class="side-card">
+        <h2>Verktyg som hör hit</h2>
+        <ul>
+          {% for t in side_tools %}<li><a href="/{{ t.path }}">{{ t.name }}</a><br><span style="color:var(--muted);font-size:14px">{{ t.time }} · {{ t.gets }}</span></li>
+          {% endfor %}
+        </ul>
+        {% if related %}
+        <h2 style="margin-top:22px">Läs också</h2>
+        <ul>
+          {% for r in related %}<li><a href="/{{ r.path }}">{{ r.short }}</a></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+    </aside>
+  </div>
+</div>
+{% endblock %}

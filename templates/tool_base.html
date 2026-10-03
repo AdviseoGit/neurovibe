@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{# Shared frame for step-by-step tools. A tool template fills: tool_intro, tool_steps (rail labels),
+   tool_body (the steps), tool_aside, tool_script. The JS in /static/assets/stepper.js drives it. #}
+{% block main %}
+<div class="wrap-wide">
+  <header class="page-head" style="padding-bottom:8px">
+    <p class="crumbs"><a href="/">Neurovibe</a> / <a href="/verktyg.html">Verktyg</a></p>
+    <h1>{% block tool_title %}{{ tool.name }}{% endblock %}</h1>
+    <p class="lead">{% block tool_lead %}{{ tool.summary }}{% endblock %}</p>
+    <div class="meta-row">
+      <span>{{ tool.time }}</span><span>Du får: {{ tool.gets }}</span><span>Sparas bara i din webbläsare</span>
+    </div>
+  </header>
+  {% block tool_body %}{% endblock %}
+</div>
+{% block tool_after %}{% endblock %}
+{% endblock %}

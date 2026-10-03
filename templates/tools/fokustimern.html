@@ -1,0 +1,112 @@
+{% extends "tool_base.html" %}
+{% block tool_title %}Fokustimern{% endblock %}
+{% block tool_lead %}En lugn pomodoro-timer på svenska. Välj hur långa passen ska vara, skriv vad du ska göra, och se tiden som en yta som krymper i stället för siffror som tickar.{% endblock %}
+{% block tool_body %}
+<div class="with-aside" style="padding-top:24px">
+  <div class="main-col">
+    <div class="panel" id="timer-panel">
+      <fieldset class="options option-grid" style="margin:0">
+        <legend style="font-weight:500;margin-bottom:10px">Passlängd</legend>
+        <label class="option"><input type="radio" name="preset" value="15-5"><span><span class="t">15 min fokus</span><span class="d">5 min paus – för trötta dagar</span></span></label>
+        <label class="option"><input type="radio" name="preset" value="25-5" checked><span><span class="t">25 min fokus</span><span class="d">5 min paus – klassisk pomodoro</span></span></label>
+        <label class="option"><input type="radio" name="preset" value="45-10"><span><span class="t">45 min fokus</span><span class="d">10 min paus</span></span></label>
+        <label class="option"><input type="radio" name="preset" value="90-15"><span><span class="t">90 min fokus</span><span class="d">15 min paus – när du är i flow</span></span></label>
+      </fieldset>
+      <div class="field" style="margin-top:22px">
+        <label for="intention">Det här ska jag göra under passet</label>
+        <input type="text" id="intention" placeholder="Till exempel: skriva första stycket i rapporten" autocomplete="off">
+        <span class="hint">Att skriva ner en enda sak gör det lättare att komma igång – och att komma tillbaka efter ett avbrott.</span>
+      </div>
+
+      <div style="margin-top:32px">
+        <p id="phase" style="margin:0;font-size:15px;font-weight:500;color:var(--muted)">Fokus</p>
+        <p id="clock" aria-live="off" style="margin:4px 0 14px;font-size:clamp(56px,9vw,88px);font-weight:300;letter-spacing:-0.03em;line-height:1">25:00</p>
+        <div aria-hidden="true" style="height:22px;border-radius:11px;background:var(--sage);overflow:hidden">
+          <div id="fill" style="height:100%;width:100%;background:var(--action);border-radius:11px"></div>
+        </div>
+        <p id="intention-show" class="explain" hidden></p>
+        <p id="status" role="status" class="visually-hidden"></p>
+      </div>
+      <div class="tool-nav">
+        <button type="button" class="btn btn-primary" id="start">Starta</button>
+        <button type="button" class="btn btn-secondary" id="pause" disabled>Pausa</button>
+        <button type="button" class="btn-link" id="reset">Nollställ</button>
+        <label class="check" style="margin-left:auto"><input type="checkbox" id="sound"> Mjuk signal när passet är slut</label>
+      </div>
+      <p id="done-today" style="margin:18px 0 0;font-size:15px;color:var(--muted)"></p>
+    </div>
+  </div>
+  <aside class="side-col">
+    <div class="side-card">
+      <h2>Body doubling</h2>
+      <p>Många med ADHD kommer lättare igång när någon annan arbetar samtidigt – på plats eller i ett videosamtal utan krav på att prata. Starta timern samtidigt som en kollega eller vän, och berätta vad ni ska göra innan passet börjar.</p>
+    </div>
+  </aside>
+</div>
+{% endblock %}
+{% block tool_after %}
+<div class="wrap"><div class="with-aside" style="padding-top:0">
+  <div class="main-col prose">
+    <h2>Vad är pomodoro?</h2>
+    <p>Pomodoro är en arbetsmetod där du arbetar i korta, avgränsade pass med en paus efter varje. Det klassiska är 25 minuter fokus och 5 minuter paus, och en längre paus efter fyra pass. Poängen är inte exakt tid, utan att uppgiften får en tydlig början och ett tydligt slut.</p>
+    <h3>Varför passar det vid ADHD?</h3>
+    <p>Ett pass med ett synligt slut gör det lättare att börja, eftersom du bara behöver orka till nästa paus. Pausen hindrar också att hyperfokus äter upp hela dagen. Välj kortare pass de dagar när energin är låg – det är bättre med två korta pass än inget.</p>
+    <h3>Body doubling – att arbeta bredvid någon</h3>
+    <p>Body doubling betyder att du arbetar i närheten av någon annan, som inte behöver hjälpa till eller ens göra samma sak. Närvaron fungerar som en yttre struktur. Det går lika bra över video med kameran på och ljudet av.</p>
+    <p>Mer om att skapa en arbetsdag som fungerar: <a href="/kognitiv-ergonomi-npf.html">Kognitiv ergonomi</a> · <a href="/arbetsplats-schema-npf.html">Schema vid NPF</a> · <a href="/verktyg-schema-generator.html">Veckoschemat</a></p>
+    {% include "partials/lead_box.html" %}
+  </div>
+</div></div>
+{% endblock %}
+{% block scripts %}
+<script>
+(function () {
+  var focus = 25 * 60, brk = 5 * 60, left = focus, total = focus, phase = 'Fokus', timer = null, endAt = 0;
+  var $ = function (id) { return document.getElementById(id); };
+  var KEY = 'nv_fokus_' + new Date().toISOString().slice(0, 10);
+  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+  function fmt(s) { var m = Math.floor(s / 60), r = s % 60; return (m < 10 ? '0' : '') + m + ':' + (r < 10 ? '0' : '') + r; }
+  function paint() {
+    $('clock').textContent = fmt(left); $('phase').textContent = phase;
+    $('fill').style.width = (100 * left / total) + '%';
+    $('fill').style.background = phase === 'Fokus' ? 'var(--action)' : 'var(--mark)';
+    document.title = (timer ? fmt(left) + ' · ' : '') + 'Fokustimern | Neurovibe';
+    var n = +(store(KEY) || 0); $('done-today').textContent = n ? 'Fokuspass i dag: ' + n : '';
+  }
+  function chime() {
+    if (!$('sound').checked) return;
+    try { var c = new (window.AudioContext || window.webkitAudioContext)(), o = c.createOscillator(), g = c.createGain();
+      o.type = 'sine'; o.frequency.value = 528; g.gain.setValueAtTime(0.0001, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.15, c.currentTime + 0.3); g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 2);
+      o.connect(g); g.connect(c.destination); o.start(); o.stop(c.currentTime + 2.1); } catch (e) {}
+  }
+  function tick() {
+    left = Math.max(0, Math.round((endAt - Date.now()) / 1000));
+    if (left === 0) {
+      chime();
+      if (phase === 'Fokus') { store(KEY, String(+(store(KEY) || 0) + 1)); phase = 'Paus'; total = left = brk; $('status').textContent = 'Fokuspasset är slut. Dags för paus.'; }
+      else { phase = 'Fokus'; total = left = focus; $('status').textContent = 'Pausen är slut.'; }
+      endAt = Date.now() + left * 1000;
+    }
+    paint();
+  }
+  function setPreset() {
+    var v = (document.querySelector('input[name=preset]:checked') || {}).value || '25-5', p = v.split('-');
+    focus = +p[0] * 60; brk = +p[1] * 60; if (!timer) { phase = 'Fokus'; total = left = focus; paint(); }
+  }
+  document.querySelectorAll('input[name=preset]').forEach(function (r) { r.addEventListener('change', setPreset); });
+  $('start').addEventListener('click', function () {
+    if (timer) return;
+    var it = $('intention').value.trim();
+    $('intention-show').hidden = !it; $('intention-show').textContent = it ? 'Nu: ' + it : '';
+    endAt = Date.now() + left * 1000; timer = setInterval(tick, 1000);
+    $('start').disabled = true; $('pause').disabled = false; $('status').textContent = phase + ' startad.';
+    if (window.nv) { window.nv.track('focus_timer_start', { minutes: Math.round(focus / 60) }); window.nv.usage('fokustimern', { minutes: Math.round(focus / 60) }); }
+    paint();
+  });
+  $('pause').addEventListener('click', function () { clearInterval(timer); timer = null; $('start').disabled = false; $('pause').disabled = true; $('start').textContent = 'Fortsätt'; paint(); });
+  $('reset').addEventListener('click', function () { clearInterval(timer); timer = null; phase = 'Fokus'; total = left = focus; $('start').disabled = false; $('pause').disabled = true; $('start').textContent = 'Starta'; paint(); });
+  setPreset(); paint();
+})();
+</script>
+{% endblock %}

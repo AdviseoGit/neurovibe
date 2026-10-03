@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="wrap">
+  <header class="page-head">
+    <p class="crumbs"><a href="/">Neurovibe</a> / Mallar</p>
+    <h1>Mallar för arbetsanpassning vid NPF</h1>
+    <p class="lead">Fem dokument för chef, HR och arbetsmiljöansvariga. Öppna, skriv ut eller spara som PDF – utan registrering. Uppdaterade mot AFS 2023:2, som ersatte AFS 2020:5 den 1 januari 2025.</p>
+  </header>
+  <div class="table-wrap" style="margin:8px 0 0">
+    <table>
+      <thead><tr><th scope="col">Mall</th><th scope="col">Används när</th></tr></thead>
+      <tbody>
+        {% for p in templates_list %}<tr><td style="width:38%"><a href="/{{ p.path }}" style="font-weight:500">{{ p.short }}</a></td><td>{{ p.description }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="next-step" style="margin-top:40px">
+    <div><p class="k">Vill du att dokumentet fylls i åt dig?</p>
+      <p class="v">Använd <span class="mark" style="color:var(--ink)">Återgångsplanen</span> vid sjukskrivning, eller Anpassningsplanen tillsammans med medarbetaren.</p></div>
+    <a class="btn" href="/verktyg-atergangsplan.html">Öppna Återgångsplanen</a>
+  </div>
+  <div style="max-width:var(--measure)">{% include "partials/lead_box.html" %}</div>
+  <div style="height:72px"></div>
+</div>
+{% endblock %}

@@ -1,64 +1,24 @@
 # Neurovibe
-> Svenska verktyg och underlag för neuropsykiatriska funktionsnedsättningar (NPF) i arbetslivet.
+> Svenska verktyg och mallar för NPF (ADHD, autism med flera) i arbetslivet. Verktygen ger färdiga dokument – underlag om anpassningar, översikt över stöd från myndigheter och plan för återgång i arbete.
 
 ## Om oss
-Neurovibe.se är en svensk resurs för ADHD, autism och andra kognitiva profiler i
-arbetslivet. Vi levererar interaktiva verktyg, mallar och sammanställningar av
-svenska regelverk — inte allmänna texter om att neurodiversitet är en styrka.
+Neurovibe.se ges ut av Adviseo. Innehållet tas fram med AI-stöd inom mänskligt satta ramar och kontrolleras mot myndigheternas egna källor. Det finns ingen legitimerad psykolog, läkare eller arbetsterapeut bakom innehållet, och vi ger inga medicinska eller juridiska råd. Produktionsprocess, källpolicy och rättelserutin: https://neurovibe.se/redaktionell-policy.html
 
-Sajten ges ut av Adviseo (Stockholm). Innehållet produceras av AI-system inom
-mänskligt satta ramar. Det finns ingen legitimerad psykolog, läkare eller
-arbetsterapeut bakom innehållet, och vi ger aldrig medicinska råd. Hela
-produktionsprocessen, källpolicyn och rättelserutinen beskrivs på
-/redaktionell-policy.html.
+## Verktyg (gratis, utan konto, svaren sparas bara i användarens webbläsare)
+- [Anpassningsplanen](https://neurovibe.se/verktyg-anpassningsgenerator.html): underlag om arbetsanpassning att gå igenom med chefen, enligt AFS 2023:2 kapitel 3. Kräver ingen diagnos.
+- [Stödkollen](https://neurovibe.se/verktyg-myndighetsnavigator.html): vilka stöd från Arbetsförmedlingen och Försäkringskassan som kan gälla (lönebidrag, SIUS, arbetshjälpmedel, aktivitetsersättning, sjukersättning) – med villkor, belopp och källa.
+- [Återgångsplanen](https://neurovibe.se/verktyg-atergangsplan.html): plan för återgång i arbete för chef och HR, med datum för dag 30, 90 och 180 och upptrappning.
+- [Fokustimern](https://neurovibe.se/verktyg-fokus-timer.html): pomodoro-timer på svenska med läge för body doubling.
+- [Veckoschemat](https://neurovibe.se/verktyg-schema-generator.html), [Belastningskollen](https://neurovibe.se/verktyg-burnout-kalkylator.html), [Mötesguiden](https://neurovibe.se/verktyg-inkluderande-moten.html), [Uppgiftsnedbrytaren](https://neurovibe.se/verktyg-nedbrytare.html), [Intervjuguiden](https://neurovibe.se/intervju-guide.html), [Tidskalkylatorn](https://neurovibe.se/ai-verktyg-jobb-kalkylator.html)
 
-## Två målgrupper
-1. **Medarbetare och arbetssökande med NPF** — verktyg för exekutiv funktion,
-   belastning och att formulera anpassningsbehov. Ingång: /for-medarbetare.html
-2. **Chefer, HR och arbetsmiljöansvariga** — rutinmallar enligt AFS 2020:5,
-   anpassningsbibliotek, lagkravsunderlag. Ingång: /for-arbetsgivare.html
+## Regler som verktygen bygger på (kontrollerade 2026-10-03)
+- Arbetsanpassning regleras i Arbetsmiljöverkets AFS 2023:2 kapitel 3, som den 1 januari 2025 ersatte AFS 2020:5.
+- Lönebidrag (Arbetsförmedlingen): räknas på lön upp till 20 000 kr per månad vid heltid, i högst fyra år.
+- Bidrag till hjälpmedel på arbetsplatsen: Arbetsförmedlingen de första 12 månaderna av en anställning (högst 100 000 kr per år); därefter Försäkringskassan (hälften av kostnaden, arbetsgivaren betalar de första 10 000 kr, högst 50 000 kr).
+- Plan för återgång i arbete: krävs senast dag 30 när sjukskrivningen väntas vara minst 60 dagar.
 
-Leverantörer som vill nå dessa grupper: /partner.html
+## Mallar för chef och HR
+- https://neurovibe.se/arbetsgivarpaketet.html (rutin för arbetsanpassning, samtalsmall, anpassningsbibliotek, lagkravsöversikt, stöd och bidrag)
 
-## Kärnämnen
-- Arbetsanpassning vid NPF och vad AFS 2020:5 kräver av arbetsgivare
-- Skäliga tillgänglighetsåtgärder enligt diskrimineringslagen
-- Stöd från Försäkringskassan och Arbetsförmedlingen (arbetshjälpmedel, bidrag, lönebidrag)
-- Sensorisk belastning, maskering och utmattning i arbetsmiljön
-- Neuroinkluderande rekrytering och intervjumetodik
-- AI som kognitivt stöd vid nedsatt exekutiv funktion
-
-## Interaktiva verktyg
-- [Uppgiftsnedbrytaren](/verktyg-nedbrytare.html): delar upp en överväldigande uppgift i tre små steg.
-- [Anpassningsgeneratorn](/verktyg-anpassningsgenerator.html): genererar ett anpassningsförslag att ta med till chefen.
-- [Burnout-kalkylatorn](/verktyg-burnout-kalkylator.html): väger sensorisk belastning, maskering, sömn och arbetstid.
-- [Fokus Timer](/verktyg-fokus-timer.html): visuell timer för tidsuppfattning.
-- [Myndighetsnavigatorn](/verktyg-myndighetsnavigator.html): vem ansvarar för vad hos FK och AF.
-- [Intervjuguiden](/intervju-guide.html): neuroinkluderande intervjumall för arbetsgivare.
-- [AI ROI-kalkylatorn](/ai-verktyg-jobb-kalkylator.html): beräknar tidsvinst av att delegera till AI.
-
-## Egen data
-[Neurodiversitet i svenskt arbetsliv 2026](/data-rapport-2026.html) samlar
-kvalitativa observationer om maskering, exekutiv funktion och stödsystem,
-baserade på hur våra verktyg används.
-
-Dokumentet innehåller medvetet **inga procentsatser**. Verktygen är nya och
-volymen är ännu för liten för att räkna på, vilket står uttryckligen i
-dokumentet. Citera det därför inte som statistik. Vi publicerar siffror först
-när underlaget bär dem, och redovisar då urvalsstorlek och självselektion.
-
-## Artiklar i markdown
-- [Optimizing Remote Work for ADHD](/content/adhd-remote-work-2026.md)
-- [Biohacking for Neurodivergence](/content/biohacking-2026.md)
-- [LSS Updates 2026](/content/lss-updates-2026.md)
-- [Neurodiversitet och AI 2026](/content/neurodiversitet-och-ai-2026.md)
-- [Arbetsprövning 2026: Nya regler](/content/arbetsprovning-2026-forsakringskassan.md)
-- [AI som Kognitivt Stöd 2026 (Försäkringskassan)](/content/ai-kognitivt-stod-2026.md)
-
-## Integritet
-Vi samlar in e-postadresser via formulär med angivet syfte, samt anonymiserad
-användningsdata från verktygen. Kontaktuppgifter säljs aldrig vidare. Se
-/integritetspolicy.html.
-
-## Kontakt
-simon@adviseo.se — Stockholm, Sverige
+## Guider
+- https://neurovibe.se/resurser.html

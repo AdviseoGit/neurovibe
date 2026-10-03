@@ -1,0 +1,121 @@
+{% extends "tool_base.html" %}
+{% block tool_title %}Återgångsplanen{% endblock %}
+{% block tool_lead %}För chef och HR när en medarbetare är sjukskriven. Fyll i steg för steg och få en plan för återgång i arbete, med datum för upptrappning och de tidsgränser Försäkringskassan bedömer mot.{% endblock %}
+{% block tool_body %}
+<form class="tool-layout" data-stepper="atergangsplanen" novalidate>
+  <nav aria-label="Steg">
+    <p style="margin:0 0 18px;font-size:14px;font-weight:500;color:var(--muted)">Återgångsplanen</p>
+    <ol class="steps-rail" data-rail>
+      <li><span class="dot">1</span><button type="button" data-goto="0">Sjukskrivningen</button></li>
+      <li><span class="dot">2</span><button type="button" data-goto="1">Arbetet i dag</button></li>
+      <li><span class="dot">3</span><button type="button" data-goto="2">Åtgärder</button></li>
+      <li><span class="dot">4</span><button type="button" data-goto="3">Upptrappning och kontakt</button></li>
+      <li><span class="dot">5</span><button type="button" data-goto="4">Planen</button></li>
+    </ol>
+    <button type="button" class="btn-link" data-reset style="margin-top:16px">Börja om</button>
+  </nav>
+
+  <div class="tool-main">
+    <div class="progress-bar" data-bar aria-hidden="true" style="margin-bottom:24px"><span></span><span></span><span></span><span></span><span></span></div>
+
+    <section class="tool-step" data-step="0">
+      <p class="step-count" data-step-count></p>
+      <h2>Om sjukskrivningen</h2>
+      <p class="intro">Namn behövs inte – initialer räcker. Inget av det du skriver lämnar den här webbläsaren.</p>
+      <div class="field"><label for="namn">Medarbetare</label><input type="text" id="namn" name="namn" placeholder="Till exempel: A. B." autocomplete="off"></div>
+      <div class="field"><label for="ansvarig">Ansvarig chef</label><input type="text" id="ansvarig" name="ansvarig" autocomplete="off"></div>
+      <div class="field"><label for="start">Första sjukdagen</label><input type="date" id="start" name="start" required>
+        <span class="hint">Används för att räkna ut dag 30, 90 och 180.</span></div>
+      <fieldset class="options" style="margin-top:22px">
+        <legend style="font-weight:500;margin-bottom:10px">Väntas sjukskrivningen vara minst 60 dagar?</legend>
+        <label class="option"><input type="radio" name="langd" value="ja"><span class="t">Ja</span></label>
+        <label class="option"><input type="radio" name="langd" value="nej"><span class="t">Nej</span></label>
+        <label class="option"><input type="radio" name="langd" value="vet-ej"><span class="t">Vet inte än</span></label>
+      </fieldset>
+      <p class="explain more">Om sjukskrivningen väntas vara minst 60 dagar ska arbetsgivaren ha en plan för återgång i arbete klar senast dag 30. Är du osäker – gör planen ändå. Den är lika användbar för kortare sjukskrivningar.</p>
+      <p data-error hidden role="alert" style="color:var(--warn-ink);font-weight:500"></p>
+      <div class="tool-nav"><button type="button" class="btn btn-primary" data-next>Nästa: Arbetet i dag</button></div>
+    </section>
+
+    <section class="tool-step" data-step="1" hidden>
+      <p class="step-count" data-step-count></p>
+      <h2>Arbetet i dag</h2>
+      <p class="intro">Beskriv arbetet, inte diagnosen. Planen ska handla om vad som behövs för att arbetet ska fungera.</p>
+      <div class="field"><label for="uppgifter">Vilka är de vanligaste arbetsuppgifterna?</label><textarea id="uppgifter" name="uppgifter"></textarea></div>
+      <div class="field"><label for="hinder">Vad i arbetet behöver förändras för att medarbetaren ska kunna komma tillbaka?</label>
+        <textarea id="hinder" name="hinder" placeholder="Till exempel: hög arbetsbelastning, många avbrott, otydliga prioriteringar."></textarea></div>
+      <div class="field"><label for="formaga">Vad kan medarbetaren göra redan nu, helt eller delvis?</label><textarea id="formaga" name="formaga"></textarea></div>
+      <div class="tool-nav"><button type="button" class="btn btn-secondary" data-prev>Tillbaka</button><button type="button" class="btn btn-primary" data-next>Nästa: Åtgärder</button></div>
+    </section>
+
+    <section class="tool-step" data-step="2" hidden>
+      <p class="step-count" data-step-count></p>
+      <h2>Vilka åtgärder ingår?</h2>
+      <p class="intro">Välj det som är aktuellt. Varje åtgärd får en ansvarig och ett datum i planen.</p>
+      <fieldset class="options" id="atgarder"></fieldset>
+      <div class="field" style="margin-top:22px"><label for="ovrigt">Andra åtgärder</label><textarea id="ovrigt" name="ovrigt" placeholder="En åtgärd per rad"></textarea></div>
+      <p data-error hidden role="alert" style="color:var(--warn-ink);font-weight:500"></p>
+      <div class="tool-nav"><button type="button" class="btn btn-secondary" data-prev>Tillbaka</button><button type="button" class="btn btn-primary" data-next>Nästa: Upptrappning</button></div>
+    </section>
+
+    <section class="tool-step" data-step="3" hidden>
+      <p class="step-count" data-step-count></p>
+      <h2>Upptrappning och kontakt</h2>
+      <div class="field"><label for="borjan">När kan medarbetaren börja arbeta igen, helt eller delvis?</label><input type="date" id="borjan" name="borjan"></div>
+      <fieldset class="options option-grid" style="margin-top:22px">
+        <legend style="font-weight:500;margin-bottom:10px">Börja med</legend>
+        <label class="option"><input type="radio" name="startgrad" value="25"><span class="t">25 procent</span></label>
+        <label class="option"><input type="radio" name="startgrad" value="50" checked><span class="t">50 procent</span></label>
+        <label class="option"><input type="radio" name="startgrad" value="75"><span class="t">75 procent</span></label>
+        <label class="option"><input type="radio" name="startgrad" value="100"><span class="t">Heltid direkt</span></label>
+      </fieldset>
+      <div class="field" style="margin-top:22px"><label for="steg">Öka var</label>
+        <select id="steg" name="steg"><option value="14">annan vecka</option><option value="21" selected>tredje vecka</option><option value="28">fjärde vecka</option></select>
+        <span class="hint">Upptrappningen är en plan, inte ett löfte. Den ändras om den inte fungerar.</span></div>
+      <fieldset class="options option-grid" style="margin-top:22px">
+        <legend style="font-weight:500;margin-bottom:10px">Kontakt under sjukskrivningen</legend>
+        <label class="option"><input type="radio" name="kontakt" value="varje vecka" checked><span class="t">Varje vecka</span></label>
+        <label class="option"><input type="radio" name="kontakt" value="varannan vecka"><span class="t">Varannan vecka</span></label>
+      </fieldset>
+      <div class="field" style="margin-top:22px"><label for="kanal">Hur håller ni kontakten?</label>
+        <select id="kanal" name="kanal"><option>kort telefonsamtal</option><option>möte på arbetsplatsen</option><option>videosamtal</option><option>mejl eller sms, enligt medarbetarens önskemål</option></select></div>
+      <div class="tool-nav"><button type="button" class="btn btn-secondary" data-prev>Tillbaka</button><button type="button" class="btn btn-primary" data-next>Visa planen</button></div>
+    </section>
+
+    <section class="tool-step" data-step="4" hidden>
+      <p class="step-count" data-step-count></p>
+      <h2>Planen är klar</h2>
+      <p class="intro">Gå igenom planen med medarbetaren och skriv under. Uppdatera den när något förändras.</p>
+      <div class="tool-nav no-print" style="margin-top:0">
+        <button type="button" class="btn btn-primary" onclick="window.print()">Skriv ut eller spara som PDF</button>
+        <button type="button" class="btn btn-secondary" id="copy-doc">Kopiera texten</button>
+      </div>
+      <article class="doc" id="doc" style="margin-top:28px" aria-label="Plan för återgång i arbete"></article>
+      <p class="no-print" style="margin-top:18px;font-size:14px;color:var(--muted)">Försäkringskassan har också en egen blankett, <a href="https://www.forsakringskassan.se/arbetsgivare/att-forebygga-sjukfranvaro/plan-for-atergang-i-arbete" rel="noopener" target="_blank">FK 7459 Arbetsgivarens plan för återgång i arbete</a>. Du kan använda den här planen som underlag när du fyller i den.</p>
+      <div class="tool-nav no-print"><button type="button" class="btn btn-secondary" data-prev>Tillbaka och ändra</button><button type="button" class="btn-link" data-reset>Börja om</button></div>
+    </section>
+  </div>
+
+  <aside aria-label="Viktiga datum">
+    <div class="side-card">
+      <h2>Viktiga datum</h2>
+      <div id="live" style="font-size:15px;margin-top:10px;color:var(--ink-2)"></div>
+      <p style="margin-top:16px;padding-top:12px;border-top:1px solid #E1E7E2;font-size:13px;color:var(--muted)">Inget av det du skriver skickas till oss.</p>
+    </div>
+  </aside>
+</form>
+{% endblock %}
+{% block tool_after %}
+<div class="wrap no-print"><div class="with-aside" style="padding-top:0">
+  <div class="main-col prose">
+    <h2>Tidsgränserna i sjukskrivningen</h2>
+    <p>Försäkringskassan bedömer arbetsförmågan mot olika saker beroende på hur länge sjukskrivningen har pågått – det kallas rehabiliteringskedjan. <strong>Dag 30:</strong> planen för återgång ska vara klar om sjukskrivningen väntas vara minst 60 dagar. <strong>Efter dag 90:</strong> rätten till sjukpenning prövas mot om medarbetaren kan göra andra uppgifter hos arbetsgivaren eller arbeta med anpassning. <strong>Efter dag 180:</strong> arbetsförmågan bedöms mot arbeten på hela arbetsmarknaden.</p>
+    <p>Det är därför tidiga, konkreta åtgärder spelar så stor roll. Läs mer hos <a href="https://www.forsakringskassan.se/arbetsgivare/sjukdom-och-skada/om-din-medarbetare-ar-sjuk-lange" rel="noopener" target="_blank">Försäkringskassan</a> och i vår guide om <a href="/arbetsprovning-2026-forsakringskassan.html">arbetsprövning</a>.</p>
+    {% include "partials/lead_box.html" %}
+  </div>
+</div></div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/assets/stepper.js?v={{ asset_v }}" defer></script>
+<script src="/static/assets/tools/atergangsplanen.js?v={{ asset_v }}" defer></script>
+{% endblock %}

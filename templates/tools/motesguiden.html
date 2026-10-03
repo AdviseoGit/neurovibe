@@ -1,0 +1,70 @@
+{% extends "tool_base.html" %}
+{% block tool_title %}Mötesguiden{% endblock %}
+{% block tool_lead %}Välj vilken typ av möte du ska hålla, så får du en checklista för före, under och efter – plus en agendamall att skicka ut. Möten som tar mindre energi fungerar bättre för alla, inte bara för den som har NPF.{% endblock %}
+{% block tool_body %}
+<div class="with-aside" style="padding-top:24px">
+  <div class="main-col">
+    <form class="panel" id="meet" novalidate>
+      <div class="option-grid" style="gap:20px">
+        <div class="field" style="margin:0"><label for="typ">Mötestyp</label>
+          <select id="typ"><option value="status">Statusuppdatering</option><option value="brainstorm">Idéarbete eller workshop</option><option value="oneone">Enskilt samtal eller avstämning</option><option value="decision">Beslutsmöte</option></select></div>
+        <div class="field" style="margin:0"><label for="format">Format</label>
+          <select id="format"><option value="digital">Digitalt</option><option value="hybrid">Hybrid</option><option value="physical">På plats</option></select></div>
+        <div class="field" style="margin:0"><label for="langd">Längd</label>
+          <select id="langd"><option value="short">Högst 25 minuter</option><option value="standard" selected>45–50 minuter</option><option value="long">Längre än en timme</option></select></div>
+      </div>
+      <div class="tool-nav"><button type="submit" class="btn btn-primary">Visa checklistan</button></div>
+    </form>
+    <div id="out" hidden style="margin-top:28px">
+      <div class="tool-nav no-print" style="margin-top:0"><button type="button" class="btn btn-primary" onclick="window.print()">Skriv ut eller spara som PDF</button></div>
+      <article class="doc" id="doc" style="margin-top:20px"></article>
+    </div>
+  </div>
+  <aside class="side-col"><div class="side-card"><h2>Varför det spelar roll</h2><p>Otydliga agendor, långa möten utan paus och krav på snabba muntliga svar är bland det som tar mest energi för personer med ADHD eller autism. Det mesta på checklistan kostar ingenting.</p></div></aside>
+</div>
+{% endblock %}
+{% block tool_after %}
+<div class="wrap no-print"><div class="with-aside" style="padding-top:0"><div class="main-col prose">
+  <h2>Så blir möten mer inkluderande</h2>
+  <p>Ett möte som är tydligt före, förutsägbart under och dokumenterat efter minskar den kognitiva belastningen för alla deltagare. Det gör det också lättare för den som behöver tid att tänka innan hen säger något.</p>
+  <p>Läs mer: <a href="/inkluderande-kultur-npf.html">Inkluderande kultur vid NPF</a> · <a href="/fem-tips-for-chefer.html">Tips för chefer</a> · <a href="/kognitiv-ergonomi-npf.html">Kognitiv ergonomi</a></p>
+  {% include "partials/lead_box.html" %}
+</div></div></div>
+{% endblock %}
+{% block scripts %}
+<script>
+(function () {
+  var R = {
+    before: { always: ['Skicka en tydlig agenda minst 24 timmar i förväg.', 'Skriv vad mötet är till för: information, diskussion eller beslut.', 'Skriv om något behöver läsas eller förberedas – och i så fall vad.'],
+      brainstorm: ['Skicka frågeställningen i förväg, så att den som behöver tid att tänka kan förbereda idéer.'],
+      hybrid: ['Lägg möteslänken tydligt i kallelsen.'], digital: ['Lägg möteslänken tydligt i kallelsen.'],
+      physical: ['Boka ett rum med dämpad belysning och god ventilation, bort från genomgångstrafik.'] },
+    during: { always: ['Börja med att kort upprepa syftet och agendan.', 'Ha en "parkering" – en plats för viktiga frågor som inte hör till dagens agenda.'],
+      digital: ['Säg uttryckligen att det är okej att ha kameran avstängd.', 'Använd räck upp handen-funktionen så att ingen blir avbruten.'],
+      hybrid: ['Låt de som är med digitalt tala först vid varje punkt.'],
+      long: ['Lägg in en paus på 5–10 minuter efter 45 minuter, utan skärm.'],
+      decision: ['Låt det vara tyst 10–15 sekunder efter en viktig fråga, så att alla hinner tänka.'],
+      oneone: ['Fråga hur personen helst vill få återkoppling – muntligt eller skriftligt.'] },
+    after: { always: ['Skicka en kort sammanfattning med beslut och nästa steg inom 24 timmar.', 'Skriv tydligt vem som gör vad och när.'],
+      brainstorm: ['Låt deltagarna skicka in fler idéer skriftligt i ett dygn efter mötet.'],
+      oneone: ['Bekräfta överenskommelser skriftligt.'] }
+  };
+  var LBL = { status: 'Statusuppdatering', brainstorm: 'Idéarbete', oneone: 'Enskilt samtal', decision: 'Beslutsmöte' };
+  function list(sec, keys) { var out = R[sec].always.slice(); keys.forEach(function (k) { (R[sec][k] || []).forEach(function (x) { if (out.indexOf(x) === -1) out.push(x); }); }); return out; }
+  function ul(items) { return '<ul style="list-style:none;padding:0">' + items.map(function (t) { return '<li><label class="check"><input type="checkbox"> ' + t + '</label></li>'; }).join('') + '</ul>'; }
+  document.getElementById('meet').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var k = [document.getElementById('typ').value, document.getElementById('format').value, document.getElementById('langd').value];
+    var html = '<h2>Checklista: ' + LBL[k[0]] + '</h2>' +
+      '<h3>Före mötet</h3>' + ul(list('before', k)) + '<h3>Under mötet</h3>' + ul(list('during', k)) + '<h3>Efter mötet</h3>' + ul(list('after', k)) +
+      '<h3>Agendamall</h3><table><tbody>' +
+      '<tr><th scope="row">Syfte</th><td>[Information / diskussion / beslut]</td></tr>' +
+      '<tr><th scope="row">Förberedelse</th><td>[Läs X före mötet / ingen förberedelse]</td></tr>' +
+      '<tr><th scope="row">Punkter</th><td>1. [Punkt] – [minuter]<br>2. [Punkt] – [minuter]<br>3. [Punkt] – [minuter]</td></tr>' +
+      '<tr><th scope="row">Avslut</th><td>Sammanfattning av beslut och nästa steg</td></tr></tbody></table>';
+    document.getElementById('doc').innerHTML = html; document.getElementById('out').hidden = false;
+    if (window.nv) window.nv.usage('motesguiden', { typ: k[0], format: k[1], langd: k[2] });
+  });
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "tool_base.html" %}
+{% block tool_title %}Uppgiftsnedbrytaren{% endblock %}
+{% block tool_lead %}När en uppgift känns för stor är det oftast första steget som är problemet. Skriv vad du ska göra och välj vilken sorts uppgift det är – så får du tre små steg där det första tar under fem minuter.{% endblock %}
+{% block tool_body %}
+<div class="with-aside" style="padding-top:24px">
+  <div class="main-col">
+    <form class="panel" id="nb" novalidate>
+      <div class="field" style="margin:0"><label for="task">Vad ska du göra?</label><input type="text" id="task" placeholder="Till exempel: skriva kvartalsrapporten" autocomplete="off"></div>
+      <fieldset class="options option-grid" style="margin-top:22px">
+        <legend style="font-weight:500;margin-bottom:10px">Vad är det för sorts uppgift?</legend>
+        <label class="option"><input type="radio" name="typ" value="skriva" checked><span class="t">Skriva något</span></label>
+        <label class="option"><input type="radio" name="typ" value="mejl"><span class="t">Svara på mejl eller meddelanden</span></label>
+        <label class="option"><input type="radio" name="typ" value="ringa"><span class="t">Ringa eller boka något</span></label>
+        <label class="option"><input type="radio" name="typ" value="admin"><span class="t">Fylla i, deklarera, administrera</span></label>
+        <label class="option"><input type="radio" name="typ" value="plugga"><span class="t">Läsa in eller lära sig något</span></label>
+        <label class="option"><input type="radio" name="typ" value="stada"><span class="t">Städa eller ordna</span></label>
+      </fieldset>
+      <div class="tool-nav"><button type="submit" class="btn btn-primary">Dela upp uppgiften</button></div>
+    </form>
+    <div id="out" hidden style="margin-top:28px" aria-live="polite"></div>
+  </div>
+  <aside class="side-col"><div class="side-card"><h2>Varför så små steg?</h2><p>Det svåra är sällan själva uppgiften utan att börja. Ett första steg som är så litet att det känns löjligt sänker tröskeln – och när du väl har börjat är det lättare att fortsätta.</p></div></aside>
+</div>
+{% endblock %}
+{% block tool_after %}
+<div class="wrap no-print"><div class="with-aside" style="padding-top:0"><div class="main-col prose">
+  <h2>Att komma igång när det tar stopp</h2>
+  <p>Svårigheter att komma igång hänger ihop med de exekutiva funktionerna – förmågan att planera, prioritera och starta. Det är inte lathet. Små, konkreta steg och en tydlig tidsgräns hjälper, liksom att arbeta bredvid någon annan.</p>
+  <p>Läs mer: <a href="/adhd-anpassningar-jobb.html">ADHD-anpassningar på jobbet</a> · <a href="/verktyg-fokus-timer.html">Fokustimern</a></p>
+  {% include "partials/lead_box.html" %}
+</div></div></div>
+{% endblock %}
+{% block scripts %}
+<script>
+(function () {
+  var T = {
+    skriva: ['Öppna ett tomt dokument och skriv bara rubriken.', 'Skriv tre punkter om vad texten ska säga – i stödord, inte meningar.', 'Skriv det sämsta möjliga första stycket. Det får bli bättre sen.'],
+    mejl: ['Öppna inkorgen och välj ut ett enda mejl.', 'Skriv ett svar på högst tre meningar.', 'Skicka det, och sortera sedan bara de fem senaste mejlen.'],
+    ringa: ['Ta fram numret eller sidan och lägg den framför dig.', 'Skriv ner en mening om vad du ska säga eller fråga.', 'Ring eller boka – och ha meningen framför dig.'],
+    admin: ['Lägg fram de papper eller öppna den sida som behövs.', 'Fyll bara i det första fältet eller den första raden.', 'Fortsätt i tio minuter, och skriv sedan ner var du slutade.'],
+    plugga: ['Öppna materialet på rätt sida.', 'Läs bara rubrikerna och sammanfattningen.', 'Skriv tre frågor som texten ska svara på, och läs för att hitta svaren.'],
+    stada: ['Ställ en timer på fem minuter.', 'Plocka bara undan det som ligger på en enda yta.', 'När timern ringer – bestäm om du vill ta fem minuter till.']
+  };
+  document.getElementById('nb').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var task = document.getElementById('task').value.trim() || 'uppgiften';
+    var typ = (document.querySelector('input[name=typ]:checked') || {}).value || 'skriva';
+    var esc = function (s) { return s.replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+    document.getElementById('out').innerHTML = '<div class="result-card"><h3>Tre steg för: ' + esc(task) + '</h3><ol style="margin:14px 0 0;padding-left:22px;font-size:18px;line-height:1.6">' +
+      T[typ].map(function (s, i) { return '<li style="margin-top:8px">' + (i === 0 ? '<span class="mark">' + s + '</span>' : s) + '</li>'; }).join('') +
+      '</ol><p style="margin:16px 0 0;color:var(--muted)">Gör bara det första steget nu. Resten kan vänta.</p></div>' +
+      '<div class="next-step"><div><p class="k">Vill du ha en tidsgräns?</p><p class="v">Starta ett kort fokuspass på 15 minuter.</p></div><a class="btn" href="/verktyg-fokus-timer.html">Öppna Fokustimern</a></div>';
+    document.getElementById('out').hidden = false;
+    if (window.nv) window.nv.usage('nedbrytaren', { typ: typ });
+  });
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,115 @@
+{% extends "tool_base.html" %}
+{% block tool_title %}Stödkollen{% endblock %}
+{% block tool_lead %}Svara på fyra frågor och se vilka stöd från Arbetsförmedlingen och Försäkringskassan som kan vara aktuella – med villkor, belopp och länk till myndighetens egen sida.{% endblock %}
+{% block tool_body %}
+<form class="tool-layout" data-stepper="stodkollen" novalidate>
+  <nav aria-label="Steg">
+    <p style="margin:0 0 18px;font-size:14px;font-weight:500;color:var(--muted)">Stödkollen</p>
+    <ol class="steps-rail" data-rail>
+      <li><span class="dot">1</span><button type="button" data-goto="0">Din situation</button></li>
+      <li><span class="dot">2</span><button type="button" data-goto="1">Ålder</button></li>
+      <li><span class="dot">3</span><button type="button" data-goto="2">Arbetsförmåga</button></li>
+      <li><span class="dot">4</span><button type="button" data-goto="3">Behov</button></li>
+      <li><span class="dot">5</span><button type="button" data-goto="4">Ditt resultat</button></li>
+    </ol>
+    <button type="button" class="btn-link" data-reset style="margin-top:16px">Börja om</button>
+  </nav>
+
+  <div class="tool-main">
+    <div class="progress-bar" data-bar aria-hidden="true" style="margin-bottom:24px"><span></span><span></span><span></span><span></span><span></span></div>
+
+    <section class="tool-step" data-step="0">
+      <p class="step-count" data-step-count></p>
+      <h2>Vad stämmer bäst just nu?</h2>
+      <fieldset class="options" style="margin-top:20px">
+        <legend class="visually-hidden">Din situation</legend>
+        <label class="option"><input type="radio" name="sit" value="anst-lang"><span><span class="t">Jag har ett jobb sedan mer än 12 månader</span></span></label>
+        <label class="option"><input type="radio" name="sit" value="anst-ny"><span><span class="t">Jag har ett jobb sedan 12 månader eller kortare</span></span></label>
+        <label class="option"><input type="radio" name="sit" value="soker"><span><span class="t">Jag söker jobb</span></span></label>
+        <label class="option"><input type="radio" name="sit" value="sjuk"><span><span class="t">Jag är sjukskriven från mitt jobb</span></span></label>
+      </fieldset>
+      <p data-error hidden role="alert" style="color:var(--warn-ink);font-weight:500"></p>
+      <div class="tool-nav"><button type="button" class="btn btn-primary" data-next>Nästa: Ålder</button></div>
+    </section>
+
+    <section class="tool-step" data-step="1" hidden>
+      <p class="step-count" data-step-count></p>
+      <h2>Hur gammal är du?</h2>
+      <p class="intro">Vissa ersättningar gäller bara i vissa åldrar.</p>
+      <fieldset class="options option-grid">
+        <legend class="visually-hidden">Ålder</legend>
+        <label class="option"><input type="radio" name="alder" value="u19"><span class="t">Under 19 år</span></label>
+        <label class="option"><input type="radio" name="alder" value="19-29"><span class="t">19–29 år</span></label>
+        <label class="option"><input type="radio" name="alder" value="30-64"><span class="t">30–64 år</span></label>
+        <label class="option"><input type="radio" name="alder" value="65"><span class="t">65 år eller äldre</span></label>
+      </fieldset>
+      <p data-error hidden role="alert" style="color:var(--warn-ink);font-weight:500"></p>
+      <div class="tool-nav"><button type="button" class="btn btn-secondary" data-prev>Tillbaka</button><button type="button" class="btn btn-primary" data-next>Nästa: Arbetsförmåga</button></div>
+    </section>
+
+    <section class="tool-step" data-step="2" hidden>
+      <p class="step-count" data-step-count></p>
+      <h2>Hur mycket orkar du arbeta?</h2>
+      <p class="intro">Tänk på hur det ser ut över tid, inte en enstaka bra eller dålig vecka.</p>
+      <fieldset class="options">
+        <legend class="visually-hidden">Arbetsförmåga</legend>
+        <label class="option"><input type="radio" name="formaga" value="heltid"><span><span class="t">Heltid, om arbetet anpassas</span><span class="d">Jag klarar jobbet men det kostar mer energi än det borde.</span></span></label>
+        <label class="option"><input type="radio" name="formaga" value="lagre-lang"><span><span class="t">Mindre än heltid – och det har varat eller väntas vara minst ett år</span></span></label>
+        <label class="option"><input type="radio" name="formaga" value="lagre-kort"><span><span class="t">Mindre än heltid just nu, men det bör gå över</span></span></label>
+        <label class="option"><input type="radio" name="formaga" value="inte"><span><span class="t">Jag kan inte arbeta alls just nu</span></span></label>
+      </fieldset>
+      <p data-error hidden role="alert" style="color:var(--warn-ink);font-weight:500"></p>
+      <div class="tool-nav"><button type="button" class="btn btn-secondary" data-prev>Tillbaka</button><button type="button" class="btn btn-primary" data-next>Nästa: Behov</button></div>
+    </section>
+
+    <section class="tool-step" data-step="3" hidden>
+      <p class="step-count" data-step-count></p>
+      <h2>Vad stämmer in på dig?</h2>
+      <p class="intro">Kryssa i allt som stämmer. Inget är obligatoriskt.</p>
+      <fieldset class="options">
+        <legend class="visually-hidden">Behov</legend>
+        <label class="option"><input type="checkbox" name="behov" value="hjalpmedel"><span><span class="t">Jag behöver hjälpmedel för att klara jobbet</span><span class="d">Till exempel brusreducerande hörlurar, planeringsprogram eller en ljuddämpad arbetsplats.</span></span></label>
+        <label class="option"><input type="checkbox" name="behov" value="inlarning"><span><span class="t">Jag behöver stöd för att lära mig och komma in i arbetsuppgifterna</span></span></label>
+        <label class="option"><input type="checkbox" name="behov" value="inskriven"><span><span class="t">Jag är inskriven på Arbetsförmedlingen</span></span></label>
+        <label class="option"><input type="checkbox" name="behov" value="underlag"><span><span class="t">Jag har ett intyg eller utlåtande om min funktionsnedsättning</span><span class="d">Från vården. Du kan också vara mitt i en utredning – då stämmer det inte ännu.</span></span></label>
+      </fieldset>
+      <div class="tool-nav"><button type="button" class="btn btn-secondary" data-prev>Tillbaka</button><button type="button" class="btn btn-primary" data-next>Visa mitt resultat</button></div>
+    </section>
+
+    <section class="tool-step" data-step="4" hidden>
+      <p class="step-count" data-step-count></p>
+      <h2 id="result-title">Ditt resultat</h2>
+      <p class="intro">Det är myndigheten som beslutar. Ta med översikten när du pratar med din handläggare eller chef.</p>
+      <div id="next" class="next-step"></div>
+      <div id="results"></div>
+      <div class="tool-nav no-print">
+        <button type="button" class="btn btn-primary" onclick="window.print()">Skriv ut eller spara som PDF</button>
+        <button type="button" class="btn btn-secondary" data-prev>Ändra mina svar</button>
+      </div>
+      <p style="margin-top:24px;font-size:14px;color:var(--muted)">Reglerna är hämtade från Arbetsförmedlingens och Försäkringskassans webbplatser och kontrollerades <span id="checked"></span>. Översikten är vägledning, inte ett beslut. Belopp och villkor kan ändras – följ länken till myndigheten innan du ansöker.</p>
+    </section>
+  </div>
+
+  <aside aria-label="Dina svar">
+    <div class="side-card">
+      <h2>Dina svar</h2>
+      <div id="live" style="font-size:15px;margin-top:10px;color:var(--ink-2)"></div>
+      <p style="margin-top:16px;padding-top:12px;border-top:1px solid #E1E7E2;font-size:13px;color:var(--muted)">Svaren skickas inte till oss. De sparas bara i den här webbläsaren.</p>
+    </div>
+  </aside>
+</form>
+{% endblock %}
+{% block tool_after %}
+<div class="wrap no-print"><div class="with-aside" style="padding-top:0">
+  <div class="main-col prose">
+    <h2>Vem ansvarar för vad?</h2>
+    <p><strong>Arbetsgivaren</strong> ansvarar för att anpassa arbetet (AFS 2023:2, kapitel 3) och för rehabiliteringen när någon är sjukskriven. <strong>Arbetsförmedlingen</strong> ger stöd när du söker jobb eller är ny på ett jobb – till exempel lönebidrag, SIUS och hjälpmedel under de första tolv månaderna. <strong>Försäkringskassan</strong> står för ersättningar när arbetsförmågan är nedsatt och för bidrag till hjälpmedel när du har varit anställd längre än tolv månader.</p>
+    <p>Läs mer: <a href="/forsakringskassan-arbetsformedlingen-stod.html">Stöd från Försäkringskassan och Arbetsförmedlingen</a> · <a href="/arbetsprovning-2026-forsakringskassan.html">Arbetsprövning</a> · <a href="/arbetsgivarpaketet/stod-och-bidrag.html">Stöd och bidrag för arbetsgivare</a></p>
+    {% include "partials/lead_box.html" %}
+  </div>
+</div></div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/assets/stepper.js?v={{ asset_v }}" defer></script>
+<script src="/static/assets/tools/stodkollen.js?v={{ asset_v }}" defer></script>
+{% endblock %}
