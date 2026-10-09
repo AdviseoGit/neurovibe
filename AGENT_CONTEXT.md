@@ -22,3 +22,6 @@
 
 ## 5. Teknisk Info
 - (Lägg till Railway-info här när det är applicerbart)
+
+## Kontaktadress
+- Publik kontaktadress på sajten är **info@neurovibe.se** (vidarebefordras till ägaren via Cloudflare Email Routing). Skriv aldrig ut simon@adviseo.se på sidor som besökare ser; den används bara för interna notiser (t.ex. LEAD_NOTIFY_EMAIL).

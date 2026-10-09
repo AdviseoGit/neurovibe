@@ -198,7 +198,7 @@
       .catch(function (err) {
         console.error("[leadflow]", err);
         messageBox(form, form.dataset.error,
-          "Något gick fel på vår sida. Mejla simon@adviseo.se och vi hör av oss direkt.",
+          "Något gick fel på vår sida. Mejla info@neurovibe.se och vi hör av oss direkt.",
           "error");
         if (button) {
           button.disabled = false;
